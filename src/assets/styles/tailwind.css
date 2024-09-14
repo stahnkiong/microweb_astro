@@ -40,19 +40,19 @@
 
 /* brands */
 #header span.text-brand {
-  background: -webkit-linear-gradient(25deg, var(--aw-color-primary), var(--aw-color-accent));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  @apply text-3xl;
+  @apply text-2xl;
 }
 
 #header.scroll span.text-brand {
-  -webkit-text-fill-color: unset;
-  background-clip: unset;
-  -webkit-background-clip: unset;
-  background: none;
-  @apply text-2xl;
+  background: -webkit-linear-gradient(25deg, var(--aw-color-primary), var(--aw-color-accent));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: var(--aw-color-text-muted);
+  @apply text-[22px];
+}
+
+#header.scroll button, #header.scroll li a {
+  @apply text-sm;
 }
 
 #header.scroll > div:first-child {
