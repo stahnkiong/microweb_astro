@@ -24,7 +24,7 @@ export const headerData = {
       ],
     },
     {
-      text: 'Application',
+      text: 'Services',
       links: [
         {
           text: 'Features (Anchor Link)',
@@ -57,7 +57,7 @@ export const headerData = {
       ],
     },
     {
-      text: 'AI Marketing',
+      text: 'Solutions',
       links: [
         {
           text: 'Lead Generation',
@@ -86,29 +86,8 @@ export const headerData = {
       ],
     },
     {
-      text: 'Web Design',
-      links: [
-        {
-          text: 'Blog List',
-          href: getBlogPermalink(),
-        },
-        {
-          text: 'Article',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
-        },
-        {
-          text: 'Article (with MDX)',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
-        },
-        {
-          text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
-        },
-      ],
+      text: 'Responsibility',
+      href: '#',
     },
     {
       text: 'News',

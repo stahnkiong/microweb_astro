@@ -39,16 +39,11 @@
 }
 
 /* brands */
-#header span.text-brand {
-  @apply text-2xl;
-}
-
-#header.scroll span.text-brand {
+.scroll .text-brand, .text-gradient {
   background: -webkit-linear-gradient(25deg, var(--aw-color-primary), var(--aw-color-accent));
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: var(--aw-color-text-muted);
-  @apply text-[22px];
+  -webkit-text-fill-color: transparent;
 }
 
 #header.scroll button, #header.scroll li a {

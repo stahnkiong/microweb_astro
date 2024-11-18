@@ -1,0 +1,11 @@
+Model Information:
+* title:	iPhone 15 pro max
+* source:	https://sketchfab.com/3d-models/iphone-15-pro-max-f8462c6b8ffe4449bc4e9037d7a18505
+* author:	Henrybenrydude657 (https://sketchfab.com/Henrybenrydude657)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "iPhone 15 pro max" (https://sketchfab.com/3d-models/iphone-15-pro-max-f8462c6b8ffe4449bc4e9037d7a18505) by Henrybenrydude657 (https://sketchfab.com/Henrybenrydude657) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
