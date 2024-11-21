@@ -27,11 +27,11 @@ const {
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
     <div class="py-12 md:py-20 min-h-[88vh] flex items-center">
-      <div class="mx-auto">
+      <div class="mx-auto mt-6 md:mt-0">
         {
           tagline && (
             <p
-              class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase"
+              class="text-base text-secondary dark:text-blue-200 mb-6 font-bold tracking-wide uppercase"
               set:html={tagline}
             />
           )
@@ -39,7 +39,7 @@ const {
         {
           title && (
             <h1
-              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-12 font-heading dark:text-gray-200"
               set:html={title}
             />
           )
