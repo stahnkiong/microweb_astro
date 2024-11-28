@@ -1,7 +1,7 @@
 ---
 import WidgetWrapper2 from '~/components/ui/WidgetWrapper2.astro';
 import Headline from '~/components/ui/Headline.astro';
-import ItemGrid2 from '~/components/ui/ItemGrid2.astro';
+import ItemGrid3 from '~/components/ui/ItemGrid3.astro';
 import type { Features as Props } from '~/types';
 
 const {
@@ -21,16 +21,16 @@ const {
 
 <WidgetWrapper2 id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline as Record<string, string>} />
-  <ItemGrid2
+  <ItemGrid3
     items={items}
     columns={columns}
     defaultIcon={defaultIcon}
     classes={{
       container: 'gap-2',
       panel:
-        'rounded-2xl backdrop-blur-xl border border-green-100/20 bg-green-800/5 dark:bg-white/10 dark:border-green-950/15 p-10',
+        'svgeffect rounded-2xl backdrop-blur-xl border border-green-100/20 bg-green-800/5 dark:bg-white/10 dark:border-green-950/15 p-10',
       description: 'text-sm',
-      icon: 'w-12 h-12 mb-6 text-secondary dark:text-white',
+      icon: 'svgeffectchild w-12 h-12 mb-2 text-secondary dark:text-white',
       ...((classes?.items as Record<string, never>) ?? {}),
     }}
   />

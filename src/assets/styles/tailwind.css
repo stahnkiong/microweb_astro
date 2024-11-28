@@ -38,6 +38,25 @@
   }
 }
 
+
+/* custom */
+.svgeffect:hover {
+  .svgeffectchild path {
+  animation: svghover 1.2s linear;
+  fill: var(--aw-color-accent);
+  }
+}
+
+@keyframes svghover {
+  0% {fill:transparent; stroke:var(--aw-color-accent); stroke-dasharray:10;}
+  50% {fill:transparent; stroke:var(--aw-color-accent); }
+  100% {fill:var(--aw-color-accent); stroke:transparent; stroke-dasharray:3;}
+}
+
+.gotolink svg {
+  @apply m-0
+}
+
 /* brands */
 .scroll .text-brand, .text-gradient {
   background: -webkit-linear-gradient(25deg, var(--aw-color-primary), var(--aw-color-accent));

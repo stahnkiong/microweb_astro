@@ -32,25 +32,26 @@ const {
         containerClass
       )}
     >
-      {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }) => (
+      {items.map(({ title, link, description, icon, callToAction, classes: itemClasses = {} }) => (
         <div class={twMerge('relative flex flex-col', panelClass, itemClasses?.panel)}>
-          <a href="/product">
-          <div class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</div>
-          {description && (
-            <p class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)} set:html={description} />
-          )}
-          <div class="flex justify-between mt-10">
-            {(icon || defaultIcon) && (
-              <Icon name={icon || defaultIcon} class={twMerge('w-10 h-10', defaultIconClass, itemClasses?.icon)} />
-            )}
-            {callToAction && (
-              <div class="mt-6">
-                <Button {...callToAction} />
-              </div>
-            )}
-          </div>
           
-          </a>
+          <div class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</div>
+            {description && (
+              <p class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)} set:html={description} />
+            )}
+            <div class="flex justify-between mt-10">
+              {(icon || defaultIcon) && (
+                <Icon name={icon || defaultIcon} class={twMerge('w-10 h-10', defaultIconClass, itemClasses?.icon)} />
+              )}
+              <a href={link} class="before:absolute before:inset-0 before:content-*">
+              {callToAction && (
+                <div class="mt-6">
+                  <Button {...callToAction} />
+                </div>
+              )}
+              </a>
+            </div>
+          
         </div>
       ))}
     </div>

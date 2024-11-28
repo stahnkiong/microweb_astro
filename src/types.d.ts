@@ -134,6 +134,7 @@ export interface Stat {
 
 export interface Item {
   title?: string;
+  link?: string;
   description?: string;
   icon?: string;
   classes?: Record<string, string>;
