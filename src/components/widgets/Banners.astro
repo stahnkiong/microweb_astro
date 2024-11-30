@@ -1,12 +1,25 @@
 ---
-
+import Image from "astro/components/Image.astro"
+import sarawak from "~/assets/images/banner/Coat_of_arms_of_Sarawak.svg"
 ---
 
-<section class="backdrop-blur-lg border border-green-100/20 bg-green-800/5 dark:bg-white/10 dark:border-green-950/15 p-10 not-prose">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 text-xs font-medium uppercase">
-    <span class="font-bold ">
+<section class="backdrop-blur-lg border border-green-100/20 bg-green-800/5 dark:bg-white/10 dark:border-green-950/15 p-6 not-prose">
+  <div class="max-w-7xl flex justify-between mx-auto px-4 sm:px-6 py-4 text-xs font-medium uppercase">
+    <div>
+      <span class="font-bold ">
        Trusted by </span
-    ><br/> Industry Leaders,<br/> Startups and SMEs
+    ><br/> Leaders, SMEs and<br/>  startups
+    </div>
+    <div>
+      <Image
+                  class=""
+                  height={50}
+                  widths={[400, 768]}
+                  src={sarawak}
+                  alt="sarawak crest"
+                />
+    </div>
   </div>
+
   
 </section>

@@ -42,7 +42,7 @@
 /* custom */
 .svgeffect:hover {
   .svgeffectchild path {
-  animation: svghover 1.2s linear;
+  animation: svghover .8s linear;
   fill: var(--aw-color-accent);
   }
 }

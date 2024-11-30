@@ -1,0 +1,33 @@
+---
+import type { ImageMetadata } from 'astro'
+import { Image } from 'astro:assets'
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/banner/*')
+const imagePaths = Object.keys(images).filter((imagePath) => {
+  return imagePath.startsWith(`/src/assets/images/banner`)
+})
+---
+
+<section class="backdrop-blur-lg border border-green-100/20 bg-green-950/10 dark:bg-white/10 dark:border-green-950/15 p-2 mb-1 not-prose">
+  <div class="max-w-7xl items-center md:flex justify-between mx-auto px-4 sm:px-6 py-4 text-xs font-medium uppercase">
+    <div class="mb-8 md:mb-0 text-center md:text-left">
+      <span class="font-bold ">
+       Trusted by </span> <span class="md:block"> Leaders, SMEs and</span>  startups
+    </div>
+    <div class="max-w-5xl grid grid-cols-4 grid-rows-2 md:grid-cols-8 md:grid-rows-1 gap-4 md:gap-10 items-center justify-items-center drop-shadow-[-.5px_0_0_rgba(50,100,70,1)] dark:drop-shadow-[-.5px_0_0_rgba(0,0,0,1)] opacity-80 dark:opacity-60">
+      {
+        imagePaths.map(async (imagePath) => {
+          const image = images[imagePath]()
+          const imageAlt = imagePath.split('/').pop() as string;
+          return (
+                <Image 
+                  src={image} 
+                  alt={imageAlt}
+                  height={60}
+                  widths={[400, 768]} />
+          )
+        })
+      }
+      </div>
+  </div>
+</section>
