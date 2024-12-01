@@ -5,6 +5,7 @@
 @layer utilities {
   .bg-page {
     background-color: var(--aw-color-bg-page);
+    transition: background-color .4s ease-in;
   }
   .bg-dark {
     background-color: var(--aw-color-bg-page-dark);

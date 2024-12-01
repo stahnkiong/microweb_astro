@@ -3,7 +3,6 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 import Banners2 from '~/components/widgets/Banners2.astro';
-import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Features4 from '~/components/widgets/Features4.astro';
 import Steps from '~/components/widgets/Steps.astro';
@@ -89,6 +88,57 @@ const metadata = {
 
   <Banners2 />
 
+<!-- Features Widget *************** -->
+
+<Features2
+id="features"
+tagline="Why Us"
+title="Agile & Adaptive Development <br/>for Maximum ROI"
+subtitle="Experience the power of iterative development, as embraced by tech giants like Google, Amazon, Microsoft, and Netflix. We simplify complex software projects by breaking them into smaller, manageable phases, allowing us to deliver high-quality solutions faster and more efficiently. Our approach is tailored to meet your immediate needs, with a pay-as-you-go model so you only invest in the features that truly matter to your business."
+items={[
+  {
+    title: 'Future-Ready Solutions',
+    description:
+      'We use the latest technologies and design patterns to create software that’s not only effective today but scalable and adaptable for tomorrow’s challenges. With a focus on long-term success, our solutions are ready to evolve as your business grows.',
+    icon: 'carbon:ml-model-reference',
+  },
+  {
+    title: 'Tailored to Your Needs',
+    description:
+      'No two businesses are alike. We work closely with you to understand your objectives, workflows, and pain points. From there, we craft custom solutions that precisely address your business needs and unlock new possibilities for growth.',
+    icon: 'carbon:ibm-streamsets',
+  },
+  {
+    title: 'AI-Ready & Scalable',
+    description:
+      'With AI integration at the core of our development process, your software will be able to make smarter decisions, automate processes, and provide insights that help drive your business forward. Our solutions are built to scale, ensuring they can grow alongside your business.',
+    icon: 'carbon:bot',
+  },
+  {
+    title: 'Seamless Integration',
+    description:
+      'We integrate our custom software seamlessly into your existing systems and infrastructure. Whether it’s connecting to third-party APIs, cloud-based services, or internal tools, we ensure that everything works together for maximum efficiency.',
+    icon: 'carbon:carbon-ui-builder',
+  },
+  {
+    title: 'Continuous Integration and Deployment (CI/CD)',
+    description:
+      "With automated CI/CD processes, your software is always up-to-date and improving. This agile approach allows us to adapt quickly to operational changes, enabling your business to scale confidently without downtime or disruption.",
+    icon: 'carbon:category-new-each',
+  },
+  {
+    title: 'Clear, Transparent Communication',
+    description:
+      'Customers and developers often clash due to differing perspectives: customers focus on immediate needs, while developers prioritize long-term software health. Bridging this gap requires open communication, empathy, and collaboration to find solutions that balance both viewpoints.',
+    icon: 'carbon:cell-tower',
+  },
+]}
+>
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-page"></div>
+</Fragment>
+</Features2>
+
   <!-- Content Widget **************** -->
 
   <Content
@@ -123,57 +173,10 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-page"></div>
+      <div class="absolute inset-0 bg-transparent"></div>
     </Fragment>
   </Content>
 
-
-  <!-- Features Widget *************** -->
-
-  <Features
-    id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022."
-    items={[
-      {
-        title: 'Astro + Tailwind CSS Integration',
-        description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-        icon: 'tabler:brand-tailwind',
-      },
-      {
-        title: 'Ready-to-use Components',
-        description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
-      },
-      {
-        title: 'Best Practices',
-        description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
-        icon: 'tabler:list-check',
-      },
-      {
-        title: 'Excellent Page Speed',
-        description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: 'Search Engine Optimization (SEO)',
-        description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
-      },
-      {
-        title: 'Open to new ideas and contributions',
-        description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
-      },
-    ]}
-  />
 
   <!-- Content Widget **************** -->
 

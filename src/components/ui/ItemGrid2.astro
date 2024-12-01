@@ -34,12 +34,7 @@ const {
     >
       {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }) => (
         <div class={twMerge('relative flex flex-col', panelClass, itemClasses?.panel)}>
-          <a href="/product">
-          <div class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</div>
-          {description && (
-            <p class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)} set:html={description} />
-          )}
-          <div class="flex justify-between mt-10">
+          <div class="flex justify-between">
             {(icon || defaultIcon) && (
               <Icon name={icon || defaultIcon} class={twMerge('w-10 h-10', defaultIconClass, itemClasses?.icon)} />
             )}
@@ -49,8 +44,12 @@ const {
               </div>
             )}
           </div>
+          <div class={twMerge('text-xl font-bold mt-2', titleClass, itemClasses?.title)}>{title}</div>
+          {description && (
+            <p class={twMerge('text-sm mt-4', descriptionClass, itemClasses?.description)} set:html={description} />
+          )}
+
           
-          </a>
         </div>
       ))}
     </div>
