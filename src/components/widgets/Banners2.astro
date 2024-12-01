@@ -14,17 +14,18 @@ const imagePaths = Object.keys(images).filter((imagePath) => {
       <span class="font-bold ">
        Trusted by </span> <span class="md:block"> Leaders, SMEs and</span>  startups
     </div>
-    <div class="max-w-5xl grid grid-cols-4 grid-rows-2 md:grid-cols-8 md:grid-rows-1 gap-4 md:gap-10 items-center justify-items-center drop-shadow-[-.5px_0_0_rgba(50,100,70,1)] dark:drop-shadow-[-.5px_0_0_rgba(0,0,0,1)] opacity-80 dark:opacity-60">
+    <div class="max-w-5xl grid grid-cols-4 grid-rows-2 md:grid-cols-8 md:grid-rows-1 gap-6 md:gap-10 items-center justify-items-center drop-shadow-[-.5px_0_0_rgba(50,100,70,1)] dark:drop-shadow-[-.5px_0_0_rgba(0,0,0,1)] opacity-80 dark:opacity-60">
       {
         imagePaths.map(async (imagePath) => {
           const image = images[imagePath]()
           const imageAlt = imagePath.split('/').pop() as string;
           return (
-                <Image 
-                  src={image} 
-                  alt={imageAlt}
-                  height={60}
-                  widths={[400, 768]} />
+            <Image 
+              src={image} 
+              alt={imageAlt}
+              loading="lazy"
+              height={60}
+              widths={[400, 768]} />
           )
         })
       }
