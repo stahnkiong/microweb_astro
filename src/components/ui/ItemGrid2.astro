@@ -46,10 +46,9 @@ const {
           </div>
           <div class={twMerge('text-xl font-bold mt-2', titleClass, itemClasses?.title)}>{title}</div>
           {description && (
-            <p class={twMerge('text-sm mt-4', descriptionClass, itemClasses?.description)} set:html={description} />
+            <p class={twMerge("text-[15px] mt-4 after:content-['...'] group-hover:after:hidden", descriptionClass, itemClasses?.description)} set:html={description} />
+            <Icon name="carbon:touch-interaction" class="self-end w-5 h-5 group-hover:hidden"/>
           )}
-
-          
         </div>
       ))}
     </div>
