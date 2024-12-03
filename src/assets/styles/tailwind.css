@@ -64,7 +64,12 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  /* transition: filter .4s ease; */
 }
+/* 
+.group:hover .text-gradient {
+  filter: invert(.7)
+} */
 
 #header.scroll > div:first-child {
   @apply bg-page md:bg-white/70 md:backdrop-blur-md;
