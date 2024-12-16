@@ -3,19 +3,19 @@ import type { ImageMetadata } from 'astro'
 import { Image } from 'astro:assets'
 import Headline from '../ui/Headline.astro'
 
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/banner/*')
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/provider/*')
 const imagePaths = Object.keys(images).filter((imagePath) => {
-  return imagePath.startsWith(`/src/assets/images/banner`)
+  return imagePath.startsWith(`/src/assets/images/provider`)
 })
 
 ---
 
-<section class="backdrop-blur-lg border border-green-100/20 bg-green-950/10 dark:bg-white/10 dark:border-green-950/15 not-prose">
+<section class="opacity-70 dark:opacity-50 dark:backdrop-invert border border-green-100/20 bg-green-900/20 dark:bg-green-950/90 dark:border-green-950/15 not-prose">
   <div class="mt-20 text-center">
     <Headline title="Our Infrastructure Providers"/>
   </div>
-  <div class="max-w-7xl mx-auto text-xs font-medium uppercase mb-20">
-    <div class="grid grid-cols-4 grid-rows-2 md:grid-cols-8 md:grid-rows-1 gap-6 md:gap-10 items-center justify-items-center drop-shadow-[-.5px_0_0_rgba(50,100,70,1)] dark:drop-shadow-[-.5px_0_0_rgba(0,0,0,1)] opacity-80 dark:opacity-60">
+  <div class="blur-[.8px] dark:blur-0 max-w-5xl mx-auto text-xs font-medium uppercase mb-20">
+    <div class="p-8 grid grid-cols-2 grid-rows-2 md:grid-cols-4 md:grid-rows-1 md:gap-10 items-center justify-items-center dark:brightness-0 dark:grayscale dark:contrast-0">
       {
         imagePaths.map(async (imagePath) => {
           const image = images[imagePath]()
@@ -25,7 +25,7 @@ const imagePaths = Object.keys(images).filter((imagePath) => {
               src={image} 
               alt={imageAlt}
               loading="lazy"
-              height={60}
+              height={100}
               widths={[400, 768]} />
           )
         })
