@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
+import Banners from '~/components/widgets/Banners.astro';
 import Banners2 from '~/components/widgets/Banners2.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Features4 from '~/components/widgets/Features4.astro';
@@ -9,7 +10,7 @@ import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
+import Stats2 from '~/components/widgets/Stats2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import ThreeJs from '~/components/widgets/ThreeJs.astro';
 
@@ -84,7 +85,6 @@ const metadata = {
     </Fragment>
   </Hero>
 
-  <!-- Note Widget ******************* -->
 
   <Banners2 />
 
@@ -142,16 +142,15 @@ items={[
 
   <!-- Stats Widget ****************** -->
 
-  <Stats
+  <Stats2
     stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
+      { title: 'Content Delivery Network Worldwide', amount: '330+', },
+      { title: 'High Availability Uptime', amount: '99.99%' },
+      { title: 'Malicious Traffic Automatic Mitigation', amount: '< 3s' },
     ]}
   />
 
-
+  <Banners/>
   <!-- Content Widget **************** -->
 
   <Content
