@@ -10,11 +10,11 @@ const imagePaths = Object.keys(images).filter((imagePath) => {
 
 ---
 
-<section class="opacity-70 dark:backdrop-invert border border-green-100/20 bg-green-100/90 dark:bg-teal-950/70 dark:border-green-950/15 not-prose">
+<section class="dark:opacity-70 backdrop-blur-lg border border-green-100/20 bg-green-100/15 dark:bg-teal-500/50 dark:border-green-100/20 not-prose">
   <div class="mt-20 text-center">
     <Headline title="Our Infrastructure Providers"/>
   </div>
-  <div class="blur-[.8px] dark:blur-0 max-w-5xl mx-auto text-xs font-medium uppercase mb-20">
+  <div class="opacity-70 dark:opacity-100 blur-[1px] dark:blur-0 max-w-5xl mx-auto text-xs font-medium uppercase mb-20">
     <div class="p-8 grid grid-cols-2 grid-rows-2 md:grid-cols-4 md:grid-rows-1 md:gap-10 items-center justify-items-center dark:brightness-0 dark:grayscale dark:contrast-50">
       {
         imagePaths.map(async (imagePath) => {
