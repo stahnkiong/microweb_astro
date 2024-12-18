@@ -201,18 +201,14 @@ items={[
   <PortFolio
     id="porfolio"
     title="Our Clients and Us"
-    tagline="Portfolio "
-    isReversed
+    tagline="Portfolio"
+    classes={{panel:'bg-slate-200', container:'pb-4 pt-12 md:pb-4 md:pt-16 lg:pb-4 lg:pt-20'}}
     items={[
       {
-        title: 'Description:',
+        title: 'Delivering Excellence Under Guidelines',
+        icon: 'carbon:application-web',
         description:
-          'Developed a comprehensive brand identity for a tech startup, Tech Innovators, specializing in disruptive innovations. The goal was to convey a modern yet approachable image that resonated with both corporate clients and tech enthusiasts.',
-      },
-      {
-        title: 'Role:',
-        description:
-          'Led the entire branding process from concept to execution. Created a dynamic logo that symbolized innovation, selected a vibrant color palette, and I designed corporate stationery, website graphics, and social media assets.',
+          'Ford had a very specific vision for the website, with strict guidelines on design aesthetics, font usage (yes, that iconic Ford font!) and overall user experience.',
       },
     ]}
     image={{
@@ -221,14 +217,14 @@ items={[
     }}
     callToAction={{
       target: '_blank',
-      text: 'Go to the project',
+      text: 'Read case study',
       icon: 'tabler:chevron-right',
       href: '#',
     }}
   >
     <Fragment slot="content">
       <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
-        Applying Ford's Design Standards <br /><span class="text-base font-semibold">Meeting Stringent Standards in Local Retails</span>
+        Applying Ford's Design Standards <br /><span class="text-lg font-semibold">Meeting Stringent Standards in Local Retails</span>
       </h3>
     </Fragment>
 
@@ -236,7 +232,71 @@ items={[
       <div class="absolute inset-0 bg-page"></div>
     </Fragment>
   </PortFolio>
+  <PortFolio
+  isReversed
+  isAfterContent
+  classes={{panel:'bg-orange-100', container:'py-4 md:py-4 lg:py-4'}}
+  items={[
+    {
+      title: 'Delivering Excellence Under Guidelines',
+      icon: 'carbon:application-web',
+      description:
+        'Ford had a very specific vision for the website, with strict guidelines on design aesthetics, font usage (yes, that iconic Ford font!) and overall user experience.',
+    },
+  ]}
+  image={{
+    src: '~/assets/images/ford_raptor.webp',
+    alt: 'ford raptor',
+  }}
+  callToAction={{
+    target: '_blank',
+    text: 'Read case study',
+    icon: 'tabler:chevron-right',
+    href: '#',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
+      Applying Ford's Design Standards <br /><span class="text-lg font-semibold">Meeting Stringent Standards in Local Retails</span>
+    </h3>
+  </Fragment>
 
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-page"></div>
+  </Fragment>
+</PortFolio>
+<PortFolio
+  isAfterContent
+  classes={{panel:'bg-cyan-100', container:'pt-4 md:pt-4 lg:pt-4'}}
+  items={[
+    {
+      title: 'Delivering Excellence Under Guidelines',
+      icon: 'carbon:application-web',
+      description:
+        'Ford had a very specific vision for the website, with strict guidelines on design aesthetics, font usage (yes, that iconic Ford font!) and overall user experience.',
+    },
+  ]}
+  image={{
+    src: '~/assets/images/ford_raptor.webp',
+    alt: 'ford raptor',
+  }}
+  callToAction={{
+    target: '_blank',
+    text: 'Read case study',
+    icon: 'tabler:chevron-right',
+    href: '#',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
+      Applying Ford's Design Standards <br /><span class="text-lg font-semibold">Meeting Stringent Standards in Local Retails</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-page"></div>
+  </Fragment>
+</PortFolio>
   <!-- Steps Widget ****************** -->
 
   <Steps

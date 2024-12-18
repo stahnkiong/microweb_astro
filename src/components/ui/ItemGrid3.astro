@@ -39,7 +39,7 @@ const {
             {description && (
               <p class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)} set:html={description} />
             )}
-            <div class="flex justify-between mt-10">
+            <div class="flex justify-between mt-6">
               {(icon || defaultIcon) && (
                 <Icon name={icon || defaultIcon} class={twMerge('w-10 h-10', defaultIconClass, itemClasses?.icon)} />
               )}

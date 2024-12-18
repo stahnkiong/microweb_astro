@@ -37,12 +37,33 @@ const {
     tagline={tagline}
     classes={{
       container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
-      title: 'text-3xl md:text-4xl font-bold tracking-tighter mb-4 font-heading',
+      title: ' font-bold tracking-tighter mb-4 font-heading',
       subtitle: 'max-w-3xl mx-auto sm:text-center ',
     }}
   />
   <div class="mx-auto max-w-7xl p-4 md:px-8">
     <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
+      <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-2/5">
+        {
+          image && (
+            <div class="relative m-auto max-w-4xl">
+              {typeof image === 'string' ? (
+                <Fragment set:html={image} />
+              ) : (
+                <Image
+                  class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
+                  width={500}
+                  height={600}
+                  widths={[400, 768, 1080]}
+                  sizes="(max-width: 768px) 100vw, 600px"
+                  layout="responsive"
+                  {...image}
+                />
+              )}
+            </div>
+          )
+        }
+      </div>
       <div class="md:basis-3/5 self-center">
         {content && <div class="mb-12 text-lg dark:text-slate-400" set:html={content} />}
 
@@ -67,27 +88,6 @@ const {
             action: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
           }}
         />
-      </div>
-      <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-2/5">
-        {
-          image && (
-            <div class="relative m-auto max-w-4xl">
-              {typeof image === 'string' ? (
-                <Fragment set:html={image} />
-              ) : (
-                <Image
-                  class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
-                  width={500}
-                  height={600}
-                  widths={[400, 768, 1080]}
-                  sizes="(max-width: 768px) 100vw, 600px"
-                  layout="responsive"
-                  {...image}
-                />
-              )}
-            </div>
-          )
-        }
       </div>
     </div>
   </div>
