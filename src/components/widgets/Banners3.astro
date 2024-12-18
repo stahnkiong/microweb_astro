@@ -10,12 +10,12 @@ const imagePaths = Object.keys(images).filter((imagePath) => {
 
 ---
 
-<section class="opacity-70 border border-white/10 bg-slate-400 dark:bg-slate-500 not-prose dark:text-neutral-700">
+<section class="opacity-70 border backdrop-blur-lg border-white/10 bg-teal-600 not-prose ">
   <div class="mt-20 text-center">
-    <Headline title="Some of the Technologies We Use" subtitle='Depending on the project, we utilize different technologies'/>
+    <Headline title="Some of the Technologies We Use" subtitle='Depending on the project, we utilize different technologies' classes={{title:'dark:text-neutral-700 tracking-normal drop-shadow-[-.5px_0px_0px_rgba(90,230,230,1)] '}}/>
   </div>
   <div class="max-w-5xl mx-auto text-xs font-medium uppercase mb-20">
-    <div class="p-8 grid grid-cols-4 grid-rows-3 md:grid-cols-6 md:grid-rows-2 gap-4 md:gap-10 items-center justify-items-center brightness-0 grayscale contrast-50 drop-shadow-[-.5px_0px_0px_rgba(255,255,255,1)] dark:drop-shadow-[-.5px_0px_0px_rgba(0,0,0,1)]">
+    <div class="p-8 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 lg:gap-10 items-center justify-items-center brightness-0 grayscale contrast-50 drop-shadow-[-.5px_0px_0px_rgba(90,230,230,1)] ">
       {
         imagePaths.map(async (imagePath) => {
           const image = images[imagePath]()
@@ -25,7 +25,7 @@ const imagePaths = Object.keys(images).filter((imagePath) => {
               src={image} 
               alt={imageAlt}
               loading="lazy"
-              height={40}
+              height={30}
               widths={[400, 768]} />
           )
         })
