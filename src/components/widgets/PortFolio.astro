@@ -41,9 +41,9 @@ const {
       subtitle: 'max-w-3xl mx-auto sm:text-center text-lg ',
     }}
   />
-  <div class=`mx-auto max-w-7xl px-6 py-8 md:px-8 rounded-3xl ${classes?.panel ?? ''}`>
+  <div class=`mx-auto max-w-7xl px-6 py-8 md:px-16 rounded-3xl ${classes?.panel ?? ''}`>
     <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
-      <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-2/5">
+      <div aria-hidden="true" class="md:basis-2/5">
         {
           image && (
             <div class="relative m-auto max-w-4xl">
@@ -64,7 +64,7 @@ const {
           )
         }
       </div>
-      <div class="md:basis-3/5 self-center">
+      <div class="mt-4 md:mt-0 md:basis-3/5 self-center">
         {content && <div class="mb-12 text-lg dark:text-slate-400" set:html={content} />}
 
         {
