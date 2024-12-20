@@ -19,7 +19,8 @@ module.exports = {
         heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
-        '3xl': ['33px', '36px'],
+        '3xl': ['2.1rem', '2.35rem'],
+        'xs' : ['0.8rem', '1.2rem'],
       },
     },
   },

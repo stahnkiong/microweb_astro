@@ -269,7 +269,7 @@ items={[
 
 <PortFolio
   isAfterContent
-  classes={{panel:'bg-[#e1e1e1]', container:'pt-4 md:pt-4 lg:pt-4'}}
+  classes={{panel:'bg-[#e1e1e1]', container:'py-4 md:py-4 lg:py-4'}}
   items={[
     {
       title: 'More Reliable and Privacy-Conscious Approach',
@@ -299,7 +299,24 @@ items={[
     <div class="absolute inset-0 bg-page"></div>
   </Fragment>
 </PortFolio>
-  <!-- Steps Widget ****************** -->
+
+
+  <CallToAction
+  classes={{container:'pt-0 md:pt-0 lg:pt-0'}}
+    actions={[
+      {
+        variant: 'secondary',
+        text: 'See more case studies',
+        href: 'https://github.com/onwidget/astrowind',
+        target: '_blank',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-page"></div>
+    </Fragment>
+  </CallToAction>
+
 
   <Steps3
     title="Our Project Approach and Stages"
@@ -325,18 +342,14 @@ items={[
       {
         title: 'Stage 4: <span class="font-medium">Deployment & Release</span>',
         description: 'Deploying the application to production servers or app stores, managing the release process and communicating with stakeholders and user support to address any immediate issues after launch.',
-        icon: 'tabler:check',
+        icon: 'carbon:cloud-data-ops',
       },
       {
         title: 'Stage 5: <span class="font-medium">Maintenance & Evolution</span>',
         description: 'Regular maintenance, performance optimizations and the addition of new features and updates, ensuring it remains relevant and effective. Because good software is never truly finished.',
-        icon: 'tabler:check',
+        icon: 'carbon:cloud-monitoring',
       },
     ]}
-    image={{
-      src: '~/assets/images/cicd.png',
-      alt: 'Steps image',
-    }}
   >
   <Fragment slot="bg">
     <div class="absolute inset-0 backdrop-blur-lg bg-black/70 dark:bg-black/30"></div>
