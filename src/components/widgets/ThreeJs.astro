@@ -3,19 +3,21 @@ import { Icon } from "astro-icon/components";
 
 ---
 
-<script is:inline src="/threejs/index-Sl9ALmI5.js"></script>
+<script is:inline src="/threejs/index-Bj97JYGW.js"></script>
 <script>
-if (window.DeviceOrientationEvent) {
-  window.addEventListener('deviceorientation', function(event) {
-    if (event.alpha !== null || event.beta !== null || event.gamma !== null) {
-      const autopilotElement = this.document.getElementById('autopilot');
-      if (autopilotElement) {
-        autopilotElement.innerText = 'Tilt Device to Control';
-      }
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.DeviceOrientationEvent) {
+      window.addEventListener('deviceorientation', function(event) {
+        if (event.alpha !== null || event.beta !== null || event.gamma !== null) {
+          const autopilotElement = document.getElementById('autopilot');
+          if (autopilotElement) {
+            autopilotElement.innerText = 'Tilt Device to Control';
+          }
+        }
+      });
     }
   });
-}
 </script>
 <div id="dimension" class="fixed h-full -z-10 dark:brightness-[0.4] dark:contrast-[1.5] transition duration-700">
 </div>
-<div id="autopilot" class="fixed right-3 bottom-5 md:bottom-20 px-6 py-2 rounded-xl text-xs -z-10 backdrop-blur-xl border border-green-100/20 bg-green-800/5 dark:bg-white/10 dark:border-green-950/15 flex items-center"><Icon name="carbon:mobile-view-orientation" class="w-5 h-5 mr-2"/>Auto Pilot: Engaged</div>
+<div id="autopilot" class="fixed right-3 bottom-20 px-6 py-2 rounded-xl text-xs -z-10 backdrop-blur-xl border border-green-100/20 bg-green-800/5 dark:bg-white/10 dark:border-green-950/15 flex items-center"><Icon name="carbon:mobile-view-orientation" class="w-5 h-5 mr-2"/>Auto Pilot: Engaged</div>
