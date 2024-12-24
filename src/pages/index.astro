@@ -96,7 +96,7 @@ const metadata = {
 id="features"
 tagline="Why Us"
 title="Agile & Adaptive Development"
-subtitle="Experience the power of iterative development, as embraced by tech giants like<br/> Google, Microsoft, and Netflix. We simplify projects into smaller phases, with a pay-as-you-go model so you only invest in the features that truly matter to your business."
+subtitle="Experience the power of iterative development, as embraced by tech giants like Google, Microsoft, and Netflix."
 classes={{ description: 'text-xs' }}
 items={[
   {
@@ -179,6 +179,14 @@ items={[
         description:
           "We've built strong partnerships in AI, IoT, hardware, event management and HR, delivering innovative and comprehensive business solutions",
       },
+      {
+        callToAction: {
+          text: "Let's Chat",
+          variant: 'primary',
+          href: '#contact',
+          icon: 'tabler:chevron-right',
+        },
+      },
     ]}
     image={{
       src: '~/assets/images/coding.jpg',
@@ -202,7 +210,7 @@ items={[
     id="porfolio"
     title="Our Clients and Us"
     tagline="Portfolio"
-    classes={{panel:'bg-sky-100', container:'pb-4 pt-12 md:pb-4 md:pt-16 lg:pb-4 lg:pt-20'}}
+    classes={{panel:'bg-blue-950 text-white', container:'pb-4 pt-12 md:pb-4 md:pt-16 lg:pb-4 lg:pt-20'}}
     items={[
       {
         title: 'Delivering Excellence Under Guidelines',
@@ -236,7 +244,7 @@ items={[
   <PortFolio
   isReversed
   isAfterContent
-  classes={{panel:'bg-orange-100', container:'py-4 md:py-4 lg:py-4'}}
+  classes={{panel:'bg-amber-300 dark:bg-fuchsia-950', container:'py-4 md:py-4 lg:py-4'}}
   items={[
     {
       title: 'Streamlining the Customer Journey: AI-Driven Approach',
@@ -269,7 +277,7 @@ items={[
 
 <PortFolio
   isAfterContent
-  classes={{panel:'bg-[#e1e1e1]', container:'py-4 md:py-4 lg:py-4'}}
+  classes={{panel:'bg-[#e1e1e1] dark:bg-slate-700', container:'py-4 md:py-4 lg:py-4'}}
   items={[
     {
       title: 'More Reliable and Privacy-Conscious Approach',
@@ -320,33 +328,34 @@ items={[
 
   <Steps3
     title="Our Project Approach and Stages"
+    subtitle='We simplify projects into smaller phases with pay-per-service pricing, allowing you to invest in the functionalities you need now and seamlessly integrate and scale them into a larger solution later'
     items={[
       {
         title: 'Stage 1: <span class="font-medium">Planning & Discovery</span>',
         description:
-          "Discovering opportunities to solve business challenges with modern technologies and solutions, moving beyond just traditional data entry and logic, while establishing the project's scope, goals, and overall plan.",
+          "Discover opportunities to solve business challenges with modern technologies and solutions, moving beyond traditional data entry and logic. This process includes establishing the project's scope, goals, and overall plan.",
         icon: 'carbon:forum',
       },
       {
         title: 'Stage 2: <span class="font-medium">Design & Prototyping</span>',
         description:
-          "This iterative process of creating mockups, prototypes, and defining technical specifications allows us to gain valuable insights into client preferences and refine the solution before development begins.",
+          "By iteratively creating mockups, prototypes, and defining technical specifications, we gain valuable insights into client preferences, enabling us to refine the solution and ensure a successful development process.",
         icon: 'carbon:devices',
       },
       {
         title: 'Stage 3: <span class="font-medium">Development & Testing</span>',
         description:
-          'Using Agile and CI/CD practices, we develop, build, and rigorously test the product in smaller, integrated components, allowing for continuous updates and future scalability for the client.',
+          'With Agile and CI/CD, we deliver a product developed, built, and rigorously tested in smaller, integrated components, guaranteeing continuous updates and future scalability for our clients.',
         icon: 'carbon:ibm-watsonx-code-assistant',
       },
       {
         title: 'Stage 4: <span class="font-medium">Deployment & Release</span>',
-        description: 'Deploying the application to production servers or app stores, managing the release process and communicating with stakeholders and user support to address any immediate issues after launch.',
+        description: 'We deploy to production servers or app stores, manage the release, and coordinate with stakeholders and user support to resolve any post-launch issues.',
         icon: 'carbon:cloud-data-ops',
       },
       {
         title: 'Stage 5: <span class="font-medium">Maintenance & Evolution</span>',
-        description: 'Regular maintenance, performance optimizations and the addition of new features and updates, ensuring it remains relevant and effective. Because good software is never truly finished.',
+        description: 'Regular maintenance, performance optimizations, and feature updates ensure the software continues to meet user needs and remain effective. Because good software is never truly finished.',
         icon: 'carbon:cloud-monitoring',
       },
     ]}
