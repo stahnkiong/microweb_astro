@@ -15,6 +15,7 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import Stats2 from '~/components/widgets/Stats2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import ThreeJs from '~/components/widgets/ThreeJs.astro';
+import Formbricks from '~/components/widgets/Formbricks.astro';
 
 const metadata = {
   title: 'MicroWeb — Tailored Software, Web Development, System Integration & AI Marketing ',
@@ -168,16 +169,22 @@ items={[
           'With over a decade of experience, our team has delivered successful projects across a range of industries, helping businesses achieve their goals',
       },
       {
-        title: 'Cutting-Edge Technology',
-        icon: 'carbon:carbon-for-ibm-product',
-        description:
-          'We stay at the forefront of technology, using the latest tools and innovations to enhance efficiency and drive growth',
-      },
-      {
         title: 'Collaborative Partnerships',
         icon: 'carbon:events',
         description:
           "We've built strong partnerships in AI, IoT, hardware, event management and HR, delivering innovative and comprehensive business solutions",
+      },      
+      {
+        title: 'Build on Modern Foundations',
+        icon: 'carbon:layers-external',
+        description:
+          "Gain a competitive advantage by incorporating industry leading practices ",
+      },
+      {
+        title: 'Cutting-Edge Technology',
+        icon: 'carbon:carbon-for-ibm-product',
+        description:
+          'We stay at the forefront of technology, using the latest tools and innovations',
       },
       {
         callToAction: {
@@ -193,10 +200,6 @@ items={[
       alt: 'Colorful Image',
     }}
   >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold font-heading dark:text-white mb-2">Building on modern foundations</h3>
-      <p class="text-base">Gain a competitive advantage by incorporating industry leading practices</p>
-    </Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-page"></div>
@@ -315,7 +318,7 @@ items={[
       {
         variant: 'secondary',
         text: 'See more case studies',
-        href: 'https://github.com/onwidget/astrowind',
+        href: 'blog.microweb.my',
         target: '_blank',
       },
     ]}
@@ -365,8 +368,19 @@ items={[
   </Fragment>
   </Steps3>
 
-  <!-- Features2 Widget ************** -->
+<Formbricks>
+  <Fragment slot="content">
+    <h2 class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl">
+      Let's Build Extraordinary Together</h2>
+    <p class="mt-4 text-base font-semibold">Transform your digital presence with agile development that adapts to your needs. </p>
+    <p class="mt-4 text-base">We understand the importance of your investment and offer flexible options, including pay-for-priority features. Contact us now to start building your digital success story.</p>
+  </Fragment>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 backdrop-blur-lg bg-white/40 dark:bg-white/5"></div>
+  </Fragment>
+</Formbricks>
 
+  <!-- Features2 Widget ************** -->
   <Features2
     title="Most used widgets"
     subtitle="Provides frequently used components for building websites using Tailwind CSS"
