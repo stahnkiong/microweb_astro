@@ -27,32 +27,20 @@ export const headerData = {
       text: 'Services',
       links: [
         {
-          text: 'Features (Anchor Link)',
-          href: getPermalink('/#features'),
+          text: 'Software',
+          href: getPermalink('/software'),
         },
         {
-          text: 'Services',
-          href: getPermalink('/services'),
+          text: 'AI Marketing',
+          href: getPermalink('/ai-marketing'),
         },
         {
-          text: 'Pricing',
-          href: getPermalink('/pricing'),
+          text: 'System Integration',
+          href: getPermalink('/system-integration'),
         },
         {
-          text: 'About us',
-          href: getPermalink('/about'),
-        },
-        {
-          text: 'Contact',
-          href: getPermalink('/contact'),
-        },
-        {
-          text: 'Terms',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
+          text: 'Web Development',
+          href: getPermalink('/web-development'),
         },
       ],
     },
