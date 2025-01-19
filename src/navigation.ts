@@ -27,7 +27,7 @@ export const headerData = {
       text: 'Services',
       links: [
         {
-          text: 'Software',
+          text: 'Custom Software',
           href: getPermalink('/software'),
         },
         {
@@ -48,28 +48,36 @@ export const headerData = {
       text: 'Solutions',
       links: [
         {
-          text: 'Lead Generation',
-          href: getPermalink('/landing/lead-generation'),
+          text: 'Enterprise',
+          href: getPermalink('/enterprise'),
         },
         {
-          text: 'Long-form Sales',
-          href: getPermalink('/landing/sales'),
+          text: 'Healthcare',
+          href: getPermalink('/healthcare'),
         },
         {
-          text: 'Click-Through',
-          href: getPermalink('/landing/click-through'),
+          text: 'Logistics & Supply Chain',
+          href: getPermalink('/finance'),
         },
         {
-          text: 'Product Details (or Services)',
-          href: getPermalink('/landing/product'),
+          text: 'Retail',
+          href: getPermalink('/retail'),
         },
         {
-          text: 'Coming Soon or Pre-Launch',
-          href: getPermalink('/landing/pre-launch'),
+          text: 'Manufacturing',
+          href: getPermalink('/manufacturing'),
         },
         {
-          text: 'Subscription',
-          href: getPermalink('/landing/subscription'),
+          text: 'Agriculture',
+          href: getPermalink('/agriculture'),
+        },
+        {
+          text: 'Hospitality',
+          href: getPermalink('/hospitality'),
+        },
+        {
+          text: 'Education',
+          href: getPermalink('/education'),
         },
       ],
     },
