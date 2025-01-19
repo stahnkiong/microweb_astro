@@ -36,7 +36,7 @@ export const headerData = {
         },
         {
           text: 'System Integration',
-          href: getPermalink('/system-integration'),
+          href: getPermalink('/integration'),
         },
         {
           text: 'Web Development',
