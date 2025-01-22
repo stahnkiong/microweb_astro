@@ -14,7 +14,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
 import Features5 from '~/components/widgets/Features5.astro';
 const metadata = {
-  title: 'MicroWeb — Tailored Software, Web Development, System Integration & AI Marketing ',
+  title: 'AI Marketing - MicroWeb',
   ignoreTitleTemplate: true,
 };
 ---
@@ -22,7 +22,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <ThreeJs/>
   <Hero2
-  tagline="Custom Software Development"
+  tagline="AI-Powered Digital Marketing"
   actions={[
     { variant: 'primary', text: "Let's Chat", href: '#contact' },
   ]}
@@ -32,11 +32,11 @@ const metadata = {
   }}
 >
   <Fragment slot="title">
-    Future-Proof Your Business and <span class="text-primary text-gradient highlight">Achieve Growth</span> with Innovative Solutions 
+    Personalize Experiences and boost your  <span class="text-primary text-gradient highlight tracking-tight">ROI with AI</span>
   </Fragment>
 
   <Fragment slot="subtitle">
-    We build custom software solutions tailored to your specific business needs. Our agile approach ensures your software grows with you, making it future-ready and AI-powered.
+    Reach the right audience with the right message at the right time. We use data-driven insights and personalized strategies to build loyalty and fuel growth.
   </Fragment>
   <Fragment slot="content">
     <Features5
@@ -44,15 +44,15 @@ const metadata = {
         classes={{ container: 'py-8' }}
         items={[
         {
-            description: 'Mobile',
+            description: 'Right Customers',
             icon: 'carbon:ibm-cloud-hpc',
         },
         {
-            description: 'Desktop',
+            description: 'AI Learns & Improves',
             icon: 'carbon:development',
         },
         {
-            description: 'Web',
+            description: 'Budget Control',
             icon: 'carbon:ml-model-reference',
         }
         ]}
@@ -67,37 +67,29 @@ const metadata = {
 
 <Features4
 id="features"
-tagline="Modern Software Ecosystem"
+tagline="Personalized Connections. Measurable Growth"
 columns={3}
-title="Bespoke Software & Custom API Integrations"
-subtitle="Your business is unique. Your software should be too. That's why we build custom software, connecting your existing systems with the leading platforms that matter most to your operations and industry, including:"
+title="How Our AI Marketing Works"
+subtitle="We use AI to drive smarter marketing results. By analyzing data, we create personalized messages that maximize ROI and build lasting customer relationships, leveraging natural language processing and machine learning to understand customer needs."
 classes={{ container: 'py-20' }}
 items={[
   {
-    title: 'Enterprise-Grade Development',
-    description: "Secure & Reliability",
+    title: 'Targeted Audience',
+    description: "Pinpoints high-value prospects",
     link: '/software-development',
     icon: 'carbon:analytics-custom',
-    callToAction: {
-      variant: 'link',
-      class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-      icon: 'carbon:arrow-right',
-    },
+
   },
   {
-    title: 'Healthcare & IoT Solutions',
-    description: "Connected Health & Remote Monitoring",
+    title: 'Personalized Experiences',
+    description: "Crafts unique customer journeys",
     link: '/ai-marketing',
     icon: 'carbon:machine-learning-model',
-    callToAction: {
-      variant: 'link',
-      class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-      icon: 'carbon:arrow-right',
-    },
+
   },
   {
-    title: 'Logistics & Supply Chain',
-    description: "Traceability & Cost savings",
+    title: 'Timing & Delivery',
+    description: "Delivers messages at the perfect moment",
     link: '/system-integration',
     icon: 'carbon:ibm-z-cloud-mod-stack',
     callToAction: {
@@ -107,30 +99,8 @@ items={[
     },
   },
   {
-    title: 'Retail & E-Commerce',
-    description: "Customer Experience & Revenue Growth",
-    link: '/web-development',
-    icon: 'carbon:network-enterprise',
-    callToAction: {
-      variant: 'link',
-      class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-      icon: 'carbon:arrow-right',
-    },
-  },
-  {
-    title: 'Manufacturing & Industry 4.0',
-    description: "Automation & Smart Factory",
-    link: '/software-development',
-    icon: 'carbon:analytics-custom',
-    callToAction: {
-      variant: 'link',
-      class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-      icon: 'carbon:arrow-right',
-    },
-  },
-  {
-    title: 'AgriTech & Smart Farming',
-    description: "Precision Agriculture & Yield Optimization",
+    title: 'Behavior Analysis',
+    description: "Understand customer behavior with insights",
     link: '/ai-marketing',
     icon: 'carbon:machine-learning-model',
     callToAction: {
@@ -140,19 +110,8 @@ items={[
     },
   },
   {
-    title: 'Hospitality & Tourism',
-    description: "Guest Satisfaction & Revenue Growth",
-    link: '/system-integration',
-    icon: 'carbon:ibm-z-cloud-mod-stack',
-    callToAction: {
-      variant: 'link',
-      class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-      icon: 'carbon:arrow-right',
-    },
-  },
-  {
-    title: 'Education & E-Learning',
-    description: "Personalized Learning & Engagement",
+    title: 'Performance Optimization',
+    description: "Maximizes marketing ROI automatically",
     link: '/web-development',
     icon: 'carbon:network-enterprise',
     callToAction: {
@@ -162,10 +121,10 @@ items={[
     },
   },
   {
-    title: 'Game Development',
-    description: "Innovative Mechanics & Gameplay",
-    link: '/web-development',
-    icon: 'carbon:network-enterprise',
+    title: 'Content Creation',
+    description: "Generates text, images, and videos",
+    link: '/software-development',
+    icon: 'carbon:analytics-custom',
     callToAction: {
       variant: 'link',
       class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
@@ -180,35 +139,35 @@ items={[
 </Features4>
 
 <Steps3
-    title="Project Approach and Stages"
-    subtitle='Control your software investment with our pay-per-service, phased approach. Start with the essential features and seamlessly scale to a full solution as your business grows'
+    title="Campaign Approach and Process"
+    subtitle='Driving Growth with AI: Our Proven 5-Stage Approach'
     items={[
       {
-        title: 'Stage 1: <span class="font-medium">Planning & Discovery</span>',
+        title: 'Stage 1: <span class="font-medium">Discovery & Strategy</span>',
         description:
-          "Innovate beyond traditional data entry and solve your business challenges with cutting-edge technology. Our process starts by defining your project's scope, goals, and plan",
+          "Understanding your business, audience, and goals to create a tailored AI marketing strategy",
         icon: 'carbon:forum',
       },
       {
-        title: 'Stage 2: <span class="font-medium">Design & Prototyping</span>',
+        title: 'Stage 2: <span class="font-medium">Implement & Integrate AI</span>',
         description:
-          "We start by creating mockups, prototypes, and technical specifications to truly understand your needs. This iterative process allows us to refine the solution and deliver a successful project",
+          "Setting up the AI infrastructure, integrating data, and connecting to your existing platforms",
         icon: 'carbon:devices',
       },
       {
-        title: 'Stage 3: <span class="font-medium">Development & Testing</span>',
+        title: 'Stage 3: <span class="font-medium">Develop & Execute Campaigns</span>',
         description:
-          'Our Agile and CI/CD approach means we develop software in small, integrated components. This allows for continuous testing and integration, ensuring frequent updates and a solution that can easily scale with your business',
+          'Creating personalized messages and running targeted campaigns across various channels',
         icon: 'carbon:ibm-watsonx-code-assistant',
       },
       {
-        title: 'Stage 4: <span class="font-medium">Deployment & Release</span>',
-        description: 'We handle deployment to production servers or app stores, manage releases, and coordinate with stakeholders and support to resolve post-launch issues',
+        title: 'Stage 4: <span class="font-medium">Monitor & Analyze Performance</span>',
+        description: 'Tracking results, analyzing data, and using AI insights to identify areas for improvement',
         icon: 'carbon:cloud-data-ops',
       },
       {
-        title: 'Stage 5: <span class="font-medium">Maintenance & Evolution</span>',
-        description: 'We provide ongoing maintenance, performance optimizations, and feature updates to maximize your software investment. Because software is a living product that constantly evolves.',
+        title: 'Stage 5: <span class="font-medium">Optimize & Continuously Improve</span>',
+        description: 'Refining campaigns, adjusting strategies, and ensuring maximum ROI through ongoing optimization',
         icon: 'carbon:cloud-monitoring',
       },
     ]}
