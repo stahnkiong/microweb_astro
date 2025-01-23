@@ -1,0 +1,53 @@
+---
+import Features2 from "./Features2.astro"
+---
+
+<Features2
+id="features"
+tagline="Why Us"
+title="Agile & Adaptive Development"
+subtitle="Experience the power of iterative development, as embraced by tech giants like Google, Microsoft, and Netflix."
+classes={{ description: 'text-xs' }}
+items={[
+  {
+    title: 'Future-Ready Solutions',
+    description:
+      "We design adaptable software solutions that not only solve today's problems<span class='hidden group-hover:opacity-100 group-hover:inline'> but also evolve to meet future needs</span>",
+    icon: 'carbon:ibm-cloud-hpc',
+  },
+  {
+    title: 'Tailored to Your Needs',
+    description:
+      "No two businesses are alike. We work closely to understand your objectives<span class='hidden group-hover:inline'> and challenges, crafting custom solutions that drive growth</span>",
+    icon: 'carbon:development',
+  },
+  {
+    title: 'AI-Ready & Scalable',
+    description:
+      "Integrate AI into your software to make smarter decisions, automate processes<span class='hidden  group-hover:inline'>, and drive business growth through innovation and efficiency</span>",
+    icon: 'carbon:ml-model-reference',
+  },
+  {
+    title: 'Seamless<br/> Integration',
+    description:
+      "We seamlessly integrate custom software with your existing systems, maximizing efficiency<span class='hidden group-hover:inline'>, ensuring everything works together</span>",
+    icon: 'carbon:ibm-api-connect',
+  },
+  {
+    title: 'Continuous Integration and Deployment (CI/CD)',
+    description:
+      "Automated CI/CD keeps your software updated, agile, ready to adapt to operational changes<span class='hidden  group-hover:inline'>, enabling confident scaling without downtime</span>",
+    icon: 'carbon:carbon-ui-builder',
+  },
+  {
+    title: 'Two-Way<br/> Communication',
+    description:
+      "Customers focus on immediate needs, while developers emphasize long-term health<span class='hidden group-hover:inline'>. Open communication, empathy and collaboration are key to our effective solutions</span>",
+    icon: 'carbon:direct-link',
+  },
+]}
+>
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-page"></div>
+</Fragment>
+</Features2>

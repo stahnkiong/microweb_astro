@@ -3,7 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import ThreeJs from "~/components/widgets/ThreeJs.astro";
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Banners2 from '~/components/widgets/Banners2.astro';
-import Features2 from '~/components/widgets/Features2.astro';
+import WhyUs from '~/components/widgets/WhyUs.astro';
 import Features4 from '~/components/widgets/Features4.astro';
 import Stats2 from '~/components/widgets/Stats2.astro';
 import Banners from '~/components/widgets/Banners.astro';
@@ -45,15 +45,15 @@ const metadata = {
         items={[
         {
             description: 'Data Synchronization',
-            icon: 'carbon:ibm-cloud-hpc',
+            icon: 'carbon:cloud-ceiling',
         },
         {
             description: 'API Development',
-            icon: 'carbon:development',
+            icon: 'carbon:api',
         },
         {
             description: 'Third-Party Integrations',
-            icon: 'carbon:ml-model-reference',
+            icon: 'carbon:app-connectivity',
         }
         ]}
         >
@@ -173,55 +173,7 @@ items={[
   </Fragment>
   </Steps3>
 
-<Features2
-id="features"
-tagline="Why Us"
-title="Agile & Adaptive Development"
-subtitle="Experience the power of iterative development, as embraced by tech giants like Google, Microsoft, and Netflix."
-classes={{ description: 'text-xs' }}
-items={[
-  {
-    title: 'Future-Ready Solutions',
-    description:
-      "We use the latest technologies and design patterns to create software that’s not <span class='hidden group-hover:opacity-100 group-hover:inline'>only effective today but scalable and adaptable for tomorrow’s challenges</span>",
-    icon: 'carbon:ibm-cloud-hpc',
-  },
-  {
-    title: 'Tailored to Your Needs',
-    description:
-      "No two businesses are alike. We work closely to understand your objectives, <span class='hidden group-hover:inline'>workflows and pain points, crafting custom solutions that meet your needs drive growth</span>",
-    icon: 'carbon:development',
-  },
-  {
-    title: 'AI-Ready & Scalable',
-    description:
-      "AI integration at your software to make smarter decisions, automate processes and <span class='hidden  group-hover:inline'> deliver insights, driving your business forward with innovation and efficiency</span>",
-    icon: 'carbon:ml-model-reference',
-  },
-  {
-    title: 'Seamless<br/> Integration',
-    description:
-      "We seamlessly integrate custom software with your existing systems, ensuring <span class='hidden group-hover:inline'> third-party APIs, cloud services, and tools work together to maximize efficiency</span>",
-    icon: 'carbon:ibm-api-connect',
-  },
-  {
-    title: 'Continuous Integration and Deployment (CI/CD)',
-    description:
-      "With automated CI/CD, your software stays updated and agile, adapting swiftly to <span class='hidden  group-hover:inline'> operational changes and enabling confident scaling without downtime or disruption</span>",
-    icon: 'carbon:carbon-ui-builder',
-  },
-  {
-    title: 'Two-Way<br/> Communication',
-    description:
-      "Customers focus on immediate needs, while developers emphasize <span class='hidden group-hover:inline'>  long-term health. We prioritize balanced communication, empathy and collaboration to craft effective solutions</span>",
-    icon: 'carbon:direct-link',
-  },
-]}
->
-<Fragment slot="bg">
-  <div class="absolute inset-0 bg-page"></div>
-</Fragment>
-</Features2>
+<WhyUs />
 
   <!-- Stats Widget ****************** -->
 
