@@ -79,6 +79,10 @@ export const headerData = {
           text: 'Education',
           href: getPermalink('/education'),
         },
+        {
+          text: '3D Development',
+          href: getPermalink('/games'),
+        },
       ],
     },
     {
