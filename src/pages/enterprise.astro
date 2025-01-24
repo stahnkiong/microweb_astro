@@ -14,7 +14,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
 import Features5 from '~/components/widgets/Features5.astro';
 const metadata = {
-  title: 'Custom Software Development - MicroWeb',
+  title: 'Enterprise Software Development - MicroWeb',
   ignoreTitleTemplate: true,
 };
 ---
@@ -22,17 +22,16 @@ const metadata = {
 <Layout metadata={metadata}>
   <ThreeJs/>
   <Hero3
-  tagline="Custom Software Development"
   actions={[
     { variant: 'primary', text: "Let's Chat", href: '#contact' },
   ]}
   image={{
-    src: '~/assets/images/software_hero.webp',
-    alt: 'software development multiple devices',
+    src: '~/assets/images/enterprise.png',
+    alt: 'enterprise software development multiple devices',
   }}
 >
   <Fragment slot="title">
-    Future-Proof Your Business and <span class="text-primary text-gradient highlight tracking-tight">Achieve Growth</span> with Innovative Solutions 
+    Enterprise <span class="text-primary text-gradient highlight tracking-tight">Software</span>  Development
   </Fragment>
 
   <Fragment slot="subtitle">
@@ -44,23 +43,36 @@ const metadata = {
         classes={{ container: 'py-8' }}
         items={[
         {
-            description: 'Mobile',
-            icon: 'carbon:carbon-for-mobile',
-        },
-        {
-            description: 'Desktop',
-            icon: 'carbon:cloud-logging',
-        },
-        {
-            description: 'Web',
-            icon: 'carbon:cloud-app',
-        }
+    description: 'CRM',
+    icon: 'carbon:sales-ops',
+  },
+  {
+    description: 'ERP',
+    icon: 'carbon:network-enterprise',
+  },
+  {
+    description: 'HRM',
+    icon: 'carbon:id-management',
+  },
+  {
+    description: 'Data & Analytics',
+    icon: 'carbon:chart-multitype',
+  },
+  {
+    description: 'Accounting & Finance',
+    icon: 'carbon:finance',
+  },
+  {
+    description: 'E-commerce & Sales',
+    icon: 'carbon:analytics-custom',
+  },
+
         ]}
         >
     </Features5>
   </Fragment>
   <Fragment slot="bg">
-    <div class="absolute inset-0 bg-page"></div>
+    <div class="absolute inset-0 backdrop-opacity-95 backdrop-blur-3xl"></div>
   </Fragment>
 </Hero3>
 
@@ -175,7 +187,9 @@ items={[
   },
 ]}
 >
-
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-white/60"></div>
+</Fragment>
 </Features4>
 
 <Steps3
