@@ -40,11 +40,11 @@ const metadata = {
   </Fragment>
   <Fragment slot="content">
     <Features5
-        columns={3}
+        columns={4}
         classes={{ container: 'py-8' }}
         items={[
         {
-            description: 'Right Customers',
+            description: 'Right<br/>Customers',
             icon: 'carbon:person-favorite',
         },
         {
@@ -52,9 +52,13 @@ const metadata = {
             icon: 'carbon:data-enrichment-add',
         },
         {
-            description: 'Budget Control',
+            description: 'Budget<br/>Control',
             icon: 'carbon:rule-locked',
-        }
+        },
+        {
+            description: 'Transparent<br/>Pricing',
+            icon: 'carbon:pricing-consumption',
+        },
         ]}
         >
     </Features5>
@@ -71,7 +75,7 @@ tagline="Personalized Connections. Measurable Growth"
 columns={3}
 title="How Our AI Marketing Works"
 subtitle="We use AI to drive smarter marketing results. By analyzing data, we create personalized messages that maximize ROI and build lasting customer relationships, leveraging natural language processing and machine learning to understand customer needs."
-classes={{ container: 'py-20' }}
+classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/85 md:bg-transparent' }}
 items={[
   {
     title: 'Targeted Audience',
