@@ -20,7 +20,7 @@ const {
 } = Astro.props;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-3xl ${classes?.container ?? ''}`} bg={bg}>
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-4xl ${classes?.container ?? ''}`} bg={bg}>
   <div class:list={['flex flex-col gap-8 md:gap-12', { 'md:flex-row-reverse': isReversed }, { 'md:flex-row': image }]}>
     <div class:list={['md:py-4 md:self-center', { 'md:basis-3/5': image }, { 'w-full': !image }]}>
       <Headline
@@ -29,8 +29,8 @@ const {
         tagline={tagline}
         classes={{
           container: 'text-left rtl:text-right',
-          title: 'text-2xl lg:text-3xl text-white/80',
-          subtitle: 'text-white/80',
+          title: 'text-2xl md:text-3xl text-white/90',
+          subtitle: 'text-white/80 text-sm',
           ...((classes?.headline as object) ?? {}),
         }}
       />

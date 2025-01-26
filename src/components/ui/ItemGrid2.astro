@@ -44,7 +44,7 @@ const {
               </div>
             )}
           </div>
-          <div class={twMerge('text-xl text-gradient group-hover:invert group-hover:brightness-75 transition duration-700 font-bold mt-0', titleClass, itemClasses?.title)} set:html={title}/>
+          <div class={twMerge('text-lg md:text-xl text-gradient group-hover:invert group-hover:brightness-75 transition duration-700 font-bold mt-0', titleClass, itemClasses?.title)} set:html={title}/>
           {description && (
             <p class={twMerge("text-sm mt-2 after:content-['...'] group-hover:after:hidden", descriptionClass, itemClasses?.description)} set:html={description} />
             <Icon name="carbon:chevron-sort-down" class="bottom-6 md:absolute opacity-50 self-center md:self-end w-5 h-5 group-hover:hidden"/>

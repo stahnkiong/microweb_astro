@@ -35,11 +35,7 @@ const {
     title={title}
     subtitle={subtitle}
     tagline={tagline}
-    classes={{
-      container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
-      title: ' font-bold tracking-tighter mb-4 font-heading',
-      subtitle: 'max-w-3xl mx-auto sm:text-center ',
-    }}
+
   />
   <div class="mx-auto max-w-7xl p-4 md:px-8">
     <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
@@ -81,10 +77,10 @@ const {
           classes={{
             container: `gap-y-4 md:gap-y-8`,
             panel: 'max-w-none',
-            title: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
+            title: 'text-base md:text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
             description: 'text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2 text-sm',
             icon: 'flex w-7 h-7 items-center justify-center text-accent',
-            action: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
+            action: 'text-sm md:text-base font-medium leading-6 dark:text-white mt-4 ml-2 rtl:ml-0 rtl:mr-2',
           }}
         />
       </div>

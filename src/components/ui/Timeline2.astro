@@ -12,7 +12,7 @@ export interface Props {
 const { items = [], classes = {}, defaultIcon } = Astro.props as Props;
 
 const {
-  container: containerClass = '',
+  container: containerClass = 'p-8 md:p-2 md:px-12',
   panel: panelClass = '',
   title: titleClass = 'text-white text-base',
   description: descriptionClass = 'text-white/95 text-xs font-light',
@@ -25,20 +25,20 @@ const {
     <div class={containerClass}>
       {items.map(({ title, description, icon, classes: itemClasses = {} }, index = 0) => (
         <div class={twMerge('flex', panelClass, itemClasses?.panel)}>
-          <div class="flex flex-col items-center mr-4 rtl:mr-0 rtl:ml-4">
+          <div class="flex flex-col items-center mr-6 md:mr-4 rtl:mr-0 rtl:ml-4">
             <div>
               <div class="flex items-center justify-center rounded-full border border-white/60 drop-shadow-[0_0_3px_gold]">
                 {(icon || defaultIcon) && (
                   <Icon
                     name={icon || defaultIcon}
-                    class={twMerge('w-28 h-14 p-3.5', defaultIconClass, itemClasses?.icon)}
+                    class={twMerge('w-14 h-28 md:w-28 md:h-14 p-3.5', defaultIconClass, itemClasses?.icon)}
                   />
                 )}
               </div>
             </div>
             {index !== items.length - 1 && <div class="w-[.5px] h-full bg-slate-300/50 drop-shadow-[3px_-6px_0_gold]"/>}
           </div>
-          <div class={`pt-1 ${index !== items.length - 1 ? 'pb-8' : ''}`}>
+          <div class={`pt-1 ${index !== items.length - 1 ? 'pb-14 md:pb-10' : ''}`}>
             {title && <p class={twMerge('text-lg font-bold', titleClass, itemClasses?.title)} set:html={title} />}
             {description && (
               <p

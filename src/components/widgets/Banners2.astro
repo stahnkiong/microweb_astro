@@ -8,13 +8,13 @@ const imagePaths = Object.keys(images).filter((imagePath) => {
 })
 ---
 
-<section class="backdrop-blur-lg border border-green-100/20 bg-green-950/10 dark:bg-white/10 dark:border-green-950/15 p-2 mb-1 not-prose">
-  <div class="max-w-7xl items-center md:flex justify-between mx-auto px-4 sm:px-6 py-4 text-xs font-medium uppercase">
+<section class="backdrop-blur-lg border border-green-100/20 bg-green-950/15 dark:bg-white/10 dark:border-green-950/15 p-2 mb-1 not-prose">
+  <div class="max-w-7xl items-center md:flex justify-between mx-auto px-12 sm:px-6 py-12 md:py-6 text-sm md:text-xs font-medium uppercase">
     <div class="mb-8 md:mb-0 text-center md:text-left">
-      <span class="font-bold ">
-       Trusted by </span> <span class="md:block"> Leaders, SMEs and</span>  startups
+      <span class="font-bold block">
+       Trusted by </span> <span class="block"> Leaders, SMEs and</span>  startups
     </div>
-    <div class="max-w-5xl grid grid-cols-4 grid-rows-2 md:grid-cols-8 md:grid-rows-1 gap-6 md:gap-10 items-center justify-items-center drop-shadow-[-.5px_0_0_rgba(50,100,70,1)] dark:drop-shadow-[-.5px_0_0_rgba(0,0,0,1)] opacity-80 dark:opacity-60">
+    <div class="max-w-5xl grid grid-cols-2 grid-rows-4 md:grid-cols-8 md:grid-rows-1 gap-6 md:gap-10 items-center justify-items-center drop-shadow-[-.5px_0_0_rgba(30,80,50,1)] dark:drop-shadow-[-.5px_0_0_rgba(0,0,0,1)] opacity-90 dark:opacity-70">
       {
         imagePaths.map(async (imagePath) => {
           const image = images[imagePath]()
@@ -25,6 +25,7 @@ const imagePaths = Object.keys(images).filter((imagePath) => {
               alt={imageAlt}
               loading="lazy"
               height={60}
+              class=""
               widths={[400, 768]} />
           )
         })
