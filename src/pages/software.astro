@@ -3,16 +3,10 @@ import Layout from '~/layouts/PageLayout.astro';
 import ThreeJs from "~/components/widgets/ThreeJs.astro";
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Banners2 from '~/components/widgets/Banners2.astro';
-import WhyUs from '~/components/widgets/WhyUs.astro';
 import Features4 from '~/components/widgets/Features4.astro';
-import Stats2 from '~/components/widgets/Stats2.astro';
-import Banners from '~/components/widgets/Banners.astro';
-import Content from '~/components/widgets/Content.astro';
-import Banners3 from '~/components/widgets/Banners3.astro';
-import PortFolio from '~/components/widgets/PortFolio.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
 import Features5 from '~/components/widgets/Features5.astro';
+import FollowUp from '~/components/widgets/FollowUp.astro';
 const metadata = {
   title: 'Custom Software Development - MicroWeb',
   ignoreTitleTemplate: true,
@@ -183,6 +177,10 @@ items={[
 </Features4>
 
 <Steps3
+    image={{
+      src: '~/assets/images/process.webp',
+      alt: 'happy people',
+    }}
     title="Project Approach and Stages"
     subtitle='Control your software investment with our pay-per-service, phased approach. Start with the essential features and seamlessly scale to a full solution as your business grows'
     items={[
@@ -221,194 +219,6 @@ items={[
   </Fragment>
   </Steps3>
 
-<WhyUs/>
-
-  <!-- Stats Widget ****************** -->
-
-  <Stats2
-    stats={[
-      { title: 'Content Delivery Network Worldwide', amount: '330+', },
-      { title: 'High Availability Uptime', amount: '99.99%' },
-      { title: 'Malicious Traffic Automatic Mitigation', amount: '< 3s' },
-    ]}
-  />
-
-  <Banners/>
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    tagline="Growing Together"
-    title="Partner with Us to Digitalize<br/> Your Business"
-    subtitle="We don’t just work with clients; we build long-lasting relationships where we both thrive"
-    items={[
-      {
-        title: 'Proven Expertise',
-        icon: 'carbon:badge',
-        description:
-          'With over a decade of experience, our team has delivered successful projects across a range of industries, helping businesses achieve their goals',
-      },
-      {
-        title: 'Collaborative Partnerships',
-        icon: 'carbon:events',
-        description:
-          "We've built strong partnerships in AI, IoT, hardware, event management and HR, delivering innovative and comprehensive business solutions",
-      },      
-      {
-        title: 'Build on Modern Foundations',
-        icon: 'carbon:layers-external',
-        description:
-          "Gain a competitive advantage by incorporating industry leading practices ",
-      },
-      {
-        title: 'Cutting-Edge Technology',
-        icon: 'carbon:carbon-for-ibm-product',
-        description:
-          'We stay at the forefront of technology, using the latest tools and innovations',
-      },
-      {
-        callToAction: {
-          text: "Let's Chat",
-          variant: 'primary',
-          href: '#contact',
-          icon: 'tabler:chevron-right',
-        },
-      },
-    ]}
-    image={{
-      src: '~/assets/images/coding.jpg',
-      alt: 'Colorful Image',
-    }}
-  >
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-page"></div>
-    </Fragment>
-  </Content>
-
-  <Banners3/>
-  <!-- Content Widget **************** -->
-
-  <PortFolio
-    id="porfolio"
-    title="Our Clients and Us"
-    tagline="Portfolio"
-    classes={{panel:'bg-blue-950 text-white', container:'pb-4 pt-12 md:pb-4 md:pt-16 lg:pb-4 lg:pt-20'}}
-    items={[
-      {
-        title: 'Delivering Excellence Under Guidelines',
-        icon: 'carbon:application-web',
-        description:
-          'Ford had a very specific vision for the website, with strict guidelines on design aesthetics, font usage (yes, that iconic Ford font!) and overall user experience.',
-      },
-    ]}
-    image={{
-      src: '~/assets/images/ford_raptor.webp',
-      alt: 'ford raptor',
-    }}
-    callToAction={{
-      target: '_blank',
-      text: 'Read case study',
-      icon: 'tabler:chevron-right',
-      href: '#',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
-        Applying Ford's Design Standards <br /><span class="text-lg font-semibold">Meeting UI/UX Development Standards in Local Retails</span>
-      </h3>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-page"></div>
-    </Fragment>
-  </PortFolio>
-
-  <PortFolio
-  isReversed
-  isAfterContent
-  classes={{panel:'bg-amber-300 dark:bg-fuchsia-950', container:'py-4 md:py-4 lg:py-4'}}
-  items={[
-    {
-      title: 'Streamlining the Customer Journey: AI-Driven Approach',
-      icon: 'carbon:application-web',
-      description:
-        "Boosted sales by targeting the right customers at the right time. We optimized Google Ads campaign by leveraging AI for precise audience targeting, strategic scheduling, and dynamic bidding.",
-    },
-  ]}
-  image={{
-    src: '~/assets/images/bosoffice_chair.webp',
-    alt: 'Bos Office Chair',
-  }}
-  callToAction={{
-    target: '_blank',
-    text: 'Read case study',
-    icon: 'tabler:chevron-right',
-    href: '#',
-  }}
->
-  <Fragment slot="content">
-    <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
-      Bos Office System <br /><span class="text-lg font-semibold">Leveraging AI-Powered Marketing</span>
-    </h3>
-  </Fragment>
-
-  <Fragment slot="bg">
-    <div class="absolute inset-0 bg-page"></div>
-  </Fragment>
-</PortFolio>
-
-<PortFolio
-  isAfterContent
-  classes={{panel:'bg-[#e1e1e1] dark:bg-slate-700', container:'py-4 md:py-4 lg:py-4'}}
-  items={[
-    {
-      title: 'More Reliable and Privacy-Conscious Approach',
-      icon: 'carbon:application-web',
-      description:
-        'Recognizing the limitations of QR codes, reliance on user scanning, limited data accuracy, and the impracticality of widespread GPS tracking - we opted for more robust solution.',
-    },
-  ]}
-  image={{
-    src: '~/assets/images/wristband2.webp',
-    alt: 'ford raptor',
-  }}
-  callToAction={{
-    target: '_blank',
-    text: 'Read case study',
-    icon: 'tabler:chevron-right',
-    href: '#',
-  }}
->
-  <Fragment slot="content">
-    <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
-      COVID-19 and Border Authorities <br /><span class="text-lg font-semibold">The Shift from QR Codes to Bluetooth Beacons</span>
-    </h3>
-  </Fragment>
-
-  <Fragment slot="bg">
-    <div class="absolute inset-0 bg-page"></div>
-  </Fragment>
-</PortFolio>
-
-
-  <CallToAction
-  classes={{container:'pt-0 md:pt-0 lg:pt-0'}}
-    actions={[
-      {
-        variant: 'secondary',
-        text: 'See more case studies',
-        href: 'blog.microweb.my',
-        target: '_blank',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-page"></div>
-    </Fragment>
-  </CallToAction>
-
-
-  
+  <FollowUp />
 
 </Layout>
