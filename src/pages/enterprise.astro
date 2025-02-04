@@ -3,16 +3,10 @@ import Layout from '~/layouts/PageLayout.astro';
 import ThreeJs from "~/components/widgets/ThreeJs.astro";
 import Hero3 from '~/components/widgets/Hero3.astro';
 import Banners2 from '~/components/widgets/Banners2.astro';
-import WhyUs from '~/components/widgets/WhyUs.astro';
-import Features4 from '~/components/widgets/Features4.astro';
-import Stats2 from '~/components/widgets/Stats2.astro';
-import Banners from '~/components/widgets/Banners.astro';
-import Content from '~/components/widgets/Content.astro';
-import Banners3 from '~/components/widgets/Banners3.astro';
-import PortFolio from '~/components/widgets/PortFolio.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import FollowUp from '~/components/widgets/FollowUp.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
 import Features5 from '~/components/widgets/Features5.astro';
+
 const metadata = {
   title: 'Enterprise Software Development - MicroWeb',
   ignoreTitleTemplate: true,
@@ -31,11 +25,11 @@ const metadata = {
   }}
 >
   <Fragment slot="title">
-    Enterprise <span class="text-primary text-gradient highlight tracking-tight">Software</span>  Development
+    <span class="text-primary text-gradient highlight tracking-tight">Bridging</span> Enterprise Software & Custom Development
   </Fragment>
 
   <Fragment slot="subtitle">
-    We build custom software solutions tailored to your specific business needs. Our agile approach ensures your software grows with you, making it future-ready and AI-powered.
+    Disconnected systems can hinder your business growth.  We specialize in solving complex integration challenges, connecting your enterprise software seamlessly and efficiently.  Let us help you unlock the full potential of your technology
   </Fragment>
   <Fragment slot="content">
     <Features5
@@ -72,7 +66,10 @@ const metadata = {
     </Features5>
   </Fragment>
   <Fragment slot="bg">
-    <div class="absolute inset-0 backdrop-opacity-90 backdrop-blur-3xl"></div>
+    <div class="absolute inset-0 grid grid-cols-2 -space-x-52 backdrop-blur-3xl backdrop-hue-rotate-180 backdrop-brightness-125 backdrop-contrast-[0.9]">
+      <div class="blur-[106px] h-64 bg-gradient-to-br from-yellow-100 to-violet-500 md:to-sky-300 dark:from-blue-700"></div>
+      <div class="blur-[106px] h-32 bg-gradient-to-r from-purple-300 to-cyan-300 dark:to-indigo-600"></div>
+    </div>
   </Fragment>
 </Hero3>
 
@@ -80,10 +77,10 @@ const metadata = {
 
 <Features5
 id="features"
-tagline="Modern Software Ecosystem"
+tagline="Connecting Your Business. Simplifying Your Technology"
 columns={2}
-title="Bespoke Software & Custom Integrations"
-subtitle="Your business is unique. Your software should be too. That's why we build custom software, connecting your existing systems with the leading platforms that matter most to your operations and industry, including:"
+title="Custom Software Integration for Enterprise"
+subtitle="Connect your software, streamline your work, and grow your business. We build custom integrations that make it happen."
 classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/85 md:bg-transparent' }}
 items={[
         {
@@ -125,233 +122,49 @@ items={[
 </Fragment>
 </Features5>
 
-<Steps3
-    title="Project Approach and Stages"
-    subtitle='Control your software investment with our pay-per-service, phased approach. Start with the essential features and seamlessly scale to a full solution as your business grows'
-    items={[
-      {
-        title: 'Stage 1: <span class="font-medium">Planning & Discovery</span>',
-        description:
-          "Innovate beyond traditional data entry and solve your business challenges with cutting-edge technology. Our process starts by defining your project's scope, goals, and plan",
-        icon: 'carbon:forum',
-      },
-      {
-        title: 'Stage 2: <span class="font-medium">Design & Prototyping</span>',
-        description:
-          "We start by creating mockups, prototypes, and technical specifications to truly understand your needs. This iterative process allows us to refine the solution and deliver a successful project",
-        icon: 'carbon:devices',
-      },
-      {
-        title: 'Stage 3: <span class="font-medium">Development & Testing</span>',
-        description:
-          'Our Agile and CI/CD approach means we develop software in small, integrated components. This allows for continuous testing and integration, ensuring frequent updates and a solution that can easily scale with your business',
-        icon: 'carbon:ibm-watsonx-code-assistant',
-      },
-      {
-        title: 'Stage 4: <span class="font-medium">Deployment & Release</span>',
-        description: 'We handle deployment to production servers or app stores, manage releases, and coordinate with stakeholders and support to resolve post-launch issues',
-        icon: 'carbon:cloud-data-ops',
-      },
-      {
-        title: 'Stage 5: <span class="font-medium">Maintenance & Evolution</span>',
-        description: 'We provide ongoing maintenance, performance optimizations, and feature updates to maximize your software investment. Because software is a living product that constantly evolves.',
-        icon: 'carbon:cloud-monitoring',
-      },
-    ]}
-  >
-  <Fragment slot="bg">
-    <div class="absolute inset-0 backdrop-blur-lg bg-black/70 dark:bg-black/30"></div>
-  </Fragment>
-  </Steps3>
-
-<WhyUs/>
-
-  <!-- Stats Widget ****************** -->
-
-  <Stats2
-    stats={[
-      { title: 'Content Delivery Network Worldwide', amount: '330+', },
-      { title: 'High Availability Uptime', amount: '99.99%' },
-      { title: 'Malicious Traffic Automatic Mitigation', amount: '< 3s' },
-    ]}
-  />
-
-  <Banners/>
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    tagline="Growing Together"
-    title="Partner with Us to Digitalize<br/> Your Business"
-    subtitle="We don’t just work with clients; we build long-lasting relationships where we both thrive"
-    items={[
-      {
-        title: 'Proven Expertise',
-        icon: 'carbon:badge',
-        description:
-          'With over a decade of experience, our team has delivered successful projects across a range of industries, helping businesses achieve their goals',
-      },
-      {
-        title: 'Collaborative Partnerships',
-        icon: 'carbon:events',
-        description:
-          "We've built strong partnerships in AI, IoT, hardware, event management and HR, delivering innovative and comprehensive business solutions",
-      },      
-      {
-        title: 'Build on Modern Foundations',
-        icon: 'carbon:layers-external',
-        description:
-          "Gain a competitive advantage by incorporating industry leading practices ",
-      },
-      {
-        title: 'Cutting-Edge Technology',
-        icon: 'carbon:carbon-for-ibm-product',
-        description:
-          'We stay at the forefront of technology, using the latest tools and innovations',
-      },
-      {
-        callToAction: {
-          text: "Let's Chat",
-          variant: 'primary',
-          href: '#contact',
-          icon: 'tabler:chevron-right',
-        },
-      },
-    ]}
-    image={{
-      src: '~/assets/images/coding.jpg',
-      alt: 'Colorful Image',
-    }}
-  >
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-page"></div>
-    </Fragment>
-  </Content>
-
-  <Banners3/>
-  <!-- Content Widget **************** -->
-
-  <PortFolio
-    id="porfolio"
-    title="Our Clients and Us"
-    tagline="Portfolio"
-    classes={{panel:'bg-blue-950 text-white', container:'pb-4 pt-12 md:pb-4 md:pt-16 lg:pb-4 lg:pt-20'}}
-    items={[
-      {
-        title: 'Delivering Excellence Under Guidelines',
-        icon: 'carbon:application-web',
-        description:
-          'Ford had a very specific vision for the website, with strict guidelines on design aesthetics, font usage (yes, that iconic Ford font!) and overall user experience.',
-      },
-    ]}
-    image={{
-      src: '~/assets/images/ford_raptor.webp',
-      alt: 'ford raptor',
-    }}
-    callToAction={{
-      target: '_blank',
-      text: 'Read case study',
-      icon: 'tabler:chevron-right',
-      href: '#',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
-        Applying Ford's Design Standards <br /><span class="text-lg font-semibold">Meeting UI/UX Development Standards in Local Retails</span>
-      </h3>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-page"></div>
-    </Fragment>
-  </PortFolio>
-
-  <PortFolio
-  isReversed
-  isAfterContent
-  classes={{panel:'bg-amber-300 dark:bg-fuchsia-950', container:'py-4 md:py-4 lg:py-4'}}
+  <Steps3
+  image={{
+    src: '~/assets/images/process.webp',
+    alt: 'happy people',
+  }}
+  title="Project Approach and Stages"
+  subtitle='<strong>Control your software investment</strong> with our pay-per-service, phased approach. Start with the essential features and seamlessly scale to a full solution as your business grows'
   items={[
     {
-      title: 'Streamlining the Customer Journey: AI-Driven Approach',
-      icon: 'carbon:application-web',
+      title: 'Stage 1: <span class="font-medium">Planning & Discovery</span>',
       description:
-        "Boosted sales by targeting the right customers at the right time. We optimized Google Ads campaign by leveraging AI for precise audience targeting, strategic scheduling, and dynamic bidding.",
+        "Innovate beyond traditional data entry and solve your business challenges with cutting-edge technology. Our process starts by defining your project's scope, goals, and plan",
+      icon: 'carbon:forum',
     },
-  ]}
-  image={{
-    src: '~/assets/images/bosoffice_chair.webp',
-    alt: 'Bos Office Chair',
-  }}
-  callToAction={{
-    target: '_blank',
-    text: 'Read case study',
-    icon: 'tabler:chevron-right',
-    href: '#',
-  }}
->
-  <Fragment slot="content">
-    <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
-      Bos Office System <br /><span class="text-lg font-semibold">Leveraging AI-Powered Marketing</span>
-    </h3>
-  </Fragment>
-
-  <Fragment slot="bg">
-    <div class="absolute inset-0 bg-page"></div>
-  </Fragment>
-</PortFolio>
-
-<PortFolio
-  isAfterContent
-  classes={{panel:'bg-[#e1e1e1] dark:bg-slate-700', container:'py-4 md:py-4 lg:py-4'}}
-  items={[
     {
-      title: 'More Reliable and Privacy-Conscious Approach',
-      icon: 'carbon:application-web',
+      title: 'Stage 2: <span class="font-medium">Design & Prototyping</span>',
       description:
-        'Recognizing the limitations of QR codes, reliance on user scanning, limited data accuracy, and the impracticality of widespread GPS tracking - we opted for more robust solution.',
+        "We start by creating mockups, prototypes, and technical specifications to truly understand your needs. This iterative process allows us to refine the solution and deliver a successful project",
+      icon: 'carbon:devices',
+    },
+    {
+      title: 'Stage 3: <span class="font-medium">Development & Testing</span>',
+      description:
+        'Our Agile and CI/CD approach means we develop software in small, integrated components. This allows for continuous testing and integration, ensuring frequent updates and a solution that can easily scale with your business',
+      icon: 'carbon:ibm-watsonx-code-assistant',
+    },
+    {
+      title: 'Stage 4: <span class="font-medium">Deployment & Release</span>',
+      description: 'We handle deployment to production servers or app stores, manage releases, and coordinate with stakeholders and support to resolve post-launch issues',
+      icon: 'carbon:cloud-data-ops',
+    },
+    {
+      title: 'Stage 5: <span class="font-medium">Maintenance & Evolution</span>',
+      description: 'We provide ongoing maintenance, performance optimizations, and feature updates to maximize your software investment. Because software is a living product that constantly evolves.',
+      icon: 'carbon:cloud-monitoring',
     },
   ]}
-  image={{
-    src: '~/assets/images/wristband2.webp',
-    alt: 'ford raptor',
-  }}
-  callToAction={{
-    target: '_blank',
-    text: 'Read case study',
-    icon: 'tabler:chevron-right',
-    href: '#',
-  }}
 >
-  <Fragment slot="content">
-    <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
-      COVID-19 and Border Authorities <br /><span class="text-lg font-semibold">The Shift from QR Codes to Bluetooth Beacons</span>
-    </h3>
-  </Fragment>
+<Fragment slot="bg">
+  <div class="absolute inset-0 backdrop-blur-lg bg-black/70 dark:bg-black/30"></div>
+</Fragment>
+</Steps3>
 
-  <Fragment slot="bg">
-    <div class="absolute inset-0 bg-page"></div>
-  </Fragment>
-</PortFolio>
-
-
-  <CallToAction
-  classes={{container:'pt-0 md:pt-0 lg:pt-0'}}
-    actions={[
-      {
-        variant: 'secondary',
-        text: 'See more case studies',
-        href: 'blog.microweb.my',
-        target: '_blank',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-page"></div>
-    </Fragment>
-  </CallToAction>
-
-
-  
+<FollowUp />
 
 </Layout>

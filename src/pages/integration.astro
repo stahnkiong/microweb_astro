@@ -58,7 +58,10 @@ const metadata = {
     </Features5>
   </Fragment>
   <Fragment slot="bg">
-    <div class="absolute inset-0 bg-page"></div>
+    <div class="absolute bg-page inset-0 grid grid-cols-2 -space-x-52 opacity-90">
+      <div class="blur-[106px] h-64 bg-gradient-to-br from-violet-200 to-purple-600 md:to-purple-400 dark:from-blue-700"></div>
+      <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-100 to-cyan-300 dark:to-indigo-600"></div>
+    </div>
   </Fragment>
 </Hero2>
 <Banners2 />
@@ -110,11 +113,11 @@ items={[
 
 <Steps3
 image={{
-  src: '~/assets/images/integrate.webp',
+  src: '~/assets/images/integration.png',
   alt: 'happy team',
 }}
     title="Our Integration Process"
-    subtitle='Control your software investment with our pay-per-service, phased approach. Start with the essential features and seamlessly scale to a full solution as your business grows'
+    subtitle='<strong>Control your software investment</strong> with our pay-per-service, phased approach. Start with the essential features and seamlessly scale to a full solution as your business grows'
     items={[
       {
         title: 'Stage 1: <span class="font-medium">Assessment & Collaboration</span>',

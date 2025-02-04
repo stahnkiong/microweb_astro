@@ -58,7 +58,10 @@ const metadata = {
     </Features5>
   </Fragment>
   <Fragment slot="bg">
-    <div class="absolute inset-0 bg-page"></div>
+    <div class="absolute bg-page inset-0 grid grid-cols-2 -space-x-52 opacity-90">
+      <div class="blur-[106px] h-64 bg-gradient-to-br from-violet-300 to-purple-500 md:to-purple-300 dark:from-blue-700"></div>
+      <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-300 to-sky-200 dark:to-indigo-600"></div>
+    </div>
   </Fragment>
 </Hero2>
 <Banners2 />
@@ -114,7 +117,7 @@ image={{
   alt: 'happy team',
 }}
     title="Phased Web Development"
-    subtitle="Collaborate with us from prototype to launch, paying in phases and ensuring you're completely satisfied with the final design. We offer design flexibility, not rigid templates"
+    subtitle="Collaborate with us from prototype to launch, paying in phases and ensuring you're completely satisfied with the final design. <strong>We offer design flexibility, not rigid templates</strong>"
     items={[
       {
         title: 'Stage 1: <span class="font-medium">Discovery & Planning</span>',
