@@ -60,7 +60,7 @@ export const headerData = {
           href: getPermalink('/logistics'),
         },
         {
-          text: 'Retail',
+          text: 'Retail & Ecommerce',
           href: getPermalink('/retail'),
         },
         {
