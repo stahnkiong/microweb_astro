@@ -8,7 +8,7 @@ import Steps3 from '~/components/widgets/Steps3.astro';
 import Features5 from '~/components/widgets/Features5.astro';
 
 const metadata = {
-  title: 'Enterprise Software Development & Integration - MicroWeb',
+  title: 'Healthcare Software Development & Integration - MicroWeb',
   ignoreTitleTemplate: true,
 };
 ---
@@ -25,41 +25,33 @@ const metadata = {
   }}
 >
   <Fragment slot="title">
-    <span class="text-primary text-gradient highlight tracking-tight">Bridging</span> Enterprise Software & Custom Development
+    Streamline <span class="text-primary text-gradient highlight tracking-tight">Your Practice</span> with Integrated Healthcare Software
   </Fragment>
 
   <Fragment slot="subtitle">
-    Disconnected systems can hinder your business growth.  We specialize in solving complex integration challenges, connecting your enterprise software seamlessly and efficiently.  Let us help you unlock the full potential of your technology
+    A practice where information flows seamlessly, your staff is empowered, and you have more time for your patients. Integrated healthcare software makes that vision a reality
   </Fragment>
   <Fragment slot="content">
     <Features5
-        columns={3}
+        columns={4}
         classes={{ container: 'py-8' }}
         items={[
         {
-    description: 'CRM',
-    icon: 'carbon:sales-ops',
-  },
-  {
-    description: 'ERP',
-    icon: 'carbon:network-enterprise',
-  },
-  {
-    description: 'HRM',
-    icon: 'carbon:id-management',
-  },
-  {
-    description: 'Data & Analytics',
-    icon: 'carbon:chart-multitype',
-  },
-  {
-    description: 'Accounting & Finance',
-    icon: 'carbon:finance',
-  },
-  {
-    description: 'E-commerce & Sales',
-    icon: 'carbon:analytics-custom',
-  },
+          description: 'EHR',
+          icon: 'carbon:id-management',
+        },
+        {
+          description: 'PMS',
+          icon: 'carbon:calendar-heat-map',
+        },
+        {
+          description: 'Patient Portal',
+          icon: 'carbon:report',
+        },
+        {
+          description: 'LIS',
+          icon: 'carbon:accumulation-precipitation',
+        },
 
         ]}
         >
@@ -77,10 +69,10 @@ const metadata = {
 
 <Features5
 id="features"
-tagline="Connecting Your Business. Simplifying Your Technology"
+tagline="Connecting Care. Simplifying Healthcare"
 columns={2}
-title="Custom Software Integration for Enterprise"
-subtitle="Connect your software, streamline your work, and grow your business. We build custom integrations that make it happen."
+title="More efficient practice, better patient care"
+subtitle="We connect your healthcare systems, streamlining workflows and improving patient care.  Our integrated software solutions empower your practice to run more efficiently and effectively, so you can focus on what matters most"
 classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/85 md:bg-transparent' }}
 items={[
         {
@@ -96,7 +88,7 @@ items={[
             icon: 'carbon:chart-radar',
         },
         {
-            description: 'Double Data<br/>Entry',
+            description: 'Eliminate<br/>Duplicate Entry',
             icon: 'carbon:result-draft',
         },
         {

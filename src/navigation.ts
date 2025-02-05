@@ -57,7 +57,7 @@ export const headerData = {
         },
         {
           text: 'Logistics & Supply Chain',
-          href: getPermalink('/finance'),
+          href: getPermalink('/logistics'),
         },
         {
           text: 'Retail',
