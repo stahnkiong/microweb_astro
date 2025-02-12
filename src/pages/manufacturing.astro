@@ -8,7 +8,7 @@ import Steps3 from '~/components/widgets/Steps3.astro';
 import Features5 from '~/components/widgets/Features5.astro';
 
 const metadata = {
-  title: 'Retail Software Development & Integration - MicroWeb',
+  title: 'Manufacturing Software Development & Integration - MicroWeb',
   ignoreTitleTemplate: true,
 };
 ---
@@ -25,40 +25,48 @@ const metadata = {
   }}
 >
   <Fragment slot="title">
-    Boost Your <span class="text-primary text-gradient highlight tracking-tight">Sales, Simplify</span> Your Retail Operations
+    Connected  <span class="text-primary text-gradient highlight tracking-tight">Factory,</span> Smarter Production
   </Fragment>
 
   <Fragment slot="subtitle">
-    Give your customers the tools they need to buy. Connect Your softwares. Get ahead of the curve
+    Seamlessly connect your factory with integrated software and hardware
   </Fragment>
   <Fragment slot="content">
     <Features5
-        columns={3}
+        columns={4}
         classes={{ container: 'py-8' }}
         items={[
         {
-          description: 'Custom Customer Tools',
-          icon: 'carbon:calculator-check',
+          description: 'Industrial IoT Sensors',
+          icon: 'carbon:iot-platform',
         },
         {
-          description: 'Point of Sale (POS)',
-          icon: 'carbon:pricing-quick-proposal',
+          description: 'Logic (PLCs)',
+          icon: 'carbon:session-border-control',
         },
         {
-          description: 'e-Commerce',
-          icon: 'carbon:shopping-cart-arrow-down',
+          description: 'Interfaces (HMIs)',
+          icon: 'carbon:gui-management',
         },
         {
-          description: 'Marketing (CRM)',
-          icon: 'carbon:events',
+          description: 'CNC Machines',
+          icon: 'carbon:ibm-engineering-lifecycle-mgmt',
         },
         {
-          description: 'Analytics & Reporting',
-          icon: 'carbon:chart-custom',
+          description: ' Systems (MES)',
+          icon: 'carbon:build-tool',
         },
         {
-          description: 'Inventory (IMS)',
-          icon: 'carbon:apps',
+          description: 'Machine / Actuators',
+          icon: 'carbon:container-engine',
+        },
+        {
+          description: 'Enterprise (ERP)',
+          icon: 'carbon:network-enterprise',
+        },
+        {
+          description: 'Quality (QMS)',
+          icon: 'carbon:badge',
         },
 
         ]}
@@ -77,10 +85,10 @@ const metadata = {
 
 <Features5
 id="features"
-tagline="Retail, Reimagined"
+tagline="Build Better Products, Faster"
 columns={2}
-title="Automate your retail operations, from inventory management to sales tracking"
-subtitle="Give your customers the tools they need! We also build custom apps for loan calculations, product configurator, service appointments, DIY quotations, and more, making it easy for them to interact with your business."
+title="Connect your factory, from machines to systems, for smarter manufacturing"
+subtitle="We develop custom software solutions tailored to your specific manufacturing needs, whether it's production planning, inventory management, or quality control. We help you optimize your operations and achieve your business goals"
 classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/85 md:bg-transparent' }}
 items={[
         {
