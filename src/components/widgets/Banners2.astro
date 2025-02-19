@@ -6,9 +6,13 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/
 const imagePaths = Object.keys(images).filter((imagePath) => {
   return imagePath.startsWith(`/src/assets/images/banner`)
 })
+
+const {
+  isBgBlack = false,
+} = Astro.props;
 ---
 
-<section class="backdrop-blur-lg border border-green-100/20 bg-green-950/15 dark:bg-white/10 dark:border-green-950/15 p-2 mb-1 not-prose">
+<section class={`backdrop-blur-lg border border-green-100/20 dark:border-green-950/15 p-2 mb-1 not-prose ${isBgBlack ? 'bg-neutral-200 dark:bg-white/20' : 'bg-green-950/15 dark:bg-white/10'}`}>
   <div class="max-w-7xl items-center md:flex justify-between mx-auto px-12 sm:px-6 py-12 md:py-6 text-sm md:text-xs font-medium uppercase">
     <div class="mb-8 md:mb-0 text-center md:text-left">
       <span class="font-bold block">

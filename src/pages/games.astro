@@ -1,0 +1,170 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import ThreeJs from "~/components/widgets/ThreeJs.astro";
+import Hero3 from '~/components/widgets/Hero3.astro';
+import Banners2 from '~/components/widgets/Banners2.astro';
+import FollowUp from '~/components/widgets/FollowUp.astro';
+import Steps3 from '~/components/widgets/Steps3.astro';
+import Features5 from '~/components/widgets/Features5.astro';
+
+const metadata = {
+  title: '3D & Game Software Development - MicroWeb',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <ThreeJs/>
+  <Hero3
+  actions={[
+    { variant: 'primary', text: "Let's Chat", href: '#contact' },
+  ]}
+  image={{
+    src: '~/assets/images/enterprise.png',
+    alt: 'enterprise software development multiple devices',
+  }}
+>
+  <Fragment slot="title">
+    Unique Game <span class="text-primary text-gradient highlight tracking-tight">Controls</span> That Engage Players
+  </Fragment>
+
+  <Fragment slot="subtitle">
+    From concept to execution, we craft unique control schemes that bring your game vision to life
+  </Fragment>
+  <Fragment slot="content">
+    <Features5
+        columns={3}
+        classes={{ container: 'py-8' }}
+        items={[
+        {
+          description: 'Learning (LMS)',
+          icon: 'carbon:chart-radar',
+        },
+        {
+          description: 'Gamification Platforms',
+          icon: 'carbon:game-wireless',
+        },
+        {
+          description: 'Adaptive Learning',
+          icon: 'carbon:airline-passenger-care',
+        },
+        {
+          description: 'Smartphones',
+          icon: 'carbon:augmented-reality',
+        },
+        {
+          description: 'Robotics Kits',
+          icon: 'carbon:machine-learning',
+        },
+        {
+          description: 'VR & AR',
+          icon: 'carbon:user-simulation',
+        },
+
+        ]}
+        >
+    </Features5>
+  </Fragment>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 grid grid-cols-2 -space-x-52 backdrop-blur-xl md:backdrop-blur-2xl backdrop-hue-rotate-180 backdrop-brightness-125 backdrop-contrast-[0.9]">
+      <div class="blur-[106px] h-64 bg-gradient-to-br from-yellow-100 to-violet-500 md:to-sky-300 dark:from-blue-700"></div>
+      <div class="blur-[106px] h-32 bg-gradient-to-r from-purple-300 to-cyan-300 dark:to-indigo-600"></div>
+    </div>
+  </Fragment>
+</Hero3>
+
+<Banners2 />
+
+<Features5
+id="features"
+tagline="Bringing your 3D visions to life"
+columns={2}
+title="Custom Game Controls, Built From Scratch"
+subtitle="We provide custom solutions for 3D modeling, game development, and interactive applications"
+classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/85 md:bg-transparent' }}
+items={[
+        {
+            description: 'Custom<br/>Development',
+            icon: 'carbon:ibm-watsonx-code-assistant',
+        },
+        {
+            description: 'Transparent<br/>Pricing',
+            icon: 'carbon:pricing-consumption',
+        },
+        {
+            description: 'Agile<br/>Development',
+            icon: 'carbon:chart-radar',
+        },
+        {
+            description: 'Reduce<br/>Double Work',
+            icon: 'carbon:result-draft',
+        },
+        {
+            description: 'Third-Party<br/>Integrations',
+            icon: 'carbon:app-connectivity',
+        },
+        {
+            description: 'Hardware<br/> iOT',
+            icon: 'carbon:archive',
+        },
+        {
+            description: 'Responsive <br/>Any Device',
+            icon: 'carbon:devices',
+        },
+        {
+            description: 'Data<br/>Synchronization',
+            icon: 'carbon:cloud-ceiling',
+        },
+]}
+>
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-white/60"></div>
+</Fragment>
+</Features5>
+
+  <Steps3
+  image={{
+    src: '~/assets/images/process.webp',
+    alt: 'happy people',
+  }}
+  title="Project Approach and Stages"
+  subtitle='<strong>Control your software investment</strong> with our pay-per-service, phased approach. Start with the essential features and seamlessly scale to a full solution as your business grows'
+  items={[
+    {
+      title: 'Stage 1: <span class="font-medium">Planning & Discovery</span>',
+      description:
+        "Innovate beyond traditional data entry and solve your business challenges with cutting-edge technology. Our process starts by defining your project's scope, goals, and plan",
+      icon: 'carbon:forum',
+    },
+    {
+      title: 'Stage 2: <span class="font-medium">Design & Prototyping</span>',
+      description:
+        "We start by creating mockups, prototypes, and technical specifications to truly understand your needs. This iterative process allows us to refine the solution and deliver a successful project",
+      icon: 'carbon:devices',
+    },
+    {
+      title: 'Stage 3: <span class="font-medium">Development & Testing</span>',
+      description:
+        'Our Agile and CI/CD approach means we develop software in small, integrated components. This allows for continuous testing and integration, ensuring frequent updates and a solution that can easily scale with your business',
+      icon: 'carbon:ibm-watsonx-code-assistant',
+    },
+    {
+      title: 'Stage 4: <span class="font-medium">Deployment & Release</span>',
+      description: 'We handle deployment to production servers or app stores, manage releases, and coordinate with stakeholders and support to resolve post-launch issues',
+      icon: 'carbon:cloud-data-ops',
+    },
+    {
+      title: 'Stage 5: <span class="font-medium">Maintenance & Evolution</span>',
+      description: 'We provide ongoing maintenance, performance optimizations, and feature updates to maximize your software investment. Because software is a living product that constantly evolves.',
+      icon: 'carbon:cloud-monitoring',
+    },
+  ]}
+>
+<Fragment slot="bg">
+  <div class="absolute inset-0 backdrop-blur-lg bg-black/70 dark:bg-black/30"></div>
+</Fragment>
+</Steps3>
+
+<FollowUp />
+
+</Layout>
