@@ -3,7 +3,7 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Hero3 from '~/components/widgets/Hero3.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
-import Steps3 from '~/components/widgets/Steps3.astro';
+import Steps4 from '~/components/widgets/Steps4.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Banners2 from '~/components/widgets/Banners2.astro';
 
@@ -30,22 +30,10 @@ const metadata = {
     <Fragment slot="subtitle">
       MicroWeb's team of experts turns your business ideas into effective software.
       We're a leading digital transformation partner, helping businesses succeed in the digital world.
-      We create great online experiences that connect with your customers and deliver real results. 
-      Using top-notch technology, including AI, we provide complete solutions designed to boost your brand and make a big impact.
+      We create great online experiences that connect with your customers and deliver real results.
     </Fragment>
   </Hero3>
   <Banners2 isBgBlack="true"/>
-  <!-- Stats Widget ****************** -->
-
-  <!-- <Stats
-    title="Statistics about us"
-    stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
-    ]}
-  /> -->
 
   <!-- Features3 Widget ************** -->
 
@@ -59,19 +47,19 @@ const metadata = {
         title: 'Relationship-Focused',
         description:
           'MicroWeb prioritizes building long-term, mutually beneficial relationships with clients, not just transactional work',
-        icon: 'tabler:template',
+        icon: 'carbon:user-favorite-alt',
       },
       {
         title: 'Collaborative Approach',
         description:
           'Work closely with a diverse range of partners, including established brands, emerging startups, and fellow developers, fostering a team-oriented environment',
-        icon: 'tabler:template',
+        icon: 'carbon:events',
       },
       {
         title: 'Specialized Efficiency',
         description:
           'Our team is divided into experts. Each team focuses on one area of the software, making them very efficient and delivering excellent results',
-        icon: 'tabler:template',
+        icon: 'carbon:gears',
       },
     ]}
   />
@@ -91,28 +79,28 @@ const metadata = {
 
   <Steps2
     title="Our values"
-    subtitle="So, at the end of the day, it's about the people. We've built a company culture where everyone's working together, always trying new things, and constantly getting better. Even the best teams have their ups and downs, disagreements or setbacks along the way but hey that's where the real magic happens. We learn from our mistakes, bounce ideas off each other, and come up with some really cool stuff."
+    subtitle="<p>So, at the end of the day, it's about the people. We've built a company culture where everyone's working together, always trying new things, and constantly getting better.</p><p class='mt-4'>Even the best teams have their ups and downs, disagreements or setbacks along the way but hey that's where the real magic happens. We learn from our mistakes, bounce ideas off each other, and come up with some really cool stuff.</p>"
 
     items={[
       {
-        title: 'Top Talent for Every Project',
+        title: 'Masters of Their Craft',
         description:
-          'We hire the best developers and match them to your project. This ensures you get experts who understand your vision and deliver the right solution',
+          'These specialists concentrate solely on their assigned modules, resulting in highly efficient and precise app development',
       },
       {
         title: 'Scalable, Flexible Teams',
         description:
-          'Our developer network is highly adaptable, allowing us to scale teams based on project requirements',
+          'Because our teams are built around independent modules, we can easily add or adjust resources without disrupting the entire project',
       },
       {
         title: 'Progressive Project Management',
         description:
-          'Our progressive project management approach ensures that your project stays on track and delivers exceptional results',
+          'Dedicated module teams allow for rapid resource switching, enabling quick adjustments to progressive project needs',
       },
     ]}
   />
 
-  <Steps3
+  <Steps4
     title="Our Journey"
     subtitle='Lifelong Learning and Continuous Improvement'
     items={[
@@ -120,62 +108,56 @@ const metadata = {
         title: '2012',
         description:
           " Started building websites to help local businesses grow online ",
-        icon: 'carbon:forum',
+        icon: 'carbon:devices',
       },
       {
         title: '2014',
         description:
           " Began building online stores for larger companies ",
-        icon: 'carbon:devices',
+        icon: 'carbon:shopping-cart-plus',
       },
       {
         title: '2015',
         description:
           " Added digital marketing (SEO and Google Ads) to help clients get more customers ",
-        icon: 'carbon:devices',
+        icon: 'carbon:search-locate-mirror',
       },
       {
         title: '2016',
         description:
           " Started building mobile apps for iPhones and Android phones ",
-        icon: 'carbon:devices',
+        icon: 'carbon:application-mobile',
       },
       {
         title: '2017',
         description:
           " Began creating custom software and web apps to improve business operations ",
-        icon: 'carbon:devices',
+        icon: 'carbon:application-web',
       },
       {
         title: '2020',
         description:
           " Completed our first government project, helping with COVID-19 management ",
-        icon: 'carbon:devices',
+        icon: 'carbon:coronavirus',
       },
       {
         title: '2021',
         description:
           " Started working with IoT hardware to offer complete digital solutions ",
-        icon: 'carbon:devices',
-      },
-      {
-        title: '2022',
-        description:
-          " Began using microservices to make digital transformations smoother ",
-        icon: 'carbon:devices',
+        icon: 'carbon:iot-platform',
       },
       {
         title: '2025',
         description:
           " Will be exporting Sarawak digital workforce to the globe ",
-        icon: 'carbon:devices',
+        icon: 'carbon:earth-southeast-asia',
       },
     ]}
   >
   <Fragment slot="bg">
     <div class="absolute inset-0 backdrop-blur-lg bg-black/70 dark:bg-black/30"></div>
   </Fragment>
-  </Steps3>
+  </Steps4>
 
   <!-- Features2 Widget ************** -->
 

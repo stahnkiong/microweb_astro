@@ -1,0 +1,37 @@
+---
+import type { ImageMetadata } from 'astro'
+import { Image } from 'astro:assets'
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/stack/*')
+const imagePaths = Object.keys(images).filter((imagePath) => {
+  return imagePath.startsWith(`/src/assets/images/stack`)
+})
+
+---
+<div class="md:py-4 md:self-center md:basis-2/5">
+  <!-- <div class="mt-24 text-center">
+    <Headline 
+      title="Some of the Technologies We Use"
+      subtitle='Depending on the project, we utilize different technologies'
+      classes={{title:'text-2xl md:text-3xl dark:text-neutral-700 tracking-normal drop-shadow-[-.5px_0px_0px_rgba(90,230,230,1)]'}}
+    />
+  </div> -->
+  <div class="max-w-5xl mx-auto text-xs font-medium uppercase mb-24">
+    <div class="p-8 px-12 md:px-8 grid grid-cols-2 gap-8 md:gap-10 items-center justify-items-center contrast-50 drop-shadow-[-.5px_0px_0px_rgba(90,230,230,1)] ">
+      {
+        imagePaths.map(async (imagePath) => {
+          const image = images[imagePath]()
+          const imageAlt = imagePath.split('/').pop() as string;
+          return (
+            <Image 
+              src={image} 
+              alt={imageAlt}
+              loading="lazy"
+              height={30}
+              widths={[400, 768]} />
+          )
+        })
+      }
+      </div>
+  </div>
+</div>

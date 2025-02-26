@@ -1,0 +1,40 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Timeline2 from '~/components/ui/Timeline2.astro';
+import Headline from '~/components/ui/Headline.astro';
+import Banners4 from '~/components/widgets/Banners4.astro';
+import type { Steps as Props } from '~/types';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  items = [],
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl ${classes?.container ?? ''}`} bg={bg}>
+  <div class:list={['flex flex-col gap-8 md:gap-12  items-center md:flex-row']}>
+    <Banners4/>
+    <div class:list={['md:py-4 md:self-center md:basis-3/5']}>
+      <Headline
+        title={title}
+        subtitle={subtitle}
+        tagline={tagline}
+        classes={{
+          container: 'text-left rtl:text-right',
+          title: 'text-2xl md:text-3xl text-white/90',
+          subtitle: 'text-white/80',
+          ...((classes?.headline as object) ?? {}),
+        }}
+      />
+      <Timeline2 items={items} classes={classes?.items as Record<string, never>} />
+    </div>
+
+  </div>
+</WidgetWrapper>
