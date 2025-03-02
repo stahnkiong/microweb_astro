@@ -6,7 +6,8 @@ import Steps2 from '~/components/widgets/Steps2.astro';
 import Steps4 from '~/components/widgets/Steps4.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Banners2 from '~/components/widgets/Banners2.astro';
-
+import Features4 from '~/components/widgets/Features4.astro';
+import PortFolio from '~/components/widgets/PortFolio.astro';
 const metadata = {
   title: 'About us',
 };
@@ -79,7 +80,7 @@ const metadata = {
 
   <Steps2
     title="Our values"
-    subtitle="<p>So, at the end of the day, it's about the people. We've built a company culture where everyone's working together, always trying new things, and constantly getting better.</p><p class='mt-4'>Even the best teams have their ups and downs, disagreements or setbacks along the way but hey that's where the real magic happens. We learn from our mistakes, bounce ideas off each other, and come up with some really cool stuff.</p>"
+    subtitle="<p>At the end of the day, it's about the people. We've built a company culture where everyone's working together, always trying new things, and constantly getting better.</p><p class='mt-4'>Even the best teams have their ups and downs, disagreements or setbacks along the way but hey that's where the real magic happens. We learn from our mistakes, bounce ideas off each other, and come up with some really cool stuff.</p>"
 
     items={[
       {
@@ -99,7 +100,59 @@ const metadata = {
       },
     ]}
   />
-
+  <Features4
+  tagline="Our Services"
+  title='Digital Partner That Prioritizes Your Return on Investment'
+  columns={4}
+  classes={{ container: 'mb-96 md:mb-0 md:pb-20' }}
+  items={[
+    {
+      title: 'Custom Software for Growth',
+      description: "Secure, Seamless and <br/>Tailored Solutions",
+      link: '/software',
+      icon: 'carbon:analytics-custom',
+      callToAction: {
+        variant: 'link',
+        class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+        icon: 'carbon:arrow-right',
+      },
+    },
+    {
+      title: 'AI-Powered Marketing for Reach',
+      description: "Personalized Users' <br/>Experiences",
+      link: '/ai-marketing',
+      icon: 'carbon:machine-learning-model',
+      callToAction: {
+        variant: 'link',
+        class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+        icon: 'carbon:arrow-right',
+      },
+    },
+    {
+      title: 'Future-Ready System Integration',
+      description: "Seamless API and <br/>AI Solutions",
+      link: '/integration',
+      icon: 'carbon:ibm-z-cloud-mod-stack',
+      callToAction: {
+        variant: 'link',
+        class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+        icon: 'carbon:arrow-right',
+      },
+    },
+    {
+      title: 'Bespoke Web Development for UI/UX',
+      description: "Navigating Digital Landscape<br/> with Confidence",
+      link: '/web-development',
+      icon: 'carbon:network-enterprise',
+      callToAction: {
+        variant: 'link',
+        class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+        icon: 'carbon:arrow-right',
+      },
+    },
+  ]}
+>
+</Features4>
   <Steps4
     title="Our Journey"
     subtitle='Lifelong Learning and Continuous Improvement'
@@ -161,6 +214,109 @@ const metadata = {
 
   <!-- Features2 Widget ************** -->
 
+
+  <PortFolio
+    id="porfolio"
+    title="Our Clients and Us"
+    tagline="Portfolio"
+    classes={{panel:'bg-blue-950 text-white', container:'pb-4 pt-12 md:pb-4 md:pt-16 lg:pb-4 lg:pt-20'}}
+    items={[
+      {
+        title: 'Delivering Excellence Under Guidelines',
+        icon: 'carbon:application-web',
+        description:
+          'Ford had a very specific vision for the website, with strict guidelines on design aesthetics, font usage (yes, that iconic Ford font!) and overall user experience.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/ford_raptor.webp',
+      alt: 'ford raptor',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'Read case study',
+      icon: 'tabler:chevron-right',
+      href: '#',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
+        Applying Ford's Design Standards <br /><span class="text-lg font-semibold">Meeting UI/UX Development Standards in Local Retails</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-page"></div>
+    </Fragment>
+  </PortFolio>
+
+  <PortFolio
+  isReversed
+  isAfterContent
+  classes={{panel:'bg-amber-300 dark:bg-fuchsia-950', container:'py-4 md:py-4 lg:py-4'}}
+  items={[
+    {
+      title: 'Streamlining the Customer Journey: AI-Driven Approach',
+      icon: 'carbon:application-web',
+      description:
+        "Boosted sales by targeting the right customers at the right time. We optimized Google Ads campaign by leveraging AI for precise audience targeting, strategic scheduling, and dynamic bidding.",
+    },
+  ]}
+  image={{
+    src: '~/assets/images/bosoffice_chair.webp',
+    alt: 'Bos Office Chair',
+  }}
+  callToAction={{
+    target: '_blank',
+    text: 'Read case study',
+    icon: 'tabler:chevron-right',
+    href: '#',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
+      Bos Office System <br /><span class="text-lg font-semibold">Leveraging AI-Powered Marketing</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-page"></div>
+  </Fragment>
+</PortFolio>
+
+<PortFolio
+  isAfterContent
+  classes={{panel:'bg-[#e1e1e1] dark:bg-slate-700', container:'py-4 md:py-4 lg:py-4'}}
+  items={[
+    {
+      title: 'More Reliable and Privacy-Conscious Approach',
+      icon: 'carbon:application-web',
+      description:
+        'Recognizing the limitations of QR codes, reliance on user scanning, limited data accuracy, and the impracticality of widespread GPS tracking - we opted for more robust solution.',
+    },
+  ]}
+  image={{
+    src: '~/assets/images/wristband2.webp',
+    alt: 'ford raptor',
+  }}
+  callToAction={{
+    target: '_blank',
+    text: 'Read case study',
+    icon: 'tabler:chevron-right',
+    href: '#',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
+      COVID-19 and Border Authorities <br /><span class="text-lg font-semibold">The Shift from QR Codes to Bluetooth Beacons</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-page"></div>
+  </Fragment>
+</PortFolio>
+
   <Features2
     title="Our locations"
     tagline="Find us"
@@ -168,11 +324,11 @@ const metadata = {
     items={[
       {
         title: 'Kuching',
-        description: '1234 Lorem Ipsum St, 12345, Miami',
+        description: '1207, Jalan Perbadanan, Pending Industrial Estate, 93450 Kuching, Sarawak',
       },
       {
-        title: 'KL',
-        description: '5678 Lorem Ipsum St, 56789, Madrid',
+        title: 'Kuala Lumpur',
+        description: 'A1-16-12, Arcoris Mont Kiara, 50480 Kuala Lumpur',
       },
     ]}
   />
