@@ -3,7 +3,7 @@ import { getPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Profile',
+      text: 'About Us',
       href: getPermalink('/about'),
     },
     {
@@ -69,19 +69,19 @@ export const headerData = {
       ],
     },
     {
-      text: 'Responsibility',
-      href: '#',
-    },
-    {
-      text: 'News',
+      text: 'Client Stories',
       href: '#',
     },
     {
       text: 'Career',
       href: '#',
     },
+    {
+      text: 'Contact',
+      href: '#contact',
+    },
   ],
-  actions: [{ text: 'Reach us', href: getPermalink('/landing/subscription'), target: '_blank' }],
+  actions: [{ text: 'Reach us', href: getPermalink('/contact'), target: '_blank' }],
 };
 
 export const footerData = {

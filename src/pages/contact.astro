@@ -1,19 +1,39 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import Features2 from '~/components/widgets/Features.astro';
-
+import Formbricks from '~/components/widgets/Formbricks.astro';
+import Features from '~/components/widgets/Features.astro';
 const metadata = {
   title: 'Contact',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-
-  <HeroText tagline="Contact" title="Let's Connect" />
-
   <!-- Features2 Widget ************** -->
-
+  <Formbricks
+  id="contact"
+>
+  <Fragment slot="content">
+      <Features
+      columns={1}
+      items={[
+        {
+          title: 'Kuching',
+          description: '1207, Jalan Perbadanan, Pending Industrial Estate, 93450 Kuching',
+        },
+        {
+          title: 'Kuala Lumpur',
+          description: 'A1-16-12, Arcoris Mont Kiara, 50480 Kuala Lumpur',
+        },
+        {
+          title: 'consult@microweb.my',
+          description: '<a href="tel:+60168880650">+6016-8880650</a>',
+        },
+      ]}
+    />
+    </Fragment>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 backdrop-blur-lg bg-white/40 dark:bg-white/5"></div>
+  </Fragment>
+</Formbricks>
   
 </Layout>
