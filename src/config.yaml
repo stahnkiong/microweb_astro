@@ -4,14 +4,14 @@ site:
   base: '/'
   trailingSlash: false
 
-  googleSiteVerificationId: false
+  googleSiteVerificationId: google-site-verification=AuOwWyzbRWHSJrMw4w6MUrkeA9xgva3sTcXMBvMpDAE
 
 # Default SEO metadata
 metadata:
   title:
     default: MicroWeb
     template: '%s — MicroWeb'
-  description: "\U0001F680 Your trusted partner for custom software developement"
+  description: "\U0001F680 Digital Partner that Prioritizes Your Return on Investment"
   robots:
     index: true
     follow: true
@@ -33,18 +33,18 @@ i18n:
 
 apps:
   blog:
-    isEnabled: false
+    isEnabled: true
     postsPerPage: 6
 
     post:
-      isEnabled: false
+      isEnabled: true
       permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
       robots:
         index: true
 
     list:
-      isEnabled: false
-      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
+      isEnabled: true
+      pathname: 'clients' # Blog main path, you can change this to "articles" (/articles)
       robots:
         index: true
 
@@ -66,7 +66,7 @@ apps:
 analytics:
   vendors:
     googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
+      id: G-GM5ZSBEGN2
 
 ui:
   theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"

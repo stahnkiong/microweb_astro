@@ -70,11 +70,11 @@ export const headerData = {
     },
     {
       text: 'Client Stories',
-      href: '#',
+      href: getPermalink('/clients'),
     },
     {
       text: 'Career',
-      href: '#',
+      href: getPermalink('/career'),
     },
     {
       text: 'Contact',
