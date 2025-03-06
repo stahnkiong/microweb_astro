@@ -8,7 +8,6 @@ import Layout from '~/layouts/PageLayout.astro';
 import Banners2 from '~/components/widgets/Banners2.astro';
 import Features4 from '~/components/widgets/Features4.astro';
 import PortFolioSummary from '~/components/blog/PortFolioSummary.astro';
-import Formbricks from '~/components/widgets/Formbricks.astro';
 const metadata = {
   title: 'About us',
 };
@@ -17,13 +16,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero3
-    tagline="About us"
-    image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
-    }}
-  >
+  <Hero3>
     <Fragment slot="title">
       Solving Real-World Problems with <br />
       <span class="text-accent dark:text-white highlight"> Software Solutions</span>
@@ -72,8 +65,8 @@ const metadata = {
     columns={3}
     isAfterContent={true}
     image={{
-      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Colorful Image',
+      src: '~/assets/images/aboutus.jpg',
+      alt: 'about people',
     }}
   />
 
