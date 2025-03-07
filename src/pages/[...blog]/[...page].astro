@@ -5,6 +5,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import BlogList from '~/components/blog/List.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
+import Formbricks from '~/components/widgets/Formbricks.astro';
 // import PostTags from "~/components/blog/Tags.astro";
 
 import { blogListRobots, getStaticPathsBlogList } from '~/utils/blog';
@@ -24,7 +25,7 @@ const currentPage = page.currentPage ?? 1;
 // const allTags = await findTags();
 
 const metadata = {
-  title: `Blog${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
+  title: `Clients' Stories${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
   robots: {
     index: blogListRobots?.index && currentPage === 1,
     follow: blogListRobots?.follow,
@@ -38,7 +39,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
     <Headline
-      subtitle="A statically generated blog example with news, tutorials, resources and other interesting content related to AstroWind"
+      subtitle="We Look Back and Cringe: How Rapid Tech Changes Drive Our Constant Improvement"
     >
       Clients' Stories
     </Headline>
@@ -49,4 +50,17 @@ const metadata = {
       <PostTags tags={allTags}  title="Search by Tags:" />
     -->
   </section>
+  <Formbricks
+  id="contact"
+>
+  <Fragment slot="content">
+    <h2 class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl">
+      Let's Build Extraordinary Together</h2>
+    <p class="mt-2 md:mt-4 text-base font-semibold">Transform your digital presence with agile development that adapts to your needs. </p>
+    <p class="mt-2 md:mt-4 text-sm md:text-base">We understand the importance of your investment and offer flexible options, including pay-for-priority features. Contact us now to start building your digital success story.</p>
+  </Fragment>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-white/80 dark:bg-white/5"></div>
+  </Fragment>
+</Formbricks>
 </Layout>
