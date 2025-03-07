@@ -87,47 +87,78 @@ export const headerData = {
 export const footerData = {
   links: [
     {
-      title: 'Product',
+      title: 'Services',
       links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Resources', href: '#' },
+        {
+          text: 'Custom Software',
+          href: getPermalink('/software'),
+        },
+        {
+          text: 'AI Marketing',
+          href: getPermalink('/ai-marketing'),
+        },
+        {
+          text: 'System Integration',
+          href: getPermalink('/integration'),
+        },
+        {
+          text: 'Web Development',
+          href: getPermalink('/web-development'),
+        },
       ],
     },
     {
-      title: 'Platform',
+      title: 'Industries & IoT',
       links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
-        { text: 'Electron', href: '#' },
-        { text: 'AstroWind Desktop', href: '#' },
+        {
+          text: 'Enterprise',
+          href: getPermalink('/enterprise'),
+        },
+        {
+          text: 'Healthcare',
+          href: getPermalink('/healthcare'),
+        },
+        {
+          text: 'Logistics & Supply Chain',
+          href: getPermalink('/logistics'),
+        },
+        {
+          text: 'Retail & Ecommerce',
+          href: getPermalink('/retail'),
+        },
+        {
+          text: 'Manufacturing',
+          href: getPermalink('/manufacturing'),
+        },
+        {
+          text: 'Agriculture',
+          href: getPermalink('/agriculture'),
+        },
+        {
+          text: 'Hospitality',
+          href: getPermalink('/hospitality'),
+        },
       ],
     },
     {
       title: 'Support',
       links: [
-        { text: 'Docs', href: '#' },
-        { text: 'Community Forum', href: '#' },
-        { text: 'Professional Services', href: '#' },
-        { text: 'Skills', href: '#' },
-        { text: 'Status', href: '#' },
+        {
+          text: 'Education',
+          href: getPermalink('/education'),
+        },
+        {
+          text: '3D Development',
+          href: getPermalink('/games'),
+        },
       ],
     },
     {
       title: 'Company',
       links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
+        { text: 'About', href: 'about' },
+        { text: 'Client Stories', href: 'clients' },
+        { text: 'Career', href: 'career' },
       ],
     },
   ],
@@ -140,7 +171,7 @@ export const footerData = {
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
+    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/' },
   ],
   footNote: `
     <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="https://onwidget.com/favicon/favicon-32x32.png" alt="onWidget logo" loading="lazy"></img>
