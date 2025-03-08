@@ -41,3 +41,5 @@ We're pumped about this. We believe it can change education. But, let's be real,
 **Conclusion:**
 
 Let's team up and build the future of education. Let's create learning experiences that inspire the next generation. Let's make it happen.
+
+<a href="https://youtu.be/8V0-h2q0cAg" target="_blank">Watch on YouTube</a>
