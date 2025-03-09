@@ -1,5 +1,5 @@
 ---
-publishDate: 2024-01-10T00:00:00Z
+publishDate: 2024-12-10T00:00:00Z
 author: Admin
 title: 'Driving Digital: Our Ford Web Design Project'
 excerpt: We partnered with Ford to deliver a custom web solution, adhering to strict design guidelines and integrating seamlessly with their systems.
@@ -34,3 +34,7 @@ We're proud of the work we did for Ford. It showed our team's ability to deliver
 **Conclusion:**
 
 Working with Ford was a great experience. We delivered a website that met their high standards, and we further solidified our reputation as a reliable web development partner.
+
+## See for Yourself:
+
+Check out the website at <a href="https://ford.rightpower.com.my/" target="_blank">Ford - Rightpower</a>

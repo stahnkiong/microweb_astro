@@ -1,5 +1,5 @@
 ---
-publishDate: 2024-10-15T00:00:00Z
+publishDate: 2023-10-15T00:00:00Z
 author: Admin
 title: 'BOS Office: Growing Profits with an AI Marketing Garden - Budget-Friendly, ROI-Focused'
 excerpt: AI isn't future talk; it's here, now. We built BOS Office a living marketing ecosystem, boosting traffic and ROI. Real results, real application. Ready to see AI work for you?
