@@ -1,5 +1,5 @@
 ---
-publishDate: 2023-08-20T00:00:00Z
+publishDate: 2022-06-25T00:00:00Z
 author: Admin
 title: 'The "Rojak" Dance: Bridging the Gap Between Vision and Code'
 excerpt: App launch excitement meets developer jargon. We explore the customer-developer dance, balancing speed with long-term quality.

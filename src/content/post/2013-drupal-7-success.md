@@ -1,41 +1,47 @@
 ---
-publishDate: 2013-12-13T00:00:00Z
+publishDate: 2019-07-13T00:00:00Z
 author: Admin
-title: '2013: Our First Holdings Client - A Drupal 7 Success Story'
-excerpt: In 2013, we were trusted by our first holdings client. We built their site with Drupal 7, a robust CMS. 12 years later, it's still running strong.
-image: https://images.unsplash.com/photo-1518770660439-46aad1659133?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaGoto-wpAgefHx8fGVufDB8fHx8fA%3D%3D
+title: 'Proven Track Record: Years of Success with Holdings Clients Since 2013'
+excerpt: "Since 2013, we've built a strong portfolio of successful tech projects, starting with Sri Datai Holdings. Their Drupal 7 site, built 6 years ago, still demonstrates our commitment to long-term reliability."
+image: https://images.unsplash.com/photo-1518770660439-46aad1659133?q=80&w-2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaGoto-wpAgefHx8fGVufDB8fHx8fA%3D%3D
 tags:
+  - Proven Portfolio
+  - Holdings Clients
   - Drupal 7
-  - CMS
-  - Web Development
+  - Long-Term Reliability
 metadata:
   canonical: https://www.microweb.my/2013-drupal-7-success
 ---
 
-In 2013, we were given a fantastic opportunity: our first holdings client. We were grateful for their trust, and we knew we had to deliver.
+For businesses seeking a tech partner with a proven track record of success with major clients, our portfolio speaks for itself. Since 2013, we have been entrusted by significant holdings clients, demonstrating our ability to deliver reliable and scalable tech solutions.
 
-## The Project: Drupal 7 - A Solid Foundation
+**Our First Holdings Client: A Foundation of Trust**
 
-We chose Drupal 7, an enterprise-level CMS, for this project. Its flexibility allowed us to build custom modules, which meant:
+In 2013, Sri Datai Holdings became our first holdings client, placing their trust in our expertise. We recognized the importance of this opportunity and delivered a robust website using Drupal 7, an enterprise-level CMS.
 
-* **Faster Development:** We could quickly implement specific features.
-* **Enhanced Security:** Drupal 7's robust architecture provided a secure platform.
+**The Project: Building for Longevity with Drupal 7**
 
-## The Result: Long-Term Reliability
+We chose Drupal 7 for its flexibility and security, allowing us to:
 
-**edit 2025 -** Fast forward 12 years, and the website is still well-maintained and running smoothly. This speaks to the quality of the initial build and the robustness of Drupal 7.
+* **Develop Custom Modules:** Tailor the website to meet the specific needs of the client.
+* **Ensure Robust Security:** Provide a stable and secure platform for their online presence.
+* **Deliver Long-Term Reliability:** Create a solution that could withstand the test of time.
 
-## See for Yourself:
+**The Result: A Testament to Enduring Quality**
 
-You can see the website here: 
-<a href="https://www.sridatai.com/" target="_blank">Sri Datai Website</a>
+**edit 2025 -** 12 years later, the Sri Datai Holdings website remains well-maintained and fully functional. This enduring reliability is a testament to the quality of our initial build and the robustness of Drupal 7.
 
-## Why Drupal 7?
+**See Our Work:**
 
-* **Flexibility:** Allowed for custom module development.
-* **Security:** Provided a stable and secure platform.
-* **Longevity:** Proven track record of long-term reliability.
+View the Sri Datai Holdings website here: <a href="https://www.sridatai.com/" target="_blank">Sri Datai Website</a>
 
-**Conclusion:**
+**Why Choose Our Proven Expertise?**
 
-This project is a testament to our commitment to building reliable and scalable web solutions. We're proud to have built a website that has stood the test of time.
+* **Experience with Major Clients:** We have a history of successful projects with significant holdings clients.
+* **Commitment to Reliability:** We build solutions that are designed to last.
+* **Proven Technology Expertise:** We leverage robust technologies like Drupal 7 to deliver high-quality results.
+* **Strong Portfolio:** We have a portfolio of successful projects that demonstrates our ability to deliver.
+
+**Conclusion: Partner with a Proven Tech Company**
+
+Our work with Sri Datai Holdings is just one example of our commitment to delivering reliable and scalable tech solutions for major clients. When you partner with us, you gain access to a team with a proven track record of success.
