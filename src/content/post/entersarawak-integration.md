@@ -3,7 +3,7 @@ publishDate: 2021-03-22T00:00:00Z
 author: Admin
 title: 'enterSarawak Integration: Streamlining Digital Border Control'
 excerpt: We delivered API integrations for enterSarawak, automating e-HDF creation and status updates. Efficient, reliable digital tracking.
-image: https://images.unsplash.com/photo-1518770660439-46aad1659133?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaGoto-wpAgefHx8fGVufDB8fHx8fA%3D%3D
+image: ~/assets/images/blog/entersarawak.webp
 tags:
   - API Integration
   - enterSarawak

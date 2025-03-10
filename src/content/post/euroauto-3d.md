@@ -3,7 +3,7 @@ publishDate: 2023-07-03T00:00:00Z
 author: Admin
 title: 'Unwavering Trust: A Decade of Partnership and Free 3D Innovation for EuroAuto'
 excerpt: 'EuroAuto, our client since 2013, exemplifies the trust we build. We recently added a free 3D enhancement to their site, demonstrating our commitment to long-term partnerships and unwavering loyalty.'
-image: https://images.unsplash.com/photo-1518770660439-46aad1659133?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaGoto-wpAgefHx8fGVufDB8fHx8fA%3D%3D
+image: ~/assets/images/blog/euroauto.webp
 tags:
   - Trustworthy Partner
   - Client Loyalty

@@ -3,7 +3,7 @@ publishDate: 2023-10-15T00:00:00Z
 author: Admin
 title: 'BOS Office: Driving ROI with an AI-Powered Marketing Ecosystem - Scalable Growth, Measurable Results'
 excerpt: 'Unlock tangible ROI with our AI-driven marketing ecosystem. We helped BOS Office transform their digital presence, boosting traffic and conversions through a phased, data-backed approach. Discover how our ever-tuning AI cycle delivers sustainable growth.'
-image: https://images.unsplash.com/photo-1431540015161-0bf868a2d407?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+image: ~/assets/images/blog/bosoffice.webp
 tags:
   - ROI
   - AI Marketing

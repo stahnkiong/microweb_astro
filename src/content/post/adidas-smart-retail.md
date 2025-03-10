@@ -3,7 +3,7 @@ publishDate: 2021-05-26T00:00:00Z
 author: Admin
 title: 'Adidas Gets Smart: Our Retail Tech Story'
 excerpt: We helped Adidas enhance their retail experience in East Malaysia with IoT solutions. Interactive displays and remote management made shopping smarter.
-image: https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+image: ~/assets/images/blog/adidas.webp
 tags:
   - IoT
   - Retail

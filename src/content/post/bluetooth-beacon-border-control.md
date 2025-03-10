@@ -3,7 +3,7 @@ publishDate: 2022-09-27T00:00:00Z
 author: Admin
 title: 'Beyond QR: Evolving Border Control with Bluetooth Beacons and IoT Integration'
 excerpt: From QR codes to Bluetooth beacons, we've evolved border control. Real-time tracking, automated data, and enhanced accuracy in a post-pandemic world, with seamless IoT integration.
-image: https://images.unsplash.com/photo-1549479616-24e548268ad3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by-wpAgefHx8fGVufDB8fHx8fA%3D%3D
+image: ~/assets/images/blog/wristband.webp
 tags:
   - Border Control
   - Bluetooth Beacons

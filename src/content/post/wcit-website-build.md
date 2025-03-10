@@ -3,7 +3,7 @@ publishDate: 2023-10-07T00:00:00Z
 author: Admin
 title: 'Seamless Event Integration: WCIT 2023 Website Delivered with Agile Precision'
 excerpt: 'We delivered a fully functional WCIT 2023 website, integrating with third-party event apps for registration, networking, and timetables. Rely on our agile team for stress-free event solutions.'
-image: https://images.unsplash.com/photo-1518770660439-46aad1659133?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaGoto-wpAgefHx8fGVufDB8fHx8fA%3D%3D
+image: ~/assets/images/blog/wcit.webp
 tags:
   - Event Solutions
   - Agile Development
