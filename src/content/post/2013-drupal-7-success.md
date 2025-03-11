@@ -3,7 +3,7 @@ publishDate: 2019-07-13T00:00:00Z
 author: Admin
 title: 'Proven Track Record: Years of Success with Holdings Clients Since 2013'
 excerpt: "Since 2013, we've built a strong portfolio of successful tech projects, starting with Sri Datai Holdings. Their Drupal 7 site, built 6 years ago, still demonstrates our commitment to long-term reliability."
-image: https://images.unsplash.com/photo-1518770660439-46aad1659133?q=80&w-2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaGoto-wpAgefHx8fGVufDB8fHx8fA%3D%3D
+image: ~/assets/images/blog/sridatai.webp
 tags:
   - Proven Portfolio
   - Holdings Clients

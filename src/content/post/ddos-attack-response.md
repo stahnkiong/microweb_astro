@@ -3,7 +3,7 @@ publishDate: 2021-03-02T00:00:00Z
 author: Admin
 title: 'When the Internet Attacked: Our DDoS Defense Story'
 excerpt: A massive DDoS hit us. We fought back, learned, and came out stronger. Here's how we defended our systems and what it taught us about cybersecurity.
-image: https://images.unsplash.com/photo-1517694712202-14dd98ba7944?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+image: ~/assets/images/blog/ddos.webp
 tags:
   - Cybersecurity
   - DDoS

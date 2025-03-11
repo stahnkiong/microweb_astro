@@ -1,7 +1,7 @@
 ---
 publishDate: 2024-12-10T00:00:00Z
 author: Admin
-title: 'Enterprise-Grade Web Solutions: Custom CMS and Development for Ford - Beyond WordPress Limitations'
+title: 'Enterprise-Grade Web Solutions: Custom CMS and Development for Ford - Beyond Limitations'
 excerpt: 'We delivered a bespoke web solution for Ford, showcasing our expertise in high-end custom development and tailored CMS, bypassing the constraints of standard platforms like WordPress. Discover how we build robust, scalable websites for enterprise clients.'
 image: ~/assets/images/blog/ford.webp
 tags:

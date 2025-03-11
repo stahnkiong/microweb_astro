@@ -3,7 +3,7 @@ publishDate: 2019-02-09T00:00:00Z
 author: Admin
 title: 'Speed Demons: Our Tech Optimization Secrets Revealed'
 excerpt: Slow websites? Crashing servers? We've optimized our systems for peak performance and scalability. Here's how we do it.
-image: https://images.unsplash.com/photo-1518770660439-46aad1659133?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+image: ~/assets/images/blog/speed.webp
 tags:
   - Optimization
   - Performance

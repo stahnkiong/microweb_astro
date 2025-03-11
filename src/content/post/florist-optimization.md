@@ -3,7 +3,7 @@ publishDate: 2015-01-18T00:00:00Z
 author: Admin
 title: 'Lavender Florist: From Zero Traffic to Peak Bloom'
 excerpt: We transformed a slow, complex florist website into a high-traffic e-commerce success, optimized for peak days like Valentine's and Mother's Day.
-image: https://images.unsplash.com/photo-1518770660439-46aad1659133?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaGoto-wpAgefHx8fGVufDB8fHx8fA%3D%3D
+image: ~/assets/images/blog/florist.webp
 tags:
   - E-commerce Optimization
   - Performance

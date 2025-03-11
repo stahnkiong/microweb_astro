@@ -3,7 +3,7 @@ publishDate: 2018-12-10T00:00:00Z
 author: Admin
 title: '2018: Breaking the Mono - Our Microservices Leap'
 excerpt: In 2018, we tackled monolithic nightmares with microservices. Faster development, better scaling, and real agility. A look back at our transformative journey.
-image: https://images.unsplash.com/photo-1518369875355-03c34c260368?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+image: ~/assets/images/blog/microservices.webp
 tags:
   - Microservices
   - Architecture
