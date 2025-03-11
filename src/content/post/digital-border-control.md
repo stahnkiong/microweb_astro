@@ -50,3 +50,7 @@ This wasn't just a tech project; it was a lifeline. We showed the world what a t
 **Conclusion:**
 
 When the world needed solutions, we delivered. We proved that innovation can happen anywhere, even in the most challenging times. We built a system that protected lives, and that's something we're incredibly proud of.
+
+**Follow Up - 2022-09-27**
+
+We shifted to Bluetooth beacons, integrating them into a comprehensive IoT solution. read more on [Evolving Border Control with Bluetooth Beacons and IoT Integration](/bluetooth-beacon-border-control)
