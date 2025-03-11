@@ -1,0 +1,94 @@
+---
+
+import Features3 from '~/components/widgets/Features3.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Career',
+};
+---
+
+<Layout metadata={metadata}>
+  <CallToAction
+  title="Join Our Team"
+  subtitle="Send your CV/resume and a cover letter to <em>teng@microweb.my</em> and tell us why you're a great fit."
+    actions={[
+      {
+        variant: 'secondary',
+        text: 'Mail Us',
+        href: 'mailto:teng@microweb.my',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-page"></div>
+    </Fragment>
+  </CallToAction>
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="Core Value: People First"
+    subtitle="Be part of a company that values continuous improvement and embraces the latest technologies."
+    columns={3}
+    items={[
+      {
+        title: 'Relationship-Focused',
+        description:
+          'MicroWeb prioritizes building long-term, mutually beneficial relationships with clients, not just transactional work',
+        icon: 'carbon:user-favorite-alt',
+      },
+      {
+        title: 'Collaborative Approach',
+        description:
+          'Work closely with a diverse range of partners, including established brands, emerging startups, and fellow developers, fostering a team-oriented environment',
+        icon: 'carbon:events',
+      },
+      {
+        title: 'Specialized Efficiency',
+        description:
+          'Our team is divided into experts. Each team focuses on one area of the software, making them very efficient and delivering excellent results',
+        icon: 'carbon:gears',
+      },
+    ]}
+  />
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    columns={3}
+    isAfterContent={true}
+    image={{
+      src: '~/assets/images/aboutus.jpg',
+      alt: 'about people',
+    }}
+  />
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="Our values"
+    subtitle="<p>At the end of the day, it's about the people. We've built a company culture where everyone's working together, always trying new things, and constantly getting better.</p><p class='mt-4'>Even the best teams have their ups and downs, disagreements or setbacks along the way but hey that's where the real magic happens. We learn from our mistakes, bounce ideas off each other, and come up with some really cool stuff.</p>"
+
+    items={[
+      {
+        title: 'Masters of Their Craft',
+        description:
+          'These specialists concentrate solely on their assigned modules, resulting in highly efficient and precise app development',
+      },
+      {
+        title: 'Scalable, Flexible Teams',
+        description:
+          'Because our teams are built around independent modules, we can easily add or adjust resources without disrupting the entire project',
+      },
+      {
+        title: 'Progressive Project Management',
+        description:
+          'Dedicated module teams allow for rapid resource switching, enabling quick adjustments to progressive project needs',
+      },
+    ]}
+  />
+
+
+</Layout>
