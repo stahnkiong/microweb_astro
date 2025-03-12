@@ -4,7 +4,7 @@ import Timeline2 from '~/components/ui/Timeline2.astro';
 import Headline from '~/components/ui/Headline.astro';
 import Image from '~/components/common/Image.astro';
 import type { Steps as Props } from '~/types';
-
+import CallToAction from './CallToAction.astro';
 const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
@@ -58,3 +58,18 @@ const {
 
   </div>
 </WidgetWrapper>
+<CallToAction
+  title="Build from the ground up, starting small"
+  subtitle="Reach out to us and let's start discussing your project"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact Us',
+        href: '/contact',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-white/70 dark:bg-black/70"></div>
+    </Fragment>
+  </CallToAction>
