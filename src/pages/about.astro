@@ -8,6 +8,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Banners2 from '~/components/widgets/Banners2.astro';
 import Features4 from '~/components/widgets/Features4.astro';
 import PortFolioSummary from '~/components/blog/PortFolioSummary.astro';
+import PortFolio from '~/components/widgets/PortFolio.astro';
 const metadata = {
   title: 'About us',
 };
@@ -94,11 +95,45 @@ const metadata = {
       },
     ]}
   />
+  <PortFolio
+    id="porfolio"
+    title="Our Long-Term Vision for an Immersive Platform"
+    tagline="Vision / Aspiration"
+    classes={{panel:'bg-neutral-100 dark:bg-neutral-600 border border-black dark:border-0', container:'pb-4 pt-12 md:pb-8 md:pt-4 lg:pb-8 lg:pt-4', action:'text-secondary dark:text-accent'}}
+    items={[
+      {
+        title: 'The Inevitable Shift Investing in the Future of Engaging Education',
+        icon: 'carbon:application-web',
+        description:
+          "A 3D interactive learning platform that redefines engagement and makes education captivating. This is not just a trend; it's the future of learning.",
+      },
+    ]}
+    image={{
+      src: '~/assets/images/blog/kidsthinking.webp',
+      alt: 'ford raptor',
+    }}
+    callToAction={{
+      text: 'Read case study',
+      icon: 'tabler:chevron-right',
+      href: '/3d-learning-platform',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
+        Shape the Future of Education <br /><span class="text-lg font-semibold">Redefines Engagement and Makes Education Captivating</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-page"></div>
+    </Fragment>
+  </PortFolio>
+  
   <Features4
   tagline="Our Services"
   title='Digital Partner That Prioritizes Your Return on Investment'
   columns={4}
-  classes={{ container: 'mb-96 md:mb-0 md:pb-20' }}
+  classes={{ container: 'my-24 md:mb-0 md:pb-20' }}
   items={[
     {
       title: 'Custom Software for Growth',
