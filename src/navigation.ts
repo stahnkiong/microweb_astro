@@ -25,6 +25,10 @@ export const headerData = {
           text: 'Web Development',
           href: getPermalink('/web-development'),
         },
+        {
+          text: 'Mobile App',
+          href: getPermalink('/mobile-app'),
+        },
       ],
     },
     {
@@ -159,6 +163,7 @@ export const footerData = {
         { text: 'About', href: '/about' },
         { text: 'Client Stories', href: '/clients' },
         { text: 'Career', href: '/career' },
+        { text: 'Contact', href: '/contact' },
       ],
     },
   ],
