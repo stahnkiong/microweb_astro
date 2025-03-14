@@ -156,9 +156,9 @@ export const footerData = {
     {
       title: 'Company',
       links: [
-        { text: 'About', href: 'about' },
-        { text: 'Client Stories', href: 'clients' },
-        { text: 'Career', href: 'career' },
+        { text: 'About', href: '/about' },
+        { text: 'Client Stories', href: '/clients' },
+        { text: 'Career', href: '/career' },
       ],
     },
   ],
