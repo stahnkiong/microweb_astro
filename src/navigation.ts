@@ -109,6 +109,10 @@ export const footerData = {
           text: 'Web Development',
           href: getPermalink('/web-development'),
         },
+        {
+          text: 'Mobile App',
+          href: getPermalink('/mobile-app'),
+        },
       ],
     },
     {
