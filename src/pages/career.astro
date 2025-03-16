@@ -4,6 +4,7 @@ import Features3 from '~/components/widgets/Features3.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Formbricks from '~/components/widgets/Formbricks.astro';
 
 const metadata = {
   title: 'Career',
@@ -90,5 +91,18 @@ const metadata = {
     ]}
   />
 
+  <Formbricks
+  id="contact"
+>
+  <Fragment slot="content">
+    <h2 class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl">
+      Let's Build Extraordinary Together</h2>
+    <p class="mt-2 md:mt-4 text-base font-semibold">Transform your digital presence with agile development that adapts to your needs. </p>
+    <p class="mt-2 md:mt-4 text-sm md:text-base">We understand the importance of your investment and offer flexible options, including pay-for-priority features. Contact us now to start building your digital success story.</p>
+  </Fragment>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 backdrop-blur-lg bg-white/40 dark:bg-white/5"></div>
+  </Fragment>
+</Formbricks>
 
 </Layout>
