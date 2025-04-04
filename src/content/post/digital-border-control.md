@@ -2,7 +2,8 @@
 publishDate: 2021-03-21T00:00:00Z
 author: Admin
 title: "Building a COVID-19 Border Control System in 72 Hours"
-excerpt: "In a global crisis, innovation was essential. We built a wearable tech system with QR codes to manage borders, ensuring safety and privacy. Real solutions, real impact. **Follow Up - 2022-04-30 : Visitors are exempted from filling the E-Health Declaration Form since 30 April 2022.**"
+excerpt: "In a global crisis, innovation was essential. We built a wearable tech system with QR codes to manage borders, ensuring safety and privacy. Real solutions, real impact.
+**Follow Up - 2022-04-30 : Visitors are exempted from filling the E-Health Declaration Form since 30 April 2022.**"
 image: ~/assets/images/blog/ehdf.webp
 tags:
   - Technology
@@ -54,3 +55,5 @@ When the world needed solutions, we delivered. We proved that innovation can hap
 **Follow Up - 2022-09-27**
 
 We shifted to Bluetooth beacons, integrating them into a comprehensive IoT solution. read more on [Evolving Border Control with Bluetooth Beacons and IoT Integration](/bluetooth-beacon-border-control)
+
+[More on Our Services](/)
