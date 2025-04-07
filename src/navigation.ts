@@ -85,7 +85,7 @@ export const headerData = {
       href: '#contact',
     },
   ],
-  actions: [{ text: 'Reach us', href: getPermalink('/contact')}],
+  actions: [{ text: 'Contact us', href: getPermalink('/contact')}],
 };
 
 export const footerData = {
