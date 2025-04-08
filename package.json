@@ -27,6 +27,7 @@
     "@astrolib/seo": "^1.0.0-beta.8",
     "@fontsource-variable/inter": "^5.1.1",
     "@fontsource/philosopher": "^5.1.1",
+    "@formbricks/js": "^4.1.0",
     "@iconify-json/carbon": "^1.2.5",
     "astro": "^5.1.7",
     "astro-embed": "^0.9.0",
