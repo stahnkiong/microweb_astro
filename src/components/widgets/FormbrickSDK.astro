@@ -4,14 +4,7 @@ import Headline from '../ui/Headline.astro';
 import WidgetWrapper from '../ui/WidgetWrapper.astro';
 import Button from '~/components/ui/Button.astro';
 import ItemGrid from '../ui/ItemGrid.astro';
-import formbricks from "@formbricks/js";
 
-if (typeof window !== "undefined") {
-  formbricks.setup({
-    environmentId: "cm522bk0g0003ld03lm0229i2", 
-    appUrl: "https://app.formbricks.com",
-  });
-}
 const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
@@ -50,6 +43,7 @@ const {
     <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
       <div aria-hidden="true" class="md:basis-1/2 -mt-10 md:mt-0">
         <div id="formbricks" class="relative h-[80dvh] md:h-[70dvh] overflow-auto dark:brightness-75"> 
+
         </div>
       </div>
       <div class="md:basis-1/2 self-center">
