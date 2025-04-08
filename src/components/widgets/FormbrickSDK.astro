@@ -1,0 +1,81 @@
+---
+import type { Content as Props } from '~/types';
+import Headline from '../ui/Headline.astro';
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import Button from '~/components/ui/Button.astro';
+import ItemGrid from '../ui/ItemGrid.astro';
+import formbricks from "@formbricks/js";
+
+if (typeof window !== "undefined") {
+  formbricks.setup({
+    environmentId: "cm522bk0g0003ld03lm0229i2", 
+    appUrl: "https://app.formbricks.com",
+  });
+}
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline,
+  content = await Astro.slots.render('content'),
+  callToAction,
+  items = [],
+  columns,
+  isReversed = false,
+  isAfterContent = false,
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  containerClass={`max-w-7xl mx-auto ${isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''} ${classes?.container ?? ''}`}
+  bg={bg}
+>
+  <Headline
+    title={title}
+    subtitle={subtitle}
+    tagline={tagline}
+    classes={{
+      container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
+      title: ' font-bold tracking-tighter mb-4 font-heading',
+      subtitle: 'max-w-3xl mx-auto sm:text-center ',
+    }}
+  />
+  <div class="mx-auto max-w-6xl p-4 md:px-8">
+    <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
+      <div aria-hidden="true" class="md:basis-1/2 -mt-10 md:mt-0">
+        <div id="formbricks" class="relative h-[80dvh] md:h-[70dvh] overflow-auto dark:brightness-75"> 
+        </div>
+      </div>
+      <div class="md:basis-1/2 self-center">
+        {content && <div class="mb-4 md:mb-12 text-lg dark:text-white" set:html={content} />}
+
+        {
+          callToAction && (
+            <div class="mt-[-40px] mb-8 text-primary">
+              <Button variant="link" {...callToAction} />
+            </div>
+          )
+        }
+
+        <ItemGrid
+          items={items}
+          columns={columns}
+          classes={{
+            container: `gap-y-4 md:gap-y-8`,
+            panel: 'max-w-none',
+            title: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
+            description: 'text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2 text-sm',
+            icon: 'flex w-7 h-7 items-center justify-center text-accent',
+            action: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
+          }}
+        />
+      </div>
+    </div>
+  </div>
+</WidgetWrapper>
