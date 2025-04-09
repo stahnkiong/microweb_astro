@@ -1,7 +1,7 @@
 ---
 import PortFolio from '~/components/widgets/PortFolio.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import Formbricks from '~/components/widgets/Formbricks.astro';
+import ContentContact from '~/components/widgets/ContentContact.astro';
 ---
   <PortFolio
     id="porfolio"
@@ -118,9 +118,8 @@ classes={{container:'pt-0 md:pt-0 lg:pt-0'}}
   </Fragment>
 </CallToAction>
 
-<Formbricks
-  id="contact"
->
+<ContentContact
+  id="contact">
   <Fragment slot="content">
     <h2 class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl">
       Let's Build Extraordinary Together</h2>
@@ -130,4 +129,4 @@ classes={{container:'pt-0 md:pt-0 lg:pt-0'}}
   <Fragment slot="bg">
     <div class="absolute inset-0 backdrop-blur-lg bg-white/40 dark:bg-white/5"></div>
   </Fragment>
-</Formbricks>
+</ContentContact>

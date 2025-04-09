@@ -12,20 +12,20 @@ import Button from "../ui/Button.astro"
    <!-- Add your Web3Forms Access Key -->
   <input type="hidden" name="access_key" value="55dfd060-feb2-49f6-a517-87177ace6fef" />
   <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
-  <div class="mb-5">
+  <div class="mb-3">
     <input
       type="text"
       placeholder="Full Name"
       required
       autocomplete="name"
-      class="w-full px-4 py-3 border placeholder:text-slate-400 rounded-md outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
+      class="w-full px-4 py-2 border placeholder:text-slate-400 rounded-md outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
       name="name"
     />
     <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
       Please provide your full name.
     </div>
   </div>
-  <div class="mb-5">
+  <div class="mb-3">
     <label for="email_address" class="sr-only">Email Address</label>
     <input
       id="email_address"
@@ -34,7 +34,7 @@ import Button from "../ui/Button.astro"
       name="email"
       required
       autocomplete="email"
-      class="w-full px-4 py-3 border placeholder:text-slate-400 rounded-md outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
+      class="w-full px-4 py-2 border placeholder:text-slate-400 rounded-md outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
     />
     <div class="empty-feedback text-red-400 text-sm mt-1">
       Please provide your email address.
@@ -43,13 +43,13 @@ import Button from "../ui/Button.astro"
       Please provide a valid email address.
     </div>
   </div>
-  <div class="mb-5">
+  <div class="mb-3">
     <input
       type="tel"
       placeholder="Contact Number"
       required
       autocomplete="tel"
-      class="w-full px-4 py-3 border placeholder:text-slate-400 rounded-md outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
+      class="w-full px-4 py-2 border placeholder:text-slate-400 rounded-md outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
       name="name"
     />
     <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
@@ -61,13 +61,13 @@ import Button from "../ui/Button.astro"
       name="message"
       required
       placeholder="Your Message"
-      class="w-full px-4 py-3 border placeholder:text-slate-400 rounded-md outline-none h-36 focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
+      class="w-full px-4 py-2 border placeholder:text-slate-400 rounded-md outline-none h-36 focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
     ></textarea>
     <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
       Please enter your message.
     </div>
   </div>
-  <div class="mt-10 grid">
+  <div class="mt-5 grid">
   <Button variant="primary" type="submit">Send Message</Button>
   </div>
   <div id="web3result" class="mt-3 text-center"></div>

@@ -43,16 +43,7 @@ const {
   />
   <div class="mx-auto max-w-6xl p-4 md:px-8">
     <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
-      <div aria-hidden="true" class="md:basis-1/2 -mt-10 md:mt-0">
-        <Web3FormsUI
-          id="form"
-          title="Drop us a message today!"
-          subtitle="Whether you're interested in our services, need more information, or have a specific request, we're here to help. Let's discuss how we can work together."
-          classes={{
-          container: 'md:py-0 lg:py-0',
-           }}
-        />
-      </div>
+      
       <div class="md:basis-1/2 self-center">
         {content && <div class="mb-4 md:mb-12 text-lg dark:text-white" set:html={content} />}
 
@@ -77,6 +68,15 @@ const {
           }}
         />
       </div>
+      <div aria-hidden="true" class="md:basis-1/2 -mt-10 md:mt-0">
+        <Web3FormsUI
+          id="form"
+          classes={{
+          container: 'md:py-0 lg:py-0',
+           }}
+        />
+      </div>
+
     </div>
   </div>
 </WidgetWrapper>

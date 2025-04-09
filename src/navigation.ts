@@ -82,7 +82,7 @@ export const headerData = {
     },
     {
       text: 'Contact',
-      href: '#contact',
+      href: getPermalink('/contact'),
     },
   ],
   actions: [{ text: 'Contact us', href: getPermalink('/contact')}],
