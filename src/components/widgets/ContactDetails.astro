@@ -4,14 +4,7 @@ import Headline from '../ui/Headline.astro';
 import WidgetWrapper from '../ui/WidgetWrapper.astro';
 import Button from '~/components/ui/Button.astro';
 import ItemGrid from '../ui/ItemGrid.astro';
-import formbricks from "@formbricks/js";
-  
-  if (typeof window !== "undefined") {
-    formbricks.setup({
-      environmentId: "cm996q48p2b4yve01bgyoxv8b",
-      appUrl: "https://app.formbricks.com",
-    });
-  }
+import Web3FormsUI from '../widgets/Web3formsUI.astro';
 
 const {
   title = await Astro.slots.render('title'),
@@ -29,6 +22,7 @@ const {
   classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
+
 ---
 
 <WidgetWrapper
@@ -50,9 +44,11 @@ const {
   <div class="mx-auto max-w-6xl p-4 md:px-8">
     <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
       <div aria-hidden="true" class="md:basis-1/2 -mt-10 md:mt-0">
-        <div id="formbricks" class="relative h-[80dvh] md:h-[70dvh] overflow-auto dark:brightness-75"> 
-
-        </div>
+        <Web3FormsUI
+        id="form"
+        title="Drop us a message today!"
+        subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+        />
       </div>
       <div class="md:basis-1/2 self-center">
         {content && <div class="mb-4 md:mb-12 text-lg dark:text-white" set:html={content} />}
