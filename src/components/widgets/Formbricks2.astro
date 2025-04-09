@@ -4,6 +4,14 @@ import Headline from '../ui/Headline.astro';
 import WidgetWrapper from '../ui/WidgetWrapper.astro';
 import Button from '~/components/ui/Button.astro';
 import ItemGrid from '../ui/ItemGrid.astro';
+import formbricks from "@formbricks/js";
+  
+  if (typeof window !== "undefined") {
+    formbricks.setup({
+      environmentId: "cm996q48p2b4yve01bgyoxv8b",
+      appUrl: "https://app.formbricks.com",
+    });
+  }
 
 const {
   title = await Astro.slots.render('title'),
