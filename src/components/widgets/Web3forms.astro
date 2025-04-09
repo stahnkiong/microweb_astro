@@ -50,7 +50,7 @@ import Button from "../ui/Button.astro"
       required
       autocomplete="tel"
       class="w-full px-4 py-2 border placeholder:text-slate-400 rounded-md outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
-      name="name"
+      name="phone"
     />
     <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
       Please provide your contact number.
@@ -129,13 +129,9 @@ import Button from "../ui/Button.astro"
               result.classList.add("text-green-500");
               result.innerHTML = json.message;
               // gtag call here for successful submission
-              gtag('event', 'form_submit', {
-                'form_id': 'web3form',
-                'name': formData.get('name'),
-                'email': formData.get('email'),
-                'message': formData.get('message'),
-                'submission_status': 'success'
-              });
+              // gtag('event', 'form_submit', {
+              //   'form_id': 'web3form',
+              // });
             } else {
               console.log(response);
               result.classList.add("text-red-500");
