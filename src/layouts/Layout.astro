@@ -34,7 +34,20 @@ const { language, textDirection } = I18N;
     <Metadata {...metadata} />
     <SiteVerification />
     <Analytics />
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/css/intlTelInput.css">
+    <style>
+      /* Fix for Astro's CSS handling */
+      .iti__flag {
+        background-image: url("/flags.png");
+      }
+      
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .iti__flag {
+          background-image: url("/flags@2x.png");
+        }
+      }
+    </style>
+    <script is:inline src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/intlTelInput.min.js"></script>
     <!-- Comment the line below to disable View Transitions -->
     <!-- <ClientRouter  /> -->
   </head>
