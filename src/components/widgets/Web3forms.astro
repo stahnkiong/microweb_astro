@@ -150,10 +150,10 @@ import Button from "../ui/Button.astro"
             if (response.status == 200) {
               result.classList.add("text-green-500");
               result.innerHTML = json.message;
-              // gtag call here for successful submission
-              // gtag('event', 'form_submit', {
-              //   'form_id': 'web3form',
-              // });
+              gtag('event', 'conversion_event_submit_lead_form_1', {
+                'event_callback': callback,
+                'event_timeout': 2000,
+              });
             } else {
               console.log(response);
               result.classList.add("text-red-500");
