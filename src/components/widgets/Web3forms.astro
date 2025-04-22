@@ -96,8 +96,6 @@ import Button from "../ui/Button.astro"
 
 <script is:inline>
 
-  // use astro:page-load event if you are using View Transitions
-
   document.addEventListener("DOMContentLoaded", () => {
 
     const input = document.querySelector("#phone");
@@ -116,10 +114,6 @@ import Button from "../ui/Button.astro"
         country: "country_code"
         }),
     });
-  
-    const countryDropdown = document.getElementById("iti-0__dropdown-content");
-    countryDropdown.classList.add("dark:bg-black");
-    countryDropdown.getElementsByClassName("iti__search-input")[0].classList.add("dark:bg-black");
 
       const form = document.getElementById("web3form");
       const result = document.getElementById("web3result");
