@@ -39,11 +39,17 @@
   }
 }
 
+.dark {
+  #iti-0__dropdown-content, .iti__search-input {
+    background: black;
+  }
+}
+
 /* svg hover effect */
 .svgeffect:hover {
   .svgeffectchild path {
-  animation: svghover .8s linear;
-  fill: var(--aw-color-accent);
+    animation: svghover .8s linear;
+    fill: var(--aw-color-accent);
   }
 }
 

@@ -164,15 +164,6 @@ import Button from "../ui/Button.astro"
             }, 5000);
           });
       });
-      // Wait for the utils script to load and initialization to complete
-      input.addEventListener("countrychange", function() {
-        const countryDropdown = document.querySelector(".iti__country-list");
-        if (countryDropdown) {
-          countryDropdown.classList.add("dark:bg-black");
-          const searchInput = countryDropdown.querySelector(".iti__search-input");
-          if (searchInput) searchInput.classList.add("dark:bg-black");
-        }
-      });
     },
     { once: true },
   );
