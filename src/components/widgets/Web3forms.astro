@@ -151,8 +151,6 @@ import Button from "../ui/Button.astro"
               result.classList.add("text-green-500");
               result.innerHTML = json.message;
               gtag('event', 'conversion_event_submit_lead_form_1', {
-                'event_callback': callback,
-                'event_timeout': 2000,
               });
             } else {
               console.log(response);
