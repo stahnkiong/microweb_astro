@@ -49,4 +49,4 @@ Our new website is a testament to our commitment to leveraging the latest techno
 
 Experience the performance and innovation of our website firsthand.
 
-[github:](https://github.com/stahnkiong)
+[see on github](https://github.com/stahnkiong)

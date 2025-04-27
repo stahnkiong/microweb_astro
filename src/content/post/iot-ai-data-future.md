@@ -47,6 +47,6 @@ Let's not be solely captivated by the dazzling possibilities of future AI. The t
 
 In the age of AI, whoever has the data wins. [More on Our Services](/)
 
-Further elaborate in:
-[AI and the Tech Frontier: A Practical Path for Local Economic Growth:](https://dev.to/chee_chiongteng/ai-and-the-tech-frontier-a-practical-path-for-local-economic-growth-b77)
-[Medium:](https://medium.com/@tengcheechiong/the-buzz-around-advanced-generative-ai-is-undeniable-09d265faccbc)
+Further elaborate in:  
+[AI and the Tech Frontier: A Practical Path for Local Economic Growth](https://dev.to/chee_chiongteng/ai-and-the-tech-frontier-a-practical-path-for-local-economic-growth-b77)  
+[Medium](https://medium.com/@tengcheechiong/the-buzz-around-advanced-generative-ai-is-undeniable-09d265faccbc)  
