@@ -46,3 +46,7 @@ While the long-term potential of advanced AI is undeniable, our immediate focus 
 Let's not be solely captivated by the dazzling possibilities of future AI. The true transformative power of technology will only be realized when it is built upon a solid base of readily available data, fueled by a connected infrastructure that includes the intelligent insights offered by IoT. By focusing on these present realities, we pave the way for a more inclusive and impactful technological future for our community. The journey to advanced AI begins with the data we cultivate and the connections we build today.
 
 In the age of AI, whoever has the data wins. [More on Our Services](/)
+
+Further elaborate in:
+[AI and the Tech Frontier: A Practical Path for Local Economic Growth:](https://dev.to/chee_chiongteng/ai-and-the-tech-frontier-a-practical-path-for-local-economic-growth-b77)
+[Medium:](https://medium.com/@tengcheechiong/the-buzz-around-advanced-generative-ai-is-undeniable-09d265faccbc)
