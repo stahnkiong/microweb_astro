@@ -6,13 +6,10 @@ import Banners2 from '~/components/widgets/Banners2.astro';
 import Features4 from '~/components/widgets/Features4.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
 import ThreeJs from '~/components/widgets/ThreeJs.astro';
-const metadata = {
-  title: 'MicroWeb — Software, Web Development & System Integration',
-  ignoreTitleTemplate: true,
-};
+
 ---
 
-<Layout metadata={metadata}>
+<Layout>
   <ThreeJs/>
   <!-- Hero Widget ******************* -->
   <Hero
@@ -34,10 +31,10 @@ const metadata = {
         classes={{ container: 'mb-96 md:mb-0 md:pb-20' }}
         items={[
           {
-            title: 'Custom Software for Growth',
+            title: 'Custom Web Application for Growth',
             description: "Secure, Seamless and <br/>Tailored Solutions",
             link: '/software',
-            icon: 'carbon:analytics-custom',
+            icon: 'carbon:network-enterprise',
             callToAction: {
               variant: 'link',
               class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
@@ -45,7 +42,18 @@ const metadata = {
             },
           },
           {
-            title: 'AI-Powered Marketing for Reach',
+            title: 'Bespoke Web Design & Development for UI/UX',
+            description: "Navigating Digital Landscape<br/> with Confidence",
+            link: '/web-development',
+            icon: 'carbon:dashboard',
+            callToAction: {
+              variant: 'link',
+              class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+              icon: 'carbon:arrow-right',
+            },
+          },
+          {
+            title: 'AI-Powered Marketing for Branding',
             description: "Personalized Users' <br/>Experiences",
             link: '/ai-marketing',
             icon: 'carbon:machine-learning-model',
@@ -66,17 +74,7 @@ const metadata = {
               icon: 'carbon:arrow-right',
             },
           },
-          {
-            title: 'Bespoke Web Development for UI/UX',
-            description: "Navigating Digital Landscape<br/> with Confidence",
-            link: '/web-development',
-            icon: 'carbon:network-enterprise',
-            callToAction: {
-              variant: 'link',
-              class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-              icon: 'carbon:arrow-right',
-            },
-          },
+          
         ]}
       >
   </Features4>
