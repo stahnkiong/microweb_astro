@@ -10,8 +10,8 @@ site:
 metadata:
   title:
     default: Web Design, Web Application Development, System Integration & AI Branding Services
-    template: '%s — MicroWeb'
-  description: "\U0001F680 MicroWeb is your digital partner for web design, web application development, and innovative AI branding solutions in Kuching and Sarawak. We also offer system integration and serve clients across Malaysia. Boost your ROI with our expert services!"
+    template: '%s — KL & Kuching, Sarawak | MicroWeb'
+  description: "\U0001F680 MicroWeb is your digital partner for web design, web application development and innovative AI branding solutions in Kuching, Sarawak. We also offer system integration and serve clients across Malaysia. Boost your ROI with our expert services!"
   robots:
     index: true
     follow: true

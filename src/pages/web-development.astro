@@ -8,29 +8,28 @@ import Steps3 from '~/components/widgets/Steps3.astro';
 import Features5 from '~/components/widgets/Features5.astro';
 import FollowUp from '~/components/widgets/FollowUp.astro';
 const metadata = {
-  title: 'Custom Web Development - KL - Kuching | MicroWeb',
-  ignoreTitleTemplate: true,
+  title: 'Custom Web Design & Development',
 };
 ---
 
 <Layout metadata={metadata}>
   <ThreeJs/>
   <Hero2
-  tagline="Custom Web Development"
+  tagline="Professional Web Design Services"
   actions={[
     { variant: 'primary', text: "Let's Chat", href: '#contact' },
   ]}
   image={{
     src: '~/assets/images/web.webp',
-    alt: 'UI UX development multiple devices',
+    alt: 'responsive website design across multiple devices',
   }}
 >
   <Fragment slot="title">
-    Attracts, engages and <span class="text-primary text-gradient highlight tracking-tight">Converts</span> visitors into customers
+    Website Design that attracts and <span class="text-primary text-gradient highlight tracking-tight">Converts</span> visitors into customers
   </Fragment>
 
   <Fragment slot="subtitle">
-    Build a digital experience that engages and retains customers. Our immersive web development draws your audience in, building lasting brand connections
+    We craft stunning and user-friendly websites tailored to your business needs. Our designs not only attract but also engage and convert your target audience.
   </Fragment>
   <Fragment slot="content">
     <Features5
@@ -38,7 +37,7 @@ const metadata = {
         classes={{ container: 'py-8' }}
         items={[
         {
-            description: 'Custom<br/>Development',
+            description: 'Custom<br/>Web Design',
             icon: 'carbon:ibm-watsonx-code-assistant',
         },
         {
@@ -70,7 +69,7 @@ const metadata = {
 id="features"
 tagline="Immersive Web Experiences"
 columns={3}
-title="Artistry + Technology + Intelligent Infrastructure"
+title="Artistry + Technology + Intelligent Infrastructure for Websites That Convert"
 subtitle="From initial landing to final conversion, we prioritize user experience to maximize engagement and satisfaction, ensuring a positive brand interaction"
 classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
 items={[
@@ -112,9 +111,9 @@ items={[
 <Steps3
 image={{
   src: '~/assets/images/webdev.webp',
-  alt: 'happy team',
+  alt: 'happy team designing website',
 }}
-    title="Phased Web Development"
+    title="Our Phased Web Design & Development Process"
     subtitle="Collaborate with us from prototype to launch, paying in phases and ensuring you're completely satisfied with the final design. <strong>We offer design flexibility, not rigid templates</strong>"
     items={[
       {

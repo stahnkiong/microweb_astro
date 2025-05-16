@@ -8,15 +8,14 @@ import Steps3 from '~/components/widgets/Steps3.astro';
 import Features5 from '~/components/widgets/Features5.astro';
 import FollowUp from '~/components/widgets/FollowUp.astro';
 const metadata = {
-  title: 'AI Marketing - KL - Kuching | MicroWeb',
-  ignoreTitleTemplate: true,
+  title: 'AI Marketing & Branding',
 };
 ---
 
 <Layout metadata={metadata}>
   <ThreeJs/>
   <Hero2
-  tagline="AI-Powered Digital Marketing"
+  tagline="AI-Powered Branding & Strategy"
   actions={[
     { variant: 'primary', text: "Let's Chat", href: '#contact' },
   ]}
@@ -26,11 +25,11 @@ const metadata = {
   }}
 >
   <Fragment slot="title">
-    Personalize Experiences and boost your  <span class="text-primary text-gradient highlight tracking-tight">ROI with AI</span>
+    Boost your brand with<span class="text-primary text-gradient highlight tracking-tight"> AI-Driven Insights</span>
   </Fragment>
 
   <Fragment slot="subtitle">
-    Reach the right audience with the right message at the right time. We use data-driven insights and personalized strategies to build loyalty and fuel growth.
+    Reach the right audience with the right message at the right time. We use data-driven insights and personalized strategies to build lasting brand connections in the market.
   </Fragment>
   <Fragment slot="content">
     <Features5
@@ -38,7 +37,7 @@ const metadata = {
         classes={{ container: 'py-8' }}
         items={[
         {
-            description: 'Right<br/>Customers',
+            description: 'Targeted<br/>Branding',
             icon: 'carbon:person-favorite',
         },
         {
@@ -68,10 +67,10 @@ const metadata = {
 
 <Features4
 id="features"
-tagline="Personalized Connections. Measurable Growth"
+tagline="Data-Driven Branding for Lasting Impact"
 columns={3}
-title="How Our AI Marketing Works"
-subtitle="We use AI to drive smarter marketing results. By analyzing data, we create personalized messages that maximize ROI and build lasting customer relationships, leveraging natural language processing and machine learning to understand customer needs."
+title="How AI Fuels Smarter Branding"
+subtitle="We leverage AI to gain deep insights into your target audience, enabling us to craft personalized brand messages, optimize brand experiences, and build stronger, more loyal customer relationships in Kuching and beyond."
 classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
 items={[
   {
@@ -81,7 +80,7 @@ items={[
 
   },
   {
-    title: 'Personalized Experiences',
+    title: 'Personalized Brand Experiences',
     description: "Crafts unique customer journeys",
     icon: 'carbon:passenger-drinks',
 
@@ -97,8 +96,8 @@ items={[
     icon: 'carbon:machine-learning-model',
   },
   {
-    title: 'Result Optimization',
-    description: "Maximizes marketing ROI automatically",
+    title: 'Brand ROI Optimization',
+    description: "Automatically refine your branding strategies",
     icon: 'carbon:quadrant-plot',
   },
   {
@@ -114,10 +113,10 @@ items={[
 <Steps3
 image={{
   src: '~/assets/images/ai2.webp',
-  alt: 'happy team',
+  alt: 'happy team developing AI branding strategies',
 }}
     title="Campaign Approach and Process"
-    subtitle='Driving Growth with AI: Our Proven 5-Stage Approach'
+    subtitle='Elevating Brands Growth with AI: Our Proven 5-Stage Approach'
     items={[
       {
         title: 'Stage 1: <span class="font-medium">Discovery & Strategy</span>',
@@ -126,7 +125,7 @@ image={{
         icon: 'carbon:forum',
       },
       {
-        title: 'Stage 2: <span class="font-medium">Implement & Integrate AI</span>',
+        title: 'Stage 2: <span class="font-medium">AI Implementation & Brand Integration</span>',
         description:
           "Setting up the AI infrastructure, integrating data, and connecting to your existing platforms",
         icon: 'carbon:devices',
@@ -144,7 +143,7 @@ image={{
       },
       {
         title: 'Stage 5: <span class="font-medium">Optimize & Continuously Improve</span>',
-        description: 'Refining campaigns, adjusting strategies, and ensuring maximum ROI through ongoing optimization',
+        description: 'Refining brand messages, adjusting strategies, and ensuring maximum ROI through ongoing optimization',
         icon: 'carbon:cloud-monitoring',
       },
     ]}

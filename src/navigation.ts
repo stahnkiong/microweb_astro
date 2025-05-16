@@ -10,24 +10,24 @@ export const headerData = {
       text: 'Services',
       links: [
         {
-          text: 'Custom Software',
+          text: 'Web Application',
           href: getPermalink('/software'),
         },
         {
-          text: 'AI Marketing',
-          href: getPermalink('/ai-marketing'),
+          text: 'Website Design',
+          href: getPermalink('/web-development'),
+        },
+        {
+          text: 'Mobile App',
+          href: getPermalink('/mobile-app'),
         },
         {
           text: 'System Integration',
           href: getPermalink('/integration'),
         },
         {
-          text: 'Web Development',
-          href: getPermalink('/web-development'),
-        },
-        {
-          text: 'Mobile App',
-          href: getPermalink('/mobile-app'),
+          text: 'AI Marketing',
+          href: getPermalink('/ai-marketing'),
         },
       ],
     },
@@ -94,11 +94,11 @@ export const footerData = {
       title: 'Services',
       links: [
         {
-          text: 'Custom Software',
+          text: 'Custom Web App',
           href: getPermalink('/software'),
         },
         {
-          text: 'AI Marketing',
+          text: 'AI Branding',
           href: getPermalink('/ai-marketing'),
         },
         {
@@ -106,7 +106,7 @@ export const footerData = {
           href: getPermalink('/integration'),
         },
         {
-          text: 'Web Development',
+          text: 'Website Development',
           href: getPermalink('/web-development'),
         },
         {
