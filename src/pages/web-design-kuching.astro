@@ -1,0 +1,161 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import ThreeJs from "~/components/widgets/ThreeJs.astro";
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Banners2 from '~/components/widgets/Banners2.astro';
+import Features4 from '~/components/widgets/Features4.astro';
+import Steps3 from '~/components/widgets/Steps3.astro';
+import Features5 from '~/components/widgets/Features5.astro';
+import FollowUp from '~/components/widgets/FollowUp.astro';
+const metadata = {
+  title: 'Custom Web Design & Development',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero2
+  tagline="Professional Web Design Services"
+  actions={[
+    { variant: 'primary', text: "Let's Chat", href: '#contact' },
+  ]}
+  image={{
+    src: '~/assets/images/web_design_development_kuching.webp',
+    alt: 'responsive website design across multiple devices',
+  }}
+>
+  <Fragment slot="title">
+    Website Design that attracts and <span class="text-primary text-gradient highlight tracking-tight">Converts</span> visitors into customers
+  </Fragment>
+
+  <Fragment slot="subtitle">
+    We craft stunning and user-friendly websites tailored to your business needs. Our designs not only attract but also engage and convert your target audience.
+  </Fragment>
+  <Fragment slot="content">
+    <Features5
+        columns={4}
+        classes={{ container: 'py-8' }}
+        items={[
+        {
+            description: 'Custom<br/>Web Design',
+            icon: 'carbon:ibm-watsonx-code-assistant',
+        },
+        {
+            description: 'Responsive <br/>Any Device',
+            icon: 'carbon:devices',
+        },
+        {
+            description: 'Transparent<br/>Pricing',
+            icon: 'carbon:pricing-consumption',
+        },
+        {
+            description: 'Agile<br/>Development',
+            icon: 'carbon:chart-radar',
+        }
+        ]}
+        >
+    </Features5>
+  </Fragment>
+  <Fragment slot="bg">
+    <div class="absolute bg-page inset-0 grid grid-cols-2 -space-x-52 opacity-80 md:opacity-85">
+      <div class="blur-[106px] h-64 bg-gradient-to-br from-violet-300 to-purple-500 md:to-purple-300 dark:from-blue-700"></div>
+      <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-300 to-sky-200 dark:to-indigo-600"></div>
+    </div>
+  </Fragment>
+</Hero2>
+<Banners2 />
+
+<Features4
+id="features"
+tagline="Immersive Web Experiences"
+columns={3}
+title="Artistry + Technology + Intelligent Infrastructure for Websites That Convert"
+subtitle="From initial landing to final conversion, we prioritize user experience to maximize engagement and satisfaction, ensuring a positive brand interaction"
+classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
+items={[
+  {
+    title: 'User-Centered Design',
+    description: "Easy to use, enjoyable to explore. Design with your users in mind",
+    icon: 'carbon:customer',
+  },
+  {
+    title: 'Fast Loading, Everywhere',
+    description: "330 global CDN<br/>Fast loading for users worldwide",
+    icon: 'carbon:earth-filled',
+  },
+  {
+    title: 'Modern User Experience',
+    description: "Combining static site generation and dynamic technologies for interactivity",
+    icon: 'carbon:image-store-local',
+  },
+  {
+    title: 'Strategic SEO',
+    description: "Optimized for best-in-class Core Web Vitals",
+    icon: 'carbon:search-locate-mirror',
+  },
+  {
+    title: 'Consistent, Any Device',
+    description: "Works seamlessly on all devices and browsers",
+    icon: 'carbon:devices',
+  },
+  {
+    title: 'Custom-Built',
+    description: "Build specifically for your unique needs",
+    icon: 'carbon:ibm-z-cloud-mod-stack',
+  },
+]}
+>
+
+</Features4>
+
+<Steps3
+image={{
+  src: '~/assets/images/webdev.webp',
+  alt: 'happy team designing website',
+}}
+    title="Our Phased Web Design & Development Process"
+    subtitle="Collaborate with us from prototype to launch, paying in phases and ensuring you're completely satisfied with the final design. <strong>We offer design flexibility, not rigid templates</strong>"
+    items={[
+      {
+        title: 'Stage 1: <span class="font-medium">Discovery & Planning</span>',
+        description:
+          "We talk with you to understand what you need. We figure out what your website should do and who will use it. We also set a timeline and budget",
+        icon: 'carbon:forum',
+      },
+      {
+        title: 'Stage 2: <span class="font-medium">Design & Prototyping</span>',
+        description:
+          "We create simple drawings to show how your website will be organized. Then, we create designs & mockups to show how it will look",
+        icon: 'carbon:devices',
+      },
+      {
+        title: 'Stage 3: <span class="font-medium">Development & Implementation</span>',
+        description:
+          'Our developers build your website using the latest technology. We make sure everything works correctly and is secure',
+        icon: 'carbon:ibm-watsonx-code-assistant',
+      },
+      {
+        title: 'Stage 4: <span class="font-medium">Testing & Quality Assurance</span>',
+        description: 'We test your website on different devices (phones, tablets, computers) and browsers to make sure it works well for everyone',
+        icon: 'carbon:ibm-watsonx-code-assistant',
+      },
+      {
+        title: 'Stage 5: <span class="font-medium">Deployment & Launch</span>',
+        description: 'We put your website online and help you get started. We also give you training and instruction',
+        icon: 'carbon:cloud-data-ops',
+      },
+      {
+        title: 'Stage 6: <span class="font-medium">Maintenance & Support</span>',
+        description: 'We keep your website safe, up-to-date, and running smoothly. We also help you if you have any questions or problems',
+        icon: 'carbon:cloud-monitoring',
+      },
+    ]}
+  >
+  <Fragment slot="bg">
+    <div class="absolute inset-0 backdrop-blur-lg bg-black/70 dark:bg-black/30"></div>
+  </Fragment>
+  </Steps3>
+
+  <FollowUp />
+  
+  <ThreeJs/>
+</Layout>
