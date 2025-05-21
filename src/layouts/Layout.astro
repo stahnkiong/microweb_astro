@@ -11,7 +11,6 @@ import Metadata from '~/components/common/Metadata.astro';
 import SiteVerification from '~/components/common/SiteVerification.astro';
 // import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
-import intlTelInput from 'intl-tel-input'
 // Comment the line below to disable View Transitions
 // import { ClientRouter  } from 'astro:transitions';
 
@@ -46,7 +45,7 @@ const { language, textDirection } = I18N;
     </script>
 
     
-    <link rel="stylesheet" href="/node_modules/intl-tel-input/build/css/intlTelInput.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/css/intlTelInput.css">
     <style>
       /* Fix for Astro's CSS handling */
       .iti__flag {
@@ -59,15 +58,15 @@ const { language, textDirection } = I18N;
         }
       }
     </style>
-    <script is:inline src="/node_modules/intl-tel-input/build/js/intlTelInput.min.js" defer></script>
-    <script is:inline defer>
-
+    
+    <script>
+      import intlTelInput from "intl-tel-input";
       document.addEventListener("DOMContentLoaded", () => {
     
         const input = document.querySelector("#phone");
         intlTelInput(input, {
             // any initialisation options go here
-            loadUtils: () => import("/node_modules/intl-tel-input/build/js/utils.js"),
+            loadUtils: () => import("intl-tel-input/build/js/utils.js"),
             initialCountry: "auto",
             geoIpLookup: function(callback) {
               fetch("https://ipapi.co/json")
