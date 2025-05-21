@@ -11,7 +11,7 @@ tags:
   - Mobile Optimization
   - Conversion Rate Optimization
 metadata:
-  canonical: https://www.microweb.my/kuching-fast-websites
+  canonical: https://www.microweb.my/web-design-sarawak
 ---
 
 > **The Reality:** 53% of mobile users in Sarawak abandon websites that take longer than 3 seconds to load. For Kuching businesses, slow websites mean lost sales and damaged credibility.
@@ -33,7 +33,7 @@ Modern web design isn't just about aesthetics - it's about delivering lightning-
 
 ### 3. SEO Benefits for Kuching Businesses
 Google prioritizes fast sites in local search results:
-- Core Web Vitals directly impact "web design Kuching" rankings
+- Core Web Vitals directly impact rankings
 - 1-second delay = 7% loss in conversions (*Portent 2023*)
 - Fast sites earn 2x more backlinks from Sarawak-based directories
 
@@ -66,4 +66,4 @@ For Kuching businesses competing in Sarawak's digital economy, website speed isn
 **Ready to accelerate?**  
 [Explore Our Kuching Web Design Packages](/web-design-kuching)
 
-*Serving Sarawak businesses since 2012 - 200+ websites launched.*
+*Serving Sarawak businesses since 2012 - 300+ websites launched.*
