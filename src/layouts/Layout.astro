@@ -13,7 +13,7 @@ import SiteVerification from '~/components/common/SiteVerification.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
 // Comment the line below to disable View Transitions
 // import { ClientRouter  } from 'astro:transitions';
-
+import 'intl-tel-input/build/css/intlTelInput.css';
 import type { MetaData as MetaDataType } from '~/types';
 
 export interface Props {
@@ -44,8 +44,6 @@ const { language, textDirection } = I18N;
       gtag('config', 'G-GM5ZSBEGN2');
     </script>
 
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/css/intlTelInput.css">
     <style>
       /* Fix for Astro's CSS handling */
       .iti__flag {
@@ -58,82 +56,7 @@ const { language, textDirection } = I18N;
         }
       }
     </style>
-    
-    <script>
-      import intlTelInput from "intl-tel-input";
-      document.addEventListener("DOMContentLoaded", () => {
-    
-        const input = document.querySelector("#phone");
-        intlTelInput(input, {
-            // any initialisation options go here
-            loadUtils: () => import("intl-tel-input/build/js/utils.js"),
-            initialCountry: "auto",
-            geoIpLookup: function(callback) {
-              fetch("https://ipapi.co/json")
-                .then(function(res) { return res.json(); })
-                .then(function(data) { callback(data.country_code); })
-                .catch(function() { callback("us"); });
-            },
-            hiddenInput: (_telInputName) => ({
-            phone: "phone_full",
-            country: "country_code"
-            }),
-        });
-    
-          const form = document.getElementById("web3form");
-          const result = document.getElementById("web3result");
-    
-          form.addEventListener("submit", function (e) {
-            e.preventDefault();
-            form.classList.add("was-validated");
-            if (!form.checkValidity()) {
-              form.querySelectorAll(":invalid")[0].focus();
-              return;
-            }
-            const formData = new FormData(form);
-            const object = Object.fromEntries(formData);
-            const json = JSON.stringify(object);
-    
-            result.innerHTML = "Sending...";
-    
-            fetch("https://api.web3forms.com/submit", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-              },
-              body: json,
-            })
-              .then(async (response) => {
-                const json = await response.json();
-                if (response.status == 200) {
-                  result.classList.add("text-green-500");
-                  result.innerHTML = json.message;
-                  gtag('event', 'conversion_event_submit_lead_form_1', {
-                  });
-                } else {
-                  console.log(response);
-                  result.classList.add("text-red-500");
-                  result.innerHTML = json.message;
-                }
-              })
-              .catch((error) => {
-                console.log(error);
-                result.innerHTML = "Something went wrong!";
-              })
-              .then(function () {
-                form.reset();
-                form.classList.remove("was-validated");
-                setTimeout(() => {
-                  result.style.display = "none";
-                }, 5000);
-              });
-          });
-        },
-        { once: true },
-      );
-    </script>
-    
+    <!-- <script is:inline src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/intlTelInput.min.js"></script> -->
     <!-- Comment the line below to disable View Transitions -->
     <!-- <ClientRouter  /> -->
   </head>
