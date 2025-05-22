@@ -152,6 +152,14 @@ export const footerData = {
       title: 'Support',
       links: [
         {
+          text: 'Kuching Web Design Specialist',
+          href: getPermalink('/web-design-kuching'),
+        },
+        {
+          text: 'Sarawak Web Development',
+          href: getPermalink('/web-design-sarawak'),
+        },
+        {
           text: 'Education',
           href: getPermalink('/education'),
         },

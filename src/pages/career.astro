@@ -4,8 +4,7 @@ import Features3 from '~/components/widgets/Features3.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import Formbricks from '~/components/widgets/Formbricks.astro';
-
+import ContentContact from '~/components/widgets/ContentContact.astro';
 const metadata = {
   title: 'Career - KL - Kuching | MicroWeb',
 };
@@ -91,9 +90,8 @@ const metadata = {
     ]}
   />
 
-  <Formbricks
-  id="contact"
->
+  <ContentContact
+  id="contact">
   <Fragment slot="content">
     <h2 class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl">
       Let's Build Extraordinary Together</h2>
@@ -103,6 +101,6 @@ const metadata = {
   <Fragment slot="bg">
     <div class="absolute inset-0 backdrop-blur-lg bg-white/40 dark:bg-white/5"></div>
   </Fragment>
-</Formbricks>
+</ContentContact>
 
 </Layout>

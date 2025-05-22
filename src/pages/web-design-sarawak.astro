@@ -1,0 +1,206 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Banners2 from '~/components/widgets/Banners2.astro';
+import Features4 from '~/components/widgets/Features4.astro';
+import Steps3 from '~/components/widgets/Steps3.astro';
+import Features5 from '~/components/widgets/Features5.astro';
+import FollowUp from '~/components/widgets/FollowUp.astro';
+
+const metadata = {
+  title: "Web Design Sarawak | Sarawak Market Specialists",
+  description: "For KL/West Malaysian/overseas businesses expanding to Sarawak: Localized web solutions with Kuching-specific SEO. Packages from RM2,000. 12+ years serving local & international clients."
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero2
+    tagline="Sarawak Market Entry Experts"
+    actions={[
+      { variant: 'primary', text: "Get Sarawak Strategy Session", href: '#contact' },
+      { variant: 'secondary', text: "Chat with Our Kuching Team", target:'_blank', href: 'https://wa.me/60168880650' }
+    ]}
+    image={{
+      src: '~/assets/images/web_design_development_kuching.webp',
+      alt: 'responsive website design across multiple devices',
+    }}
+  >
+    <Fragment slot="title">
+      <span class="text-primary text-gradient highlight tracking-tight">Global Brands</span> Trust Our Kuching Web Expertise
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      We help West Malaysian and international businesses create <strong>Sarawak-optimized</strong> websites that connect with local audiences while perfectly aligning with your existing UI/UX systems.
+      <div class="mt-4 flex gap-4 flex-wrap mb-4">
+        <span class="badge badge-lg">🌍 Global UI Standards</span>
+        <span class="badge badge-lg">🔄 Seamless Integration</span>
+        <span class="badge badge-lg">📱 Mobile-First Sarawak</span>
+      </div>
+    </Fragment>
+
+    <Fragment slot="content">
+      <Features5
+        columns={4}
+        classes={{ container: 'py-8' }}
+        items={[
+          {
+            description: 'Sarawak-SEO<br/>Integration',
+            icon: 'carbon:language',
+          },
+          {
+            description: 'Global + Local<br/>Hosting',
+            icon: 'carbon:cloud-service-management',
+          },
+          {
+            description: 'Cultural<br/>Adaptation',
+            icon: 'carbon:group-account',
+          },
+          {
+            description: 'Bilingual<br/>Support',
+            icon: 'carbon:translate',
+          }
+        ]}
+      />
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute bg-page inset-0 grid grid-cols-2 -space-x-52 opacity-80 md:opacity-85">
+        <div class="blur-[106px] h-64 bg-gradient-to-br from-violet-300 to-purple-500 md:to-purple-300 dark:from-blue-700"></div>
+        <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-300 to-sky-200 dark:to-indigo-600"></div>
+      </div>
+    </Fragment>
+  </Hero2>
+
+  <Banners2 />
+
+  <Features4
+    id="why-global"
+    tagline="Why International Businesses Choose Us"
+    columns={3}
+    title="Your Bridge to Sarawak's Digital Market"
+    subtitle="We understand both global standards and Sarawak's unique business culture"
+    classes={{ container: 'py-20 bg-white/80 dark:bg-black/80' }}
+    items={[
+      {
+        title: 'Market-Specific SEO',
+        description: "Optimized for 'Kuching' + your global keywords",
+        icon: 'carbon:search-advanced',
+      },
+      {
+        title: 'Hybrid Hosting',
+        description: "Global CDN with edge nodes",
+        icon: 'carbon:data-center',
+      },
+      {
+        title: 'Cultural Localization',
+        description: "Adapted for Sarawak's multicultural audience",
+        icon: 'carbon:user-certification',
+      },
+      {
+        title: 'Global CMS Integration',
+        description: "Sync with your existing app technology",
+        icon: 'carbon:cics-system-group',
+      },
+      {
+        title: 'Compliance Ready',
+        description: "Sarawak business + Malaysia PDPA aligned",
+        icon: 'carbon:security',
+      },
+      {
+        title: 'KL-Kuching Coordination',
+        description: "Seamless collaboration across regions",
+        icon: 'carbon:collaborate',
+      },
+    ]}
+  />
+
+  <Steps3
+    image={{
+      src: '~/assets/images/webdev.webp',
+      alt: 'international team meeting with Kuching staff',
+    }}
+    title="Our Global-to-Local Process"
+    subtitle="Proven framework for international businesses entering Sarawak"
+    items={[
+      {
+        title: '1. Market Alignment',
+        description: "Analyze your global assets + Sarawak opportunities",
+        icon: 'carbon:earth-southeast-asia-filled',
+      },
+      {
+        title: '2. Cultural Adaptation',
+        description: "Localize content for Sarawak audiences",
+        icon: 'carbon:group-account',
+      },
+      {
+        title: '3. Technical Integration',
+        description: "Connect with your existing systems",
+        icon: 'carbon:integration',
+      },
+      {
+        title: '4. Local SEO Deployment',
+        description: "Dominate 'Kuching' search results",
+        icon: 'carbon:location-filled',
+      },
+      {
+        title: '5. Performance Testing',
+        description: "Validate across Sarawak networks",
+        icon: 'carbon:meter',
+      },
+      {
+        title: '6. Ongoing Local Support',
+        description: "Keep your website safe, up-to-date",
+        icon: 'carbon:customer-service',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 backdrop-blur-lg bg-black/70 dark:bg-black/30"></div>
+    </Fragment>
+  </Steps3>
+
+  <!-- Special Section for International Clients -->
+  <section class="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-gray-900 dark:to-gray-800 py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">For Businesses Expanding to Sarawak</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold mb-4">West Malaysian Companies</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <span class="text-primary mr-2">✓</span>
+              <span>Dual-location website strategy</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-primary mr-2">✓</span>
+              <span>KL-Kuching content synchronization</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-primary mr-2">✓</span>
+              <span>Peninsular-Sarawak SEO bridging</span>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold mb-4">International Businesses</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <span class="text-primary mr-2">✓</span>
+              <span>Sarawak market entry consulting</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-primary mr-2">✓</span>
+              <span>Multilingual support (English/Malay/Chinese)</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-primary mr-2">✓</span>
+              <span>Global brand + local adaptation</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FollowUp />
+  
+</Layout>

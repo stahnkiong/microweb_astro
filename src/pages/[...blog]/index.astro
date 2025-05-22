@@ -12,7 +12,7 @@ import { getStaticPathsBlogPost, blogPostRobots } from '~/utils/blog';
 import { findImage } from '~/utils/images';
 import type { MetaData } from '~/types';
 import RelatedPosts from '~/components/blog/RelatedPosts.astro';
-import Formbricks from '~/components/widgets/Formbricks.astro';
+import ContentContact from '~/components/widgets/ContentContact.astro';
 export const prerender = true;
 
 export const getStaticPaths = (async () => {
@@ -51,9 +51,9 @@ const metadata = merge(
   </SinglePost>
   <ToBlogLink />
   <RelatedPosts post={post} />
-  <Formbricks
-  id="contact"
->
+
+<ContentContact
+  id="contact">
   <Fragment slot="content">
     <h2 class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl">
       Let's Build Extraordinary Together</h2>
@@ -63,5 +63,5 @@ const metadata = merge(
   <Fragment slot="bg">
     <div class="absolute inset-0 backdrop-blur-lg bg-white/40 dark:bg-white/5"></div>
   </Fragment>
-</Formbricks>
+</ContentContact>
 </Layout>

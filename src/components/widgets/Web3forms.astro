@@ -96,27 +96,25 @@ import Button from "../ui/Button.astro"
 <script>
   import intlTelInput from "intl-tel-input";
   document.addEventListener("DOMContentLoaded", () => {
-
-const input = document.querySelector("#phone");
-if (input instanceof HTMLInputElement) {
-  intlTelInput(input, {
-      // any initialisation options go here
-      loadUtils: () => import("intl-tel-input/build/js/utils.js"),
-      initialCountry: "auto",
-      geoIpLookup: function(callback) {
-        fetch("https://ipapi.co/json")
-          .then(function(res) { return res.json(); })
-          .then(function(data) { callback(data.country_code); })
-          .catch(function() { callback("us"); });
-      },
-      hiddenInput: (_telInputName) => ({
-      phone: "phone_full",
-      country: "country_code"
-      }),
+    const input = document.querySelector("#phone");
+    if (input instanceof HTMLInputElement) {
+      intlTelInput(input, {
+          // any initialisation options go here
+          loadUtils: () => import("intl-tel-input/build/js/utils.js"),
+          initialCountry: "auto",
+          geoIpLookup: function(callback) {
+            fetch("https://ipapi.co/json")
+              .then(function(res) { return res.json(); })
+              .then(function(data) { callback(data.country_code); })
+              .catch(function() { callback("us"); });
+          },
+          hiddenInput: (_telInputName) => ({
+          phone: "phone_full",
+          country: "country_code"
+          }),
+      });
+    }
   });
-}
-  }
-  );
 </script>
 <script is:inline defer>
 
