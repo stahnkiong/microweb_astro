@@ -59,15 +59,22 @@ const {
   </div>
 </WidgetWrapper>
 <CallToAction
-  title="Build from the ground up, starting small"
-  subtitle="Reach out to us and let's start discussing your project"
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Contact Us',
-        href: '/contact',
-      },
-    ]}
+title="Start Small, Scale Smart <br/> Let’s Build Your Digital Solution"
+subtitle="Get started today with a free consultation. No commitments, just real solutions."
+actions={[
+  {
+    variant: 'primary',
+    text: 'Free Consultation',
+    href: '/contact',
+    icon: 'tabler:arrow-right' // Optional: Adds visual urgency
+  },
+  {
+    variant: 'secondary',
+    text: 'Trusted by 200+ SMEs', // Emphasizes social proof
+    href: '/clients',  // Links to your client portfolio/case studies
+    icon: 'tabler:users'  // People icon for social proof
+  }
+]}
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-white/70 dark:bg-black/70"></div>

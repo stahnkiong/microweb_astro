@@ -31,10 +31,10 @@ import ThreeJs from '~/components/widgets/ThreeJs.astro';
         classes={{ container: 'mb-96 md:mb-0 md:pb-20' }}
         items={[
           {
-            title: 'Custom Web Application for Growth',
-            description: "Secure, Seamless and <br/>Tailored Solutions",
-            link: '/software',
-            icon: 'carbon:network-enterprise',
+            title: 'Web Design & Development for UI/UX',
+            description: "Navigating Digital Landscape<br/> with Confidence",
+            link: '/web-development',
+            icon: 'carbon:dashboard',
             callToAction: {
               variant: 'link',
               class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
@@ -42,10 +42,10 @@ import ThreeJs from '~/components/widgets/ThreeJs.astro';
             },
           },
           {
-            title: 'Bespoke Web Design & Development for UI/UX',
-            description: "Navigating Digital Landscape<br/> with Confidence",
-            link: '/web-development',
-            icon: 'carbon:dashboard',
+            title: 'Custom Web Application for Growth',
+            description: "Secure, Seamless and <br/>Tailored Solutions",
+            link: '/software',
+            icon: 'carbon:network-enterprise',
             callToAction: {
               variant: 'link',
               class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
@@ -86,43 +86,39 @@ import ThreeJs from '~/components/widgets/ThreeJs.astro';
     src: '~/assets/images/process.webp',
     alt: 'happy people',
   }}
-    title="Our Streamlined Process for Web Design & App Development Projects"
-    subtitle='<strong>Invest wisely in your digital presence.</strong> Our pay-per-service, phased approach allows you to start with core features for your website or application and seamlessly scale as your business grows.'
-    items={[
-      {
-        title: 'Stage 1: <span class="font-medium">Planning & Discovery</span>',
-        description:
-          "Innovate beyond traditional data entry and solve your business challenges with cutting-edge technology. Our process starts by defining your project's scope, goals, and plan",
-        icon: 'carbon:forum',
-      },
-      {
-        title: 'Stage 2: <span class="font-medium">Design & Prototyping</span>',
-        description:
-          "We start by creating mockups, prototypes, and technical specifications to truly understand your needs. This iterative process allows us to refine the solution and deliver a successful project",
-        icon: 'carbon:devices',
-      },
-      {
-        title: 'Stage 3: <span class="font-medium">Development & Testing</span>',
-        description:
-          'Our Agile and CI/CD approach means we develop software in small, integrated components. This allows for continuous testing and integration, ensuring frequent updates and a solution that can easily scale with your business',
-        icon: 'carbon:ibm-watsonx-code-assistant',
-      },
-      {
-        title: 'Stage 4: <span class="font-medium">Deployment & Release</span>',
-        description: 'We handle deployment to production servers or app stores, manage releases, and coordinate with stakeholders and support to resolve post-launch issues',
-        icon: 'carbon:cloud-data-ops',
-      },
-      {
-        title: 'Stage 5: <span class="font-medium">Maintenance & Evolution</span>',
-        description: 'We provide ongoing maintenance, performance optimizations, and feature updates to maximize your software investment. Because software is a living product that constantly evolves.',
-        icon: 'carbon:cloud-monitoring',
-      },
-    ]}
-  >
+  title="Simple, Effective Process for Digital Projects"
+  subtitle='<strong>Start small, scale smart.</strong> Our flexible approach lets you begin with essential features and expand as needed.'
+  items={[
+    {
+      title: '1. <span class="font-medium">Understand</span>',
+      description: "We listen first to fully grasp your business needs and goals",
+      icon: 'carbon:forum',
+    },
+    {
+      title: '2. <span class="font-medium">Design</span>',
+      description: "We create prototypes to visualize and refine your solution",
+      icon: 'carbon:devices',
+    },
+    {
+      title: '3. <span class="font-medium">Build</span>',
+      description: 'We develop in stages with continuous testing and feedback',
+      icon: 'carbon:ibm-watsonx-code-assistant',
+    },
+    {
+      title: '4. <span class="font-medium">Launch</span>',
+      description: 'We handle deployment and ensure smooth go-live',
+      icon: 'carbon:cloud-data-ops',
+    },
+    {
+      title: '5. <span class="font-medium">Improve</span>',
+      description: 'We provide updates and optimizations to keep your solution fresh',
+      icon: 'carbon:cloud-monitoring',
+    },
+  ]}
+>
   <Fragment slot="bg">
     <div class="absolute inset-0 backdrop-blur-lg bg-black/70 dark:bg-black/30"></div>
   </Fragment>
-  </Steps3>
-
+</Steps3>
 
 </Layout>
