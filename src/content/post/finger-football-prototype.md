@@ -1,8 +1,8 @@
 ---
 publishDate: 2024-02-06T00:00:00Z
 author: Admin
-title: 'Next-Gen Game Development: Finger Football - Building Beyond Bloated Engines for Lean, High-ROI Startups'
-excerpt: 'We developed "Finger Football" in Godot, demonstrating our ability to create innovative, high-engagement games without relying on resource-heavy engines. Discover how our lean approach translates to faster development cycles and higher investor returns.'
+title: 'Football Game Development Solution: Building Beyond Bloated Engines for Lean, High-ROI Startups'
+excerpt: 'We developed "Finger Football" in Godot, demonstrating our ability to create innovative, high-engagement games without relying on resource-heavy engines. Discover how our lean approach translates to faster development cycles and higher investor returns. Check the youtube video at end of this article.'
 image: ~/assets/images/blog/game.webp
 tags:
   - Game Investment
