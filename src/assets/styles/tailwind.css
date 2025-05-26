@@ -45,6 +45,15 @@
   }
 }
 
+/* text shadow */
+.txt-shadow {
+  text-shadow: -.5px -.5px 1px rgb(255, 255, 255);
+}
+
+.dark .txt-shadow {
+  text-shadow: none;
+}
+
 /* svg hover effect */
 .svgeffect:hover {
   .svgeffectchild path {
