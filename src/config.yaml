@@ -9,9 +9,9 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Web Design, Web App Development, System Integration & AI Branding
+    default: Web Design, App Developer, System Integration & AI Branding
     template: '%s — Kuching, Sarawak & KL'
-  description: "\U0001F680 Web design, web application development and innovative AI branding solutions in Kuching & KL. We also offer system integration and serve clients across Malaysia. Boost your ROI with our expert services!"
+  description: "\U0001F680 Web design, app design & development and innovative AI branding solutions in Kuching & KL. We also offer system integration and serve clients across Malaysia. Boost your ROI with our expert services!"
   robots:
     index: true
     follow: true
