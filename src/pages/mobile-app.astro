@@ -66,91 +66,90 @@ const metadata = {
   <Banners2 />
 
   <Features4
-    id="features"
-    tagline="Immersive Mobile Experiences"
-    columns={3}
-    title="Innovation + Functionality + User Engagement"
-    subtitle="From intuitive design to seamless functionality, we prioritize user experience to maximize engagement and satisfaction, ensuring a positive brand interaction."
-    classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
-    items={[
-      {
-        title: 'User-Centric Design',
-        description: "Intuitive, engaging, and easy to navigate. Design with your mobile users in mind.",
-        icon: 'carbon:customer',
-      },
-      {
-        title: 'Cross-Platform Development',
-        description: "Reach a wider audience with apps that work seamlessly on iOS and Android.",
-        icon: 'carbon:carbon-for-mobile',
-      },
-      {
-        title: 'Modern Mobile UI/UX',
-        description: "Leverage the latest mobile design trends and technologies for a superior user experience.",
-        icon: 'carbon:carbon-ui-builder',
-      },
-      {
-        title: 'Performance Optimization',
-        description: "Fast loading times and smooth performance for optimal user satisfaction.",
-        icon: 'carbon:forecast-lightning',
-      },
-      {
-        title: 'Seamless Integration',
-        description: "Integrate with existing systems and third-party services for enhanced functionality.",
-        icon: 'carbon:devices',
-      },
-      {
-        title: 'Custom-Built Solutions',
-        description: "Develop apps tailored to your specific business needs and user requirements.",
-        icon: 'carbon:ibm-z-cloud-mod-stack',
-      },
-    ]}
-  >
-  </Features4>
+  id="features"
+  tagline="Powerful Mobile Experiences"
+  columns={3}
+  title="Beautiful Apps That People Love To Use"
+  subtitle="We build mobile apps that combine stunning design with flawless performance - keeping users engaged and coming back"
+  classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
+  items={[
+    {
+      title: 'User-First Design',
+      description: "Intuitive interfaces that feel natural to use",
+      icon: 'carbon:customer',
+    },
+    {
+      title: 'iOS & Android',
+      description: "Single codebase works on both platforms",
+      icon: 'carbon:carbon-for-mobile',
+    },
+    {
+      title: 'Cutting-Edge UI',
+      description: "Modern interactions and animations",
+      icon: 'carbon:carbon-ui-builder',
+    },
+    {
+      title: 'Lightning Fast',
+      description: "Optimized for instant loading",
+      icon: 'carbon:forecast-lightning',
+    },
+    {
+      title: 'Easy Integration',
+      description: "Connects to your existing tools",
+      icon: 'carbon:devices',
+    },
+    {
+      title: '100% Custom',
+      description: "Built specifically for your needs",
+      icon: 'carbon:ibm-z-cloud-mod-stack',
+    },
+  ]}
+/>
 
-  <Steps3
-    image={{
-      src: '~/assets/images/webdev.webp',
-      alt: 'happy team mobile app development',
-    }}
-    title="Phased Mobile App Development"
-    subtitle="Collaborate with us from concept to launch, with phased development and payments, ensuring complete satisfaction. <strong>We offer tailored solutions, not rigid templates</strong>"
-    items={[
-      {
-        title: 'Stage 1: <span class="font-medium">Discovery & Planning</span>',
-        description: "We work with you to define your app's purpose, target audience, and key features. We establish a clear project scope and timeline.",
-        icon: 'carbon:forum',
-      },
-      {
-        title: 'Stage 2: <span class="font-medium">Design & Prototyping</span>',
-        description: "We create wireframes and mockups to visualize the app's user interface and experience. We refine the design based on your feedback.",
-        icon: 'carbon:devices',
-      },
-      {
-        title: 'Stage 3: <span class="font-medium">Development & Implementation</span>',
-        description: 'Our developers build your app using the latest mobile technologies. We ensure clean, efficient, and secure code.',
-        icon: 'carbon:ibm-watsonx-code-assistant',
-      },
-      {
-        title: 'Stage 4: <span class="font-medium">Testing & Quality Assurance</span>',
-        description: 'We conduct rigorous testing on various devices and platforms to ensure your app is bug-free and performs optimally.',
-        icon: 'carbon:ibm-watsonx-code-assistant',
-      },
-      {
-        title: 'Stage 5: <span class="font-medium">Deployment & Launch</span>',
-        description: 'We guide you through the app store submission process and assist with the launch of your app.',
-        icon: 'carbon:cloud-data-ops',
-      },
-      {
-        title: 'Stage 6: <span class="font-medium">Maintenance & Support</span>',
-        description: 'We provide ongoing maintenance, updates, and support to ensure your app remains secure and up-to-date.',
-        icon: 'carbon:cloud-monitoring',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 backdrop-blur-lg bg-black/70 dark:bg-black/30"></div>
-    </Fragment>
-  </Steps3>
+<Steps3
+image={{
+  src: '~/assets/images/webdev.webp',
+  alt: 'Mobile app development team collaborating',
+}}
+title="Our 6-Step App Development Process"
+subtitle="Pay as we build. Get a custom mobile app - no cookie-cutter solutions"
+items={[
+  {
+    title: '1. Strategy Session',
+    description: "We define your app's goals, users, and must-have features",
+    icon: 'carbon:forum',
+  },
+  {
+    title: '2. Design & Prototype',
+    description: "Create and refine your app's look and feel",
+    icon: 'carbon:devices',
+  },
+  {
+    title: '3. Development',
+    description: "We code your app with clean, secure technology",
+    icon: 'carbon:ibm-watsonx-code-assistant',
+  },
+  {
+    title: '4. Rigorous Testing',
+    description: "Ensure flawless performance on all devices",
+    icon: 'carbon:ibm-watsonx-code-assistant',
+  },
+  {
+    title: '5. App Store Launch',
+    description: "We handle submission and go-live support",
+    icon: 'carbon:cloud-data-ops',
+  },
+  {
+    title: '6. Ongoing Care',
+    description: "Updates, improvements, and maintenance",
+    icon: 'carbon:cloud-monitoring',
+  },
+]}
+>
+<Fragment slot="bg">
+  <div class="absolute inset-0 backdrop-blur-lg bg-black/70 dark:bg-black/30"></div>
+</Fragment>
+</Steps3>
 
   <FollowUp />
 </Layout>

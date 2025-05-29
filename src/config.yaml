@@ -18,7 +18,7 @@ metadata:
   openGraph:
     site_name: MicroWeb
     images:
-      - url: '~/assets/images/MicroWeb.webp'
+      - url: '~/assets/images/web_design_discussion.webp'
         width: 1200
         height: 628
     type: website
