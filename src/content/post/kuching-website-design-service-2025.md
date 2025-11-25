@@ -10,6 +10,7 @@ tags:
   - Local SEO
   - Conversion Rate Optimization
   - Website Security
+image: ~/assets/images/blog/cloudflare-microweb.webp
 metadata:
   canonical: https://www.microweb.my/kuching-website-design-service-2025
 ---

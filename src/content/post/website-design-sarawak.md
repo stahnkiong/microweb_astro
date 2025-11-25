@@ -1,5 +1,5 @@
 ---
-publishDate: 2024-08-15T00:00:00+08:00
+publishDate: 2024-01-15T00:00:00+08:00
 author: Admin
 title: "Why Every Businesses Needs a Fast-Loading Website Design in Kuching 2024"
 excerpt: "Slow websites cost Kuching businesses customers and revenue. Discover why speed matters for Sarawak's mobile-first users and how to fix it with modern web design."
@@ -9,6 +9,7 @@ tags:
   - Kuching Business
   - Mobile Optimization
   - Conversion Rate Optimization
+image: ~/assets/images/blog/cloudflare-microweb.jpg
 metadata:
   canonical: https://www.microweb.my/web-design-sarawak
 ---
