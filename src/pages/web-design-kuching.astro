@@ -8,18 +8,20 @@ import Features5 from '~/components/widgets/Features5.astro';
 import FollowUp from '~/components/widgets/FollowUp.astro';
 import ThreeJs from '~/components/widgets/ThreeJs.astro';
 const metadata = {
-  title: "Web Design Kuching | Trusted by 200+ SMEs Since 2012",
-  description: "Top web design agency in Sarawak crafting responsive, ultra-fast websites with SEO. Packages from RM2,000. 13+ years local expertise."
+  ignoreTitleTemplate: true,
+  title: 'Web Design Kuching | Trusted by 200+ SMEs Since 2012',
+  description:
+    'Top web design agency in Sarawak crafting responsive, ultra-fast websites with SEO. Packages from RM2,000. 13+ years local expertise.',
 };
 ---
 
 <Layout metadata={metadata}>
-  <ThreeJs/>
+  <ThreeJs />
   <Hero2
     tagline="Professional Web Design Services"
     actions={[
-      { variant: 'primary', text: "Get Free Quote", href: '#contact' },
-      { variant: 'secondary', text: "WhatsApp Now", target:'_blank', href: 'https://wa.me/60168880650' }
+      { variant: 'primary', text: 'Get Free Quote', href: '#contact' },
+      { variant: 'secondary', text: 'WhatsApp Now', target: '_blank', href: 'https://wa.me/60168880650' },
     ]}
     image={{
       src: '~/assets/images/web_design_development_kuching.webp',
@@ -27,11 +29,12 @@ const metadata = {
     }}
   >
     <Fragment slot="title">
-      Web Design Kuching: <span class="text-primary text-gradient highlight tracking-tight">Trusted by 200+ SMEs</span> Since 2012
+      Web Design Kuching: <span class="text-primary text-gradient highlight tracking-tight">Trusted by 200+ SMEs</span> Since
+      2012
     </Fragment>
 
     <Fragment slot="subtitle">
-      Build mobile-friendly, SEO-optimized websites that load in seconds. 
+      Build mobile-friendly, SEO-optimized websites that load in seconds.
       <div class="mt-4 flex gap-4 flex-wrap mb-4">
         <span class="badge badge-lg">✅ 12+ Years Experience</span>
         <span class="badge badge-lg">⚡ 95/100 PageSpeed</span>
@@ -59,21 +62,24 @@ const metadata = {
           {
             description: 'From RM2,000',
             icon: 'carbon:pricing-consumption',
-          }
+          },
         ]}
       />
     </Fragment>
 
     <Fragment slot="bg">
       <div class="absolute bg-page inset-0 grid grid-cols-2 -space-x-52 opacity-80 md:opacity-85">
-        <div class="blur-[106px] h-64 bg-gradient-to-br from-violet-300 to-purple-500 md:to-purple-300 dark:from-blue-700"></div>
+        <div
+          class="blur-[106px] h-64 bg-gradient-to-br from-violet-300 to-purple-500 md:to-purple-300 dark:from-blue-700"
+        >
+        </div>
         <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-300 to-sky-200 dark:to-indigo-600"></div>
       </div>
     </Fragment>
   </Hero2>
-<Banners2 />
+  <Banners2 />
 
-<Features4
+  <Features4
     id="why-us"
     tagline="Why Kuching Chooses Us"
     columns={3}
@@ -93,28 +99,28 @@ const metadata = {
       },
       {
         title: 'Ultra-Fast Performance',
-        description: "<2s load times with CDN in Sarawak",
+        description: '<2s load times with CDN in Sarawak',
         icon: 'carbon:forecast-lightning',
       },
       {
         title: 'Transparent Pricing',
-        description: "Packages from RM2,000",
+        description: 'Packages from RM2,000',
         icon: 'carbon:wallet',
       },
       {
         title: 'Secure & Reliable',
-        description: "99.99% uptime guarantee",
+        description: '99.99% uptime guarantee',
         icon: 'carbon:security',
       },
       {
         title: 'Ongoing Support',
-        description: "Local maintenance team",
+        description: 'Local maintenance team',
         icon: 'carbon:user',
       },
     ]}
   />
 
-<Steps3
+  <Steps3
     image={{
       src: '~/assets/images/webdev.webp',
       alt: 'team working on website design',
@@ -124,32 +130,32 @@ const metadata = {
     items={[
       {
         title: '1. Discovery Session',
-        description: "Understand your business goals at our Kuching office",
+        description: 'Understand your business goals at our Kuching office',
         icon: 'carbon:forum',
       },
       {
         title: '2. Design Mockups',
-        description: "Get 3 concept designs tailored for Kuching market",
+        description: 'Get 3 concept designs tailored for Kuching market',
         icon: 'carbon:image-copy',
       },
       {
         title: '3. Development',
-        description: "Build with Vue.js/Astro for maximum speed",
+        description: 'Build with Vue.js/Astro for maximum speed',
         icon: 'carbon:code',
       },
       {
         title: '4. Local SEO Setup',
-        description: "Optimize for Kuching search terms",
+        description: 'Optimize for Kuching search terms',
         icon: 'carbon:search',
       },
       {
         title: '5. Quality Testing',
-        description: "Cross-device testing on local networks",
+        description: 'Cross-device testing on local networks',
         icon: 'carbon:test-tool',
       },
       {
         title: '6. Launch & Support',
-        description: "Keep your website safe, up-to-date",
+        description: 'Keep your website safe, up-to-date',
         icon: 'carbon:launch',
       },
     ]}
@@ -160,5 +166,4 @@ const metadata = {
   </Steps3>
 
   <FollowUp />
-  
 </Layout>

@@ -7,118 +7,119 @@ import Features4 from '~/components/widgets/Features4.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
 import ThreeJs from '~/components/widgets/ThreeJs.astro';
 
+const metadata = {
+  title: 'MicroWeb - Custom Web Design & App Development',
+  ignoreTitleTemplate: true,
+};
 ---
 
-<Layout>
-  <ThreeJs/>
+<Layout metadata={metadata}>
+  <ThreeJs />
   <!-- Hero Widget ******************* -->
-  <Hero
-    tagline='Custom Web Design & App Development'
-  >
+  <Hero tagline="Custom Web Design & App Development">
     <!--from hero tag: image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }} -->
     <Fragment slot="title">
-      <span class="text-primary text-gradient highlight">Digital Partner </span>That<br/> Prioritizes Your Return on Investment
+      <span class="text-primary text-gradient highlight">Digital Partner </span>That<br /> Prioritizes Your Return on Investment
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 grid grid-cols-2 -space-x-52">
-        <div class="blur-[106px] h-64 bg-gradient-to-br from-red-100 to-sky-300 md:to-purple-100 dark:from-blue-700"></div>
-        <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-100 to-red-400 md:to-violet-400 dark:to-indigo-600"></div>
+        <div class="blur-[106px] h-64 bg-gradient-to-br from-red-100 to-sky-300 md:to-purple-100 dark:from-blue-700">
+        </div>
+        <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-100 to-red-400 md:to-violet-400 dark:to-indigo-600">
+        </div>
       </div>
     </Fragment>
   </Hero>
   <Features4
-        columns={4}
-        classes={{ container: 'mb-96 md:mb-0 md:pb-20' }}
-        items={[
-          {
-            title: 'Web Design & Development',
-            description: "Navigating Digital Landscape<br/> with Confidence",
-            link: '/web-development',
-            icon: 'carbon:dashboard',
-            callToAction: {
-              variant: 'link',
-              class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-              icon: 'carbon:arrow-right',
-            },
-          },
-          {
-            title: 'Custom App Development',
-            description: "Secure, Seamless and <br/>Tailored Solutions",
-            link: '/software',
-            icon: 'carbon:network-enterprise',
-            callToAction: {
-              variant: 'link',
-              class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-              icon: 'carbon:arrow-right',
-            },
-          },
-          {
-            title: 'AI Marketing & Branding',
-            description: "Personalized Users' <br/>Experiences",
-            link: '/ai-marketing',
-            icon: 'carbon:machine-learning-model',
-            callToAction: {
-              variant: 'link',
-              class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-              icon: 'carbon:arrow-right',
-            },
-          },
-          {
-            title: 'Future-Ready System Integration',
-            description: "Seamless API and <br/>AI Solutions",
-            link: '/integration',
-            icon: 'carbon:ibm-z-cloud-mod-stack',
-            callToAction: {
-              variant: 'link',
-              class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-              icon: 'carbon:arrow-right',
-            },
-          },
-          
-        ]}
-      >
-  </Features4>
+    columns={4}
+    classes={{ container: 'mb-96 md:mb-0 md:pb-20' }}
+    items={[
+      {
+        title: 'Web Design & Development',
+        description: 'Navigating Digital Landscape<br/> with Confidence',
+        link: '/web-development',
+        icon: 'carbon:dashboard',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+      {
+        title: 'Custom App Development',
+        description: 'Secure, Seamless and <br/>Tailored Solutions',
+        link: '/software',
+        icon: 'carbon:network-enterprise',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+      {
+        title: 'AI Marketing & Branding',
+        description: "Personalized Users' <br/>Experiences",
+        link: '/ai-marketing',
+        icon: 'carbon:machine-learning-model',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+      {
+        title: 'Future-Ready System Integration',
+        description: 'Seamless API and <br/>AI Solutions',
+        link: '/integration',
+        icon: 'carbon:ibm-z-cloud-mod-stack',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+    ]}
+  />
   <Banners2 />
   <FollowUp />
 
   <Steps3
-  image={{
-    src: '~/assets/images/process.webp',
-    alt: 'Team working on a web development project',
-  }}
-  title="Simple, Effective Process for Digital Projects"
-  subtitle='<strong>Start small, scale smart.</strong> Our flexible approach lets you begin with essential features and expand as needed.'
-  items={[
-    {
-      title: '1. <span class="font-medium">Understand</span>',
-      description: "We listen first to fully grasp your business needs and goals",
-      icon: 'carbon:forum',
-    },
-    {
-      title: '2. <span class="font-medium">Design</span>',
-      description: "We create prototypes to visualize and refine your solution",
-      icon: 'carbon:devices',
-    },
-    {
-      title: '3. <span class="font-medium">Build</span>',
-      description: 'We develop in stages with continuous testing and feedback',
-      icon: 'carbon:ibm-watsonx-code-assistant',
-    },
-    {
-      title: '4. <span class="font-medium">Launch</span>',
-      description: 'We handle deployment and ensure smooth go-live',
-      icon: 'carbon:cloud-data-ops',
-    },
-    {
-      title: '5. <span class="font-medium">Improve</span>',
-      description: 'We provide updates and optimizations to keep your solution fresh',
-      icon: 'carbon:cloud-monitoring',
-    },
-  ]}
->
-  <Fragment slot="bg">
-    <div class="absolute inset-0 backdrop-blur-lg bg-black/70 dark:bg-black/30"></div>
-  </Fragment>
-</Steps3>
-
+    image={{
+      src: '~/assets/images/process.webp',
+      alt: 'Team working on a web development project',
+    }}
+    title="Simple, Effective Process for Digital Projects"
+    subtitle="<strong>Start small, scale smart.</strong> Our flexible approach lets you begin with essential features and expand as needed."
+    items={[
+      {
+        title: '1. <span class="font-medium">Understand</span>',
+        description: 'We listen first to fully grasp your business needs and goals',
+        icon: 'carbon:forum',
+      },
+      {
+        title: '2. <span class="font-medium">Design</span>',
+        description: 'We create prototypes to visualize and refine your solution',
+        icon: 'carbon:devices',
+      },
+      {
+        title: '3. <span class="font-medium">Build</span>',
+        description: 'We develop in stages with continuous testing and feedback',
+        icon: 'carbon:ibm-watsonx-code-assistant',
+      },
+      {
+        title: '4. <span class="font-medium">Launch</span>',
+        description: 'We handle deployment and ensure smooth go-live',
+        icon: 'carbon:cloud-data-ops',
+      },
+      {
+        title: '5. <span class="font-medium">Improve</span>',
+        description: 'We provide updates and optimizations to keep your solution fresh',
+        icon: 'carbon:cloud-monitoring',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 backdrop-blur-lg bg-black/70 dark:bg-black/30"></div>
+    </Fragment>
+  </Steps3>
 </Layout>

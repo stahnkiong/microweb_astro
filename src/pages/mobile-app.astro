@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import ThreeJs from "~/components/widgets/ThreeJs.astro";
+import ThreeJs from '~/components/widgets/ThreeJs.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Banners2 from '~/components/widgets/Banners2.astro';
 import Features4 from '~/components/widgets/Features4.astro';
@@ -9,16 +9,16 @@ import Features5 from '~/components/widgets/Features5.astro';
 import FollowUp from '~/components/widgets/FollowUp.astro';
 const metadata = {
   title: 'Mobile App Development',
+  ignoreTitleTemplate: true,
+  description: 'Mobile App Development, Custom Software Development, Custom Web Application Development',
 };
 ---
 
 <Layout metadata={metadata}>
-  <ThreeJs/>
+  <ThreeJs />
   <Hero2
     tagline="Custom Mobile App Development"
-    actions={[
-      { variant: 'primary', text: "Let's Chat", href: '#contact' },
-    ]}
+    actions={[{ variant: 'primary', text: "Let's Chat", href: '#contact' }]}
     image={{
       src: '~/assets/images/web.webp',
       alt: 'Mobile app development multiple devices',
@@ -29,7 +29,8 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      Build a seamless mobile experience that delights users. Our custom mobile app development creates lasting brand engagement.
+      Build a seamless mobile experience that delights users. Our custom mobile app development creates lasting brand
+      engagement.
     </Fragment>
     <Fragment slot="content">
       <Features5
@@ -51,14 +52,16 @@ const metadata = {
           {
             description: 'Agile<br/>Development',
             icon: 'carbon:chart-radar',
-          }
+          },
         ]}
-      >
-      </Features5>
+      />
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute bg-page inset-0 grid grid-cols-2 -space-x-52 opacity-80 md:opacity-85">
-        <div class="blur-[106px] h-64 bg-gradient-to-br from-violet-300 to-purple-500 md:to-purple-300 dark:from-blue-700"></div>
+        <div
+          class="blur-[106px] h-64 bg-gradient-to-br from-violet-300 to-purple-500 md:to-purple-300 dark:from-blue-700"
+        >
+        </div>
         <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-300 to-sky-200 dark:to-indigo-600"></div>
       </div>
     </Fragment>
@@ -66,90 +69,90 @@ const metadata = {
   <Banners2 />
 
   <Features4
-  id="features"
-  tagline="Powerful Mobile Experiences"
-  columns={3}
-  title="Beautiful Apps That People Love To Use"
-  subtitle="We build mobile apps that combine stunning design with flawless performance - keeping users engaged and coming back"
-  classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
-  items={[
-    {
-      title: 'User-First Design',
-      description: "Intuitive interfaces that feel natural to use",
-      icon: 'carbon:customer',
-    },
-    {
-      title: 'iOS & Android',
-      description: "Single codebase works on both platforms",
-      icon: 'carbon:carbon-for-mobile',
-    },
-    {
-      title: 'Cutting-Edge UI',
-      description: "Modern interactions and animations",
-      icon: 'carbon:carbon-ui-builder',
-    },
-    {
-      title: 'Lightning Fast',
-      description: "Optimized for instant loading",
-      icon: 'carbon:forecast-lightning',
-    },
-    {
-      title: 'Easy Integration',
-      description: "Connects to your existing tools",
-      icon: 'carbon:devices',
-    },
-    {
-      title: '100% Custom',
-      description: "Built specifically for your needs",
-      icon: 'carbon:ibm-z-cloud-mod-stack',
-    },
-  ]}
-/>
+    id="features"
+    tagline="Powerful Mobile Experiences"
+    columns={3}
+    title="Beautiful Apps That People Love To Use"
+    subtitle="We build mobile apps that combine stunning design with flawless performance - keeping users engaged and coming back"
+    classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
+    items={[
+      {
+        title: 'User-First Design',
+        description: 'Intuitive interfaces that feel natural to use',
+        icon: 'carbon:customer',
+      },
+      {
+        title: 'iOS & Android',
+        description: 'Single codebase works on both platforms',
+        icon: 'carbon:carbon-for-mobile',
+      },
+      {
+        title: 'Cutting-Edge UI',
+        description: 'Modern interactions and animations',
+        icon: 'carbon:carbon-ui-builder',
+      },
+      {
+        title: 'Lightning Fast',
+        description: 'Optimized for instant loading',
+        icon: 'carbon:forecast-lightning',
+      },
+      {
+        title: 'Easy Integration',
+        description: 'Connects to your existing tools',
+        icon: 'carbon:devices',
+      },
+      {
+        title: '100% Custom',
+        description: 'Built specifically for your needs',
+        icon: 'carbon:ibm-z-cloud-mod-stack',
+      },
+    ]}
+  />
 
-<Steps3
-image={{
-  src: '~/assets/images/webdev.webp',
-  alt: 'Mobile app development team collaborating',
-}}
-title="Our 6-Step App Development Process"
-subtitle="Pay as we build. Get a custom mobile app - no cookie-cutter solutions"
-items={[
-  {
-    title: '1. Strategy Session',
-    description: "We define your app's goals, users, and must-have features",
-    icon: 'carbon:forum',
-  },
-  {
-    title: '2. Design & Prototype',
-    description: "Create and refine your app's look and feel",
-    icon: 'carbon:devices',
-  },
-  {
-    title: '3. Development',
-    description: "We code your app with clean, secure technology",
-    icon: 'carbon:ibm-watsonx-code-assistant',
-  },
-  {
-    title: '4. Rigorous Testing',
-    description: "Ensure flawless performance on all devices",
-    icon: 'carbon:ibm-watsonx-code-assistant',
-  },
-  {
-    title: '5. App Store Launch',
-    description: "We handle submission and go-live support",
-    icon: 'carbon:cloud-data-ops',
-  },
-  {
-    title: '6. Ongoing Care',
-    description: "Updates, improvements, and maintenance",
-    icon: 'carbon:cloud-monitoring',
-  },
-]}
->
-<Fragment slot="bg">
-  <div class="absolute inset-0 backdrop-blur-lg bg-black/70 dark:bg-black/30"></div>
-</Fragment>
-</Steps3>
+  <Steps3
+    image={{
+      src: '~/assets/images/webdev.webp',
+      alt: 'Mobile app development team collaborating',
+    }}
+    title="Our 6-Step App Development Process"
+    subtitle="Pay as we build. Get a custom mobile app - no cookie-cutter solutions"
+    items={[
+      {
+        title: '1. Strategy Session',
+        description: "We define your app's goals, users, and must-have features",
+        icon: 'carbon:forum',
+      },
+      {
+        title: '2. Design & Prototype',
+        description: "Create and refine your app's look and feel",
+        icon: 'carbon:devices',
+      },
+      {
+        title: '3. Development',
+        description: 'We code your app with clean, secure technology',
+        icon: 'carbon:ibm-watsonx-code-assistant',
+      },
+      {
+        title: '4. Rigorous Testing',
+        description: 'Ensure flawless performance on all devices',
+        icon: 'carbon:ibm-watsonx-code-assistant',
+      },
+      {
+        title: '5. App Store Launch',
+        description: 'We handle submission and go-live support',
+        icon: 'carbon:cloud-data-ops',
+      },
+      {
+        title: '6. Ongoing Care',
+        description: 'Updates, improvements, and maintenance',
+        icon: 'carbon:cloud-monitoring',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 backdrop-blur-lg bg-black/70 dark:bg-black/30"></div>
+    </Fragment>
+  </Steps3>
 
   <FollowUp />
 </Layout>

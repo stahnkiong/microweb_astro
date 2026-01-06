@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import ThreeJs from "~/components/widgets/ThreeJs.astro";
+import ThreeJs from '~/components/widgets/ThreeJs.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Banners2 from '~/components/widgets/Banners2.astro';
 import Features4 from '~/components/widgets/Features4.astro';
@@ -8,193 +8,195 @@ import Steps3 from '~/components/widgets/Steps3.astro';
 import Features5 from '~/components/widgets/Features5.astro';
 import FollowUp from '~/components/widgets/FollowUp.astro';
 const metadata = {
+  ignoreTitleTemplate: true,
   title: 'App Developer & Software Company',
-  description: "Kuching's leading app development & software company. Specializing in custom web application development, mobile app and SEO-optimized websites for Malaysian businesses. 150+ projects delivered. Free consultation."
+  description:
+    "Kuching's leading app development & software company. Specializing in custom web application development, mobile app and SEO-optimized websites for Malaysian businesses. 150+ projects delivered. Free consultation.",
 };
 ---
 
 <Layout metadata={metadata}>
-  <ThreeJs/>
+  <ThreeJs />
   <Hero2
-  tagline="Custom App Development Services"
-  actions={[
-    { variant: 'primary', text: "Let's Chat", href: '#contact' },
-  ]}
-  image={{
-    src: '~/assets/images/custom_web_application_developement.webp',
-    alt: 'custom web development and software dashboard',
-  }}
->
-  <Fragment slot="title">
-    <span class="text-primary text-gradient highlight tracking-tight">Future-Ready App Development</span> That Grow With Your Business
-  </Fragment>
+    tagline="Custom App Development Services"
+    actions={[{ variant: 'primary', text: "Let's Chat", href: '#contact' }]}
+    image={{
+      src: '~/assets/images/custom_web_application_developement.webp',
+      alt: 'custom web development and software dashboard',
+    }}
+  >
+    <Fragment slot="title">
+      <span class="text-primary text-gradient highlight tracking-tight">Future-Ready App Development</span> That Grow With
+      Your Business
+    </Fragment>
 
-  <Fragment slot="subtitle">
-    Scalable, secure web applications powered by AI - built for Malaysian businesses with 24/7 support and enterprise-grade reliability.
-  </Fragment>
-  <Fragment slot="content">
-    <Features5
+    <Fragment slot="subtitle">
+      Scalable, secure web applications powered by AI - built for Malaysian businesses with 24/7 support and
+      enterprise-grade reliability.
+    </Fragment>
+    <Fragment slot="content">
+      <Features5
         columns={4}
         classes={{ container: 'py-8' }}
         items={[
-        {
+          {
             description: 'Mobile',
             icon: 'carbon:carbon-for-mobile',
-        },
-        {
+          },
+          {
             description: 'Desktop',
             icon: 'carbon:cloud-logging',
-        },
-        {
+          },
+          {
             description: 'IoT',
             icon: 'carbon:archive',
-        },
-        {
+          },
+          {
             description: 'Web',
             icon: 'carbon:cloud-app',
-        }
+          },
         ]}
+      />
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute bg-page inset-0 grid grid-cols-2 -space-x-52 opacity-80 md:opacity-85">
+        <div
+          class="blur-[106px] h-64 bg-gradient-to-br from-violet-300 to-purple-500 md:to-purple-300 dark:from-blue-700"
         >
-    </Features5>
-  </Fragment>
-  <Fragment slot="bg">
-    <div class="absolute bg-page inset-0 grid grid-cols-2 -space-x-52 opacity-80 md:opacity-85">
-      <div class="blur-[106px] h-64 bg-gradient-to-br from-violet-300 to-purple-500 md:to-purple-300 dark:from-blue-700"></div>
-      <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-300 to-sky-200 dark:to-indigo-600"></div>
-    </div>
-  </Fragment>
-</Hero2>
+        </div>
+        <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-300 to-sky-200 dark:to-indigo-600"></div>
+      </div>
+    </Fragment>
+  </Hero2>
 
-<Banners2 />
+  <Banners2 />
 
-<Features4
-id="features"
-tagline="Our App Development Expertise"
-columns={3}
-title="Custom Web App & Integrations"
-subtitle="Your business is unique. Your software should be too. We design custom app that work seamlessly with your existing systems and industry needs, including:"
-classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
-items={[
-  {
-    title: 'Enterprise-Grade Development',
-    description: "Secure & Reliability",
-    link: '/enterprise',
-    icon: 'carbon:network-enterprise',
-    callToAction: {
-      variant: 'link',
-      class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-      icon: 'carbon:arrow-right',
-    },
-  },
-  {
-    title: 'Healthcare & IoT Solutions',
-    description: "Connected Health & Remote Monitoring",
-    link: '/healthcare',
-    icon: 'carbon:stethoscope',
-    callToAction: {
-      variant: 'link',
-      class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-      icon: 'carbon:arrow-right',
-    },
-  },
-  {
-    title: 'Logistics & Supply Chain',
-    description: "Traceability & Cost savings",
-    link: '/logistics',
-    icon: 'carbon:delivery-truck',
-    callToAction: {
-      variant: 'link',
-      class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-      icon: 'carbon:arrow-right',
-    },
-  },
-  {
-    title: 'Retail & E-Commerce',
-    description: "Customer Experience & Revenue Growth",
-    link: '/retail',
-    icon: 'carbon:shopping-cart-arrow-down',
-    callToAction: {
-      variant: 'link',
-      class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-      icon: 'carbon:arrow-right',
-    },
-  },
-  {
-    title: 'Manufacturing & Industry 4.0',
-    description: "Automation & Smart Factory",
-    link: '/manufacturing',
-    icon: 'carbon:industry',
-    callToAction: {
-      variant: 'link',
-      class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-      icon: 'carbon:arrow-right',
-    },
-  },
-  {
-    title: 'AgriTech & Smart Farming',
-    description: "Precision Agriculture & Yield Optimization",
-    link: '/agriculture',
-    icon: 'carbon:agriculture-analytics',
-    callToAction: {
-      variant: 'link',
-      class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-      icon: 'carbon:arrow-right',
-    },
-  },
-  {
-    title: 'Hospitality & Tourism',
-    description: "Guest Satisfaction & Revenue Growth",
-    link: '/hospitality',
-    icon: 'carbon:pedestrian-family',
-    callToAction: {
-      variant: 'link',
-      class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-      icon: 'carbon:arrow-right',
-    },
-  },
-  {
-    title: 'Education & E-Learning',
-    description: "Personalized Learning & Engagement",
-    link: '/education',
-    icon: 'carbon:tennis-ball',
-    callToAction: {
-      variant: 'link',
-      class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-      icon: 'carbon:arrow-right',
-    },
-  },
-  {
-    title: '3D Development',
-    description: "Innovative Mechanics & Gameplay",
-    link: '/games',
-    icon: 'carbon:game-wireless',
-    callToAction: {
-      variant: 'link',
-      class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-      icon: 'carbon:arrow-right',
-    },
-  },
-]}
->
+  <Features4
+    id="features"
+    tagline="Our App Development Expertise"
+    columns={3}
+    title="Custom Web App & Integrations"
+    subtitle="Your business is unique. Your software should be too. We design custom app that work seamlessly with your existing systems and industry needs, including:"
+    classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
+    items={[
+      {
+        title: 'Enterprise-Grade Development',
+        description: 'Secure & Reliability',
+        link: '/enterprise',
+        icon: 'carbon:network-enterprise',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+      {
+        title: 'Healthcare & IoT Solutions',
+        description: 'Connected Health & Remote Monitoring',
+        link: '/healthcare',
+        icon: 'carbon:stethoscope',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+      {
+        title: 'Logistics & Supply Chain',
+        description: 'Traceability & Cost savings',
+        link: '/logistics',
+        icon: 'carbon:delivery-truck',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+      {
+        title: 'Retail & E-Commerce',
+        description: 'Customer Experience & Revenue Growth',
+        link: '/retail',
+        icon: 'carbon:shopping-cart-arrow-down',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+      {
+        title: 'Manufacturing & Industry 4.0',
+        description: 'Automation & Smart Factory',
+        link: '/manufacturing',
+        icon: 'carbon:industry',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+      {
+        title: 'AgriTech & Smart Farming',
+        description: 'Precision Agriculture & Yield Optimization',
+        link: '/agriculture',
+        icon: 'carbon:agriculture-analytics',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+      {
+        title: 'Hospitality & Tourism',
+        description: 'Guest Satisfaction & Revenue Growth',
+        link: '/hospitality',
+        icon: 'carbon:pedestrian-family',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+      {
+        title: 'Education & E-Learning',
+        description: 'Personalized Learning & Engagement',
+        link: '/education',
+        icon: 'carbon:tennis-ball',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+      {
+        title: '3D Development',
+        description: 'Innovative Mechanics & Gameplay',
+        link: '/games',
+        icon: 'carbon:game-wireless',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+    ]}
+  />
 
-</Features4>
-
-<Steps3
+  <Steps3
     image={{
       src: '~/assets/images/process.webp',
       alt: 'App development team collaborating',
     }}
     title="Our Clear 5-Step Process"
-    subtitle='Pay only for what you need now. Start small and scale effortlessly as you grow'
+    subtitle="Pay only for what you need now. Start small and scale effortlessly as you grow"
     items={[
       {
         title: '1. Plan & Discover',
-        description: "We define your goals and challenges to build the right solution",
+        description: 'We define your goals and challenges to build the right solution',
         icon: 'carbon:forum',
       },
       {
         title: '2. Design & Prototype',
-        description: "Create and refine mockups to visualize your perfect solution",
+        description: 'Create and refine mockups to visualize your perfect solution',
         icon: 'carbon:devices',
       },
       {
@@ -214,11 +216,10 @@ items={[
       },
     ]}
   >
-  <Fragment slot="bg">
-    <div class="absolute inset-0 backdrop-blur-lg bg-black/70 dark:bg-black/30"></div>
-  </Fragment>
-</Steps3>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 backdrop-blur-lg bg-black/70 dark:bg-black/30"></div>
+    </Fragment>
+  </Steps3>
 
   <FollowUp />
-
 </Layout>

@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import ThreeJs from "~/components/widgets/ThreeJs.astro";
+import ThreeJs from '~/components/widgets/ThreeJs.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Banners2 from '~/components/widgets/Banners2.astro';
 import Features4 from '~/components/widgets/Features4.astro';
@@ -9,150 +9,148 @@ import Features5 from '~/components/widgets/Features5.astro';
 import FollowUp from '~/components/widgets/FollowUp.astro';
 const metadata = {
   title: 'Custom Web Design | Website Development',
-
+  ignoreTitleTemplate: true,
+  description:
+    'For KL/West Malaysian/overseas businesses expanding to Sarawak: Localized web solutions with Kuching-specific SEO. Packages from RM2,000. 13+ years serving local & international clients.',
 };
 ---
 
 <Layout metadata={metadata}>
-  <ThreeJs/>
+  <ThreeJs />
   <Hero2
-  tagline="Professional Web Design Services"
-  actions={[
-    { variant: 'primary', text: "Let's Chat", href: '#contact' },
-  ]}
-  image={{
-    src: '~/assets/images/web_design_development_kuching.webp',
-    alt: 'responsive website design across multiple devices',
-  }}
->
-  <Fragment slot="title">
-    Websites That <span class="text-primary text-gradient highlight tracking-tight">Attract & Convert</span>
-  </Fragment>
+    tagline="Professional Web Design Services"
+    actions={[{ variant: 'primary', text: "Let's Chat", href: '#contact' }]}
+    image={{
+      src: '~/assets/images/web_design_development_kuching.webp',
+      alt: 'responsive website design across multiple devices',
+    }}
+  >
+    <Fragment slot="title">
+      Websites That <span class="text-primary text-gradient highlight tracking-tight">Attract & Convert</span>
+    </Fragment>
 
-  <Fragment slot="subtitle">
-    Beautiful, high-performing websites tailored to grow your business
-  </Fragment>
-  <Fragment slot="content">
-    <Features5
+    <Fragment slot="subtitle"> Beautiful, high-performing websites tailored to grow your business </Fragment>
+    <Fragment slot="content">
+      <Features5
         columns={4}
         classes={{ container: 'py-8' }}
         items={[
           {
-              description: 'Instant Loading',
-              icon: 'carbon:rocket',
+            description: 'Instant Loading',
+            icon: 'carbon:rocket',
           },
           {
-              description: 'Custom Design',
-              icon: 'carbon:ibm-watsonx-code-assistant',
+            description: 'Custom Design',
+            icon: 'carbon:ibm-watsonx-code-assistant',
           },
           {
-              description: 'Mobile-Friendly',
-              icon: 'carbon:devices',
+            description: 'Mobile-Friendly',
+            icon: 'carbon:devices',
           },
           {
-              description: 'Clear Pricing',
-              icon: 'carbon:pricing-consumption',
+            description: 'Clear Pricing',
+            icon: 'carbon:pricing-consumption',
           },
         ]}
+      />
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute bg-page inset-0 grid grid-cols-2 -space-x-52 opacity-80 md:opacity-85">
+        <div
+          class="blur-[106px] h-64 bg-gradient-to-br from-violet-300 to-purple-500 md:to-purple-300 dark:from-blue-700"
         >
-    </Features5>
-  </Fragment>
-  <Fragment slot="bg">
-    <div class="absolute bg-page inset-0 grid grid-cols-2 -space-x-52 opacity-80 md:opacity-85">
-      <div class="blur-[106px] h-64 bg-gradient-to-br from-violet-300 to-purple-500 md:to-purple-300 dark:from-blue-700"></div>
-      <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-300 to-sky-200 dark:to-indigo-600"></div>
-    </div>
-  </Fragment>
-</Hero2>
-<Banners2 />
+        </div>
+        <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-300 to-sky-200 dark:to-indigo-600"></div>
+      </div>
+    </Fragment>
+  </Hero2>
+  <Banners2 />
 
-<Features4
-id="features"
-tagline="High-Converting Websites"
-columns={3}
-title="Beautiful Design + Smart Technology"
-subtitle="Every element optimized to engage visitors and drive action"
-classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
-items={[
-  {
-      title: 'User-Focused',
-      description: "Designed for how real people browse",
-      icon: 'carbon:customer',
-    },
-    {
-      title: 'Lightning Fast',
-      description: "Global CDN for instant loading",
-      icon: 'carbon:earth-filled',
-    },
-    {
-      title: 'Interactive UX',
-      description: "Engaging without slowing down",
-      icon: 'carbon:image-store-local',
-    },
-    {
-      title: 'SEO Optimized',
-      description: "Built to rank well",
-      icon: 'carbon:search-locate-mirror',
-    },
-    {
-      title: 'Device Perfect',
-      description: "Flawless on all screens",
-      icon: 'carbon:devices',
-    },
-    {
-      title: '100% Custom',
-      description: "Tailored to your needs",
-      icon: 'carbon:ibm-z-cloud-mod-stack',
-    },
-]}
->
+  <Features4
+    id="features"
+    tagline="High-Converting Websites"
+    columns={3}
+    title="Beautiful Design + Smart Technology"
+    subtitle="Every element optimized to engage visitors and drive action"
+    classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
+    items={[
+      {
+        title: 'User-Focused',
+        description: 'Designed for how real people browse',
+        icon: 'carbon:customer',
+      },
+      {
+        title: 'Lightning Fast',
+        description: 'Global CDN for instant loading',
+        icon: 'carbon:earth-filled',
+      },
+      {
+        title: 'Interactive UX',
+        description: 'Engaging without slowing down',
+        icon: 'carbon:image-store-local',
+      },
+      {
+        title: 'SEO Optimized',
+        description: 'Built to rank well',
+        icon: 'carbon:search-locate-mirror',
+      },
+      {
+        title: 'Device Perfect',
+        description: 'Flawless on all screens',
+        icon: 'carbon:devices',
+      },
+      {
+        title: '100% Custom',
+        description: 'Tailored to your needs',
+        icon: 'carbon:ibm-z-cloud-mod-stack',
+      },
+    ]}
+  />
 
-</Features4>
-
-<Steps3
-  image={{
-    src: '~/assets/images/webdev.webp',
-    alt: 'Web design team collaborating',
-  }}
-  title="Our Clear 6-Step Web Design Process"
-  subtitle="Pay as we progress. Get exactly the website you want - no rigid templates"
-  items={[
-    {
-      title: '1. Plan & Research',
-      description: "We listen to your needs and plan your perfect website",
-      icon: 'carbon:forum',
-    },
-    {
-      title: '2. Design & Mockups',
-      description: "Create visual concepts for your approval",
-      icon: 'carbon:devices',
-    },
-    {
-      title: '3. Build & Code',
-      description: "Developers bring your design to life",
-      icon: 'carbon:ibm-watsonx-code-assistant',
-    },
-    {
-      title: '4. Test & Refine',
-      description: "Ensure perfect performance on all devices",
-      icon: 'carbon:ibm-watsonx-code-assistant',
-    },
-    {
-      title: '5. Launch & Train',
-      description: "Go live with full support",
-      icon: 'carbon:cloud-data-ops',
-    },
-    {
-      title: '6. Maintain & Support',
-      description: "Ongoing updates and assistance",
-      icon: 'carbon:cloud-monitoring',
-    },
-  ]}
->
-  <Fragment slot="bg">
-    <div class="absolute inset-0 backdrop-blur-lg bg-black/70 dark:bg-black/30"></div>
-  </Fragment>
-</Steps3>
+  <Steps3
+    image={{
+      src: '~/assets/images/webdev.webp',
+      alt: 'Web design team collaborating',
+    }}
+    title="Our Clear 6-Step Web Design Process"
+    subtitle="Pay as we progress. Get exactly the website you want - no rigid templates"
+    items={[
+      {
+        title: '1. Plan & Research',
+        description: 'We listen to your needs and plan your perfect website',
+        icon: 'carbon:forum',
+      },
+      {
+        title: '2. Design & Mockups',
+        description: 'Create visual concepts for your approval',
+        icon: 'carbon:devices',
+      },
+      {
+        title: '3. Build & Code',
+        description: 'Developers bring your design to life',
+        icon: 'carbon:ibm-watsonx-code-assistant',
+      },
+      {
+        title: '4. Test & Refine',
+        description: 'Ensure perfect performance on all devices',
+        icon: 'carbon:ibm-watsonx-code-assistant',
+      },
+      {
+        title: '5. Launch & Train',
+        description: 'Go live with full support',
+        icon: 'carbon:cloud-data-ops',
+      },
+      {
+        title: '6. Maintain & Support',
+        description: 'Ongoing updates and assistance',
+        icon: 'carbon:cloud-monitoring',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 backdrop-blur-lg bg-black/70 dark:bg-black/30"></div>
+    </Fragment>
+  </Steps3>
 
   <FollowUp />
 </Layout>

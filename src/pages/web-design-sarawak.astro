@@ -8,18 +8,20 @@ import Features5 from '~/components/widgets/Features5.astro';
 import FollowUp from '~/components/widgets/FollowUp.astro';
 import ThreeJs from '~/components/widgets/ThreeJs.astro';
 const metadata = {
-  title: "Web Design Sarawak | Web Development Sarawak",
-  description: "For KL/West Malaysian/overseas businesses expanding to Sarawak: Localized web solutions with Kuching-specific SEO. Packages from RM2,000. 13+ years serving local & international clients."
+  ignoreTitleTemplate: true,
+  title: 'Web Design Sarawak | Web Development Sarawak',
+  description:
+    'For KL/West Malaysian/overseas businesses expanding to Sarawak: Localized web solutions with Kuching-specific SEO. Packages from RM2,000. 13+ years serving local & international clients.',
 };
 ---
 
 <Layout metadata={metadata}>
-  <ThreeJs/>
+  <ThreeJs />
   <Hero2
     tagline="Sarawak Market Entry Experts"
     actions={[
-      { variant: 'primary', text: "Get Sarawak Strategy Session", href: '#contact' },
-      { variant: 'secondary', text: "Chat with Our Kuching Team", target:'_blank', href: 'https://wa.me/60168880650' }
+      { variant: 'primary', text: 'Get Sarawak Strategy Session', href: '#contact' },
+      { variant: 'secondary', text: 'Chat with Our Kuching Team', target: '_blank', href: 'https://wa.me/60168880650' },
     ]}
     image={{
       src: '~/assets/images/web_design_development_kuching.webp',
@@ -31,7 +33,8 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      We help West Malaysian and international businesses create <strong>Sarawak-optimized</strong> websites that connect with local audiences while perfectly aligning with your existing UI/UX systems.
+      We help West Malaysian and international businesses create <strong>Sarawak-optimized</strong> websites that connect
+      with local audiences while perfectly aligning with your existing UI/UX systems.
       <div class="mt-4 flex gap-4 flex-wrap mb-4">
         <span class="badge badge-lg">🌍 Global UI Standards</span>
         <span class="badge badge-lg">🔄 Seamless Integration</span>
@@ -59,13 +62,16 @@ const metadata = {
           {
             description: 'Bilingual<br/>Support',
             icon: 'carbon:translate',
-          }
+          },
         ]}
       />
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute bg-page inset-0 grid grid-cols-2 -space-x-52 opacity-80 md:opacity-85">
-        <div class="blur-[106px] h-64 bg-gradient-to-br from-violet-300 to-purple-500 md:to-purple-300 dark:from-blue-700"></div>
+        <div
+          class="blur-[106px] h-64 bg-gradient-to-br from-violet-300 to-purple-500 md:to-purple-300 dark:from-blue-700"
+        >
+        </div>
         <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-300 to-sky-200 dark:to-indigo-600"></div>
       </div>
     </Fragment>
@@ -88,7 +94,7 @@ const metadata = {
       },
       {
         title: 'Hybrid Hosting',
-        description: "Global CDN with edge nodes",
+        description: 'Global CDN with edge nodes',
         icon: 'carbon:data-center',
       },
       {
@@ -98,17 +104,17 @@ const metadata = {
       },
       {
         title: 'Global CMS Integration',
-        description: "Sync with your existing app technology",
+        description: 'Sync with your existing app technology',
         icon: 'carbon:cics-system-group',
       },
       {
         title: 'Compliance Ready',
-        description: "Sarawak business + Malaysia PDPA aligned",
+        description: 'Sarawak business + Malaysia PDPA aligned',
         icon: 'carbon:security',
       },
       {
         title: 'KL-Kuching Coordination',
-        description: "Seamless collaboration across regions",
+        description: 'Seamless collaboration across regions',
         icon: 'carbon:collaborate',
       },
     ]}
@@ -124,17 +130,17 @@ const metadata = {
     items={[
       {
         title: '1. Market Alignment',
-        description: "Analyze your global assets + Sarawak opportunities",
+        description: 'Analyze your global assets + Sarawak opportunities',
         icon: 'carbon:earth-southeast-asia-filled',
       },
       {
         title: '2. Cultural Adaptation',
-        description: "Localize content for Sarawak audiences",
+        description: 'Localize content for Sarawak audiences',
         icon: 'carbon:group-account',
       },
       {
         title: '3. Technical Integration',
-        description: "Connect with your existing systems",
+        description: 'Connect with your existing systems',
         icon: 'carbon:integration',
       },
       {
@@ -144,12 +150,12 @@ const metadata = {
       },
       {
         title: '5. Performance Testing',
-        description: "Validate across Sarawak networks",
+        description: 'Validate across Sarawak networks',
         icon: 'carbon:meter',
       },
       {
         title: '6. Ongoing Local Support',
-        description: "Keep your website safe, up-to-date",
+        description: 'Keep your website safe, up-to-date',
         icon: 'carbon:customer-service',
       },
     ]}
@@ -203,5 +209,4 @@ const metadata = {
   </section>
 
   <FollowUp />
-  
 </Layout>

@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import ThreeJs from "~/components/widgets/ThreeJs.astro";
+import ThreeJs from '~/components/widgets/ThreeJs.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Banners2 from '~/components/widgets/Banners2.astro';
 import Features4 from '~/components/widgets/Features4.astro';
@@ -8,130 +8,128 @@ import Steps3 from '~/components/widgets/Steps3.astro';
 import Features5 from '~/components/widgets/Features5.astro';
 import FollowUp from '~/components/widgets/FollowUp.astro';
 const metadata = {
+  ignoreTitleTemplate: true,
   title: 'System Integration & API',
+  description: 'System Integration & API, Custom API Development, Third-Party Integrations',
 };
 ---
 
 <Layout metadata={metadata}>
-  <ThreeJs/>
+  <ThreeJs />
   <Hero2
-  tagline="System Integration & API"
-  actions={[
-    { variant: 'primary', text: "Let's Chat", href: '#contact' },
-  ]}
-  image={{
-    src: '~/assets/images/integration_2.webp',
-    alt: 'Software & System Integration',
-  }}
->
-<Fragment slot="title">
-  <span class="text-primary text-gradient highlight tracking-tight">Powerful API Solutions</span> That Connect Your Business
-</Fragment>
+    tagline="System Integration & API"
+    actions={[{ variant: 'primary', text: "Let's Chat", href: '#contact' }]}
+    image={{
+      src: '~/assets/images/integration_2.webp',
+      alt: 'Software & System Integration',
+    }}
+  >
+    <Fragment slot="title">
+      <span class="text-primary text-gradient highlight tracking-tight">Powerful API Solutions</span> That Connect Your Business
+    </Fragment>
 
-<Fragment slot="subtitle">
-  Automate workflows, sync data in real-time, and eliminate manual processes - so you can focus on growing your business
-</Fragment>
-  <Fragment slot="content">
-    <Features5
+    <Fragment slot="subtitle">
+      Automate workflows, sync data in real-time, and eliminate manual processes - so you can focus on growing your
+      business
+    </Fragment>
+    <Fragment slot="content">
+      <Features5
         columns={4}
         classes={{ container: 'py-8' }}
         items={[
-        {
+          {
             description: 'Data<br/>Synchronization',
             icon: 'carbon:cloud-ceiling',
-        },
-        {
+          },
+          {
             description: 'API<br/>Development',
             icon: 'carbon:api',
-        },
-        {
+          },
+          {
             description: 'Third-Party<br/>Integrations',
             icon: 'carbon:app-connectivity',
-        },
-        {
+          },
+          {
             description: 'Transparent<br/>Pricing',
             icon: 'carbon:pricing-consumption',
-        }
+          },
         ]}
+      />
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute bg-page inset-0 grid grid-cols-2 -space-x-52 opacity-80 md:opacity-85">
+        <div
+          class="blur-[106px] h-64 bg-gradient-to-br from-violet-200 to-purple-600 md:to-purple-400 dark:from-blue-700"
         >
-    </Features5>
-  </Fragment>
-  <Fragment slot="bg">
-    <div class="absolute bg-page inset-0 grid grid-cols-2 -space-x-52 opacity-80 md:opacity-85">
-      <div class="blur-[106px] h-64 bg-gradient-to-br from-violet-200 to-purple-600 md:to-purple-400 dark:from-blue-700"></div>
-      <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-100 to-cyan-300 dark:to-indigo-600"></div>
-    </div>
-  </Fragment>
-</Hero2>
-<Banners2 />
+        </div>
+        <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-100 to-cyan-300 dark:to-indigo-600"></div>
+      </div>
+    </Fragment>
+  </Hero2>
+  <Banners2 />
 
-<Features4
-id="features"
-tagline="Modern Software Ecosystem"
-columns={3}
-title="Connected Systems, Real Growth"
-subtitle="Break free from disconnected systems. Our custom API solutions connect:"
-classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
-items={[
-  {
-    title: 'CRM',
-    description: "Customer Relationship Management",
-    icon: 'carbon:sales-ops',
-  },
-  {
-    title: 'ERP',
-    description: "Enterprise Resource Planning",
-    icon: 'carbon:network-enterprise',
-  },
-  {
-    title: 'HRM',
-    description: "Human Resource Management",
-    icon: 'carbon:id-management',
-  },
-  {
-    title: 'Accounting/Finance',
-    description: "Accounting software, Financial management systems",
-    icon: 'carbon:finance',
-  },
-  {
-    title: 'E-commerce and Sales',
-    description: "Online Platform, Point of Sale",
-    icon: 'carbon:analytics-custom',
-  },
-  {
-    title: 'Data and Analytics',
-    description: "Data Warehouses, Business Intelligence (BI) Tools",
-    icon: 'carbon:chart-multitype',
-  }
-]}
->
+  <Features4
+    id="features"
+    tagline="Modern Software Ecosystem"
+    columns={3}
+    title="Connected Systems, Real Growth"
+    subtitle="Break free from disconnected systems. Our custom API solutions connect:"
+    classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
+    items={[
+      {
+        title: 'CRM',
+        description: 'Customer Relationship Management',
+        icon: 'carbon:sales-ops',
+      },
+      {
+        title: 'ERP',
+        description: 'Enterprise Resource Planning',
+        icon: 'carbon:network-enterprise',
+      },
+      {
+        title: 'HRM',
+        description: 'Human Resource Management',
+        icon: 'carbon:id-management',
+      },
+      {
+        title: 'Accounting/Finance',
+        description: 'Accounting software, Financial management systems',
+        icon: 'carbon:finance',
+      },
+      {
+        title: 'E-commerce and Sales',
+        description: 'Online Platform, Point of Sale',
+        icon: 'carbon:analytics-custom',
+      },
+      {
+        title: 'Data and Analytics',
+        description: 'Data Warehouses, Business Intelligence (BI) Tools',
+        icon: 'carbon:chart-multitype',
+      },
+    ]}
+  />
 
-</Features4>
-
-<Steps3
-image={{
-  src: '~/assets/images/integration.png',
-  alt: 'happy team',
-}}
+  <Steps3
+    image={{
+      src: '~/assets/images/integration.png',
+      alt: 'happy team',
+    }}
     title="Our Integration Process"
-    subtitle='<strong>Control your software investment</strong> with our pay-per-service, phased approach. Start with the essential features and seamlessly scale to a full solution as your business grows'
+    subtitle="<strong>Control your software investment</strong> with our pay-per-service, phased approach. Start with the essential features and seamlessly scale to a full solution as your business grows"
     items={[
       {
         title: 'Stage 1: <span class="font-medium">Assessment & Collaboration</span>',
-        description:
-          "We work closely with you to understand your existing systems, workflows, and integration needs",
+        description: 'We work closely with you to understand your existing systems, workflows, and integration needs',
         icon: 'carbon:forum',
       },
       {
         title: 'Stage 2: <span class="font-medium">Solution Design & Planning</span>',
-        description:
-          "Creating a tailored integration solution and detailed implementation plan",
+        description: 'Creating a tailored integration solution and detailed implementation plan',
         icon: 'carbon:devices',
       },
       {
         title: 'Stage 3: <span class="font-medium">Development & Implementation</span>',
-        description:
-          'We develop and rigorously test the integration solution to ensure seamless functionality',
+        description: 'We develop and rigorously test the integration solution to ensure seamless functionality',
         icon: 'carbon:ibm-watsonx-code-assistant',
       },
       {
@@ -141,9 +139,9 @@ image={{
       },
     ]}
   >
-  <Fragment slot="bg">
-    <div class="absolute inset-0 backdrop-blur-lg bg-black/70 dark:bg-black/30"></div>
-  </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 backdrop-blur-lg bg-black/70 dark:bg-black/30"></div>
+    </Fragment>
   </Steps3>
 
   <FollowUp />
