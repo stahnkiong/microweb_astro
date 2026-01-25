@@ -9,30 +9,28 @@ import Features5 from '~/components/widgets/Features5.astro';
 import FollowUp from '~/components/widgets/FollowUp.astro';
 const metadata = {
   ignoreTitleTemplate: true,
-  title: 'App Developer & Software Company',
+  title: 'Mission-Critical Software & Digital Infrastructure Partner',
   description:
-    "Kuching's leading app development & software company. Specializing in custom web application development, mobile app and SEO-optimized websites for Malaysian businesses. 150+ projects delivered. Free consultation.",
+    "Sarawak's trusted partner for Government & Enterprise digital infrastructure. Specializing in PDPA-compliant systems, secure API integration, and sovereign cloud solutions.",
 };
 ---
 
 <Layout metadata={metadata}>
   <ThreeJs />
   <Hero2
-    tagline="Custom App Development Services"
-    actions={[{ variant: 'primary', text: "Let's Chat", href: '#contact' }]}
+    tagline="Digital Infrastructure Partner"
+    actions={[{ variant: 'primary', text: "Request Technical Proposal", href: '#contact' }]}
     image={{
       src: '~/assets/images/custom_web_application_developement.webp',
-      alt: 'custom web development and software dashboard',
+      alt: 'Dashboard showing government-grade digital infrastructure metrics',
     }}
   >
     <Fragment slot="title">
-      <span class="text-primary text-gradient highlight tracking-tight">Future-Ready App Development</span> That Grow With
-      Your Business
+      <span class="text-primary text-gradient highlight tracking-tight">Mission-Critical</span> Software Solutions for Sarawak's Future
     </Fragment>
 
     <Fragment slot="subtitle">
-      Scalable, secure web applications powered by AI - built for Malaysian businesses with 24/7 support and
-      enterprise-grade reliability.
+      We engineer <strong>sovereign, scalable, and secure</strong> digital platforms. From PDPA-compliant healthcare systems to automated government workflows, we build the infrastructure that powers Sarawak's digital economy.
     </Fragment>
     <Fragment slot="content">
       <Features5
@@ -40,20 +38,20 @@ const metadata = {
         classes={{ container: 'py-8' }}
         items={[
           {
-            description: 'Mobile',
-            icon: 'carbon:carbon-for-mobile',
+            description: 'Sovereign<br/>Cloud',
+            icon: 'carbon:cloud-service-management',
           },
           {
-            description: 'Desktop',
-            icon: 'carbon:cloud-logging',
+            description: 'Gov-Grade<br/>Security',
+            icon: 'carbon:security',
           },
           {
-            description: 'IoT',
+            description: 'IoT Data<br/>Intelligence',
             icon: 'carbon:archive',
           },
           {
-            description: 'Web',
-            icon: 'carbon:cloud-app',
+            description: 'Legacy<br/>Integration',
+            icon: 'carbon:app-connectivity',
           },
         ]}
       />
@@ -73,17 +71,17 @@ const metadata = {
 
   <Features4
     id="features"
-    tagline="Our App Development Expertise"
+    tagline="Sector-Specific expertise"
     columns={3}
-    title="Custom Web App & Integrations"
-    subtitle="Your business is unique. Your software should be too. We design custom app that work seamlessly with your existing systems and industry needs, including:"
+    title="Digital Infrastructure for Key Industries"
+    subtitle="We provide compliance-ready technology stacks tailored for Sarawak's core economic sectors."
     classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
     items={[
       {
-        title: 'Enterprise-Grade Development',
-        description: 'Secure & Reliability',
+        title: 'Government & GLCs',
+        description: 'Secure Data Pipelines & Citizen Portals',
         link: '/enterprise',
-        icon: 'carbon:network-enterprise',
+        icon: 'carbon:building-insights-3',
         callToAction: {
           variant: 'link',
           class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
@@ -91,10 +89,10 @@ const metadata = {
         },
       },
       {
-        title: 'Healthcare & IoT Solutions',
-        description: 'Connected Health & Remote Monitoring',
+        title: 'Healthcare Systems',
+        description: 'PDPA Compliant Patient Management',
         link: '/healthcare',
-        icon: 'carbon:stethoscope',
+        icon: 'carbon:hospital-bed',
         callToAction: {
           variant: 'link',
           class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
@@ -102,8 +100,8 @@ const metadata = {
         },
       },
       {
-        title: 'Logistics & Supply Chain',
-        description: 'Traceability & Cost savings',
+        title: 'Smart Logistics',
+        description: 'Supply Chain Sovereignty & Tracking',
         link: '/logistics',
         icon: 'carbon:delivery-truck',
         callToAction: {
@@ -113,8 +111,8 @@ const metadata = {
         },
       },
       {
-        title: 'Retail & E-Commerce',
-        description: 'Customer Experience & Revenue Growth',
+        title: 'Digital Commerce',
+        description: 'High-Volume Transaction Processing',
         link: '/retail',
         icon: 'carbon:shopping-cart-arrow-down',
         callToAction: {
@@ -124,8 +122,8 @@ const metadata = {
         },
       },
       {
-        title: 'Manufacturing & Industry 4.0',
-        description: 'Automation & Smart Factory',
+        title: 'Industry 4.0',
+        description: 'Factory Automation & IoT Sensors',
         link: '/manufacturing',
         icon: 'carbon:industry',
         callToAction: {
@@ -135,8 +133,8 @@ const metadata = {
         },
       },
       {
-        title: 'AgriTech & Smart Farming',
-        description: 'Precision Agriculture & Yield Optimization',
+        title: 'AgriTech Intelligence',
+        description: 'Yield Optimization & Soil Analytics',
         link: '/agriculture',
         icon: 'carbon:agriculture-analytics',
         callToAction: {
@@ -146,8 +144,8 @@ const metadata = {
         },
       },
       {
-        title: 'Hospitality & Tourism',
-        description: 'Guest Satisfaction & Revenue Growth',
+        title: 'Smart Tourism',
+        description: 'Visitor Analytics & Booking Systems',
         link: '/hospitality',
         icon: 'carbon:pedestrian-family',
         callToAction: {
@@ -157,10 +155,10 @@ const metadata = {
         },
       },
       {
-        title: 'Education & E-Learning',
-        description: 'Personalized Learning & Engagement',
+        title: 'EdTech Platforms',
+        description: 'LMS Integration & Student Data Security',
         link: '/education',
-        icon: 'carbon:tennis-ball',
+        icon: 'carbon:education',
         callToAction: {
           variant: 'link',
           class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
@@ -168,10 +166,10 @@ const metadata = {
         },
       },
       {
-        title: '3D Development',
-        description: 'Innovative Mechanics & Gameplay',
+        title: 'Immersive Tech',
+        description: 'AR/VR Solutions for Training & Sims',
         link: '/games',
-        icon: 'carbon:game-wireless',
+        icon: 'carbon:virtual-private-cloud',
         callToAction: {
           variant: 'link',
           class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
