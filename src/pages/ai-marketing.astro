@@ -10,31 +10,29 @@ import FollowUp from '~/components/widgets/FollowUp.astro';
 
 const metadata = {
   ignoreTitleTemplate: true,
-  title: 'AI Automation and Marketing',
+  title: "Sarawak's First AI-Autonomous Agency",
   description:
-    'Unlock the power of AI for your brands and operation. We offer AI automation, development, and workforce solutions to boost your business.',
+    'Software at the Speed of Thought. We use autonomous AI agents to build, test, and self-heal software for Sarawak SMEs, Startups, and Enterprises.',
 };
 ---
 
 <Layout metadata={metadata}>
   <ThreeJs />
   <Hero2
-    tagline="AI-Powered Automation & Strategy"
+    tagline="Software at the Speed of Thought"
     actions={[{ variant: 'primary', text: "Let's Chat", href: '#contact' }]}
     image={{
       src: '~/assets/images/analytics2.png',
-      alt: 'google analytics',
+      alt: 'AI autonomous agency',
     }}
   >
     <Fragment slot="title">
-      A real AI that works for you<span class="text-primary text-gradient highlight tracking-tight">
-        NOT just chat</span
-      >
+      Sarawak’s First <span class="text-primary text-gradient highlight tracking-tight">AI-Autonomous Agency</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      We help client setup AI tools to automate their business operations. Client can ask AI to create a systems that
-      match their operations. Contact us for more information.
+      We use Cloud Workstations to run autonomous AI agents that build, test, and self-heal software. Get an entire team
+      of full stack developers at an affordable cost—more efficient and accurate than human counterparts.
     </Fragment>
     <Fragment slot="content">
       <Features5
@@ -42,20 +40,20 @@ const metadata = {
         classes={{ container: 'py-8' }}
         items={[
           {
-            description: 'Automation<br/>& Future',
-            icon: 'carbon:person-favorite',
+            description: 'Autonomous<br/>devs',
+            icon: 'carbon:ibm-watsonx-code-assistant',
           },
           {
-            description: 'AI Learns & Improves',
-            icon: 'carbon:data-enrichment-add',
+            description: '24/7<br/>monitoring',
+            icon: 'carbon:view-filled',
           },
           {
-            description: 'Budget<br/>Control',
-            icon: 'carbon:rule-locked',
+            description: 'Cost<br/>Efficient',
+            icon: 'carbon:money',
           },
           {
-            description: 'Transparent<br/>Pricing',
-            icon: 'carbon:pricing-consumption',
+            description: 'Accurate<br/>Performance',
+            icon: 'carbon:chart-high-low',
           },
         ]}
       />
@@ -74,66 +72,64 @@ const metadata = {
 
   <Features4
     id="features"
-    tagline="Our Core Services"
+    tagline="Who We Serve"
     columns={3}
-    title="Empowering Your Business with AI"
-    subtitle="Discover how our AI solutions can revolutionize your operations, development, and workforce efficiency."
+    title="Tailored Solutions for Every Growth Stage"
+    subtitle="From local innovators to national enterprises, our agentic AI models scale to your needs with precision and security."
     classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
     items={[
       {
-        title: 'AI Automation Tools',
+        title: 'Sarawak-based SMEs',
         description:
-          'Automate repetitive tasks and streamline workflows. Our tools work 24/7 to ensure your business runs efficiently without human error.',
-        icon: 'carbon:bot',
+          'Digital transformation made accessible. Unlock enterprise-grade software development at affordable rates, leveling the playing field against bigger competitors.',
+        icon: 'carbon:store',
       },
       {
-        title: 'AI Development',
+        title: 'Tech Startups',
         description:
-          'Custom AI solutions tailored to your business needs. From predictive analytics to intelligent chatbots, we build the future.',
-        icon: 'carbon:code',
+          'Accelerate your MVP. Leverage our autonomous agents to iterate fast, test continuously, and launch your product with "Software at the Speed of Thought".',
+        icon: 'carbon:rocket',
       },
       {
-        title: 'Outsourcing to AI',
+        title: 'GLC & Enterprise',
         description:
-          'Delegate tasks to our advanced AI agents capable of handling the workload of up to 5 human resources. Maximize efficiency and reduce operational costs.',
-        icon: 'carbon:user-multiple',
+          'Digital Sovereignty assured. We use a Google Cloud + Cloudflare Shield setup to keep data local while protected by global-grade firewalls.',
+        icon: 'carbon:building-insights-2',
       },
     ]}
   />
 
   <Steps3
     image={{
-      src: '~/assets/images/ai2.webp',
-      alt: 'happy team developing AI branding strategies',
+      src: '~/assets/images/agentic_ai_advantage.png',
+      alt: 'Agentic AI Development',
     }}
-    title="Campaign Approach and Process"
-    subtitle="Elevating Brands Growth with AI: Our Proven 5-Stage Approach"
+    title="The Agentic Advantage"
+    subtitle="Why our AI-driven system is superior to traditional development teams."
     items={[
       {
-        title: 'Stage 1: <span class="font-medium">Discovery & Strategy</span>',
-        description: 'Understanding your business, audience, and goals to create a tailored AI marketing strategy',
-        icon: 'carbon:forum',
-      },
-      {
-        title: 'Stage 2: <span class="font-medium">AI Implementation & Brand Integration</span>',
-        description: 'Setting up the AI infrastructure, integrating data, and connecting to your existing platforms',
-        icon: 'carbon:devices',
-      },
-      {
-        title: 'Stage 3: <span class="font-medium">Develop & Execute Campaigns</span>',
-        description: 'Creating personalized messages and running targeted campaigns across various channels',
+        title: 'Step 1: <span class="font-medium">Agentic Development</span>',
+        description:
+          'Forget managing a team of 5 seniors. Our AI-driven autonomous system builds software with unparalleled speed and consistency, eliminating human error.',
         icon: 'carbon:ibm-watsonx-code-assistant',
       },
       {
-        title: 'Stage 4: <span class="font-medium">Monitor & Analyze Performance</span>',
-        description: 'Tracking results, analyzing data, and using AI insights to identify areas for improvement',
-        icon: 'carbon:cloud-data-ops',
+        title: 'Step 2: <span class="font-medium">24/7 Self-Healing</span>',
+        description:
+          'Our software lives on Cloud Workstations that act as an immune system. They continually monitor, test, and "self-heal" your application day and night.',
+        icon: 'carbon:security',
       },
       {
-        title: 'Stage 5: <span class="font-medium">Optimize & Continuously Improve</span>',
+        title: 'Step 3: <span class="font-medium">Infrastructure Shield</span>',
         description:
-          'Refining brand messages, adjusting strategies, and ensuring maximum ROI through ongoing optimization',
-        icon: 'carbon:cloud-monitoring',
+          'Hosted on Google Cloud with a Cloudflare Shield. We ensure low latency by keeping data in Singapore/KL regions, honoring Digital Sovereignty.',
+        icon: 'carbon:cloud-satellite',
+      },
+      {
+        title: 'Step 4: <span class="font-medium">Cost-Efficient Scaling</span>',
+        description:
+          'Scale your technical capabilities without the overhead of hiring, insurance, or office space. Pay for performance and results.',
+        icon: 'carbon:chart-line',
       },
     ]}
   >

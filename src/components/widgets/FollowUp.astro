@@ -1,122 +1,116 @@
 ---
-import Banners from '~/components/widgets/Banners.astro';
 import Banners3 from '~/components/widgets/Banners3.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Content from '~/components/widgets/Content.astro';
 import Stats2 from '~/components/widgets/Stats2.astro';
 import PortFolioSummary from '../blog/PortFolioSummary.astro';
 ---
+
+<Stats2
+  stats={[
+    { title: 'Global CDN Nodes', amount: '330+' },
+    { title: 'Uptime Guarantee', amount: '99.9%' },
+    { title: 'Mitigation Speed', amount: '< 3s' },
+  ]}
+/>
+
 <Features2
-id="features"
-tagline="Why Choose Us for Web Design & Web Applications"
-title="<p class='font-normal'>Bespoke. Custom Development for High-Impact Web Solutions.</p>"
-items={[
-  {
-    title: 'Cost-Effective Design & Development',
-    description:
-      "Start with the essentials. Build what you need first, then tweak as you go. Things change quickly<span class='hidden group-hover:opacity-100 group-hover:inline'> so stay flexible to avoid wasted resources and focus on your priorities</span>",
-    icon: 'carbon:ibm-cloud-hpc',
-  },
-  {
-    title: 'Custom Solutions Tailored to Your Needs',
-    description:
-      "No two businesses are alike. We work closely to understand your objectives, <span class='hidden group-hover:inline'>workflows and pain points, crafting custom solutions that meet your needs drive growth</span>",
-    icon: 'carbon:development',
-  },
-  {
-    title: 'Future & AI-Ready Web Experiences',
-    description:
-      "Leveraging the latest technologies, we build websites and web applications that are not <span class='hidden group-hover:opacity-100 group-hover:inline'>only effective today but scalable and adaptable for tomorrow’s challenges</span>",
-    icon: 'carbon:ml-model-reference',
-  },
-  {
-    title: 'Seamless Integration of Web App Ecosystems',
-    description:
-      "We seamlessly integrate custom software with your existing systems, ensuring <span class='hidden group-hover:inline'> third-party APIs, cloud services, and tools work together to maximize efficiency</span>",
-    icon: 'carbon:ibm-api-connect',
-  },
-  {
-    title: 'Two-Way<br/> Communication',
-    description:
-      "Customers focus on immediate needs, while developers emphasize <span class='hidden group-hover:inline'>  long-term health. We prioritize balanced communication, empathy and collaboration to craft effective web solutions</span>",
-    icon: 'carbon:direct-link',
-  },
-  {
-    title: 'Continuous Integration and Deployment (CI/CD)',
-    description:
-      "With automated CI/CD, your software stays updated and agile, adapting swiftly to <span class='hidden  group-hover:inline'> operational changes and enabling confident scaling without downtime or disruption</span>",
-    icon: 'carbon:carbon-ui-builder',
-  },
-]}
+  id="features"
+  tagline="Why Power Your Business with Us?"
+  title="<p class='font-normal'>Scalable, AI-Ready, & Custom-Built for Growth.</p>"
+  items={[
+    {
+      title: 'Cost-Effective Scaling',
+      description:
+        'Start with a Minimum Viable Product (MVP) and scale as you grow. We prioritize flexible architectures that save resources and adapt to change.',
+      icon: 'carbon:ibm-cloud-hpc',
+    },
+    {
+      title: 'Tailored Business Logic',
+      description:
+        'Your business is unique. We build custom workflows and solutions that align perfectly with your specific operational needs and goals.',
+      icon: 'carbon:development',
+    },
+    {
+      title: 'Future-Proof & AI-Integrated',
+      description:
+        'Stay ahead with AI-ready web applications. We build systems designed to integrate modern machine learning and automation tools seamlessly.',
+      icon: 'carbon:ml-model-reference',
+    },
+    {
+      title: 'Seamless Ecosystem Integration',
+      description:
+        'Connect everything. We ensure your custom software plays nicely with your existing third-party APIs, cloud services, and legacy tools.',
+      icon: 'carbon:ibm-api-connect',
+    },
+    {
+      title: 'Transparent Collaboration',
+      description:
+        'We believe in two-way communication. You get clear insights into the technical health, while we align strictly with your business objectives.',
+      icon: 'carbon:direct-link',
+    },
+    {
+      title: 'Automated CI/CD Pipelines',
+      description:
+        'Deploy with confidence. Our automated pipelines ensure rapid updates, immediate bug fixes, and zero-downtime scalability.',
+      icon: 'carbon:carbon-ui-builder',
+    },
+  ]}
 >
-<Fragment slot="bg">
-  <div class="absolute inset-0 bg-page"></div>
-</Fragment>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-page"></div>
+  </Fragment>
 </Features2>
 
-  <Banners/>
+<!-- <Banners/> -->
 
-  <Stats2
-    stats={[
-      { title: 'Content Delivery Network Worldwide', amount: '330+', },
-      { title: 'High Availability Uptime', amount: '99.99%' },
-      { title: 'Malicious Traffic Automatic Mitigation', amount: '< 3s' },
-    ]}
-  />
+<!-- Content Widget **************** -->
 
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    tagline="Your Digital Partner"
-    title="Grow Your Business<br/>With Our Digital Solutions"
-    subtitle="We partner with you for long-term success, not just one-time projects"
-    items={[
-      {
-        title: '13+ Years Experience',
-        icon: 'carbon:badge',
-        description:
-          'Trusted by businesses across industries to deliver results',
+<Content
+  isReversed
+  tagline="Your Long-Term Digital Partner"
+  title="Grow With Confidence"
+  subtitle="We don't just build; we maintain, optimize, and scale your digital presence."
+  items={[
+    {
+      title: '13+ Years of Excellence',
+      icon: 'carbon:badge',
+      description: 'A proven track record of delivering robust software solutions across various industries.',
+    },
+    {
+      title: 'Holistic Tech Expertise',
+      icon: 'carbon:events',
+      description: 'From AI and IoT to cloud infrastructure, we bring a full spectrum of technical knowledge.',
+    },
+    {
+      title: 'Performance-Driven',
+      icon: 'carbon:layers-external',
+      description: 'Focusing on speed, security, and SEO to give you a competitive market edge.',
+    },
+    {
+      title: 'Modern Tech Stack',
+      icon: 'carbon:carbon-for-ibm-product',
+      description: 'Utilizing the latest frameworks like Astro, React, and Tailwind for superior performance.',
+    },
+    {
+      callToAction: {
+        text: 'Start Your Project',
+        variant: 'secondary',
+        href: '#contact',
+        icon: 'tabler:chevron-right',
       },
-      {
-        title: 'Collaborative Partnerships',
-        icon: 'carbon:events',
-        description:
-          "Experts in AI, IoT, and business solutions working together",
-      },      
-      {
-        title: 'Industry-Leading Practices',
-        icon: 'carbon:layers-external',
-        description:
-          "We implement what works to give you an edge",
-      },
-      {
-        title: 'Cutting-Edge Technology',
-        icon: 'carbon:carbon-for-ibm-product',
-        description:
-          'Using modern tools to solve business challenges',
-      },
-      {
-        callToAction: {
-          text: "Let's Talk",
-          variant: 'secondary',
-          href: '#contact',
-          icon: 'tabler:chevron-right',
-        },
-      },
-    ]}
-    image={{
-      src: '~/assets/images/app_development_discussion.webp',
-      alt: 'Happy clients in Sarawak dicussing app development process with developers',
-    }}
-  >
+    },
+  ]}
+  image={{
+    src: '~/assets/images/app_development_discussion.webp',
+    alt: 'Sarawak development team discussing custom web application strategies',
+  }}
+>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-page"></div>
+  </Fragment>
+</Content>
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-page"></div>
-    </Fragment>
-  </Content>
+<Banners3 />
 
-  <Banners3/>
-  <!-- Content Widget **************** -->
-
-  <PortFolioSummary/>
+<PortFolioSummary />
