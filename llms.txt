@@ -1,0 +1,153 @@
+# MicroWeb Codebase
+
+> MicroWeb is a high-performance web agency site built on the Astro v5 and Tailwind CSS v3 stack, leveraging the AstroWind theme architecture. Designed for custom web application development, mobile apps, system integrations, and AI-driven marketing campaigns, this codebase is fully optimized for speed, responsive design, search engine optimization (SEO), and cross-platform integrations.
+
+---
+
+## Core Architecture & Stack
+
+This project is a hybrid/static website built with modern frontend frameworks and integrations:
+- **Astro v5 (`astro`)**: The modern web framework for content-driven websites. Supports static pre-rendering, MDX, and optimized asset handling.
+- **Tailwind CSS v3 (`@astrojs/tailwind`)**: For utility-first styling and robust theme switching (dark/light support).
+- **Astro Icon (`astro-icon`)**: Direct SVG icon utility, preconfigured for `tabler` and `flat-color-icons` packages.
+- **Formbricks Integration (`@formbricks/js`)**: Integrated for feedback collection, surveys, and analytic events.
+- **Web3forms (`web3forms`)**: Used for zero-config, low-maintenance contact and integration forms.
+- **Asset Optimization (`astro-compress`)**: Auto-minification of CSS, HTML, and JS assets at build time.
+
+---
+
+## Directory Layout & Key Modules
+
+The codebase is organized as follows:
+
+- **`src/assets/`**: Static styles and visual assets.
+  - `styles/tailwind.css`: Custom Tailwind base layers, component layers, global resets, and utility declarations.
+- **`src/components/`**: Modular Astro UI blocks and layouts.
+  - `widgets/`: Dynamic visual sections of the site (e.g., Headers, Footers, Heroes, Forms).
+  - `CustomStyles.astro`: HSL-based Tailwind theme color overrides and font-family selectors.
+  - `Favicons.astro`: Configures app/site icon files.
+  - `Logo.astro`: Renders the customized `<Micro><Web>` brand element.
+- **`src/content/`**: Markdown and MDX content collections.
+  - `config.ts`: Strong typing validation schema definitions for the `post` collection.
+  - `post/`: MD/MDX files that drive dynamic portfolio pages and blog articles.
+- **`src/layouts/`**: Core page wrappers.
+  - `Layout.astro`: Direct HTML structure, scripts setup, and dark/light system handlers.
+  - `PageLayout.astro`: Combines `Layout.astro` with global header/footer configurations.
+  - `LandingLayout.astro`: Streamlined layout for specific marketing campaigns, removing clutter.
+  - `MarkdownLayout.astro`: Renders raw markdown documents (e.g., legal or policy texts).
+- **`src/pages/`**: File-based router. Each file maps to a public endpoint.
+- **`src/utils/`**: Helper methods for asset management, permalinks, routing, and blog posts queries.
+
+---
+
+## Pages & Service Routes
+
+Below is the routing mapping under `src/pages/`:
+
+### Core Pages
+- `index.astro` -> Home page (`/`)
+- `about.astro` -> Company background and vision (`/about`)
+- `contact.astro` -> General contact form (`/contact`)
+- `contact-formbricks.astro` -> Interactive survey form (`/contact-formbricks`)
+- `career.astro` -> Job opportunities and core values (`/career`)
+- `rss.xml.ts` -> Dynamic sitemap/RSS feed generation for portfolio entries.
+- `privacy.md` & `terms.md` -> Regulatory legal pages (`/privacy`, `/terms`).
+
+### Specialist Services
+- `software.astro` -> Custom Web Application Development (`/software`)
+- `web-development.astro` -> General Website Design (`/web-development`)
+- `mobile-app.astro` -> iOS/Android Mobile Apps (`/mobile-app`)
+- `integration.astro` -> System Integrations & APIs (`/integration`)
+- `ai-marketing.astro` -> AI-Powered Marketing & Branding (`/ai-marketing`)
+
+### Industrial Verticals (Solutions)
+- `enterprise.astro` -> Enterprise level solutions (`/enterprise`)
+- `healthcare.astro` -> Health industry software (`/healthcare`)
+- `logistics.astro` -> Supply chain management systems (`/logistics`)
+- `retail.astro` -> Ecommerce & retail tech (`/retail`)
+- `manufacturing.astro` -> Industry 4.0 & manufacturing automation (`/manufacturing`)
+- `agriculture.astro` -> Smart farming & agricultural IoT (`/agriculture`)
+- `hospitality.astro` -> Reservation systems & hospitality tech (`/hospitality`)
+- `education.astro` -> Learning Management Systems (LMS) (`/education`)
+- `games.astro` -> 3D Web & interactive development (`/games`)
+
+### Location-Targeted SEO Pages
+- `web-design-kuching.astro` -> Web services target for Kuching (`/web-design-kuching`)
+- `web-design-sarawak.astro` -> Web services target for Sarawak (`/web-design-sarawak`)
+
+### Dynamic Blog / Portfolio
+- `[...blog]/` -> Maps portfolio tags, categories, lists, and items under `/clients` as configured in `src/config.yaml`.
+
+---
+
+## Components & Custom Widgets
+
+The codebase utilizes high-quality, configurable components in `src/components/widgets/`:
+
+- **Layout Components**:
+  - `Header.astro` & `Footer.astro`: Main page navigation wrappers reading properties dynamically from `src/navigation.ts`.
+  - `Announcement.astro`: Top bar notice layout for temporary banners.
+- **Hero & Presentation**:
+  - `Hero.astro`, `Hero2.astro`, `Hero3.astro`, `HeroText.astro`: Highly customizable high-impact text and image sections.
+  - `Features.astro` through `Features5.astro`: Flexible grid overlays representing core service features or values.
+  - `Content.astro` & `ContentContact.astro`: Split sections layout with media assets and structured checklists.
+- **Utility / Marketing Widgets**:
+  - `Stats.astro` & `Stats2.astro`: Data metrics grids.
+  - `Steps.astro` through `Steps4.astro`: Linear workflows and milestones maps.
+  - `Testimonials.astro`: Direct customer references and feedback carousel layout.
+  - `Brands.astro`: Grid showcase for trusted partner logos.
+  - `CallToAction.astro` & `Banners.astro`: Conversions and marketing banners.
+  - `Formbricks.astro` & `Web3forms.astro`: Lead intake systems and validation triggers.
+  - `FollowUp.astro`: A prepackaged widget combining stats, service grids, and content highlights.
+
+---
+
+## Content Collections (Post Schema)
+
+Dynamic portfolio articles and client stories are managed in `src/content/post/`. Each entry must satisfy the Zod verification schema in `src/content/config.ts`:
+
+```typescript
+schema: z.object({
+  title: z.string(),                  // The primary title
+  publishDate: z.date().optional(),   // Date published
+  updateDate: z.date().optional(),    // Date updated
+  draft: z.boolean().optional(),      // Draft flag to hide in production
+  excerpt: z.string().optional(),     // Short paragraph preview
+  image: z.string().optional(),       // URL/path to cover image
+  category: z.string().optional(),    // Category grouping
+  tags: z.array(z.string()).optional(), // Keywords and tags list
+  author: z.string().optional(),      // Story or post author
+  metadata: z.object({                // Specific SEO details
+    title: z.string().optional(),
+    description: z.string().optional(),
+    robots: z.object({ index: z.boolean().optional(), follow: z.boolean().optional() }).optional(),
+    openGraph: z.object({ url: z.string().optional(), siteName: z.string().optional(), images: z.array(z.object({ url: z.string(), width: z.number().optional(), height: z.number().optional() })).optional() }).optional(),
+    twitter: z.object({ handle: z.string().optional(), site: z.string().optional(), cardType: z.string().optional() }).optional(),
+  }).optional()
+})
+```
+
+---
+
+## Core Utilities
+
+Use these helpers inside `src/utils/` to ensure architectural consistency:
+
+- **`permalinks.ts`**: Handles routing paths. Import `getPermalink` or `getAsset` to create standard relative/absolute URLs.
+- **`blog.ts`**: Methods to fetch, sort, filter, and paginate entries from the `post` collection.
+- **`images.ts` & `images-optimization.ts`**: Safe imports and asset pipelines. Handles HEIC/WebP formats and processes dimension metadata.
+- **`utils.ts`**: Generic utility routines (DOM manipulations, dynamic class concatenations).
+
+---
+
+## Development Commands
+
+All tasks are initiated from the root path:
+
+| Command | Objective |
+|---|---|
+| `npm run dev` | Spins up the Astro local dev server (default port `localhost:4321`) |
+| `npm run build` | Builds the optimized, statically compressed production bundle into `/dist/` |
+| `npm run preview` | Runs a local server to preview the built static bundle from `/dist/` |
+| `npm run check` | Checks TypeScript compliance, linting rules, and Prettier formatting |
+| `npm run fix` | Automatically formats codebase with Prettier and resolves autofixable ESLint issues |

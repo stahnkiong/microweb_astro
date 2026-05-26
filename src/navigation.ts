@@ -10,6 +10,10 @@ export const headerData = {
       text: 'Services',
       links: [
         {
+          text: 'AI Agents Automation',
+          href: getPermalink('/ai-marketing'),
+        },
+        {
           text: 'Web Application',
           href: getPermalink('/software'),
         },
@@ -25,10 +29,7 @@ export const headerData = {
           text: 'System Integration',
           href: getPermalink('/integration'),
         },
-        {
-          text: 'AI Marketing',
-          href: getPermalink('/ai-marketing'),
-        },
+
       ],
     },
     {
@@ -98,7 +99,7 @@ export const footerData = {
           href: getPermalink('/software'),
         },
         {
-          text: 'AI Branding',
+          text: 'AI Agent Automation',
           href: getPermalink('/ai-marketing'),
         },
         {

@@ -7,6 +7,7 @@ import Features4 from '~/components/widgets/Features4.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
 import Features5 from '~/components/widgets/Features5.astro';
 import FollowUp from '~/components/widgets/FollowUp.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
   ignoreTitleTemplate: true,
@@ -69,6 +70,52 @@ const metadata = {
     </Fragment>
   </Hero2>
   <Banners2 />
+
+  <Features2
+    id="symptoms"
+    tagline="Operational Bottlenecks"
+    title="Are Immediate Friction Symptoms Costing Your Business Money?"
+    subtitle="Identify the operational bottlenecks holding your business back and deploy autonomous systems to resolve them instantly."
+    columns={3}
+    items={[
+      {
+        title: 'How to automate customer responses on WhatsApp 24/7',
+        description:
+          'Leads wait hours for answers and drift to competitors. We build intelligent WhatsApp-native AI agents that qualify, answer FAQs, and engage clients round-the-clock.',
+        icon: 'tabler:brand-whatsapp',
+      },
+      {
+        title: 'Boost local SEO automatically using WhatsApp review loops',
+        description:
+          'Happy clients forget to leave reviews, causing your search engine and GPT rankings to stagnate. We build automated post-transaction WhatsApp feedback systems that filter for 5-star sentiment and direct satisfied clients straight to your Google Business Profile.',
+        icon: 'tabler:seo',
+      },
+      {
+        title: 'Stop missing leads after hours business automation',
+        description:
+          'Inquiries coming in during nights and weekends are lost forever. Our automation setups instantly capture, qualify, and respond to late-night prospects to hold their attention.',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'How to automatically qualify inbound leads without hiring',
+        description:
+          'Your team wastes valuable hours manually filtering cold leads. Conversational agents automatically ask target questions (budget, timeline, fit) and pass only hot leads to your sales reps.',
+        icon: 'tabler:user-check',
+      },
+      {
+        title: 'Automate appointment booking from website to calendar',
+        description:
+          'Eliminate endless back-and-forth messaging to schedule a simple call. Our AI integrations sync with Google Calendar or Outlook, letting qualified prospects book meetings instantly.',
+        icon: 'tabler:calendar-time',
+      },
+      {
+        title: 'How to handle high volume customer inquiries automatically',
+        description:
+          'Your customer support is overwhelmed by repetitive questions, slowing resolutions. AI-driven agents handle 80% of routine questions instantly, freeing up your team for high-value tasks.',
+        icon: 'tabler:messages',
+      },
+    ]}
+  />
 
   <Features4
     id="features"
