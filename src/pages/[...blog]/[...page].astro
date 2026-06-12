@@ -27,7 +27,7 @@ const currentPage = page.currentPage ?? 1;
 const metadata = {
   title: `Clients' Stories${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
   robots: {
-    index: blogListRobots?.index && currentPage === 1,
+    index: blogListRobots?.index,
     follow: blogListRobots?.follow,
   },
   openGraph: {
