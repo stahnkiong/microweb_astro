@@ -2,7 +2,7 @@ site:
   name: MicroWeb
   site: 'https://www.microweb.my'
   base: '/'
-  trailingSlash: false
+  trailingSlash: true
 
   googleSiteVerificationId: google-site-verification=AuOwWyzbRWHSJrMw4w6MUrkeA9xgva3sTcXMBvMpDAE
 

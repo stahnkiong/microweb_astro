@@ -38,8 +38,9 @@ const getPostRedirects = () => {
 };
 
 export default defineConfig({
-  site: 'https://www.microweb.my/',
+  site: 'https://www.microweb.my',
   output: 'static',
+  trailingSlash: 'always',
 
   redirects: getPostRedirects(),
 
