@@ -11,29 +11,30 @@ import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
   ignoreTitleTemplate: true,
-  title: "Sarawak's First AI-Autonomous Agency",
+  title: "Sarawak's First Agentic Integration Agency | MicroWeb",
   description:
-    'Software at the Speed of Thought. We use autonomous AI agents to build, test, and self-heal software for Sarawak SMEs, Startups, and Enterprises.',
+    'Eliminate manual operational data entry. We deploy autonomous WhatsApp AI agents that integrate directly into your core business software—allowing clients to submit data, orders, and invoices via a single photo.',
 };
 ---
 
 <Layout metadata={metadata}>
   <ThreeJs />
   <Hero2
-    tagline="Software at the Speed of Thought"
-    actions={[{ variant: 'primary', text: "Let's Chat", href: '#contact' }]}
+    tagline="Zero-Friction Business Automation"
+    actions={[{ variant: 'primary', text: 'Deploy an Agent', href: '#contact' }]}
     image={{
       src: '~/assets/images/analytics2.png',
-      alt: 'AI autonomous agency',
+      alt: 'WhatsApp AI Agentic Integration Architecture',
     }}
   >
     <Fragment slot="title">
-      Sarawak’s First <span class="text-primary text-gradient highlight tracking-tight">AI-Autonomous Agency</span>
+      Sarawak’s First <span class="text-primary text-gradient highlight tracking-tight">Agentic AI Integration</span> Agency
     </Fragment>
 
     <Fragment slot="subtitle">
-      We use Cloud Workstations to run autonomous AI agents that build, test, and self-heal software. Get an entire team
-      of full stack developers at an affordable cost—more efficient and accurate than human counterparts.
+      Stop fighting user adoption friction. We design and embed autonomous WhatsApp agents directly into your legacy
+      software backends. Your clients and field teams skip clunky manual key-ins and simply snap a photo—our pipelines
+      process, validate, and commit the structured data natively 24/7.
     </Fragment>
     <Fragment slot="content">
       <Features5
@@ -41,20 +42,20 @@ const metadata = {
         classes={{ container: 'py-8' }}
         items={[
           {
-            description: 'Autonomous<br/>devs',
-            icon: 'carbon:ibm-watsonx-code-assistant',
+            description: 'WhatsApp-Native<br/>Interfaces',
+            icon: 'tabler:brand-whatsapp',
           },
           {
-            description: '24/7<br/>monitoring',
-            icon: 'carbon:view-filled',
+            description: 'Computer Vision<br/>Photo Parsing',
+            icon: 'carbon:image-search',
           },
           {
-            description: 'Cost<br/>Efficient',
-            icon: 'carbon:money',
+            description: 'Zero-Management<br/>Automation',
+            icon: 'carbon:gears',
           },
           {
-            description: 'Accurate<br/>Performance',
-            icon: 'carbon:chart-high-low',
+            description: 'Local Trust<br/>Liquidity',
+            icon: 'carbon:security',
           },
         ]}
       />
@@ -74,45 +75,45 @@ const metadata = {
   <Features2
     id="symptoms"
     tagline="Operational Bottlenecks"
-    title="Are Immediate Friction Symptoms Costing Your Business Money?"
-    subtitle="Identify the operational bottlenecks holding your business back and deploy autonomous systems to resolve them instantly."
+    title="Are Manual Key-Ins & 'Tech-Shock' Stalling Your Sales Volume?"
+    subtitle="Forcing local clients or field workers to download complex apps or navigate rigid forms breaks their natural habits. Meet them where they already live."
     columns={3}
     items={[
       {
-        title: 'How to automate customer responses on WhatsApp 24/7',
+        title: 'Instant Photo-to-Data Supply Chain Processing',
         description:
-          'Leads wait hours for answers and drift to competitors. We build intelligent WhatsApp-native AI agents that qualify, answer FAQs, and engage clients round-the-clock.',
-        icon: 'tabler:brand-whatsapp',
+          'Stop requiring clients or delivery drivers to manually type long product SKUs, quantities, or invoice fields. Our agents let them snap a photo of a handwritten order sheet or warehouse manifest directly inside WhatsApp, instantly converting the image into structured database payloads.',
+        icon: 'carbon:document-view',
       },
       {
-        title: 'Boost local SEO automatically using WhatsApp review loops',
+        title: 'Direct WhatsApp-to-Software ERP Integration',
         description:
-          'Happy clients forget to leave reviews, causing your search engine and GPT rankings to stagnate. We build automated post-transaction WhatsApp feedback systems that filter for 5-star sentiment and direct satisfied clients straight to your Google Business Profile.',
+          'Eliminate the data silo between your customer chats and your backend accounting or CRM software. We bridge WhatsApp communications natively into your core business engines, executing zero-management background pipelines that update inventory levels and dispatch tracking details instantly.',
+        icon: 'carbon:link',
+      },
+      {
+        title: 'Automate Customer Responses & Order Status 24/7',
+        description:
+          'Leads freeze when forced to wait hours for simple stock confirmations or delivery statuses. Our WhatsApp-native agents handle complex client parameter queries round-the-clock, maintaining institutional trust by answering contextually within seconds.',
+        icon: 'tabler:messages',
+      },
+      {
+        title: 'Accelerate Local Trust via WhatsApp Feedback Loops',
+        description:
+          'Satisfied clients rarely navigate manual external review links, causing your search engine rankings to plateau. We deploy post-transaction WhatsApp automation hooks that capture real-time sentiment flags and route your best transactions straight to your Google Business Profile.',
         icon: 'tabler:seo',
       },
       {
-        title: 'Stop missing leads after hours business automation',
+        title: 'Eliminate Inbound Qualification Friction Automatically',
         description:
-          'Inquiries coming in during nights and weekends are lost forever. Our automation setups instantly capture, qualify, and respond to late-night prospects to hold their attention.',
-        icon: 'tabler:clock',
-      },
-      {
-        title: 'How to automatically qualify inbound leads without hiring',
-        description:
-          'Your team wastes valuable hours manually filtering cold leads. Conversational agents automatically ask target questions (budget, timeline, fit) and pass only hot leads to your sales reps.',
+          'Your operational reps waste valuable corporate hours filtering unvetted inquiries. Conversational WhatsApp agents programmatically qualify budget boundaries and delivery parameters using natural chat flows, moving only high-value targets to your sales team.',
         icon: 'tabler:user-check',
       },
       {
-        title: 'Automate appointment booking from website to calendar',
+        title: 'Synchronize Site Appointments Directly into Calendars',
         description:
-          'Eliminate endless back-and-forth messaging to schedule a simple call. Our AI integrations sync with Google Calendar or Outlook, letting qualified prospects book meetings instantly.',
+          'Remove the administrative friction of manual back-and-forth coordinate checks. Our integration pipelines interface WhatsApp chats directly with Google Calendar or enterprise scheduling systems, booking verified clients into your available slots automatically.',
         icon: 'tabler:calendar-time',
-      },
-      {
-        title: 'How to handle high volume customer inquiries automatically',
-        description:
-          'Your customer support is overwhelmed by repetitive questions, slowing resolutions. AI-driven agents handle 80% of routine questions instantly, freeing up your team for high-value tasks.',
-        icon: 'tabler:messages',
       },
     ]}
   />
@@ -121,26 +122,26 @@ const metadata = {
     id="features"
     tagline="Who We Serve"
     columns={3}
-    title="Tailored Solutions for Every Growth Stage"
-    subtitle="From local innovators to national enterprises, our agentic AI models scale to your needs with precision and security."
+    title="Eliminating Complexity Across Regional Enterprise Ecosystems"
+    subtitle="From regional supply chains to localized services, we build invisible agentic wrappers that protect operations from technology adoption failures."
     classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
     items={[
       {
-        title: 'Sarawak-based SMEs',
+        title: 'Sarawak-Based FMCG & SMEs',
         description:
-          'Digital transformation made accessible. Unlock enterprise-grade software development at affordable rates, leveling the playing field against bigger competitors.',
+          'Accelerate your time-to-market. Modernize your ordering workflows without exposing non-technical retail clients to complex backend systems, preserving traditional habits while gaining digital speed.',
         icon: 'carbon:store',
       },
       {
-        title: 'Tech Startups',
+        title: 'Logistics & B2B Supply Chains',
         description:
-          'Accelerate your MVP. Leverage our autonomous agents to iterate fast, test continuously, and launch your product with "Software at the Speed of Thought".',
-        icon: 'carbon:rocket',
+          'Connect cold-chain transit tracking directly to field operations. Drivers verify warehouse receipts by snapping image confirmations inside WhatsApp, bypassing manual field configurations entirely.',
+        icon: 'carbon:delivery-truck',
       },
       {
-        title: 'GLC & Enterprise',
+        title: 'Enterprises & Public Sector Infrastructure',
         description:
-          'Digital Sovereignty assured. We use a Google Cloud + Cloudflare Shield setup to keep data local while protected by global-grade firewalls.',
+          'Ensure absolute Digital Sovereignty. All high-velocity text processing and automated data pipelines operate behind an enterprise Google Cloud and Cloudflare Shield setup, keeping regional data isolated and secure.',
         icon: 'carbon:building-insights-2',
       },
     ]}
@@ -149,34 +150,34 @@ const metadata = {
   <Steps3
     image={{
       src: '~/assets/images/agentic_ai_advantage.png',
-      alt: 'Agentic AI Development',
+      alt: 'Agentic Infrastructure Flow: Photo Input to Database Action',
     }}
-    title="The Agentic Advantage"
-    subtitle="Why our AI-driven system is superior to traditional development teams."
+    title="The Integration Advantage"
+    subtitle="How our invisible operational backend layout outperforms traditional application development."
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Agentic Development</span>',
+        title: 'Step 1: <span class="font-medium">Capture Natively (Zero Habit Change)</span>',
         description:
-          'Forget managing a team of 5 seniors. Our AI-driven autonomous system builds software with unparalleled speed and consistency, eliminating human error.',
-        icon: 'carbon:ibm-watsonx-code-assistant',
+          'The client or field worker executes their task inside WhatsApp. They snap a photo of an asset, line item, or document. There are zero new apps to open, zero forms to clear, and zero tech-shock.',
+        icon: 'carbon:camera',
       },
       {
-        title: 'Step 2: <span class="font-medium">24/7 Self-Healing</span>',
+        title: 'Step 2: <span class="font-medium">Autonomous Extraction & Validation</span>',
         description:
-          'Our software lives on Cloud Workstations that act as an immune system. They continually monitor, test, and "self-heal" your application day and night.',
+          'Our serverless parsing pipelines ingest the visual asset via high-accuracy computer vision. The autonomous engine extracts relevant data matrices, fixes perspective warps, and runs structural validation checks.',
+        icon: 'carbon:image-search',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Direct-to-Software Commits</span>',
+        description:
+          'Validated data payloads bypass human entry desks and update your core internal software or inventory ledger natively. The client gets an instant WhatsApp confirmation summary automatically.',
+        icon: 'carbon:data-share',
+      },
+      {
+        title: 'Step 4: <span class="font-medium">24/7 Cloud Architecture Shield</span>',
+        description:
+          'The complete system runs on decoupled Cloud Workstations monitored for runtime exceptions. Your business layer operates with high-availability automation while data stays regionally secure.',
         icon: 'carbon:security',
-      },
-      {
-        title: 'Step 3: <span class="font-medium">Infrastructure Shield</span>',
-        description:
-          'Hosted on Google Cloud with a Cloudflare Shield. We ensure low latency by keeping data in Singapore/KL regions, honoring Digital Sovereignty.',
-        icon: 'carbon:cloud-satellite',
-      },
-      {
-        title: 'Step 4: <span class="font-medium">Cost-Efficient Scaling</span>',
-        description:
-          'Scale your technical capabilities without the overhead of hiring, insurance, or office space. Pay for performance and results.',
-        icon: 'carbon:chart-line',
       },
     ]}
   >

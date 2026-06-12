@@ -7,30 +7,33 @@ import Features4 from '~/components/widgets/Features4.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
 import Features5 from '~/components/widgets/Features5.astro';
 import FollowUp from '~/components/widgets/FollowUp.astro';
+
 const metadata = {
-  title: 'Mobile App Development',
   ignoreTitleTemplate: true,
-  description: 'Mobile App Development, Custom Software Development, Custom Web Application Development',
+  title: 'Mobile App Development Kuching | Custom App Company Sarawak',
+  description:
+    'Sovereign, cross-platform mobile application engineering in Sarawak. We specialize in offline-first architectures, native hardware sync pipelines, and network-resilient enterprise builds.',
 };
 ---
 
 <Layout metadata={metadata}>
   <ThreeJs />
   <Hero2
-    tagline="Citizen-First Mobile Experiences"
-    actions={[{ variant: 'primary', text: 'Start Citizen Project', href: '#contact' }]}
+    tagline="Mobile App Development Kuching & Sarawak"
+    actions={[{ variant: 'primary', text: 'Request Engineering Proposal', href: '#contact' }]}
     image={{
       src: '~/assets/images/web.webp',
-      alt: 'Citizen using government mobile service app',
+      alt: 'Enterprise mobile application interface showcasing offline sync states and telemetry parameters',
     }}
   >
     <Fragment slot="title">
-      Engage, Serve, and <span class="text-primary text-gradient highlight tracking-tight">Protect</span> your Mobile Population
+      Network-Resilient <span class="text-primary text-gradient highlight tracking-tight">Mobile Application</span> Engineering
     </Fragment>
 
     <Fragment slot="subtitle">
-      Deploy secure, <strong>offline-first mobile applications</strong> designed for Sarawak's unique geography. Essential
-      for extending government services and enterprise reach to rural communities with limited connectivity.
+      We build cross-platform mobile environments designed for complex regional infrastructure. From offline-first local
+      cache synchronization to native hardware integrations, we ensure your business applications run smoothly on
+      standard devices over erratic networks.
     </Fragment>
     <Fragment slot="content">
       <Features5
@@ -38,19 +41,19 @@ const metadata = {
         classes={{ container: 'py-8' }}
         items={[
           {
-            description: 'Offline-First<br/>Architecture',
+            description: 'Offline-First<br/>State Sync',
             icon: 'carbon:no-ticket',
           },
           {
-            description: 'Biometric<br/>Security',
+            description: 'Native Component<br/>Performance',
             icon: 'carbon:fingerprint-recognition',
           },
           {
-            description: 'Population<br/>Scale',
+            description: 'Automated CI/CD<br/>App Builds',
             icon: 'carbon:pricing-consumption',
           },
           {
-            description: 'Gov<br/>Compliance',
+            description: 'Hardware API<br/>Integration',
             icon: 'carbon:ai-governance-lifecycle',
           },
         ]}
@@ -70,41 +73,50 @@ const metadata = {
 
   <Features4
     id="features"
-    tagline="Scalable Mobile Solutions"
+    tagline="Engineering Vector Matrix"
     columns={3}
-    title="Apps Built for Sovereignty & Scale"
-    subtitle="We build mobile infrastructure that withstands high-traffic surges and operates reliably in low-bandwidth environments."
+    title="High-Uptime Architectures Built for Field Scale"
+    subtitle="We skip bloated, unoptimized application templates. We write high-efficiency, native-compiled cross-platform layouts that scale without runtime degradation."
     classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
     items={[
       {
-        title: 'Citizen-Centric UX',
-        description: 'Inclusive design for all demographics (Urban/Rural)',
-        icon: 'carbon:user-multiple',
+        title: 'Offline-First Data Schemas',
+        description:
+          'Writing telemetry variables directly to local device SQLite layers, auto-syncing with central endpoints upon network re-establishment.',
+        link: '/clients/bluetooth-beacon-border-control',
+        icon: 'carbon:data-blob',
       },
       {
-        title: 'Hybrid Deployment',
-        description: 'iOS, Android & HarmonyOS ready',
+        title: 'Cross-Platform Compilations',
+        description:
+          'Deploying optimized, uniform code bases targeting both iOS and Android runtimes to minimize client technical debt.',
         icon: 'carbon:carbon-for-mobile',
       },
       {
-        title: 'Secure Identity',
-        description: 'MyKad & SingPass integration ready',
+        title: 'Native Hardware Interfacing',
+        description:
+          'Wiring directly into underlying device arrays—including low-level BLE beacon scanning, camera optics, and biometric tokens.',
+        link: '/clients/adidas-smart-retail',
         icon: 'carbon:id-management',
       },
       {
-        title: 'Edge Performance',
-        description: 'Optimized for instant loading on 4G/5G',
+        title: 'Decoupled State Management',
+        description:
+          'Isolating visual interface loops from intensive data parsing threads, dropping client-side interface frame drops to zero.',
         icon: 'carbon:forecast-lightning',
       },
       {
-        title: 'Legacy Bridging',
-        description: 'Connects with mainframe agency backends',
+        title: 'Asynchronous API Gateways',
+        description:
+          'Routing core app actions through non-blocking network queues to prevent system lockups during background sync states.',
+        link: '/clients/architecting-persistent-b2b-supply-chain-medusajs-docker',
         icon: 'carbon:api',
       },
       {
-        title: 'Sovereign Data',
-        description: 'Local storage compliance guaranteed',
-        icon: 'carbon:data-blob',
+        title: 'Sovereign Storage Protocols',
+        description:
+          'Hardening regional transmission paths using encrypted local storage configurations that comply with local data policies.',
+        icon: 'carbon:user-multiple',
       },
     ]}
   />
@@ -112,39 +124,44 @@ const metadata = {
   <Steps3
     image={{
       src: '~/assets/images/webdev.webp',
-      alt: 'Mobile app development team collaborating',
+      alt: 'MicroWeb mobile application developers compiling native runtime files and monitoring device console logs',
     }}
-    title="Our 6-Step App Development Process"
-    subtitle="Pay as we build. Get a custom mobile app - no cookie-cutter solutions"
+    title="Velocity Over Elegance: Our Mobile Engineering Pipeline"
+    subtitle="We structure mobile systems to deliver immediate functional value, validating deployment stability against real-world network conditions."
     items={[
       {
-        title: '1. Strategy Session',
-        description: "We define your app's goals, users, and must-have features",
+        title: '1. Deconstruct Data Requirements',
+        description:
+          'We audit the target field workflows to map the absolute minimal dataset required to execute actions cleanly.',
         icon: 'carbon:forum',
       },
       {
-        title: '2. Design & Prototype',
-        description: "Create and refine your app's look and feel",
+        title: '2. Isolate Sync Prototypes',
+        description:
+          'We build thin local storage configurations to verify database write and update pathways under simulated network loss.',
         icon: 'carbon:devices',
       },
       {
-        title: '3. Development',
-        description: 'We code your app with clean, secure technology',
+        title: '3. Write Native-Compiled Code',
+        description: 'We develop optimized UI layouts using responsive, component-driven cross-platform frameworks.',
         icon: 'carbon:ibm-watsonx-code-assistant',
       },
       {
-        title: '4. Rigorous Testing',
-        description: 'Ensure flawless performance on all devices',
+        title: '4. Execute Automated Unit Checks',
+        description:
+          'We run the codebase through continuous integration tests, verifying system behavior across diverse device profiles.',
         icon: 'carbon:ibm-watsonx-code-assistant',
       },
       {
-        title: '5. App Store Launch',
-        description: 'We handle submission and go-live support',
+        title: '5. Push to Distribution Ecosystems',
+        description:
+          'We manage deployment staging pipelines, pushing verified release blocks securely to enterprise store sandboxes.',
         icon: 'carbon:cloud-data-ops',
       },
       {
-        title: '6. Ongoing Care',
-        description: 'Updates, improvements, and maintenance',
+        title: '6. Live Runtime Instrumentation',
+        description:
+          'We monitor live exception telemetry logs to identify and resolve device crashes or sync latency bottlenecks instantly.',
         icon: 'carbon:cloud-monitoring',
       },
     ]}

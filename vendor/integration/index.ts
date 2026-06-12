@@ -106,6 +106,25 @@ export default ({ config: _themeConfig = 'src/config.yaml' } = {}): AstroIntegra
               });
             }
           }
+
+          // Update _redirects file with post redirects
+          buildLogger.info('Updating `_redirects` with post redirects ...');
+          const redirectsFileInOut = new URL('_redirects', outDir);
+          const postDir = new URL('src/content/post', cfg.root);
+
+          if (fs.existsSync(postDir) && fs.existsSync(redirectsFileInOut)) {
+            const files = fs.readdirSync(postDir);
+            let redirectsAppend = '';
+            for (const file of files) {
+              if (file.endsWith('.md') || file.endsWith('.mdx')) {
+                const slug = file.replace(/\.mdx?$/, '');
+                redirectsAppend += `${os.EOL}/${slug} /clients/${slug} 301`;
+              }
+            }
+            if (redirectsAppend) {
+              fs.appendFileSync(redirectsFileInOut, redirectsAppend, { encoding: 'utf8' });
+            }
+          }
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (error) {
           /* empty */

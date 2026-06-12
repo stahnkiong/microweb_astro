@@ -6,24 +6,20 @@ import Banners2 from '~/components/widgets/Banners2.astro';
 import Features4 from '~/components/widgets/Features4.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
 import ThreeJs from '~/components/widgets/ThreeJs.astro';
-
-const metadata = {
-  title: 'MicroWeb - Custom Web Design & App Development',
-  ignoreTitleTemplate: true,
-};
 ---
 
-<Layout metadata={metadata}>
+<Layout>
   <ThreeJs />
   <!-- Hero Widget ******************* -->
-  <Hero tagline="Custom Web Design & App Development">
-    <!--from hero tag: image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }} -->
+  <Hero tagline="App Developer & Enterprise System Integration Company in Kuching, Sarawak">
     <Fragment slot="title">
-      <span class="text-primary text-gradient highlight">Hire Your Next </span>Top Performer<br />A 24/7 Digital
-      Employee
+      <span class="text-primary text-gradient highlight">Deploy Your Next </span>Top Performer:<br />An Invisible
+      Automation Shield
     </Fragment>
     <Fragment slot="subtitle">
-      Stop missing leads after-hours. From 24/7 WhatsApp response automation to automatic inbound qualifying and booking, we build systems that solve your immediate operational friction symptoms.
+      Stop fighting user adoption friction or complex forms. As a leading app company in Kuching, we engineer
+      high-performance custom software and automated WhatsApp integrations that let clients submit orders, track stock,
+      and process documents via a single photo 24/7.
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 grid grid-cols-2 -space-x-52">
@@ -34,24 +30,14 @@ const metadata = {
       </div>
     </Fragment>
   </Hero>
+
   <Features4
     columns={4}
     classes={{ container: 'mb-96 md:mb-0 md:pb-20' }}
     items={[
       {
-        title: 'Web Design & Development',
-        description: 'Navigating Digital Landscape<br/> with Confidence',
-        link: '/web-development',
-        icon: 'carbon:dashboard',
-        callToAction: {
-          variant: 'link',
-          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-          icon: 'carbon:arrow-right',
-        },
-      },
-      {
         title: 'Custom App Development',
-        description: 'Secure, Seamless and <br/>Tailored Solutions',
+        description: 'Secure, high-availability mobile & web application architectures tailored for regional scale.',
         link: '/software',
         icon: 'carbon:network-enterprise',
         callToAction: {
@@ -61,8 +47,19 @@ const metadata = {
         },
       },
       {
-        title: 'AI Agents & Automation Setup',
-        description: "Stop missing leads after-hours. <br/>Automate WhatsApp & booking 24/7.",
+        title: 'Enterprise System Integration',
+        description: 'Bridging legacy databases with modern API pipelines and decoupled third-party ecosystems.',
+        link: '/integration',
+        icon: 'carbon:ibm-z-cloud-mod-stack',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+      {
+        title: 'WhatsApp Agents & Automation',
+        description: 'Eliminate manual key-in friction using computer-vision pipelines running natively inside chat.',
         link: '/ai-marketing',
         icon: 'carbon:machine-learning-model',
         callToAction: {
@@ -72,10 +69,11 @@ const metadata = {
         },
       },
       {
-        title: 'Future-Ready System Integration',
-        description: 'Seamless API and <br/>AI Solutions',
-        link: '/integration',
-        icon: 'carbon:ibm-z-cloud-mod-stack',
+        title: 'High-Performance Web Design',
+        description:
+          'Edge-cached, fast-loading corporate properties optimized for local search authority and core web vitals.',
+        link: '/web-development',
+        icon: 'carbon:dashboard',
         callToAction: {
           variant: 'link',
           class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
@@ -84,40 +82,46 @@ const metadata = {
       },
     ]}
   />
+
   <Banners2 />
   <FollowUp />
 
   <Steps3
     image={{
       src: '~/assets/images/process.webp',
-      alt: 'Team working on a web development project',
+      alt: 'MicroWeb systems engineers blueprinting a custom integration schema',
     }}
-    title="Simple, Effective Process for Digital Projects"
-    subtitle="<strong>Start small, scale smart.</strong> Our flexible approach lets you begin with essential features and expand as needed."
+    title="Velocity Over Elegance: Our Development Lifecycle"
+    subtitle="<strong>Start small, validate fast, scale permanently.</strong> We decouple complex dependencies to isolate and eliminate operational bottlenecks within weeks, not months."
     items={[
       {
-        title: '1. <span class="font-medium">Understand</span>',
-        description: 'We listen first to fully grasp your business needs and goals',
+        title: '1. <span class="font-medium">Deconstruct Bottlenecks</span>',
+        description:
+          'We audit your current operational workflows to target the single highest-friction administrative point.',
         icon: 'carbon:forum',
       },
       {
-        title: '2. <span class="font-medium">Design</span>',
-        description: 'We create prototypes to visualize and refine your solution',
+        title: '2. <span class="font-medium">Isolate the MVP Core</span>',
+        description:
+          'We wire up a thin prototype interface to validate core data flow paths using real production variables.',
         icon: 'carbon:devices',
       },
       {
-        title: '3. <span class="font-medium">Build</span>',
-        description: 'We develop in stages with continuous testing and feedback',
+        title: '3. <span class="font-medium">Automated Engineering</span>',
+        description:
+          'We build out stable module backends paired with automated continuous testing pipelines to prevent technical debt.',
         icon: 'carbon:ibm-watsonx-code-assistant',
       },
       {
-        title: '4. <span class="font-medium">Launch</span>',
-        description: 'We handle deployment and ensure smooth go-live',
+        title: '4. <span class="font-medium">Edge Deployment</span>',
+        description:
+          'We launch across secure container environments, hardwiring a Cloudflare protection perimeter for local digital sovereignty.',
         icon: 'carbon:cloud-data-ops',
       },
       {
-        title: '5. <span class="font-medium">Improve</span>',
-        description: 'We provide updates and optimizations to keep your solution fresh',
+        title: '5. <span class="font-medium">Lifecycle Monitoring</span>',
+        description:
+          'We deploy persistent monitoring telemetry tools to handle routine exceptions and track data optimization velocities.',
         icon: 'carbon:cloud-monitoring',
       },
     ]}

@@ -11,8 +11,9 @@ import PortFolioSummary from '~/components/blog/PortFolioSummary.astro';
 import PortFolio from '~/components/widgets/PortFolio.astro';
 
 const metadata = {
-  title: 'About us - MicroWeb',
-  description: 'MicroWeb is a leading digital transformation partner, helping businesses succeed in the digital world.',
+  title: 'Systems Architects & Custom Software Engineers | MicroWeb',
+  description:
+    'Rooted in Kuching since 2012. We engineer network-resilient custom applications, edge-cached web platforms, and zero-management WhatsApp-to-ERP integration pipelines across Malaysia.',
   ignoreTitleTemplate: true,
 };
 ---
@@ -22,14 +23,14 @@ const metadata = {
 
   <Hero3>
     <Fragment slot="title">
-      Solving Real-World Problems with <br />
-      <span class="text-accent dark:text-white highlight"> Software Solutions</span>
+      Engineering Performance-Driven <br />
+      <span class="text-accent dark:text-white highlight">Custom Software & Integrations</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      MicroWeb's team of experts turns your business ideas into effective software. We're a leading digital
-      transformation partner, helping businesses succeed in the digital world. We create great online experiences that
-      connect with your customers and deliver real results.
+      At MicroWeb, we don't build temporary marketing landers; we architect permanent digital infrastructure. We
+      specialize in isolating high-friction operational bottlenecks and deploying decoupled, edge-managed systems that
+      eliminate manual key-in debt and mitigate enterprise tech-shock.
     </Fragment>
   </Hero3>
   <Banners2 isBgBlack="true" />
@@ -37,28 +38,28 @@ const metadata = {
   <!-- Features3 Widget ************** -->
 
   <Features3
-    title="Core Value: People First"
-    subtitle="MicroWeb builds strong, lasting relationships with our clients. We work closely with successful brands, startups, and other developers to create outstanding solutions together."
+    title="Our Core Architecture Maxims"
+    subtitle="We discard bloated administrative overhead and theoretical perfection. We deliver predictable backend stability using strict software engineering protocols."
     columns={3}
     isBeforeContent={true}
     items={[
       {
-        title: 'Relationship-Focused',
+        title: 'Velocity Over Elegance',
         description:
-          'MicroWeb prioritizes building long-term, mutually beneficial relationships with clients, not just transactional work',
-        icon: 'carbon:user-favorite-alt',
-      },
-      {
-        title: 'Collaborative Approach',
-        description:
-          'Work closely with a diverse range of partners, including established brands, emerging startups, and fellow developers, fostering a team-oriented environment',
-        icon: 'carbon:events',
-      },
-      {
-        title: 'Specialized Efficiency',
-        description:
-          'Our team is divided into experts. Each team focuses on one area of the software, making them very efficient and delivering excellent results',
+          'We build lean, highly targeted Minimum Viable Products (MVPs) to isolate and eliminate workflow failures in production quickly, avoiding the high cost of premature optimization.',
         icon: 'carbon:gears',
+      },
+      {
+        title: 'Friction-Free Interface Decoupling',
+        description:
+          'We protect users from technology adoption failure by wrapping advanced logic inside existing daily habits—such as using automated WhatsApp pipelines to process structural data from photos.',
+        icon: 'carbon:cloud',
+      },
+      {
+        title: 'Digital Sovereignty & Security',
+        description:
+          'We secure regional data assets behind enterprise Cloudflare Edge Shield arrays, ensuring low latency and consistent compliance with local data hosting parameters.',
+        icon: 'carbon:security',
       },
     ]}
   />
@@ -70,37 +71,38 @@ const metadata = {
     isAfterContent={true}
     image={{
       src: '~/assets/images/aboutus.jpg',
-      alt: 'about our web design agency in Kuching, Sarawak, Malaysia',
+      alt: 'MicroWeb custom application developers blueprinting software infrastructure solutions in Kuching, Sarawak',
     }}
   />
 
   <!-- Steps2 Widget ****************** -->
 
   <Steps2
-    title="Our values"
-    subtitle="<p>At the end of the day, it's about the people. We've built a company culture where everyone's working together, always trying new things, and constantly getting better.</p><p class='mt-4'>Even the best teams have their ups and downs, disagreements or setbacks along the way but hey that's where the real magic happens. We learn from our mistakes, bounce ideas off each other, and come up with some really cool stuff.</p>"
+    title="Engineering Execution Blueprint"
+    subtitle="<p>Software durability relies entirely on backend predictability. Our agency is organized around clean dependency isolation and iterative delivery to maximize structural lifespan.</p><p class='mt-4'>By treating volatile networks and shifting corporate parameters as constants during the design phase, we build software environments that easily withstand a decade of technology lifecycle shifts.</p>"
     items={[
       {
-        title: 'Masters of Their Craft',
+        title: 'Component-Isolated Specialists',
         description:
-          'These specialists concentrate solely on their assigned modules, resulting in highly efficient and precise app development',
+          'Our systems engineers focus exclusively on independent modules, ensuring clean separation of concerns and dropping layout or database serialization friction to absolute zero.',
       },
       {
-        title: 'Scalable, Flexible Teams',
+        title: 'Decoupled API Agility',
         description:
-          'Because our teams are built around independent modules, we can easily add or adjust resources without disrupting the entire project',
+          'Because our backends rely on modular content schemas and isolated API wrappers, resources can be scaled up or reassigned instantly without endangering the core database state.',
       },
       {
-        title: 'Progressive Project Management',
+        title: 'Automated CI/CD Delivery',
         description:
-          'Dedicated module teams allow for rapid resource switching, enabling quick adjustments to progressive project needs',
+          'Every incremental patch or integration update runs through automated verification testing via GitHub Actions, completely preventing configuration drift across hosting environments.',
       },
     ]}
   />
+
   <PortFolio
     id="porfolio"
-    title="Our Long-Term Vision for an Immersive Platform"
-    tagline="Vision / Aspiration"
+    title="Our Innovation Pipeline"
+    tagline="Active R&D Focus"
     classes={{
       panel: 'bg-neutral-100 dark:bg-neutral-600 border border-black dark:border-0',
       container: 'pb-4 pt-12 md:pb-8 md:pt-4 lg:pb-8 lg:pt-4',
@@ -108,26 +110,26 @@ const metadata = {
     }}
     items={[
       {
-        title: 'The Inevitable Shift Investing in the Future of Engaging Education',
+        title: 'Client-Side Real-Time 3D Simulation Engines',
         icon: 'carbon:application-web',
         description:
-          "A 3D interactive learning platform that redefines engagement and makes education captivating. This is not just a trend; it's the future of learning.",
+          'Architecting open-source, WebGL-driven educational frameworks that run interactive deterministic physics models completely in-browser, bypassing heavy local hardware configurations.',
       },
     ]}
     image={{
       src: '~/assets/images/blog/kidsthinking.webp',
-      alt: 'game development & 3D learning platform case study by MicroWeb',
+      alt: 'Open-source 3D physics engine and interactive learning platform architecture by MicroWeb',
     }}
     callToAction={{
-      text: 'Read case study',
+      text: 'Review Engine Breakdown',
       icon: 'tabler:chevron-right',
-      href: '/3d-learning-platform',
+      href: '/clients/3d-learning-platform',
     }}
   >
     <Fragment slot="content">
       <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
-        Shape the Future of Education <br /><span class="text-lg font-semibold"
-          >Redefines Engagement and Makes Education Captivating</span
+        Re-Engineering Digital Instruction <br /><span class="text-lg font-semibold"
+          >Replacing Passive Consumption with Multi-Variable Simulation Environment</span
         >
       </h3>
     </Fragment>
@@ -138,14 +140,14 @@ const metadata = {
   </PortFolio>
 
   <Features4
-    tagline="Our Services"
-    title="Digital Partner That Prioritizes Your Return on Investment"
+    tagline="Core Architecture Vector"
+    title="Specialized Systems Engineered for Transactional Scale"
     columns={4}
     classes={{ container: 'my-24 md:mb-0 md:pb-20' }}
     items={[
       {
-        title: 'Custom Web Application for Growth',
-        description: 'Secure, Seamless and <br/>Tailored Solutions',
+        title: 'Custom App Development',
+        description: 'Secure, high-availability mobile & web application architectures tailored for regional scale.',
         link: '/software',
         icon: 'carbon:network-enterprise',
         callToAction: {
@@ -155,10 +157,10 @@ const metadata = {
         },
       },
       {
-        title: 'Bespoke Web Design & Development for UI/UX',
-        description: 'Navigating Digital Landscape<br/> with Confidence',
-        link: '/web-development',
-        icon: 'carbon:dashboard',
+        title: 'Enterprise System Integration',
+        description: 'Bridging legacy core databases with modern API pipelines and decoupled third-party web services.',
+        link: '/integration',
+        icon: 'carbon:ibm-z-cloud-mod-stack',
         callToAction: {
           variant: 'link',
           class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
@@ -166,8 +168,8 @@ const metadata = {
         },
       },
       {
-        title: 'AI-Powered Marketing for Branding',
-        description: "Personalized Users' <br/>Experiences",
+        title: 'WhatsApp Automation Pipelines',
+        description: 'Eliminate manual data key-in errors using low-latency computer-vision photo processing models.',
         link: '/ai-marketing',
         icon: 'carbon:machine-learning-model',
         callToAction: {
@@ -177,10 +179,10 @@ const metadata = {
         },
       },
       {
-        title: 'Future-Ready System Integration',
-        description: 'Seamless API and <br/>AI Solutions',
-        link: '/integration',
-        icon: 'carbon:ibm-z-cloud-mod-stack',
+        title: 'High-Performance Web Design',
+        description: 'Edge-cached corporate properties optimized for high Core Web Vitals and local organic authority.',
+        link: '/web-development',
+        icon: 'carbon:dashboard',
         callToAction: {
           variant: 'link',
           class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
@@ -189,49 +191,58 @@ const metadata = {
       },
     ]}
   />
+
   <Steps4
-    title="Our Journey"
-    subtitle="Lifelong Learning and Continuous Improvement"
+    title="Our Engineering Timeline"
+    subtitle="A 14-Year Trajectory of Infrastructure Delivery"
     items={[
       {
         title: '2012',
-        description: ' Started building websites to help local businesses grow online ',
+        description:
+          'Established local software development core in Sarawak, building data-optimized web applications for local business sectors.',
         icon: 'carbon:devices',
       },
       {
+        title: '2013',
+        description:
+          'Deployed enterprise corporate architecture for Sri Datai Holdings using Drupal 7, a system that continues running flawlessly today.',
+        icon: 'carbon:building-insights-2',
+      },
+      {
         title: '2014',
-        description: ' Began building online stores for larger companies ',
+        description:
+          'Scaled into regional B2B e-commerce infrastructure, deploying high-volume transactional catalogs and inventory layers for corporate groups.',
         icon: 'carbon:shopping-cart-plus',
       },
       {
-        title: '2015',
-        description: ' Added digital marketing (SEO and Google Ads) to help clients get more customers ',
-        icon: 'carbon:search-locate-mirror',
-      },
-      {
         title: '2016',
-        description: ' Started building mobile apps for iPhones and Android phones ',
+        description:
+          'Expanded capabilities to include custom native mobile applications, optimizing performance states across iOS and Android runtime platforms.',
         icon: 'carbon:application-mobile',
       },
       {
-        title: '2017',
-        description: ' Began creating custom software and web apps to improve business operations ',
-        icon: 'carbon:application-web',
-      },
-      {
         title: '2020',
-        description: ' Completed our first government project, helping with COVID-19 management ',
-        icon: 'carbon:coronavirus',
+        description:
+          'Engineered a mission-critical automated BLE beacon tracking grid and telemetry integration layer for high-security regional border control.',
+        icon: 'carbon:security',
       },
       {
         title: '2021',
-        description: ' Started working with IoT hardware to offer complete digital solutions ',
+        description:
+          'Architected and deployed a cloud-managed, network-resilient Raspberry Pi IoT digital display fleet across retail endpoints for Adidas East Malaysia.',
         icon: 'carbon:iot-platform',
       },
       {
         title: '2025',
-        description: ' Exporting Sarawak digital workforce to the globe ',
+        description:
+          'Managed the high-availability DevOps architecture for #SCEKL25, delivering zero-downtime, sub-second latency access for 21,895 international attendees.',
         icon: 'carbon:earth-southeast-asia',
+      },
+      {
+        title: '2026',
+        description:
+          'Launched Omnia Foods B2B supply chain core on MedusaJS & Docker alongside our proprietary zero-habit-change WhatsApp photo integration pipeline.',
+        icon: 'carbon:gears',
       },
     ]}
   >
@@ -243,17 +254,17 @@ const metadata = {
   <PortFolioSummary />
 
   <Features2
-    title="Our locations"
-    tagline="Find us"
+    title="Our Structural Regions"
+    tagline="Operational Coordinates"
     columns={2}
     items={[
       {
-        title: 'Kuching',
-        description: '1207, Jalan Perbadanan, Pending Industrial Estate, 93450 Kuching',
+        title: 'Kuching (HQ)',
+        description: 'Pending Industrial Estate, 93450 Kuching, Sarawak, Malaysia',
       },
       {
         title: 'Kuala Lumpur',
-        description: 'A1-16-12, Arcoris Mont Kiara, 50480 Kuala Lumpur',
+        description: 'Arcoris Mont Kiara, 50480 Kuala Lumpur, Malaysia',
       },
     ]}
   />

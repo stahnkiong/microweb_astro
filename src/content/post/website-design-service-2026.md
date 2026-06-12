@@ -11,7 +11,7 @@ tags:
   - Trust & Security
 image: ~/assets/images/blog/ux2026.webp
 metadata:
-  canonical: https://www.microweb.my/customer-pov-web-design-2026
+  canonical: https://www.microweb.my/website-design-service-2026
 ---
 
 > **The Reality:** Your customer isn't looking for a "website." They are looking for a solution to their problem, and they are in a hurry. Here is exactly what goes through their mind when they land on a site built with our 2026 standards.

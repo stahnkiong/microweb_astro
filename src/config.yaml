@@ -9,9 +9,9 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Web Design, App Developer, System Integration & AI Branding
-    template: '%s — Kuching, Sarawak & KL'
-  description: "\U0001F680 Web design, app design & development and innovative AI branding solutions in Kuching & KL. We also offer system integration and serve clients across Malaysia. Boost your ROI with our expert services!"
+    default: App Developer & Enterprise System Integration
+    template: '%s | MicroWeb Sarawak'
+  description: 'Top-tier app development and automated software integrations in Kuching & KL. We architect zero-management digital infrastructure and WhatsApp-to-ERP pipelines for businesses across Malaysia.'
   robots:
     index: true
     follow: true
@@ -38,7 +38,7 @@ apps:
 
     post:
       isEnabled: true
-      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      permalink: '/clients/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
       robots:
         index: true
 

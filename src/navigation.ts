@@ -36,7 +36,7 @@ export const headerData = {
       text: 'Solutions',
       links: [
         {
-          text: 'Enterprise',
+          text: 'WhatsApp AI Integrations',
           href: getPermalink('/enterprise'),
         },
         {
@@ -120,7 +120,7 @@ export const footerData = {
       title: 'Integration & IoT',
       links: [
         {
-          text: 'Enterprise',
+          text: 'WhatsApp AI Integrations',
           href: getPermalink('/enterprise'),
         },
         {

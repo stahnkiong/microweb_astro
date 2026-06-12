@@ -7,30 +7,34 @@ import Features4 from '~/components/widgets/Features4.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
 import Features5 from '~/components/widgets/Features5.astro';
 import FollowUp from '~/components/widgets/FollowUp.astro';
+
 const metadata = {
   ignoreTitleTemplate: true,
-  title: 'System Integration & API',
-  description: 'System Integration & API, Custom API Development, Third-Party Integrations',
+  title: 'Enterprise System Integration & Custom API Development | MicroWeb',
+  description:
+    'Bridge legacy database environments with modern cloud infrastructure. We engineer secure, decoupled API middleware, webhook orchestrations, and automated data synchronization pipelines.',
 };
 ---
 
 <Layout metadata={metadata}>
   <ThreeJs />
   <Hero2
-    tagline="System Integration & API"
-    actions={[{ variant: 'primary', text: "Let's Chat", href: '#contact' }]}
+    tagline="Enterprise System Integration & Custom API Development"
+    actions={[{ variant: 'primary', text: 'Request Integration Audit', href: '#contact' }]}
     image={{
       src: '~/assets/images/integration_2.webp',
-      alt: 'Software & System Integration',
+      alt: 'Architecture layout showing decoupled API middleware endpoints and secure network routing metrics',
     }}
   >
     <Fragment slot="title">
-      <span class="text-primary text-gradient highlight tracking-tight">Powerful API Solutions</span> That Connect Your Business
+      Decoupled <span class="text-primary text-gradient highlight tracking-tight">API Middleware</span> & Enterprise System
+      Integrations
     </Fragment>
 
     <Fragment slot="subtitle">
-      Automate workflows, sync data in real-time, and eliminate manual processes - so you can focus on growing your
-      business
+      Eliminate broken data dependencies and manual processing silos. We engineer secure, high-throughput API layers
+      that safely connect legacy backends with modern cloud infrastructure, serverless edge networks, and instant
+      messaging channels.
     </Fragment>
     <Fragment slot="content">
       <Features5
@@ -38,19 +42,19 @@ const metadata = {
         classes={{ container: 'py-8' }}
         items={[
           {
-            description: 'Data<br/>Synchronization',
+            description: 'Asynchronous<br/>Data Sync',
             icon: 'carbon:cloud-ceiling',
           },
           {
-            description: 'API<br/>Development',
+            description: 'Bespoke API<br/>Engineering',
             icon: 'carbon:api',
           },
           {
-            description: 'Third-Party<br/>Integrations',
+            description: 'Decoupled Third-Party<br/>Webhooks',
             icon: 'carbon:app-connectivity',
           },
           {
-            description: 'Transparent<br/>Pricing',
+            description: 'Zero-Management<br/>Automation',
             icon: 'carbon:pricing-consumption',
           },
         ]}
@@ -70,40 +74,49 @@ const metadata = {
 
   <Features4
     id="features"
-    tagline="Modern Software Ecosystem"
+    tagline="Ecosystem Architecture"
     columns={3}
-    title="Connected Systems, Real Growth"
-    subtitle="Break free from disconnected systems. Our custom API solutions connect:"
+    title="Unified Data Environments, Managed Risk"
+    subtitle="Break free from fragile, hardcoded point-to-point connections. Our custom middleware orchestrates data flow patterns across your entire stack:"
     classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
     items={[
       {
-        title: 'CRM',
-        description: 'Customer Relationship Management',
-        icon: 'carbon:sales-ops',
-      },
-      {
-        title: 'ERP',
-        description: 'Enterprise Resource Planning',
+        title: 'ERP & Legacy Inventory Links',
+        description: 'Connecting underlying product databases directly to high-velocity headless commerce storefronts.',
+        link: '/clients/architecting-persistent-b2b-supply-chain-medusajs-docker',
         icon: 'carbon:network-enterprise',
       },
       {
-        title: 'HRM',
-        description: 'Human Resource Management',
-        icon: 'carbon:id-management',
+        title: 'Hardware Telemetry Pipelines',
+        description:
+          'Ingesting raw edge metrics from low-level BLE beacon arrays and physical IoT signages into remote cloud environments.',
+        link: '/clients/bluetooth-beacon-border-control',
+        icon: 'carbon:sales-ops',
       },
       {
-        title: 'Accounting/Finance',
-        description: 'Accounting software, Financial management systems',
+        title: 'Automated Account Routing',
+        description:
+          'Bridging front-end payment actions with legacy enterprise accounting suites via secure, transaction-safe ledgers.',
+        link: '/clients/bosoffice',
         icon: 'carbon:finance',
       },
       {
-        title: 'E-commerce and Sales',
-        description: 'Online Platform, Point of Sale',
+        title: 'WhatsApp-to-Database Bridges',
+        description:
+          'Converting raw mobile photo assets into structured server variables natively using computer-vision pipelines.',
+        icon: 'carbon:id-management',
+      },
+      {
+        title: 'High-Velocity Content Schemas',
+        description:
+          'Synchronizing complex state payloads across distributed client viewports during high-traffic launch windows.',
+        link: '/clients/behind-scekl25',
         icon: 'carbon:analytics-custom',
       },
       {
-        title: 'Data and Analytics',
-        description: 'Data Warehouses, Business Intelligence (BI) Tools',
+        title: 'Secure Identity Ingestion',
+        description:
+          'Deploying encrypted token exchanges and strict JWT validation protocols to govern external API access paths.',
         icon: 'carbon:chart-multitype',
       },
     ]}
@@ -112,29 +125,33 @@ const metadata = {
   <Steps3
     image={{
       src: '~/assets/images/integration.png',
-      alt: 'happy team',
+      alt: 'MicroWeb integration engineers mapping out data transformation logic and webhook event pipelines',
     }}
-    title="Our Integration Process"
-    subtitle="<strong>Control your software investment</strong> with our pay-per-service, phased approach. Start with the essential features and seamlessly scale to a full solution as your business grows"
+    title="Velocity Over Elegance: Our Integration Framework"
+    subtitle="We minimize deployment shock by executing your integration sequence in modular phases, ensuring continuous data availability."
     items={[
       {
-        title: 'Stage 1: <span class="font-medium">Assessment & Collaboration</span>',
-        description: 'We work closely with you to understand your existing systems, workflows, and integration needs',
+        title: 'Stage 1: Deconstruct Data Schema Blocks',
+        description:
+          'We document and audit your current system schemas, mapping underlying table relations and dependency constraints.',
         icon: 'carbon:forum',
       },
       {
-        title: 'Stage 2: <span class="font-medium">Solution Design & Planning</span>',
-        description: 'Creating a tailored integration solution and detailed implementation plan',
+        title: 'Stage 2: Blueprint Middleware Mappings',
+        description:
+          'We outline the transactional path routing, specifying error handling rules and data caching policies.',
         icon: 'carbon:devices',
       },
       {
-        title: 'Stage 3: <span class="font-medium">Development & Implementation</span>',
-        description: 'We develop and rigorously test the integration solution to ensure seamless functionality',
+        title: 'Stage 3: Automated Micro-Code Compiles',
+        description:
+          'We develop the integration bridges using isolated service modules, validated by automated continuous testing suites.',
         icon: 'carbon:ibm-watsonx-code-assistant',
       },
       {
-        title: 'Stage 4: <span class="font-medium">Deployment, Monitoring & Ongoing Support</span>',
-        description: 'We deploy the integration, monitor its performance, and provide ongoing support',
+        title: 'Stage 4: Edge Runtime Orchestration',
+        description:
+          'We deploy the completed API layers behind an enterprise Cloudflare perimeter, monitoring active packet flows.',
         icon: 'carbon:cloud-data-ops',
       },
     ]}

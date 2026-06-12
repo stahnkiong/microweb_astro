@@ -7,48 +7,55 @@ import Features4 from '~/components/widgets/Features4.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
 import Features5 from '~/components/widgets/Features5.astro';
 import FollowUp from '~/components/widgets/FollowUp.astro';
+
 const metadata = {
-  title: 'Custom Web Design | Website Development',
   ignoreTitleTemplate: true,
+  title: 'Web Design Kuching | High-Performance Website Development Sarawak',
   description:
-    'For KL/West Malaysian/overseas businesses expanding to Sarawak: Localized web solutions with Kuching-specific SEO. 13+ years serving local & international clients.',
+    'Sovereign, fast-loading corporate web design and development services in Kuching & KL. We engineer edge-cached Astro sites optimized for local search authority and sub-second rendering.',
 };
 ---
 
 <Layout metadata={metadata}>
   <ThreeJs />
   <Hero2
-    tagline="Professional Web Design Services"
-    actions={[{ variant: 'primary', text: "Let's Chat", href: '#contact' }]}
+    tagline="Web Design Kuching & Website Development Sarawak"
+    actions={[{ variant: 'primary', text: 'Request Technical Audit', href: '#contact' }]}
     image={{
       src: '~/assets/images/web_design_development_kuching.webp',
-      alt: 'responsive website design across multiple devices',
+      alt: 'MicroWeb systems engineering web interfaces with sub-second page rendering performance',
     }}
   >
     <Fragment slot="title">
-      Websites That <span class="text-primary text-gradient highlight tracking-tight">Attract & Convert</span>
+      High-Performance Web Design Engineering <br />for <span
+        class="text-primary text-gradient highlight tracking-tight">Enterprise Scale</span
+      >
     </Fragment>
 
-    <Fragment slot="subtitle"> Beautiful, high-performing websites tailored to grow your business </Fragment>
+    <Fragment slot="subtitle">
+      Stop losing leads to slow loading states. We engineer static-compiled corporate properties and decoupled content
+      layouts built on modern web frameworks. We optimize for perfect Core Web Vitals to guarantee smooth execution—even
+      on erratic mobile connections.
+    </Fragment>
     <Fragment slot="content">
       <Features5
         columns={4}
         classes={{ container: 'py-8' }}
         items={[
           {
-            description: 'Instant Loading',
+            description: 'Sub-Second<br/>Page TTFB',
             icon: 'carbon:rocket',
           },
           {
-            description: 'Custom Design',
+            description: 'Astro Component<br/>Architecture',
             icon: 'carbon:ibm-watsonx-code-assistant',
           },
           {
-            description: 'Mobile-Friendly',
-            icon: 'carbon:devices',
+            description: 'Local Search<br/>Authority Loops',
+            icon: 'carbon:search-locate-mirror',
           },
           {
-            description: 'Clear Pricing',
+            description: 'Edge-Cached<br/>Sovereignty',
             icon: 'carbon:pricing-consumption',
           },
         ]}
@@ -68,41 +75,49 @@ const metadata = {
 
   <Features4
     id="features"
-    tagline="High-Converting Websites"
+    tagline="Performance Engineering Vectors"
     columns={3}
-    title="Beautiful Design + Smart Technology"
-    subtitle="Every element optimized to engage visitors and drive action"
+    title="Speed, Security, & Contextual Funnel Intent"
+    subtitle="We discard bloated WordPress templates and heavy plugins. We write clean, asset-optimized code that converts traffic into customers."
     classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
     items={[
       {
-        title: 'User-Focused',
-        description: 'Designed for how real people browse',
-        icon: 'carbon:customer',
+        title: 'Static Site Generation (SSG)',
+        description:
+          'Compiling database pages into flat HTML files before deployment, reducing server compute delay to absolute zero.',
+        icon: 'carbon:ibm-z-cloud-mod-stack',
       },
       {
-        title: 'Lightning Fast',
-        description: 'Global CDN for instant loading',
+        title: 'Regional Edge Caching',
+        description:
+          'Distributing platform static payloads through a global CDN network to serve files directly from local regional centers.',
         icon: 'carbon:earth-filled',
       },
       {
-        title: 'Interactive UX',
-        description: 'Engaging without slowing down',
+        title: 'Intent-Isolated Funnels',
+        description:
+          'Structuring category directory schemas to eliminate search disconnects and drop bounce variables by over 40%.',
+        link: '/clients/bosoffice',
         icon: 'carbon:image-store-local',
       },
       {
-        title: 'SEO Optimized',
-        description: 'Built to rank well',
-        icon: 'carbon:search-locate-mirror',
-      },
-      {
-        title: 'Device Perfect',
-        description: 'Flawless on all screens',
+        title: 'Strict Layout Integrity',
+        description:
+          'Enforcing precise dimensional rules across code blocks to eliminate layout shifts (CLS) on dynamic viewports.',
         icon: 'carbon:devices',
       },
       {
-        title: '100% Custom',
-        description: 'Tailored to your needs',
-        icon: 'carbon:ibm-z-cloud-mod-stack',
+        title: 'Decoupled CMS Management',
+        description:
+          'Integrating structured markdown configurations to let operational teams run changes without altering core layout logic.',
+        link: '/clients/behind-scekl25',
+        icon: 'carbon:customer',
+      },
+      {
+        title: 'Optimized Media Pipelines',
+        description:
+          'Automating asset pipelines to compress image matrices into next-gen formats at build time, reducing bandwidth drag.',
+        icon: 'carbon:devices',
       },
     ]}
   />
@@ -110,39 +125,45 @@ const metadata = {
   <Steps3
     image={{
       src: '~/assets/images/webdev.webp',
-      alt: 'Web design team collaborating',
+      alt: 'MicroWeb system engineers testing layout core web vitals and mobile rendering thresholds',
     }}
-    title="Our Clear 6-Step Web Design Process"
-    subtitle="Pay as we progress. Get exactly the website you want - no rigid templates"
+    title="Velocity Over Elegance: Our Web Engineering Framework"
+    subtitle="We structure web platforms phase-by-phase, ensuring core operational utility is live and validated before scaling features."
     items={[
       {
-        title: '1. Plan & Research',
-        description: 'We listen to your needs and plan your perfect website',
+        title: '1. Deconstruct Content Schemas',
+        description:
+          'We audit your existing informational hierarchy to identify and isolate key semantic search intents.',
         icon: 'carbon:forum',
       },
       {
-        title: '2. Design & Mockups',
-        description: 'Create visual concepts for your approval',
+        title: '2. Wireframe System Prototypes',
+        description:
+          'We build interactive component blueprints to visualize file routing and confirm directory structures early.',
         icon: 'carbon:devices',
       },
       {
-        title: '3. Build & Code',
-        description: 'Developers bring your design to life',
+        title: '3. Write Component-Driven Code',
+        description:
+          'We develop optimized layout blocks using modern, fast-compiling frameworks like Astro and Tailwind CSS.',
         icon: 'carbon:ibm-watsonx-code-assistant',
       },
       {
-        title: '4. Test & Refine',
-        description: 'Ensure perfect performance on all devices',
+        title: '4. Execute Automated Load Checks',
+        description:
+          'We subject the application to synthetic throttle tests, optimizing script payloads for congested mobile data paths.',
         icon: 'carbon:ibm-watsonx-code-assistant',
       },
       {
-        title: '5. Launch & Train',
-        description: 'Go live with full support',
+        title: '5. Commit to Edge Networks',
+        description:
+          'We deploy the production code to serverless cloud hosting clusters, hardwiring a Cloudflare defense shield.',
         icon: 'carbon:cloud-data-ops',
       },
       {
-        title: '6. Maintain & Support',
-        description: 'Ongoing updates and assistance',
+        title: '6. Live Telemetry Instrumentation',
+        description:
+          'We track Core Web Vitals and crawl diagnostics inside Search Console to resolve indexing dropouts natively.',
         icon: 'carbon:cloud-monitoring',
       },
     ]}

@@ -7,30 +7,33 @@ import Features4 from '~/components/widgets/Features4.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
 import Features5 from '~/components/widgets/Features5.astro';
 import FollowUp from '~/components/widgets/FollowUp.astro';
+
 const metadata = {
   ignoreTitleTemplate: true,
-  title: 'Mission-Critical Software & Digital Infrastructure Partner',
+  title: 'Custom Software & Web Application Development | MicroWeb',
   description:
-    "Sarawak's trusted partner for Government & Enterprise digital infrastructure. Specializing in PDPA-compliant systems, secure API integration, and sovereign cloud solutions.",
+    "Sarawak's premier custom app developer company. We engineer high-availability web applications, secure API architectures, and zero-management automation backends for enterprises across Malaysia.",
 };
 ---
 
 <Layout metadata={metadata}>
   <ThreeJs />
   <Hero2
-    tagline="Digital Infrastructure Partner"
-    actions={[{ variant: 'primary', text: "Request Technical Proposal", href: '#contact' }]}
+    tagline="Custom Software & Web Application Development"
+    actions={[{ variant: 'primary', text: 'Request Architectural Proposal', href: '#contact' }]}
     image={{
       src: '~/assets/images/custom_web_application_developement.webp',
-      alt: 'Dashboard showing government-grade digital infrastructure metrics',
+      alt: 'Dashboard showcasing secure web application performance and API telemetry analytics',
     }}
   >
     <Fragment slot="title">
-      <span class="text-primary text-gradient highlight tracking-tight">Mission-Critical</span> Software Solutions for Sarawak's Future
+      High-Availability <span class="text-primary text-gradient highlight tracking-tight">Custom Software</span> & Web Applications
     </Fragment>
 
     <Fragment slot="subtitle">
-      We engineer <strong>sovereign, scalable, and secure</strong> digital platforms. From PDPA-compliant healthcare systems to automated government workflows, we build the infrastructure that powers Sarawak's digital economy.
+      We engineer high-performance, secure web applications designed to decouple technical debt and eliminate manual
+      workflow bottlenecks. From regional B2B logistics nodes to custom cloud layouts, we build software that adapts
+      seamlessly to your operational scale.
     </Fragment>
     <Fragment slot="content">
       <Features5
@@ -38,19 +41,19 @@ const metadata = {
         classes={{ container: 'py-8' }}
         items={[
           {
-            description: 'Sovereign<br/>Cloud',
+            description: 'Decoupled<br/>Architectures',
             icon: 'carbon:cloud-service-management',
           },
           {
-            description: 'Gov-Grade<br/>Security',
+            description: 'High-Availability<br/>Uptime',
             icon: 'carbon:security',
           },
           {
-            description: 'IoT Data<br/>Intelligence',
+            description: 'Automated Data<br/>Pipelines',
             icon: 'carbon:archive',
           },
           {
-            description: 'Legacy<br/>Integration',
+            description: 'Legacy System<br/>Integrations',
             icon: 'carbon:app-connectivity',
           },
         ]}
@@ -71,38 +74,16 @@ const metadata = {
 
   <Features4
     id="features"
-    tagline="Sector-Specific expertise"
+    tagline="Enterprise Sector Architectures"
     columns={3}
-    title="Digital Infrastructure for Key Industries"
-    subtitle="We provide compliance-ready technology stacks tailored for Sarawak's core economic sectors."
+    title="Custom Application Engineering Across Key Sectors"
+    subtitle="We provide compliance-ready, highly maintainable technology stacks optimized for regional transaction velocities."
     classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
     items={[
       {
-        title: 'Government & GLCs',
-        description: 'Secure Data Pipelines & Citizen Portals',
-        link: '/enterprise',
-        icon: 'carbon:building-insights-3',
-        callToAction: {
-          variant: 'link',
-          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-          icon: 'carbon:arrow-right',
-        },
-      },
-      {
-        title: 'Healthcare Systems',
-        description: 'PDPA Compliant Patient Management',
-        link: '/healthcare',
-        icon: 'carbon:hospital-bed',
-        callToAction: {
-          variant: 'link',
-          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-          icon: 'carbon:arrow-right',
-        },
-      },
-      {
-        title: 'Smart Logistics',
-        description: 'Supply Chain Sovereignty & Tracking',
-        link: '/logistics',
+        title: 'B2B Supply Chain & Logistics',
+        description: 'Decoupled headless marketplace platforms and secure tracking ledger pipelines.',
+        link: '/clients/architecting-persistent-b2b-supply-chain-medusajs-docker',
         icon: 'carbon:delivery-truck',
         callToAction: {
           variant: 'link',
@@ -111,9 +92,20 @@ const metadata = {
         },
       },
       {
-        title: 'Digital Commerce',
-        description: 'High-Volume Transaction Processing',
-        link: '/retail',
+        title: 'Government & State GLCs',
+        description: 'Secure, high-availability digital portals and automated site log verification engines.',
+        link: '/clients/behind-scekl25',
+        icon: 'carbon:building-insights-3',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+      {
+        title: 'Smart Retail & Edge IoT',
+        description: 'Network-resilient edge appliance software and centralized device fleet management.',
+        link: '/clients/adidas-smart-retail',
         icon: 'carbon:shopping-cart-arrow-down',
         callToAction: {
           variant: 'link',
@@ -122,9 +114,20 @@ const metadata = {
         },
       },
       {
-        title: 'Industry 4.0',
-        description: 'Factory Automation & IoT Sensors',
-        link: '/manufacturing',
+        title: 'High-Volume E-Commerce',
+        description: 'Conversion-rate optimized product architectures built for sub-second page delivery.',
+        link: '/clients/bosoffice',
+        icon: 'carbon:network-enterprise',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+      {
+        title: 'Automated Telemetry Networks',
+        description: 'Continuous hardware-to-cloud integration grids utilizing BLE beacon validation protocols.',
+        link: '/clients/bluetooth-beacon-border-control',
         icon: 'carbon:industry',
         callToAction: {
           variant: 'link',
@@ -133,43 +136,10 @@ const metadata = {
         },
       },
       {
-        title: 'AgriTech Intelligence',
-        description: 'Yield Optimization & Soil Analytics',
-        link: '/agriculture',
+        title: 'Interactive WebGL Engines',
+        description: 'Open-source 3D client-side rendering engines running real-time physics simulations.',
+        link: '/clients/3d-learning-platform',
         icon: 'carbon:agriculture-analytics',
-        callToAction: {
-          variant: 'link',
-          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-          icon: 'carbon:arrow-right',
-        },
-      },
-      {
-        title: 'Smart Tourism',
-        description: 'Visitor Analytics & Booking Systems',
-        link: '/hospitality',
-        icon: 'carbon:pedestrian-family',
-        callToAction: {
-          variant: 'link',
-          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-          icon: 'carbon:arrow-right',
-        },
-      },
-      {
-        title: 'EdTech Platforms',
-        description: 'LMS Integration & Student Data Security',
-        link: '/education',
-        icon: 'carbon:education',
-        callToAction: {
-          variant: 'link',
-          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
-          icon: 'carbon:arrow-right',
-        },
-      },
-      {
-        title: 'Immersive Tech',
-        description: 'AR/VR Solutions for Training & Sims',
-        link: '/games',
-        icon: 'carbon:virtual-private-cloud',
         callToAction: {
           variant: 'link',
           class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
@@ -182,34 +152,39 @@ const metadata = {
   <Steps3
     image={{
       src: '~/assets/images/process.webp',
-      alt: 'App development team collaborating',
+      alt: 'MicroWeb application developers organizing system dependencies on an agile board',
     }}
-    title="Our Clear 5-Step Process"
-    subtitle="Pay only for what you need now. Start small and scale effortlessly as you grow"
+    title="Velocity Over Elegance: Our Engineering Lifecycle"
+    subtitle="We minimize technical debt by starting with focused functional targets, allowing systems to scale cleanly alongside verification metrics."
     items={[
       {
-        title: '1. Plan & Discover',
-        description: 'We define your goals and challenges to build the right solution',
+        title: '1. Deconstruct Bottlenecks',
+        description:
+          'We audit active system workflows to identify the specific operational failure points stalling productivity.',
         icon: 'carbon:forum',
       },
       {
-        title: '2. Design & Prototype',
-        description: 'Create and refine mockups to visualize your perfect solution',
+        title: '2. Isolate the MVP Core',
+        description:
+          'We prototype a thin, high-velocity functional interface to validate underlying data schema paths in production.',
         icon: 'carbon:devices',
       },
       {
-        title: '3. Build & Test',
-        description: 'Agile development with continuous testing for quality results',
+        title: '3. Automated Development',
+        description:
+          'We write robust application code backed by rigorous continuous testing blocks to isolate external dependencies.',
         icon: 'carbon:ibm-watsonx-code-assistant',
       },
       {
-        title: '4. Launch & Deploy',
-        description: 'Seamless rollout to production with full support',
+        title: '4. Edge Infrastructure Rollout',
+        description:
+          'We deploy containerized application blocks, hardwiring an enterprise Cloudflare perimeter for regional data sovereignty.',
         icon: 'carbon:cloud-data-ops',
       },
       {
-        title: '5. Maintain & Grow',
-        description: 'Ongoing updates and optimizations to keep you ahead',
+        title: '5. Automated Telemetry',
+        description:
+          'We monitor continuous runtime telemetry to track packet execution speeds and neutralize drift before exceptions occur.',
         icon: 'carbon:cloud-monitoring',
       },
     ]}

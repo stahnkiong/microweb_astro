@@ -1,68 +1,62 @@
 ---
 publishDate: 2026-01-26T00:00:00Z
+updatedDate: 2026-06-12T00:00:00Z
 author: Admin
-title: 'Technical Journey: Architecting a Persistent B2B Supply Chain Platform with MedusaJS and Docker'
-excerpt: 'Discover how Omnia Foods engineered a bulletproof B2B supply chain platform in Sarawak using MedusaJS, Docker, and a custom "Direct-to-Disk" persistent storage bridge on DigitalOcean.'
+title: 'Supply Chain Architecture: Engineering High-Availability B2B Infrastructure via MedusaJS and Docker'
+excerpt: 'A technical breakdown of the Omnia Foods B2B core: Implementing high-performance container persistence, zero-latency edge delivery via Cloudflare, and isolated API dual-domain masking.'
 image: ~/assets/images/blog/logistics.webp
 tags:
-  - Docker
   - MedusaJS
-  - Supply Chain
-  - Sarawak Tech
-  - DigitalOcean
-  - Cloudflare
+  - Cloud Infrastructure
+  - Docker Architecture
+  - B2B Marketplace
 metadata:
-  canonical: https://www.microweb.my/architecting-persistent-b2b-supply-chain-medusajs-docker
+  canonical: https://www.microweb.my/clients/architecting-persistent-b2b-supply-chain-medusajs-docker
 ---
 
-We recently hit a major milestone in developing the **Omnia Foods** ecosystem. While most see a [simple ordering app](/mobile-app), the "engine" underneath is a [sophisticated setup](/software) designed for high availability and data integrity. This post explores how we solved the complex challenge of persistent cloud storage for a localized B2B marketplace right here in Sarawak.
+Scaling a B2B supply chain marketplace within regional infrastructure limits requires a strict focus on backend predictability. For the Sarawak F&B sector, where inventory data fresh-rates directly dictate cold-chain logistics timelines, system latency and data dropouts represent direct operational losses.
 
-## The Architecture: From Local to Production
-
-Moving from a local development environment to a production-grade setup is never just a "copy-paste" job. For Omnia Foods, we needed an architecture that could withstand the demands of a bustling F&B supply chain.
-
-We transitioned to a robust **DigitalOcean Droplet**, fortified behind a **Cloudflare edge network**. This combination ensures that our infrastructure is not only scalable but also protected against common web threats. Cloudflare's edge nodes in East Malaysia allow us to achieve sub-second loading times, ensuring that users in Kuching and beyond experience a snappy, responsive application—even on mobile data.
-
-## The Persistent Storage Challenge
-
-One of the most critical technical hurdles we faced was data persistence in a containerized environment. In a standard Docker setup, data can be ephemeral—if a container restarts, unpersisted data is lost. For a B2B marketplace cataloguing fresh produce and inventory, losing product images or invoices is not an option.
-
-We engineered a **"Direct-to-Disk" bridge** between our Docker containers and the physical server storage. This custom solution ensures that every product image, invoice, and critical document is written directly to the persistent disk of the host machine.
-
-This "Direct-to-Disk" methodology means:
-
-- **Zero Data Loss:** Even if we redeploy the entire application stack, the data remains safe.
-- **Lightning Speed:** Serving assets directly from the physical disk, cached by Nginx and Cloudflare, drastically reduces latency categories.
-
-## Security & Stealth: The Dual-Domain Strategy
-
-Security for a B2B platform is paramount. We implemented a **dual-domain "Masking" strategy** to separate our concerns and reduce the attack surface.
-
-1.  **Core API (Stealth Mode):** Our backend API resides on a secure, private subdomain. This layer is shielded from direct public traversal, accessible only through authenticated channels.
-2.  **Frontend Assets (Public Facing):** The primary branded domain (`PasarNow`) serves the user interface and static assets.
-
-This separation ensures that our core business logic remains secure while the storefront remains accessible and fast.
-
-## B2B Value Prop: Why This Matters for the Customer
-
-Why do we obsess over "backend bridges" and "container persistence"? Because for the F&B industry, technology is a tool for survival and growth.
-
-For our stakeholders and customers, this architecture translates to:
-
-- **Real-Time Inventory Visibility:** What you see is what is actually there. No caching errors or lost updates.
-- **Reliable Cold-Chain Logistics Data:** Seamless tracking of orders from warehouse to kitchen.
-- **Uninterrupted Service:** Platform updates can happen in the background without losing a single invoice or order history.
-
-## Conclusion
-
-Building for the F&B industry in Sarawak means moving beyond "it works on my machine." It requires architecting systems that are as resilient as the supply chain itself. With MedusaJS, Docker, and our optimized persistence strategy, Omnia Foods is ready to redefine B2B logistics in the region.
-
-The warehouse is ready. The cold storage logic is locked. The engine is purring.
+During the foundational engineering phase of the **Omnia Foods** B2B ecosystem, we avoided generic monolithic deployments. Instead, we architected a decoupled, containerized infrastructure designed for maximum transaction velocity, data persistence, and perimeter security.
 
 ---
 
-### Keep up with our journey
+## The Infrastructure Topology: Edge Routing to Linux Host
 
-If you're in the F&B space and want to see how we're removing the friction from supply chain logistics, keep an eye on our latest developments.
+The production architecture is deployed across a dedicated **DigitalOcean Droplet Compute Node** running an optimized Linux core, protected behind an aggressive **Cloudflare Edge Network** perimeter.
 
-#SarawakTech #B2BLogistics #MedusaJS #StartupLife #SupplyChain
+[Client App] ──> [Cloudflare Edge (Kuching Node)] ──> [Nginx Reverse Proxy] ──> [Docker / MedusaJS API]
+
+By leveraging localized edge routing nodes, we achieve sub-second Time to First Byte (TTFB) across East Malaysia. This network configuration ensures that warehouse managers and procurement officers experience zero interface lag—even when transmitting high-volume orders over erratic cellular connections.
+
+---
+
+## Resolving Container State Persistence
+
+A fundamental challenge of containerized headless environments (like MedusaJS running inside a Docker runtime) is handling ephemeral storage. If an active container crashes or is replaced during an automated CI/CD deployment, any application state written within the container layer is destroyed.
+
+To ensure absolute asset permanence without introducing the latency overhead of early-stage remote network storage, we engineered a high-velocity **Direct-to-Disk persistent volume bridge** on the host machine.
+
+### Core Implementation Parameters:
+
+- **Host-Bound Volume Mounts:** We isolated high-wear asset directories (such as generated invoices and product media payloads) and hard-mapped them directly out of the containerized environment into the host's physical NVMe storage layer.
+- **Cached Asset Delivery:** Media assets are served directly from the physical disk layer via an optimized Nginx reverse-proxy cache, combined with Cloudflare’s global edge caching rules. This workflow completely bypasses the Node.js application layer for static file requests, minimizing CPU overhead.
+- **Decoupled Architecture Scaling:** While local NVMe storage satisfies our initial velocity targets, the underlying file-service layout is fully abstracted. This design allows us to seamlessly swap the storage driver to an S3-compatible object storage cluster as transaction volume expands.
+
+---
+
+## Perimeter Security: The Dual-Domain Isolation Strategy
+
+To protect core enterprise logic and inventory management databases from discovery and automated scanning bots, we implemented a strict **Dual-Domain Security Layout**:
+
+1. **The Public Storefront Layer:** The client-facing web application and static asset catalogs are served via the public-facing domain environment (`PasarNow`). This layer handles all standard, non-privileged web traffic.
+2. **The Stealth API Layer:** The MedusaJS core engine and database orchestrators are isolated on a completely separate, obfuscated private subdomain infrastructure. This endpoint operates behind strict Cross-Origin Resource Sharing (CORS) security guidelines and JWT token validation protocols, rendering the core backend invisible to unauthorized public traversal.
+
+---
+
+## The Operational Yield: Engineering for Survival
+
+We don't over-engineer backend infrastructure to follow abstract industry trends; we build to eliminate real-world business failure states. For our B2B marketplace stakeholders, this predictable architecture delivers concrete business outcomes:
+
+- **Synchronized Inventory Accuracy:** Real-time state updates eliminate the risk of double-booking perishable stock or showing inaccurate warehouse levels to restaurants.
+- **Uptime During Fleet Redeployments:** Security patches and application updates can be pushed to the Docker environment concurrently without interrupting live orders or endangering past transactional data.
+- **Hardened Data Records:** Every invoice, cold-chain ledger entry, and order history asset is immediately hard-saved to permanent storage, creating a reliable ledger that local businesses can confidently rely upon.

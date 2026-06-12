@@ -1,47 +1,59 @@
 ---
 publishDate: 2019-07-13T00:00:00Z
+updatedDate: 2026-06-12T00:00:00Z
 author: Admin
-title: 'Proven Track Record: Years of Success with Holdings Clients Since 2013'
-excerpt: "Since 2013, we've built a strong portfolio of successful tech projects, starting with Sri Datai Holdings. Their Drupal 7 site, built 6 years ago, still demonstrates our commitment to long-term reliability."
+title: 'Legacy Infrastructure: Engineering 12+ Years of System Reliability for Sri Datai Holdings'
+excerpt: 'Architecting enterprise web systems that survive a decade of technology shifts. A deep dive into the Drupal 7 deployment for Sarawak’s Sri Datai Holdings, engineered in 2013 and still operational today.'
 image: ~/assets/images/blog/sridatai.webp
 tags:
-  - Proven Portfolio
-  - Holdings Clients
+  - Enterprise Architecture
   - Drupal 7
-  - Long-Term Reliability
+  - Legacy Systems
+  - Infrastructure Reliability
 metadata:
-  canonical: https://www.microweb.my/2013-drupal-7-success
+  canonical: https://www.microweb.my/clients/2013-drupal-7-success
 ---
 
-For businesses seeking a tech partner with a proven track record of success with major clients, our portfolio speaks for itself. Since 2013, we have been entrusted by significant holdings clients, demonstrating our ability to deliver reliable and scalable tech solutions.
+When evaluating a technology partner, the ultimate metric isn't how fast they can launch a modern framework—it is how their architecture performs over a decade later. For major holdings and infrastructure conglomerates, software stability is an operational requirement, not a luxury.
 
-**Our First Holdings Client: A Foundation of Trust**
+In 2013, Sarawak-based infrastructure group **Sri Datai Holdings** tasked us with building their core digital presence. Twelve years later, that foundational architecture remains online, fully functional, and structurally sound.
 
-In 2013, Sri Datai Holdings became our first holdings client, placing their trust in our expertise. We recognized the importance of this opportunity and delivered a robust website using Drupal 7, an enterprise-level CMS.
+Here is the architectural breakdown of how we engineered a system for long-term viability.
 
-**The Project: Building for Longevity with Drupal 7**
+---
 
-We chose Drupal 7 for its flexibility and security, allowing us to:
+## The Blueprint: Choosing an Enterprise-Grade CMS Stack
 
-* **Develop Custom Modules:** Tailor the website to meet the specific needs of the client.
-* **Ensure Robust Security:** Provide a stable and secure platform for their online presence.
-* **Deliver Long-Term Reliability:** Create a solution that could withstand the test of time.
+In 2013, the web landscape was fragmented. For a diversified holdings group managing large-scale civil engineering and infrastructure projects, a standard blogging platform or lightweight framework would introduce severe security and data isolation risks.
 
-**The Result: A Testament to Enduring Quality**
+We deployed the platform on **Drupal 7**, utilizing its enterprise-level database abstraction layer and strict access control configurations.
 
-**edit 2025 -** 12 years later, the Sri Datai Holdings website remains well-maintained and fully functional. This enduring reliability is a testament to the quality of our initial build and the robustness of Drupal 7.
+### Key Engineering Objectives:
 
-**See Our Work:**
+- **Custom Module Architecture:** Instead of relying on volatile, third-party plugins that break during core security updates, we engineered bespoke modules tailored specifically to the group’s multi-sector corporate structure.
+- **Granular Schema Control:** Built a structured content schema using Drupal's field system to ensure data integrity across various corporate divisions.
+- **Hardened Security Perimeter:** Leveraged Drupal's native database abstraction layer to prevent SQL injection vulnerabilities, a critical requirement for a high-profile corporate asset.
 
-View the Sri Datai Holdings website here: <a href="https://www.sridatai.com/" target="_blank">Sri Datai Website</a>
+---
 
-**Why Choose Our Proven Expertise?**
+## The 12-Year Stress Test: Surviving the Tech Shift
 
-* **Experience with Major Clients:** We have a history of successful projects with significant holdings clients.
-* **Commitment to Reliability:** We build solutions that are designed to last.
-* **Proven Technology Expertise:** We leverage robust technologies like Drupal 7 to deliver high-quality results.
-* **Strong Portfolio:** We have a portfolio of successful projects that demonstrates our ability to deliver.
+Most corporate websites are completely rebuilt every 3 to 5 years due to structural decay, unmaintained dependencies, or broken backend environments.
 
-**Conclusion: Partner with a Proven Tech Company**
+> **2026 Systems Update:** Nearly 13 years after initial deployment, the Sri Datai Holdings platform remains fully operational.
 
-Our work with Sri Datai Holdings is just one example of our commitment to delivering reliable and scalable tech solutions for major clients. When you partner with us, you gain access to a team with a proven track record of success.
+This exceptional lifecycle exposure highlights a fundamental software philosophy: **Velocity matters, but structural integrity endures.** By adhering to strict coding standards and avoiding over-engineered dependency webs during the initial build, we minimized the long-term technical debt that typically kills legacy applications.
+
+### Production Case Details:
+
+- **Live System Deployment:** [Review the live production environment for Sri Datai Holdings](https://www.sridatai.com/)
+
+---
+
+## Engineering for Longevity: Our Core Deployment Protocols
+
+We don't build temporary marketing landers; we architect permanent digital infrastructure. Every enterprise build we manage follows these core parameters:
+
+- **Monolithic Stability Where It Counts:** While we build modern, edge-computed headless platforms today, we select the technology stack based on the project's required lifespan, not current industry hype cycles.
+- **Dependency Isolation:** We minimize third-party software risks by writing clean, native implementations for core business logic, ensuring your system doesn't break when an external library goes dark.
+- **Legacy Lifecycle Management:** We design database schemas and directory structures with future migrations in mind, protecting your underlying data assets even as frontend layers evolve.

@@ -25,6 +25,16 @@ const { post, url } = Astro.props;
           <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
           <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
           {
+            post.updateDate && (
+              <>
+                {' '}
+                <span class="text-xs text-muted dark:text-slate-400">
+                  (Updated: <time datetime={String(post.updateDate)}>{getFormattedDate(post.updateDate)}</time>)
+                </span>
+              </>
+            )
+          }
+          {
             post.author && (
               <>
                 {' '}

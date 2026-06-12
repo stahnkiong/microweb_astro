@@ -11,7 +11,7 @@ tags:
   - Conversion Rate Optimization
 image: ~/assets/images/blog/cloudflare-microweb.jpg
 metadata:
-  canonical: https://www.microweb.my/web-design-sarawak
+  canonical: https://www.microweb.my/website-design-sarawak
 ---
 
 > **The Reality:** 53% of mobile users in Sarawak abandon websites that take longer than 3 seconds to load. For Kuching businesses, slow websites mean lost sales and damaged credibility.

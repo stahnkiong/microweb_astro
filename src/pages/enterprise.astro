@@ -8,8 +8,9 @@ import Steps3 from '~/components/widgets/Steps3.astro';
 import Features5 from '~/components/widgets/Features5.astro';
 
 const metadata = {
-  title: 'Enterprise Web Application Development & Integration',
-  description: 'Custom Web Application Development & Integration, API bridging & Systems Automation',
+  title: 'WhatsApp AI Agents, Custom VPS & Self-Hosted LLM Infrastructure | MicroWeb',
+  description:
+    'Deploy zero-friction WhatsApp AI agents. From serverless Firebase pipelines to custom Linux VPS environments running self-hosted local LLMs/LRMs for absolute data sovereignty.',
   ignoreTitleTemplate: true,
 };
 ---
@@ -17,21 +18,23 @@ const metadata = {
 <Layout metadata={metadata}>
   <ThreeJs />
   <Hero3
-    actions={[{ variant: 'primary', text: 'Schedule Consultation', href: '#contact' }]}
+    actions={[{ variant: 'primary', text: 'Deploy Private AI Infrastructure', href: '#contact' }]}
     image={{
       src: '~/assets/images/custom_web_application_developement.webp',
-      alt: 'Enterprise dashboard showing real-time data analytics and compliance metrics',
+      alt: 'System architecture blueprint detailing isolated Linux VPS infrastructure hosting open-source LLM networks and WhatsApp webhooks',
     }}
   >
     <Fragment slot="title">
-      <span class="text-primary text-gradient highlight tracking-tight">Sovereign</span> Enterprise Ecosystems &<br /> Secure
-      Integrations
+      WhatsApp AI Agents Backed by <br />
+      <span class="text-primary text-gradient highlight tracking-tight">Self-Hosted LLM & Custom VPS</span> Environments
     </Fragment>
 
     <Fragment slot="subtitle">
-      Eliminate data silos and operational redundancy. We architect <strong
-        >mission-critical digital infrastructure</strong
-      > that unifies your fragmented systems while ensuring strict regulatory compliance (PDPA/GDPR) and data sovereignty.
+      Stop wasting corporate budget on unpredictable third-party API tokens and leaky external cloud networks. We
+      engineer high-throughput WhatsApp Cloud API middleware powered by your choice of architecture: lightweight
+      serverless Firebase pipelines, or dedicated custom Linux VPS bare-metal nodes hosting private, open-source Large
+      Language Models (LLMs) and Large Reasoning Models (LRMs). Complete data sovereignty, zero adoption friction, and
+      instant execution.
     </Fragment>
     <Fragment slot="content">
       <Features5
@@ -39,28 +42,28 @@ const metadata = {
         classes={{ container: 'py-8' }}
         items={[
           {
-            description: 'Centralized CRM<br/>(Single Truth)',
-            icon: 'carbon:sales-ops',
+            description: 'Custom Linux VPS<br/>Bare-Metal Configs',
+            icon: 'carbon:virtual-private-cloud',
           },
           {
-            description: 'Enterprise Resource<br/>Planning (ERP)',
-            icon: 'carbon:network-enterprise',
+            description: 'Self-Hosted Private<br/>LLM & LRM Clusters',
+            icon: 'carbon:machine-learning-model',
           },
           {
-            description: 'Human Capital<br/>Management',
-            icon: 'carbon:id-management',
+            description: 'Absolute Local<br/>Data Sovereignty',
+            icon: 'carbon:security',
           },
           {
-            description: 'Predictive<br/>Analytics',
-            icon: 'carbon:chart-multitype',
+            description: 'Computer-Vision<br/>Photo Parsing',
+            icon: 'carbon:image-search',
           },
           {
-            description: 'Automated<br/>Financial Auditing',
-            icon: 'carbon:finance',
+            description: 'Instant Lead Tracking<br/>(Zero-Cold Phase)',
+            icon: 'carbon:flash',
           },
           {
-            description: 'Unified<br/>Commerce Layer',
-            icon: 'carbon:analytics-custom',
+            description: 'Direct Backend<br/>ERP Automation',
+            icon: 'carbon:app-connectivity',
           },
         ]}
       />
@@ -80,43 +83,59 @@ const metadata = {
 
   <Features5
     id="features"
-    tagline="Enterprise-Grade Architecture"
+    tagline="Private Agentic Ecosystems"
     columns={2}
-    title="Sovereign Digital Infrastructure & API Bridging"
-    subtitle="We don't just build apps; we engineer secure, scalable digital ecosystems that serve as the backbone of your organization."
+    title="Uncompromising Performance Built on Sovereign Infrastructure"
+    subtitle="We don't tie your business logic to fragile public web tools. We deploy independent computational backends designed to eliminate technical debt and automate human workloads natively inside WhatsApp."
     classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
     items={[
       {
-        description: 'Bespoke<br/>Agile Development',
-        icon: 'carbon:ibm-watsonx-code-assistant',
+        title: 'Self-Hosted Local LLM & LRM Deployments',
+        description:
+          'We free your enterprise from per-token SaaS pricing models. By deploying and fine-tuning open-source models natively on specialized compute layers, we establish a permanent AI asset that handles deep conversational reasoning, vector embeddings, and contextual intent processing internally.',
+        icon: 'carbon:code',
       },
       {
-        description: 'Fixed-Bid<br/>Transparent SLAs',
-        icon: 'carbon:pricing-consumption',
+        title: 'Custom Linux VPS Environments from Scratch',
+        description:
+          'For organizations demanding strict data isolation, we provision and harden dedicated Virtual Private Servers (VPS) from the OS layer up. We program your entire messaging middleware, caching arrays, and local data nodes with zero external software dependencies.',
+        icon: 'carbon:server-dns',
       },
       {
-        description: 'Rapid<br/>Prototyping',
-        icon: 'carbon:chart-radar',
+        title: 'Instant Image-to-Data Parsing',
+        description:
+          'Manual data typing introduces errors and delays. Our integration allows delivery drivers, clients, or warehouse teams to snap a photo of a physical receipt or invoice sheet inside WhatsApp, using computer vision to instantly map parameters straight to your system databases.',
+        icon: 'carbon:document-view',
       },
       {
-        description: 'Process<br/>Automation',
-        icon: 'carbon:result-draft',
+        title: 'Non-Cold Lead Conversion Loops',
+        description:
+          'When an inbound prospect requests service details, manual tracking delays allow their intent to chill. Our autonomous conversational middleware captures, qualifies, and logs lead metrics instantly inside chat, moving hot prospects to your reps in real time.',
+        icon: 'carbon:flash',
       },
       {
-        description: 'Legacy<br/>Modernization',
-        icon: 'carbon:app-connectivity',
+        title: 'Serverless Firebase Micro-Pipelines',
+        description:
+          'When target projects require hyper-focused operational execution without dedicated infrastructure costs, we utilize serverless Firebase Cloud Functions. The environment automatically scales horizontally during traffic spikes and operates with zero maintenance overhead.',
+        icon: 'carbon:cloud-service-management',
       },
       {
-        description: 'Secure IoT<br/>Integrations',
-        icon: 'carbon:archive',
+        title: 'Automated ERP & Core Database Commits',
+        description:
+          'Bypass human middleware bottlenecks entirely. Once our parsing layers extract and validate transaction parameters from inbound customer messages, data payloads are securely pushed straight into your legacy ERP ledger via transactional-safe REST/GraphQL APIs.',
+        icon: 'carbon:data-share',
       },
       {
-        description: 'Device-Agnostic<br/>Interfaces',
-        icon: 'carbon:devices',
+        title: 'Contextual Multi-Turn Conversation Logic',
+        description:
+          'Our agentic workflows move far beyond primitive, rigid keyword match rules. We map out robust conversational state machines that understand complex, multi-turn human dialogue variations, maintaining memory context and parameters across long-form interactions.',
+        icon: 'tabler:messages',
       },
       {
-        description: 'Real-Time<br/>Data Sync',
-        icon: 'carbon:cloud-ceiling',
+        title: 'Isolated Perimeter Security & Cloudflare Shield',
+        description:
+          'Whether running on serverless clusters or custom VPS setups, your production environment remains completely hidden from direct public access. Webhook traffic must cross an aggressive enterprise Cloudflare verification layer before communicating with internal systems.',
+        icon: 'carbon:security',
       },
     ]}
   />
@@ -124,40 +143,34 @@ const metadata = {
   <Steps3
     image={{
       src: '~/assets/images/process.webp',
-      alt: 'happy people',
+      alt: 'MicroWeb systems engineers compiling custom Linux backend kernels and fine-tuning local model weights',
     }}
-    title="Project Approach and Stages"
-    subtitle="<strong>Control your software investment</strong> with our pay-per-service, phased approach. Start with the essential features and seamlessly scale to a full solution as your business grows"
+    title="Velocity Over Elegance: Infrastructure Deployment"
+    subtitle="We launch your communication automation following strict validation loops, ensuring production speed over abstract over-engineering."
     items={[
       {
-        title: 'Stage 1: <span class="font-medium">Planning & Discovery</span>',
+        title: 'Stage 1: Deconstruct Workflows & Data Scopes',
         description:
-          "Innovate beyond traditional data entry and solve your business challenges with cutting-edge technology. Our process starts by defining your project's scope, goals, and plan",
+          'We analyze your manual administrative logs to map out the exact data collection sequences that cause structural operational delays.',
         icon: 'carbon:forum',
       },
       {
-        title: 'Stage 2: <span class="font-medium">Design & Prototyping</span>',
+        title: 'Stage 2: Provision & Harden the Environment',
         description:
-          'We start by creating mockups, prototypes, and technical specifications to truly understand your needs. This iterative process allows us to refine the solution and deliver a successful project',
+          'We deploy your dedicated compute stack, configuring serverless endpoints or spinning up a clean Linux VPS optimized for hosting local data nodes.',
         icon: 'carbon:devices',
       },
       {
-        title: 'Stage 3: <span class="font-medium">Development & Testing</span>',
+        title: 'Stage 3: Instantiate local Models & Vision Engines',
         description:
-          'Our Agile and CI/CD approach means we develop software in small, integrated components. This allows for continuous testing and integration, ensuring frequent updates and a solution that can easily scale with your business',
+          'We wire up your custom, self-hosted LLM/LRM weights and configure the computer-vision pipelines to handle automated image asset extraction.',
         icon: 'carbon:ibm-watsonx-code-assistant',
       },
       {
-        title: 'Stage 4: <span class="font-medium">Deployment & Release</span>',
+        title: 'Stage 4: Hardwire Core Backend System Hooks',
         description:
-          'We handle deployment to production servers or app stores, manage releases, and coordinate with stakeholders and support to resolve post-launch issues',
+          'We connect the WhatsApp Cloud API webhook layer, routing validated operational payloads directly into your core business ERP databases.',
         icon: 'carbon:cloud-data-ops',
-      },
-      {
-        title: 'Stage 5: <span class="font-medium">Maintenance & Evolution</span>',
-        description:
-          'We provide ongoing maintenance, performance optimizations, and feature updates to maximize your software investment. Because software is a living product that constantly evolves.',
-        icon: 'carbon:cloud-monitoring',
       },
     ]}
   >
