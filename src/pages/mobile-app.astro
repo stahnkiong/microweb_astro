@@ -5,9 +5,22 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Banners2 from '~/components/widgets/Banners2.astro';
 import Features4 from '~/components/widgets/Features4.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import Features5 from '~/components/widgets/Features5.astro';
-import FollowUp from '~/components/widgets/FollowUp.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Portfoliosummary from '~/components/blog/PortFolioSummary.astro';
+import Stats2 from '~/components/widgets/Stats2.astro';
+import ContentContact from '~/components/widgets/ContentContact.astro';
+import Headline from '~/components/ui/Headline.astro';
 
+// Automated Asset Ingestion for the Tech Stack Tracker
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/stack/*');
+const imagePaths = Object.keys(images).filter((imagePath) => {
+  return imagePath.startsWith(`/src/assets/images/stack`);
+});
+
+// Global Metadata Configuration targeting High-Volume Mobile App Intent
 const metadata = {
   ignoreTitleTemplate: true,
   title: 'Mobile App Development Kuching | Custom App Company Sarawak',
@@ -18,12 +31,14 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <ThreeJs />
+
+  <!-- SECTION 1: HERO (The Tactical Hook - Unique Content) -->
   <Hero2
     tagline="Mobile App Development Kuching & Sarawak"
     actions={[{ variant: 'primary', text: 'Request Engineering Proposal', href: '#contact' }]}
     image={{
       src: '~/assets/images/web.webp',
-      alt: 'Enterprise mobile application interface showcasing offline sync states and telemetry parameters',
+      alt: 'Enterprise mobile application interface showcasing offline sync states, native device storage caches, and telemetry parameters',
     }}
   >
     <Fragment slot="title">
@@ -33,7 +48,7 @@ const metadata = {
     <Fragment slot="subtitle">
       We build cross-platform mobile environments designed for complex regional infrastructure. From offline-first local
       cache synchronization to native hardware integrations, we ensure your business applications run smoothly on
-      standard devices over erratic networks.
+      standard devices over erratic networks across Malaysia.
     </Fragment>
     <Fragment slot="content">
       <Features5
@@ -69,62 +84,130 @@ const metadata = {
       </div>
     </Fragment>
   </Hero2>
+
   <Banners2 />
 
-  <Features4
-    id="features"
+  <!-- SECTION 2: SYSTEM CAPACITY METRICS (Mobile Performance Telemetry) -->
+  <Stats2
+    stats={[
+      { title: 'Offline Render Latency', amount: '0ms' },
+      { title: 'Hardware Sync Speed', amount: '< 180ms' },
+      { title: 'Native Target Frame Rate', amount: '60fps+' },
+    ]}
+  />
+
+  <!-- SECTION 3: CORE PARAMETERS (Expanded Symmetric 8-Item Core Grid - Unique Mobile Context) -->
+  <Features2
+    id="parameters"
     tagline="Engineering Vector Matrix"
-    columns={3}
-    title="High-Uptime Architectures Built for Field Scale"
+    title="High-Uptime Architectures Built for Field Scale Operations"
     subtitle="We skip bloated, unoptimized application templates. We write high-efficiency, native-compiled cross-platform layouts that scale without runtime degradation."
-    classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
+    columns={2}
     items={[
       {
-        title: 'Offline-First Data Schemas',
+        title: 'Offline-First Local Data Schemas',
         description:
-          'Writing telemetry variables directly to local device SQLite layers, auto-syncing with central endpoints upon network re-establishment.',
-        link: '/clients/bluetooth-beacon-border-control',
+          'Writing core telemetry variables directly to local device SQLite or encrypted database layers. The system runs local transactions independently and auto-syncs data matrices with central endpoints upon network re-establishment.',
         icon: 'carbon:data-blob',
       },
       {
-        title: 'Cross-Platform Compilations',
+        title: 'Cross-Platform Runtime Compilations',
         description:
-          'Deploying optimized, uniform code bases targeting both iOS and Android runtimes to minimize client technical debt.',
+          'Deploying optimized, uniform codebases utilizing frameworks like React Native or Flutter targeting both iOS and Android environments to minimize client operational management and technical debt.',
         icon: 'carbon:carbon-for-mobile',
       },
       {
-        title: 'Native Hardware Interfacing',
+        title: 'Native Hardware Layer Interfacing',
         description:
-          'Wiring directly into underlying device arrays—including low-level BLE beacon scanning, camera optics, and biometric tokens.',
-        link: '/clients/adidas-smart-retail',
+          'Wiring directly into underlying device arrays—including low-level BLE beacon scanning, camera optical character recognition (OCR), background GPS tracking tags, and native biometric tokens.',
         icon: 'carbon:id-management',
       },
       {
-        title: 'Decoupled State Management',
+        title: 'Decoupled UI Thread Management',
         description:
-          'Isolating visual interface loops from intensive data parsing threads, dropping client-side interface frame drops to zero.',
+          'Isolating visual interface rendering loops from intensive data processing and background synchronization threads, dropping client-side mobile interface frame lag to absolute zero.',
         icon: 'carbon:forecast-lightning',
       },
       {
-        title: 'Asynchronous API Gateways',
+        title: 'Asynchronous API Queue Gateways',
         description:
-          'Routing core app actions through non-blocking network queues to prevent system lockups during background sync states.',
-        link: '/clients/architecting-persistent-b2b-supply-chain-medusajs-docker',
+          'Routing core app actions through non-blocking network queues to prevent frontend system lockups during background sync states, even on congested regional cellular connections.',
         icon: 'carbon:api',
       },
       {
-        title: 'Sovereign Storage Protocols',
+        title: 'Hardened Local Encryption Protocols',
         description:
-          'Hardening regional transmission paths using encrypted local storage configurations that comply with local data policies.',
+          'Securing regional transmission paths using encrypted local storage configurations and runtime keychain wrappers that comply strictly with corporate data isolation guidelines.',
         icon: 'carbon:user-multiple',
+      },
+      {
+        title: 'Automated Over-The-Air (OTA) Patches',
+        description:
+          'Deploying critical application bundle patches instantly to remote field staff without forcing manual app store downloads, ensuring immediate deployment velocity across your teams.',
+        icon: 'carbon:cloud-data-ops',
+      },
+      {
+        title: 'Persistent Remote Crash Telemetry',
+        description:
+          'Injecting real-time exception tracking instrumentation straight into compilation targets to catch memory leaks, device compatibility errors, and synchronization dropouts natively.',
+        icon: 'carbon:cloud-monitoring',
       },
     ]}
   />
 
+  <!-- SECTION 4: ENTERPRISE SECTOR ARCHITECTURES (Vertical Application Segmentation) -->
+  <Features4
+    id="features"
+    tagline="Who We Serve"
+    columns={3}
+    title="Custom App Engineering Across Key Sectors"
+    subtitle="We provide compliance-ready, highly maintainable mobile technology stacks optimized for regional transaction velocities."
+    classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
+    items={[
+      {
+        title: 'Automated Telemetry Networks',
+        description:
+          'Continuous hardware-to-cloud integration grids utilizing BLE beacon tracking protocols and mobile validation pipelines.',
+        link: '/clients/bluetooth-beacon-border-control/',
+        icon: 'carbon:industry',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+      {
+        title: 'Smart Retail & Field Operations',
+        description:
+          'Network-resilient field management and warehouse fleet coordination applications running natively on user devices.',
+        link: '/clients/adidas-smart-retail/',
+        icon: 'carbon:shopping-cart-arrow-down',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+      {
+        title: 'B2B Logistics & Supply Chains',
+        description:
+          'Decoupled headless marketplace apps and inventory status tracking platforms built for sub-second database delivery.',
+        link: '/clients/architecting-persistent-b2b-supply-chain-medusajs-docker/',
+        icon: 'carbon:delivery-truck',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+    ]}
+  />
+
+  <!-- SECTION 5: THE TECHNICAL DEVELOPMENT STEPS (Operational Flow) -->
   <Steps3
     image={{
       src: '~/assets/images/webdev.webp',
-      alt: 'MicroWeb mobile application developers compiling native runtime files and monitoring device console logs',
+      alt: 'MicroWeb mobile application developers compiling native runtime files and monitoring live device console logs',
     }}
     title="Velocity Over Elegance: Our Mobile Engineering Pipeline"
     subtitle="We structure mobile systems to deliver immediate functional value, validating deployment stability against real-world network conditions."
@@ -132,30 +215,31 @@ const metadata = {
       {
         title: '1. Deconstruct Data Requirements',
         description:
-          'We audit the target field workflows to map the absolute minimal dataset required to execute actions cleanly.',
+          'We audit target field workflows to map the absolute minimal dataset required to execute actions cleanly without administrative bloat.',
         icon: 'carbon:forum',
       },
       {
         title: '2. Isolate Sync Prototypes',
         description:
-          'We build thin local storage configurations to verify database write and update pathways under simulated network loss.',
+          'We build thin local storage configurations to verify database write and update pathways under simulated regional network loss.',
         icon: 'carbon:devices',
       },
       {
         title: '3. Write Native-Compiled Code',
-        description: 'We develop optimized UI layouts using responsive, component-driven cross-platform frameworks.',
+        description:
+          'We develop optimized UI layouts using responsive, component-driven cross-platform frameworks built for rapid viewport rendering.',
         icon: 'carbon:ibm-watsonx-code-assistant',
       },
       {
         title: '4. Execute Automated Unit Checks',
         description:
-          'We run the codebase through continuous integration tests, verifying system behavior across diverse device profiles.',
+          'We run the codebase through continuous integration tests, verifying system behavior and logic stability across diverse device profiles.',
         icon: 'carbon:ibm-watsonx-code-assistant',
       },
       {
         title: '5. Push to Distribution Ecosystems',
         description:
-          'We manage deployment staging pipelines, pushing verified release blocks securely to enterprise store sandboxes.',
+          'We manage deployment staging pipelines, pushing verified release blocks securely to enterprise app store sandboxes or internal profiles.',
         icon: 'carbon:cloud-data-ops',
       },
       {
@@ -171,5 +255,67 @@ const metadata = {
     </Fragment>
   </Steps3>
 
-  <FollowUp />
+  <!-- SECTION 6: INTEGRATION VECTOR STACK (Sovereignty & Runtime Proof) -->
+  <section
+    class="opacity-80 border-t border-b backdrop-blur-lg border-white/10 bg-neutral-50 dark:bg-neutral-900/30 not-prose py-16"
+  >
+    <div class="text-center mb-12">
+      <Headline
+        title="Production Mobile Tooling Layers & Compilation Runtimes"
+        subtitle="We design application binaries utilizing runtime architectures selected for data persistence, execution speed, and hardware layer connectivity."
+        classes={{
+          title: 'text-2xl md:text-3xl font-bold tracking-tight text-neutral-900 dark:text-white',
+          subtitle: 'text-neutral-500 dark:text-neutral-400 mt-2 max-w-2xl mx-auto',
+        }}
+      />
+    </div>
+    <div class="max-w-5xl mx-auto text-xs font-medium uppercase">
+      <div
+        class="px-8 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-12 items-center justify-items-center brightness-0 grayscale dark:invert opacity-60"
+      >
+        {
+          imagePaths.map(async (imagePath) => {
+            const image = images[imagePath]();
+            const imageAlt = imagePath.split('/').pop()?.split('.').shift() || 'Technical stack integration token';
+            return (
+              <Image
+                src={image}
+                alt={`${imageAlt} mobile infrastructure token - MicroWeb Sarawak`}
+                loading="lazy"
+                height={32}
+                widths={[400, 768]}
+                class="object-contain transition-all hover:opacity-100"
+              />
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: PRODUCTION CLIENT PROOF (Nested low to protect human text variance) -->
+  <Portfoliosummary />
+
+  <!-- SECTION 8: CUSTOM CONVERSION INTAKE GATEWAY (Highly Focused Client Context Intake) -->
+  <ContentContact id="contact">
+    <Fragment slot="content">
+      <h2 class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl">
+        Request a Mobile Engineering Proposal
+      </h2>
+      <p class="mt-2 md:mt-4 text-lg font-semibold text-primary dark:text-accent">
+        Let’s deploy a high-performance cross-platform application optimized for your field operations.
+      </p>
+      <p class="mt-2 md:mt-4 text-neutral-600 dark:text-neutral-400">
+        Stop forcing your teams or regional partners to use unoptimized web links or rigid templates that fail when
+        connectivity drops. We engineer resilient, native-compiled mobile applications designed with robust offline
+        synchronization layers and precise hardware integrations to safeguard your workflow data.<br />
+        <strong
+          >Let's execute — Contact our system architect team today to initiate a technical scoping analysis.</strong
+        >
+      </p>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 backdrop-blur-lg bg-white/40 dark:bg-neutral-950/20"></div>
+    </Fragment>
+  </ContentContact>
 </Layout>

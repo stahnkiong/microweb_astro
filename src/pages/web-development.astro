@@ -5,9 +5,22 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Banners2 from '~/components/widgets/Banners2.astro';
 import Features4 from '~/components/widgets/Features4.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import Features5 from '~/components/widgets/Features5.astro';
-import FollowUp from '~/components/widgets/FollowUp.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Portfoliosummary from '~/components/blog/PortFolioSummary.astro';
+import Stats2 from '~/components/widgets/Stats2.astro';
+import ContentContact from '~/components/widgets/ContentContact.astro';
+import Headline from '~/components/ui/Headline.astro';
 
+// Automated Asset Ingestion for the Tech Stack Tracker
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/stack/*');
+const imagePaths = Object.keys(images).filter((imagePath) => {
+  return imagePath.startsWith(`/src/assets/images/stack`);
+});
+
+// Global Metadata Configuration targeting High-Volume Web Design Intent
 const metadata = {
   ignoreTitleTemplate: true,
   title: 'Web Design Kuching | High-Performance Website Development Sarawak',
@@ -18,12 +31,14 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <ThreeJs />
+
+  <!-- SECTION 1: HERO (The Tactical Hook - Unique Content) -->
   <Hero2
     tagline="Web Design Kuching & Website Development Sarawak"
     actions={[{ variant: 'primary', text: 'Request Technical Audit', href: '#contact' }]}
     image={{
       src: '~/assets/images/web_design_development_kuching.webp',
-      alt: 'MicroWeb systems engineering web interfaces with sub-second page rendering performance',
+      alt: 'MicroWeb systems engineering web interfaces with sub-second page rendering performance and clean Astro code structures',
     }}
   >
     <Fragment slot="title">
@@ -33,9 +48,9 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      Stop losing leads to slow loading states. We engineer static-compiled corporate properties and decoupled content
-      layouts built on modern web frameworks. We optimize for perfect Core Web Vitals to guarantee smooth execution—even
-      on erratic mobile connections.
+      Stop losing regional leads to slow loading states and unvalidated layouts. We engineer static-compiled corporate
+      properties and decoupled content layouts built on modern web frameworks. We optimize for perfect Core Web Vitals
+      to guarantee smooth execution—even on erratic mobile connections.
     </Fragment>
     <Fragment slot="content">
       <Features5
@@ -71,61 +86,130 @@ const metadata = {
       </div>
     </Fragment>
   </Hero2>
+
   <Banners2 />
 
-  <Features4
-    id="features"
-    tagline="Performance Engineering Vectors"
-    columns={3}
-    title="Speed, Security, & Contextual Funnel Intent"
-    subtitle="We discard bloated WordPress templates and heavy plugins. We write clean, asset-optimized code that converts traffic into customers."
-    classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
+  <!-- SECTION 2: SYSTEM CAPACITY METRICS (Web Performance Telemetry) -->
+  <Stats2
+    stats={[
+      { title: 'Google Core Web Vitals LCP', amount: '< 1.2s' },
+      { title: 'Cumulative Layout Shift', amount: '0.00' },
+      { title: 'Mobile Page Speed Score', amount: '99+' },
+    ]}
+  />
+
+  <!-- SECTION 3: CORE PARAMETERS (Expanded Symmetric 8-Item Core Grid - Unique Web Architecture Context) -->
+  <Features2
+    id="parameters"
+    tagline="Performance Frameworks"
+    title="Engineered Web Infrastructure Built to Capture Search Intents Natively"
+    subtitle="We discard bloated WordPress templates, heavy plugins, and brittle frontend frameworks. We write clean, asset-optimized code that converts search impressions into corporate customers."
+    columns={2}
     items={[
       {
         title: 'Static Site Generation (SSG)',
         description:
-          'Compiling database pages into flat HTML files before deployment, reducing server compute delay to absolute zero.',
+          'Compiling database and content routes into flat HTML files before deployment, reducing server compute delays and time-to-first-byte (TTFB) overhead to absolute zero.',
         icon: 'carbon:ibm-z-cloud-mod-stack',
       },
       {
-        title: 'Regional Edge Caching',
+        title: 'Regional Edge Cache Distribution',
         description:
-          'Distributing platform static payloads through a global CDN network to serve files directly from local regional centers.',
+          'Routing platform static assets through an enterprise CDN perimeter to serve files directly from local regional centers across Malaysia, maximizing load velocities on erratic mobile nodes.',
         icon: 'carbon:earth-filled',
       },
       {
-        title: 'Intent-Isolated Funnels',
+        title: 'Intent-Isolated Directory Funnels',
         description:
-          'Structuring category directory schemas to eliminate search disconnects and drop bounce variables by over 40%.',
-        link: '/clients/bosoffice',
+          'Structuring categorical page hierarchy routes to perfectly align with local B2B query volumes, eliminating semantic mismatches and reducing bounce rates by over 40%.',
         icon: 'carbon:image-store-local',
       },
       {
-        title: 'Strict Layout Integrity',
+        title: 'Strict Structural Layout Integrity',
         description:
-          'Enforcing precise dimensional rules across code blocks to eliminate layout shifts (CLS) on dynamic viewports.',
+          'Enforcing precise dimensional rules across responsive code blocks to eliminate user layout shifts (CLS) on dynamic modern viewports, maintaining a fluid, unbroken visual experience.',
         icon: 'carbon:devices',
       },
       {
-        title: 'Decoupled CMS Management',
+        title: 'Decoupled Headless CMS Options',
         description:
-          'Integrating structured markdown configurations to let operational teams run changes without altering core layout logic.',
-        link: '/clients/behind-scekl25',
+          'Integrating clean, structured markdown configurations or isolated API content fields to let operational teams run changes safely without altering core design system rules.',
         icon: 'carbon:customer',
       },
       {
-        title: 'Optimized Media Pipelines',
+        title: 'Automated Build-Time Media Pipelines',
         description:
-          'Automating asset pipelines to compress image matrices into next-gen formats at build time, reducing bandwidth drag.',
-        icon: 'carbon:devices',
+          'Automating asset processing pipelines to compress imagery matrices into next-generation formats (WebP/AVIF) at compile time, eliminating raw asset bandwidth drag.',
+        icon: 'carbon:image-search',
+      },
+      {
+        title: 'Component-Driven Tailwind UI Engineering',
+        description:
+          'Building custom interfaces utilizing atomic utility styles and standalone Astro elements, removing dead unused CSS properties to keep runtime dependencies lightweight.',
+        icon: 'carbon:assembly-cluster',
+      },
+      {
+        title: 'Semantic SEO Metadata Mapping',
+        description:
+          'Injecting native JSON-LD schema objects and exact-match canonical configurations directly into page layouts, preventing double-indexing conflicts inside Google Search Console.',
+        icon: 'carbon:search-locate-mirror',
       },
     ]}
   />
 
+  <!-- SECTION 4: CASE STUDY MAPPING MATRIX (Sector Deployments) -->
+  <Features4
+    id="features"
+    tagline="Performance Engineering Vectors"
+    columns={3}
+    title="Custom Web Engineering Across Regional Sectors"
+    subtitle="We build high-speed informational layouts and secure application gateways that protect regional businesses from adoption failures."
+    classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
+    items={[
+      {
+        title: 'Corporate Identity Architectures',
+        description:
+          'Engineered high-performance web properties tailored to global brand constraints and sub-second rendering targets.',
+        link: '/clients/ford-web-design/',
+        icon: 'carbon:network-enterprise',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+      {
+        title: 'High-Volume E-Commerce Systems',
+        description:
+          'Conversion-rate optimized product architectures built with decoupled data backends and custom sales integrations.',
+        link: '/clients/bosoffice/',
+        icon: 'carbon:shopping-cart-arrow-down',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+      {
+        title: 'Government Portal Infrastructures',
+        description:
+          'Secure, high-availability digital solutions built for localized data compliance guidelines and public verification logs.',
+        link: '/clients/behind-scekl25/',
+        icon: 'carbon:building-insights-3',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+    ]}
+  />
+
+  <!-- SECTION 5: THE TECHNICAL DEVELOPMENT STEPS (Operational Flow) -->
   <Steps3
     image={{
       src: '~/assets/images/webdev.webp',
-      alt: 'MicroWeb system engineers testing layout core web vitals and mobile rendering thresholds',
+      alt: 'MicroWeb systems engineers testing layout core web vitals and mobile rendering thresholds',
     }}
     title="Velocity Over Elegance: Our Web Engineering Framework"
     subtitle="We structure web platforms phase-by-phase, ensuring core operational utility is live and validated before scaling features."
@@ -133,13 +217,13 @@ const metadata = {
       {
         title: '1. Deconstruct Content Schemas',
         description:
-          'We audit your existing informational hierarchy to identify and isolate key semantic search intents.',
+          'We audit your existing informational hierarchy to identify, capture, and isolate key semantic search intents.',
         icon: 'carbon:forum',
       },
       {
         title: '2. Wireframe System Prototypes',
         description:
-          'We build interactive component blueprints to visualize file routing and confirm directory structures early.',
+          'We build interactive component blueprints to visualize file routing paths and confirm directory structures early.',
         icon: 'carbon:devices',
       },
       {
@@ -151,13 +235,13 @@ const metadata = {
       {
         title: '4. Execute Automated Load Checks',
         description:
-          'We subject the application to synthetic throttle tests, optimizing script payloads for congested mobile data paths.',
+          'We subject the application templates to synthetic throttle tests, optimizing script payloads for congested mobile data paths.',
         icon: 'carbon:ibm-watsonx-code-assistant',
       },
       {
         title: '5. Commit to Edge Networks',
         description:
-          'We deploy the production code to serverless cloud hosting clusters, hardwiring a Cloudflare defense shield.',
+          'We deploy the production code to serverless cloud hosting clusters, hardwiring an enterprise Cloudflare defense shield.',
         icon: 'carbon:cloud-data-ops',
       },
       {
@@ -173,5 +257,69 @@ const metadata = {
     </Fragment>
   </Steps3>
 
-  <FollowUp />
+  <!-- SECTION 6: INTEGRATION VECTOR STACK (Sovereignty & Runtime Proof) -->
+  <section
+    class="opacity-80 border-t border-b backdrop-blur-lg border-white/10 bg-neutral-50 dark:bg-neutral-900/30 not-prose py-16"
+  >
+    <div class="text-center mb-12">
+      <Headline
+        title="Production Tooling Layers & Static Compiling Environments"
+        subtitle="We build platforms utilizing technology layers selected entirely for execution stability, sub-second routing speed, and clean code parameters."
+        classes={{
+          title: 'text-2xl md:text-3xl font-bold tracking-tight text-neutral-900 dark:text-white',
+          subtitle: 'text-neutral-500 dark:text-neutral-400 mt-2 max-w-2xl mx-auto',
+        }}
+      />
+    </div>
+    <div class="max-w-5xl mx-auto text-xs font-medium uppercase">
+      <div
+        class="px-8 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-12 items-center justify-items-center brightness-0 grayscale dark:invert opacity-60"
+      >
+        {
+          imagePaths.map(async (imagePath) => {
+            const image = images[imagePath]();
+            const imageAlt = imagePath.split('/').pop()?.split('.').shift() || 'Technical stack integration token';
+            return (
+              <Image
+                src={image}
+                alt={`${imageAlt} infrastructure integration token - MicroWeb Sarawak`}
+                loading="lazy"
+                height={32}
+                widths={[400, 768]}
+                class="object-contain transition-all hover:opacity-100"
+              />
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: PRODUCTION CLIENT PROOF (Nested low to protect human text variance) -->
+  <Portfoliosummary />
+
+  <!-- SECTION 8: CUSTOM CONVERSION INTAKE GATEWAY (Highly Focused Client Context Intake) -->
+  <ContentContact id="contact">
+    <Fragment slot="content">
+      <h2 class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl">
+        Request a Web Infrastructure Audit
+      </h2>
+      <p class="mt-2 md:mt-4 text-lg font-semibold text-primary dark:text-accent">
+        Let’s optimize your corporate digital presence for sub-second edge rendering and explicit search engine
+        authority.
+      </p>
+      <p class="mt-2 md:mt-4 text-neutral-600 dark:text-neutral-400">
+        Stop pushing your local clients through heavy, template-stuffed content management systems that kill loading
+        times and drop conversion metrics. We build secure, clean, static-compiled corporate websites and custom layout
+        infrastructures engineered to capture regional search intents safely.<br />
+        <strong
+          >Let's execute — Reach out to our system architect team today to request a comprehensive core performance
+          audit.</strong
+        >
+      </p>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 backdrop-blur-lg bg-white/40 dark:bg-neutral-950/20"></div>
+    </Fragment>
+  </ContentContact>
 </Layout>

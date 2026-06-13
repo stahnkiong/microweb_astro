@@ -5,25 +5,40 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Banners2 from '~/components/widgets/Banners2.astro';
 import Features4 from '~/components/widgets/Features4.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import Features5 from '~/components/widgets/Features5.astro';
-import FollowUp from '~/components/widgets/FollowUp.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Portfoliosummary from '~/components/blog/PortFolioSummary.astro';
+import Stats2 from '~/components/widgets/Stats2.astro';
+import ContentContact from '~/components/widgets/ContentContact.astro';
+import Headline from '~/components/ui/Headline.astro';
 
+// Automated Asset Ingestion for the Tech Stack Tracker
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/stack/*');
+const imagePaths = Object.keys(images).filter((imagePath) => {
+  return imagePath.startsWith(`/src/assets/images/stack`);
+});
+
+// Global Metadata Configuration targeting Enterprise System Search Volume
 const metadata = {
   ignoreTitleTemplate: true,
-  title: 'Enterprise System Integration & Custom API Development | MicroWeb',
+  title: 'Enterprise System Integration & Custom API Company | MicroWeb Sarawak',
   description:
-    'Bridge legacy database environments with modern cloud infrastructure. We engineer secure, decoupled API middleware, webhook orchestrations, and automated data synchronization pipelines.',
+    'Bridge legacy database environments with modern cloud infrastructure. We engineer secure, decoupled API middleware, webhook orchestrations, and automated data synchronization pipelines across Kuching & KL.',
 };
 ---
 
 <Layout metadata={metadata}>
   <ThreeJs />
+
+  <!-- SECTION 1: HERO (The Tactical Hook - Unique Content) -->
   <Hero2
     tagline="Enterprise System Integration & Custom API Development"
     actions={[{ variant: 'primary', text: 'Request Integration Audit', href: '#contact' }]}
     image={{
       src: '~/assets/images/integration_2.webp',
-      alt: 'Architecture layout showing decoupled API middleware endpoints and secure network routing metrics',
+      alt: 'Architecture layout mapping decoupled API middleware endpoints, data routing tables, and secure gateway network routing metrics',
     }}
   >
     <Fragment slot="title">
@@ -32,9 +47,9 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      Eliminate broken data dependencies and manual processing silos. We engineer secure, high-throughput API layers
-      that safely connect legacy backends with modern cloud infrastructure, serverless edge networks, and instant
-      messaging channels.
+      Eliminate broken data dependencies and manual processing silos across your business units. As a specialized
+      software company in Kuching, we engineer secure, high-throughput API layers that safely connect legacy backends
+      with modern web design applications, serverless edge networks, and instant messaging channels.
     </Fragment>
     <Fragment slot="content">
       <Features5
@@ -70,88 +85,174 @@ const metadata = {
       </div>
     </Fragment>
   </Hero2>
+
   <Banners2 />
 
+  <!-- SECTION 2: SYSTEM CAPACITY METRICS (Middleware Throughput Performance) -->
+  <Stats2
+    stats={[
+      { title: 'Data Pipeline Concurrency', amount: '10k/sec+' },
+      { title: 'Average Packet Delivery', amount: '< 90ms' },
+      { title: 'Sync Failure Resolution', amount: 'Automated' },
+    ]}
+  />
+
+  <!-- SECTION 3: CORE PARAMETERS (Expanded Symmetric 8-Item Core Grid - Unique Architecture Context) -->
+  <Features2
+    id="parameters"
+    tagline="Ecosystem Parameters"
+    title="Hardened Middleware Architecture Built for Seamless Data Exchange"
+    subtitle="Break free from fragile, point-to-point hardcoding. We write adaptive translation layers that isolate and route system events natively without data degradation."
+    columns={2}
+    items={[
+      {
+        title: 'Asynchronous Event-Driven Messaging',
+        description:
+          'We implement robust background queuing architectures to handle heavy data synchronizations. By decoupling message consumption hooks from the primary execution thread, we prevent user interface frame drops during massive bulk data updates.',
+        icon: 'carbon:cloud-ceiling',
+      },
+      {
+        title: 'Bespoke REST & GraphQL Middleware',
+        description:
+          'We design and deploy custom communication bridges programmed to transform disparate database schemas on the fly, allowing decoupled frontend layouts to read and write directly to complex legacy internal ledgers.',
+        icon: 'carbon:api',
+      },
+      {
+        title: 'Decoupled Third-Party Webhook Orchestration',
+        description:
+          'Isolate external vendor payload risks from your primary databases. We write containerized validation modules that ingest incoming webhooks, strip out problematic formats, and map clean data matrices straight to your ERP endpoints.',
+        icon: 'carbon:app-connectivity',
+      },
+      {
+        title: 'Zero-Management Pipeline Automation',
+        description:
+          'Leveraging serverless Cloud Functions and Firebase runtimes that scale horizontally automatically based on system demand spikes, reducing infrastructure maintenance tasks and operational overhead to zero.',
+        icon: 'carbon:pricing-consumption',
+      },
+      {
+        title: 'Encrypted Token Exchanges & Access Rules',
+        description:
+          'Protect internal communication vectors from unauthorized manipulation. We configure strict JWT authorization validations, rotating API keys, and rate-limiting rules to safeguard your core corporate information profiles.',
+        icon: 'carbon:chart-multitype',
+      },
+      {
+        title: 'Transactional Caching & Identity Buffers',
+        description:
+          'To optimize processing costs and reduce strain on fragile legacy host nodes, we engineer high-speed Redis caching buffers that store recurring read payloads securely at the edge.',
+        icon: 'carbon:assembly-cluster',
+      },
+      {
+        title: 'Automated Synchronization Reconciliation',
+        description:
+          'Eliminate administrative ledger mismatches permanently. Our data pipelines deploy automated checksum verification scripts to trace, isolate, and log packet exceptions, self-healing system synchronization states natively.',
+        icon: 'carbon:forecast-lightning',
+      },
+      {
+        title: 'Sovereign Network Infrastructure Defense',
+        description:
+          'We establish secure routing networks backed by dedicated Cloudflare firewalls. We configure custom perimeter access controls to shield internal system communication paths from public web vulnerabilities.',
+        icon: 'carbon:security',
+      },
+    ]}
+  />
+
+  <!-- SECTION 4: ECOSYSTEM ARCHITECTURE SECTOR MAPPING (Silo Data Layouts) -->
   <Features4
     id="features"
     tagline="Ecosystem Architecture"
     columns={3}
     title="Unified Data Environments, Managed Risk"
-    subtitle="Break free from fragile, hardcoded point-to-point connections. Our custom middleware orchestrates data flow patterns across your entire stack:"
+    subtitle="Our custom middleware orchestrates clean, scalable data flow patterns across your entire business system footprint:"
     classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
     items={[
       {
         title: 'ERP & Legacy Inventory Links',
-        description: 'Connecting underlying product databases directly to high-velocity headless commerce storefronts.',
-        link: '/clients/architecting-persistent-b2b-supply-chain-medusajs-docker',
+        description:
+          'Connecting underlying product databases directly to high-velocity custom software and headless commerce storefronts.',
+        link: '/clients/architecting-persistent-b2b-supply-chain-medusajs-docker/',
         icon: 'carbon:network-enterprise',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
       },
       {
         title: 'Hardware Telemetry Pipelines',
         description:
-          'Ingesting raw edge metrics from low-level BLE beacon arrays and physical IoT signages into remote cloud environments.',
-        link: '/clients/bluetooth-beacon-border-control',
+          'Ingesting raw edge metrics from low-level BLE beacon arrays and physical IoT signages securely into remote cloud environments.',
+        link: '/clients/bluetooth-beacon-border-control/',
         icon: 'carbon:sales-ops',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
       },
       {
         title: 'Automated Account Routing',
         description:
-          'Bridging front-end payment actions with legacy enterprise accounting suites via secure, transaction-safe ledgers.',
-        link: '/clients/bosoffice',
+          'Bridging front-end website design elements and payment actions with legacy enterprise accounting suites via secure ledgers.',
+        link: '/clients/bosoffice/',
         icon: 'carbon:finance',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
       },
       {
         title: 'WhatsApp-to-Database Bridges',
         description:
-          'Converting raw mobile photo assets into structured server variables natively using computer-vision pipelines.',
+          'Converting raw mobile chat photos into structured database server updates natively using automated computer-vision pipelines.',
         icon: 'carbon:id-management',
       },
       {
         title: 'High-Velocity Content Schemas',
         description:
-          'Synchronizing complex state payloads across distributed client viewports during high-traffic launch windows.',
-        link: '/clients/behind-scekl25',
+          'Synchronizing complex layout state payloads across distributed client viewports during high-traffic enterprise launch windows.',
+        link: '/clients/behind-scekl25/',
         icon: 'carbon:analytics-custom',
-      },
-      {
-        title: 'Secure Identity Ingestion',
-        description:
-          'Deploying encrypted token exchanges and strict JWT validation protocols to govern external API access paths.',
-        icon: 'carbon:chart-multitype',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
       },
     ]}
   />
 
+  <!-- SECTION 5: THE TECHNICAL DEVELOPMENT STEPS (Modular Phases) -->
   <Steps3
     image={{
       src: '~/assets/images/integration.png',
-      alt: 'MicroWeb integration engineers mapping out data transformation logic and webhook event pipelines',
+      alt: 'MicroWeb integration engineers mapping out relational database schemas, data transformation logic, and webhook event pipelines',
     }}
     title="Velocity Over Elegance: Our Integration Framework"
-    subtitle="We minimize deployment shock by executing your integration sequence in modular phases, ensuring continuous data availability."
+    subtitle="We minimize system deployment shock by executing your integration sequence in modular phases, ensuring continuous data availability."
     items={[
       {
         title: 'Stage 1: Deconstruct Data Schema Blocks',
         description:
-          'We document and audit your current system schemas, mapping underlying table relations and dependency constraints.',
+          'We document and audit your current system schemas, mapping underlying table relations, custom software blocks, and dependency constraints.',
         icon: 'carbon:forum',
       },
       {
         title: 'Stage 2: Blueprint Middleware Mappings',
         description:
-          'We outline the transactional path routing, specifying error handling rules and data caching policies.',
+          'We outline the transactional path routing configurations, specifying exact exception handling rules and data caching policies.',
         icon: 'carbon:devices',
       },
       {
         title: 'Stage 3: Automated Micro-Code Compiles',
         description:
-          'We develop the integration bridges using isolated service modules, validated by automated continuous testing suites.',
+          'We develop the integration bridges using isolated service modules, validated continuously by automated unit testing suites.',
         icon: 'carbon:ibm-watsonx-code-assistant',
       },
       {
         title: 'Stage 4: Edge Runtime Orchestration',
         description:
-          'We deploy the completed API layers behind an enterprise Cloudflare perimeter, monitoring active packet flows.',
+          'We deploy the completed API layers behind an enterprise Cloudflare perimeter, monitoring active packet flows and metric stability.',
         icon: 'carbon:cloud-data-ops',
       },
     ]}
@@ -161,5 +262,68 @@ const metadata = {
     </Fragment>
   </Steps3>
 
-  <FollowUp />
+  <!-- SECTION 6: INTEGRATION VECTOR STACK (Sovereignty & Runtime Proof) -->
+  <section
+    class="opacity-80 border-t border-b backdrop-blur-lg border-white/10 bg-neutral-50 dark:bg-neutral-900/30 not-prose py-16"
+  >
+    <div class="text-center mb-12">
+      <Headline
+        title="Production Data Infrastructure Layers & Protocol Backends"
+        subtitle="We wire system boundaries utilizing protocol environments configured for absolute transaction safety, data isolation, and runtime reliability."
+        classes={{
+          title: 'text-2xl md:text-3xl font-bold tracking-tight text-neutral-900 dark:text-white',
+          subtitle: 'text-neutral-500 dark:text-neutral-400 mt-2 max-w-2xl mx-auto',
+        }}
+      />
+    </div>
+    <div class="max-w-5xl mx-auto text-xs font-medium uppercase">
+      <div
+        class="px-8 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-12 items-center justify-items-center brightness-0 grayscale dark:invert opacity-60"
+      >
+        {
+          imagePaths.map(async (imagePath) => {
+            const image = images[imagePath]();
+            const imageAlt = imagePath.split('/').pop()?.split('.').shift() || 'Technical stack integration token';
+            return (
+              <Image
+                src={image}
+                alt={`${imageAlt} data infrastructure integration layer - MicroWeb Sarawak`}
+                loading="lazy"
+                height={32}
+                widths={[400, 768]}
+                class="object-contain transition-all hover:opacity-100"
+              />
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: PRODUCTION CLIENT PROOF (Nested low to avoid layout repetition) -->
+  <Portfoliosummary />
+
+  <!-- SECTION 8: CUSTOM CONVERSION INTAKE GATEWAY (Silo Oriented Scoping Contract) -->
+  <ContentContact id="contact">
+    <Fragment slot="content">
+      <h2 class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl">
+        Request an Integration Audit
+      </h2>
+      <p class="mt-2 md:mt-4 text-lg font-semibold text-primary dark:text-accent">
+        Let’s eliminate manual processing gaps and secure your cross-platform system communications.
+      </p>
+      <p class="mt-2 md:mt-4 text-neutral-600 dark:text-neutral-400">
+        Stop relying on unstable scripts and broken database hooks that crash during transaction spikes. We develop
+        secure, decoupled middleware, automated background queues, and custom API abstractions engineered to connect
+        your distributed systems natively while protecting your network boundaries behind an enterprise edge shield.<br
+        />
+        <strong
+          >Let's execute — Contact our system architect team today to organize an operational data mapping audit.</strong
+        >
+      </p>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 backdrop-blur-lg bg-white/40 dark:bg-neutral-950/20"></div>
+    </Fragment>
+  </ContentContact>
 </Layout>

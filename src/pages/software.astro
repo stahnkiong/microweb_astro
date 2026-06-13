@@ -5,25 +5,40 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Banners2 from '~/components/widgets/Banners2.astro';
 import Features4 from '~/components/widgets/Features4.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import Features5 from '~/components/widgets/Features5.astro';
-import FollowUp from '~/components/widgets/FollowUp.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Portfoliosummary from '~/components/blog/PortFolioSummary.astro';
+import Stats2 from '~/components/widgets/Stats2.astro';
+import ContentContact from '~/components/widgets/ContentContact.astro';
+import Headline from '~/components/ui/Headline.astro';
 
+// Automated Asset Ingestion for the Tech Stack Tracker
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/stack/*');
+const imagePaths = Object.keys(images).filter((imagePath) => {
+  return imagePath.startsWith(`/src/assets/images/stack`);
+});
+
+// Global Metadata Configuration targeting High-Volume App & Software Intent
 const metadata = {
   ignoreTitleTemplate: true,
-  title: 'Custom Software & Web Application Development | MicroWeb',
+  title: 'Custom Software & Mobile App Development Company | MicroWeb Sarawak',
   description:
-    "Sarawak's premier custom app developer company. We engineer high-availability web applications, secure API architectures, and zero-management automation backends for enterprises across Malaysia.",
+    "Sarawak's premier custom app developer company. We engineer high-availability web applications, secure API architectures, and zero-management automation backends for enterprises across Kuching, KL, and Malaysia.",
 };
 ---
 
 <Layout metadata={metadata}>
   <ThreeJs />
+
+  <!-- SECTION 1: HERO (The Tactical Hook - Unique Content) -->
   <Hero2
-    tagline="Custom Software & Web Application Development"
+    tagline="Enterprise Application Engineering"
     actions={[{ variant: 'primary', text: 'Request Architectural Proposal', href: '#contact' }]}
     image={{
       src: '~/assets/images/custom_web_application_developement.webp',
-      alt: 'Dashboard showcasing secure web application performance and API telemetry analytics',
+      alt: 'Dashboard showcasing secure web application performance, API telemetry metrics, and Astro edge processing pipelines',
     }}
   >
     <Fragment slot="title">
@@ -32,8 +47,8 @@ const metadata = {
 
     <Fragment slot="subtitle">
       We engineer high-performance, secure web applications designed to decouple technical debt and eliminate manual
-      workflow bottlenecks. From regional B2B logistics nodes to custom cloud layouts, we build software that adapts
-      seamlessly to your operational scale.
+      workflow bottlenecks. From regional B2B logistics nodes to custom mobile app development, we build software that
+      adapts seamlessly to your operational scale across Malaysia.
     </Fragment>
     <Fragment slot="content">
       <Features5
@@ -45,7 +60,7 @@ const metadata = {
             icon: 'carbon:cloud-service-management',
           },
           {
-            description: 'High-Availability<br/>Uptime',
+            description: 'High-Availability<br/>Uptime Target',
             icon: 'carbon:security',
           },
           {
@@ -53,7 +68,7 @@ const metadata = {
             icon: 'carbon:archive',
           },
           {
-            description: 'Legacy System<br/>Integrations',
+            description: 'Legacy System<br/>ERP Integrations',
             icon: 'carbon:app-connectivity',
           },
         ]}
@@ -72,6 +87,75 @@ const metadata = {
 
   <Banners2 />
 
+  <!-- SECTION 2: SYSTEM CAPACITY METRICS (Software Performance Telemetry) -->
+  <Stats2
+    stats={[
+      { title: 'Production Uptime Base', amount: '99.99%' },
+      { title: 'Horizontal Autoscaling', amount: '< 12s' },
+      { title: 'Data Processing Ingestion', amount: 'Real-Time' },
+    ]}
+  />
+
+  <!-- SECTION 3: CORE PARAMETERS (Expanded Symmetric 8-Item Core Grid - Unique Architecture Context) -->
+  <Features2
+    id="parameters"
+    tagline="Systems Architecture"
+    title="Decoupled Software Structures Engineered for Operational Freedom"
+    subtitle="We do not wrap fragile public wrappers around half-baked assumptions. We compile standalone, high-performance web applications built to eliminate tech-shock natively."
+    columns={2}
+    items={[
+      {
+        title: 'Component-Driven Architecture Stack',
+        description:
+          'We write clean, compile-optimized custom software utilizing modern frameworks like Astro and React. By isolating UI elements into modular components, we guarantee lightning-fast load speeds, sub-second edge routing, and clean code that prevents long-term technical debt.',
+        icon: 'carbon:assembly-cluster',
+      },
+      {
+        title: 'Hardened REST & GraphQL API Integration',
+        description:
+          'Connect disconnected systems securely. We design and expose enterprise abstraction layers that map custom frontend endpoints straight to legacy ERP ledgers, custom corporate accounting files, and remote warehouse database nodes.',
+        icon: 'carbon:ibm-api-connect',
+      },
+      {
+        title: 'Serverless Firebase Micro-Pipelines',
+        description:
+          'When regional targets require hyper-focused operational execution without dedicated server overhead, we utilize serverless Cloud Functions. The backend automatically scales horizontally during traffic spikes and operates with zero maintenance overhead.',
+        icon: 'carbon:cloud-service-management',
+      },
+      {
+        title: 'Secure Isolated Database Deployments',
+        description:
+          'Protect sensitive transaction logs natively. From high-velocity embedded SQLite configurations for local nodes to encrypted PostgreSQL clusters, we ensure your operational data profiles stay structured, relational, and completely private.',
+        icon: 'carbon:data-base',
+      },
+      {
+        title: 'Automated CI/CD Verification Testing',
+        description:
+          'Deploy production patches to live apps with absolute assurance. Our pipeline scripts execute automated validation workflows via GitHub Actions, systematically testing data processing routines to eliminate environment deployment drift.',
+        icon: 'carbon:carbon-ui-builder',
+      },
+      {
+        title: 'Persistent Monitoring & Exception Telemetry',
+        description:
+          'Maintain complete systems visibility 24/7. We hardwire automated tracking telemetry monitors straight into your code layer to track network request times, database load limits, and system errors, fixing anomalies before your teams notice.',
+        icon: 'carbon:cloud-monitoring',
+      },
+      {
+        title: 'Sovereign Bare-Metal Linux VPS Environments',
+        description:
+          'For corporate organizations demanding total data isolation, we provision and harden dedicated Virtual Private Servers (VPS) from the OS layer up. We program your entire middleware and local processing caches with zero external dependencies.',
+        icon: 'carbon:server-dns',
+      },
+      {
+        title: 'Edge-Cached Network Optimization',
+        description:
+          'Ensure your application content renders instantly across both urban and rural network zones. We deploy production assets behind an enterprise Cloudflare perimeter, leveraging custom cache rules to block direct public access to your backend.',
+        icon: 'carbon:network-enterprise',
+      },
+    ]}
+  />
+
+  <!-- SECTION 4: ENTERPRISE SECTOR ARCHITECTURES (Vertical Application Segmentation) -->
   <Features4
     id="features"
     tagline="Enterprise Sector Architectures"
@@ -83,7 +167,7 @@ const metadata = {
       {
         title: 'B2B Supply Chain & Logistics',
         description: 'Decoupled headless marketplace platforms and secure tracking ledger pipelines.',
-        link: '/clients/architecting-persistent-b2b-supply-chain-medusajs-docker',
+        link: '/clients/architecting-persistent-b2b-supply-chain-medusajs-docker/',
         icon: 'carbon:delivery-truck',
         callToAction: {
           variant: 'link',
@@ -94,7 +178,7 @@ const metadata = {
       {
         title: 'Government & State GLCs',
         description: 'Secure, high-availability digital portals and automated site log verification engines.',
-        link: '/clients/behind-scekl25',
+        link: '/clients/behind-scekl25/',
         icon: 'carbon:building-insights-3',
         callToAction: {
           variant: 'link',
@@ -105,7 +189,7 @@ const metadata = {
       {
         title: 'Smart Retail & Edge IoT',
         description: 'Network-resilient edge appliance software and centralized device fleet management.',
-        link: '/clients/adidas-smart-retail',
+        link: '/clients/adidas-smart-retail/',
         icon: 'carbon:shopping-cart-arrow-down',
         callToAction: {
           variant: 'link',
@@ -115,8 +199,9 @@ const metadata = {
       },
       {
         title: 'High-Volume E-Commerce',
-        description: 'Conversion-rate optimized product architectures built for sub-second page delivery.',
-        link: '/clients/bosoffice',
+        description:
+          'Conversion-rate optimized product architectures built for sub-second page delivery and custom web design frameworks.',
+        link: '/clients/bosoffice/',
         icon: 'carbon:network-enterprise',
         callToAction: {
           variant: 'link',
@@ -127,7 +212,7 @@ const metadata = {
       {
         title: 'Automated Telemetry Networks',
         description: 'Continuous hardware-to-cloud integration grids utilizing BLE beacon validation protocols.',
-        link: '/clients/bluetooth-beacon-border-control',
+        link: '/clients/bluetooth-beacon-border-control/',
         icon: 'carbon:industry',
         callToAction: {
           variant: 'link',
@@ -138,7 +223,7 @@ const metadata = {
       {
         title: 'Interactive WebGL Engines',
         description: 'Open-source 3D client-side rendering engines running real-time physics simulations.',
-        link: '/clients/3d-learning-platform',
+        link: '/clients/3d-learning-platform/',
         icon: 'carbon:agriculture-analytics',
         callToAction: {
           variant: 'link',
@@ -149,10 +234,11 @@ const metadata = {
     ]}
   />
 
+  <!-- SECTION 5: THE TECHNICAL DEVELOPMENT STEPS (Operational Flow) -->
   <Steps3
     image={{
       src: '~/assets/images/process.webp',
-      alt: 'MicroWeb application developers organizing system dependencies on an agile board',
+      alt: 'MicroWeb application developers organizing system dependencies on an agile board to optimize custom software layout',
     }}
     title="Velocity Over Elegance: Our Engineering Lifecycle"
     subtitle="We minimize technical debt by starting with focused functional targets, allowing systems to scale cleanly alongside verification metrics."
@@ -160,19 +246,19 @@ const metadata = {
       {
         title: '1. Deconstruct Bottlenecks',
         description:
-          'We audit active system workflows to identify the specific operational failure points stalling productivity.',
+          'We audit active system workflows to identify the specific operational failure points stalling corporate productivity.',
         icon: 'carbon:forum',
       },
       {
         title: '2. Isolate the MVP Core',
         description:
-          'We prototype a thin, high-velocity functional interface to validate underlying data schema paths in production.',
+          'We prototype a thin, high-velocity functional interface to validate underlying data schema paths in live production environments.',
         icon: 'carbon:devices',
       },
       {
         title: '3. Automated Development',
         description:
-          'We write robust application code backed by rigorous continuous testing blocks to isolate external dependencies.',
+          'We write robust application code backed by rigorous continuous testing blocks to isolate external third-party dependencies.',
         icon: 'carbon:ibm-watsonx-code-assistant',
       },
       {
@@ -182,9 +268,9 @@ const metadata = {
         icon: 'carbon:cloud-data-ops',
       },
       {
-        title: '5. Automated Telemetry',
+        title: '5. Automated Telemetry Monitoring',
         description:
-          'We monitor continuous runtime telemetry to track packet execution speeds and neutralize drift before exceptions occur.',
+          'We monitor continuous runtime telemetry to track packet execution speeds and neutralize architecture drift before exceptions occur.',
         icon: 'carbon:cloud-monitoring',
       },
     ]}
@@ -194,5 +280,65 @@ const metadata = {
     </Fragment>
   </Steps3>
 
-  <FollowUp />
+  <!-- SECTION 6: INTEGRATION VECTOR STACK (Sovereignty & Runtime Proof) -->
+  <section
+    class="opacity-80 border-t border-b backdrop-blur-lg border-white/10 bg-neutral-50 dark:bg-neutral-900/30 not-prose py-16"
+  >
+    <div class="text-center mb-12">
+      <Headline
+        title="Production Tooling Layers & Integrated Backends"
+        subtitle="We build applications utilizing technology layers selected entirely for execution stability, sub-second routing speed, and data safety constraints."
+        classes={{
+          title: 'text-2xl md:text-3xl font-bold tracking-tight text-neutral-900 dark:text-white',
+          subtitle: 'text-neutral-500 dark:text-neutral-400 mt-2 max-w-2xl mx-auto',
+        }}
+      />
+    </div>
+    <div class="max-w-5xl mx-auto text-xs font-medium uppercase">
+      <div
+        class="px-8 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-12 items-center justify-items-center brightness-0 grayscale dark:invert opacity-60"
+      >
+        {
+          imagePaths.map(async (imagePath) => {
+            const image = images[imagePath]();
+            const imageAlt = imagePath.split('/').pop()?.split('.').shift() || 'Technical stack integration token';
+            return (
+              <Image
+                src={image}
+                alt={`${imageAlt} infrastructure integration token - MicroWeb Sarawak`}
+                loading="lazy"
+                height={32}
+                widths={[400, 768]}
+                class="object-contain transition-all hover:opacity-100"
+              />
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: PRODUCTION CLIENT PROOF (Nested low to protect human text variance) -->
+  <Portfoliosummary />
+
+  <!-- SECTION 8: CUSTOM CONVERSION INTAKE GATEWAY (Highly Focused Client Context Intake) -->
+  <ContentContact id="contact">
+    <Fragment slot="content">
+      <h2 class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl">
+        Request an Architectural Proposal
+      </h2>
+      <p class="mt-2 md:mt-4 text-lg font-semibold text-primary dark:text-accent">
+        Let’s design a custom software application tailored for your business transaction velocities.
+      </p>
+      <p class="mt-2 md:mt-4 text-neutral-600 dark:text-neutral-400">
+        Stop pushing your field operations or enterprise clients into rigid off-the-shelf software packages that trigger
+        adoption failures. We build secure, component-driven web applications and clean API integration middlewares
+        engineered to optimize your administrative overhead.<br />
+        <strong>Let's execute — Reach out to our system architect team today to request a technical audit.</strong>
+      </p>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 backdrop-blur-lg bg-white/40 dark:bg-neutral-950/20"></div>
+    </Fragment>
+  </ContentContact>
 </Layout>

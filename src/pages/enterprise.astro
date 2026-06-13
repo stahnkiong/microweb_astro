@@ -1,27 +1,44 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import ThreeJs from '~/components/widgets/ThreeJs.astro';
-import Hero3 from '~/components/widgets/Hero3.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
 import Banners2 from '~/components/widgets/Banners2.astro';
-import FollowUp from '~/components/widgets/FollowUp.astro';
+import Features4 from '~/components/widgets/Features4.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import Features5 from '~/components/widgets/Features5.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Portfoliosummary from '~/components/blog/PortFolioSummary.astro';
+import Stats2 from '~/components/widgets/Stats2.astro';
+import ContentContact from '~/components/widgets/ContentContact.astro';
+import Headline from '~/components/ui/Headline.astro';
 
+// Automated Asset Ingestion for the Tech Stack Tracker
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/stack/*');
+const imagePaths = Object.keys(images).filter((imagePath) => {
+  return imagePath.startsWith(`/src/assets/images/stack`);
+});
+
+// Global Metadata Configuration targeting High-Tier Compute Search Intent
 const metadata = {
-  title: 'WhatsApp AI Agents, Custom VPS & Self-Hosted LLM Infrastructure | MicroWeb',
-  description:
-    'Deploy zero-friction WhatsApp AI agents. From serverless Firebase pipelines to custom Linux VPS environments running self-hosted local LLMs/LRMs for absolute data sovereignty.',
   ignoreTitleTemplate: true,
+  title: 'Custom VPS, Private LLM Nodes & AI Infrastructure | MicroWeb Sarawak',
+  description:
+    'Deploy zero-friction WhatsApp AI agents backed by dedicated compute nodes. We engineer secure Linux VPS environments and fine-tune self-hosted local LLMs/LRMs for absolute corporate data sovereignty.',
 };
 ---
 
 <Layout metadata={metadata}>
   <ThreeJs />
-  <Hero3
+
+  <!-- SECTION 1: HERO (The Tactical Hook - Unique Content) -->
+  <Hero2
+    tagline="Private Agentic Ecosystems & Dedicated Compute"
     actions={[{ variant: 'primary', text: 'Deploy Private AI Infrastructure', href: '#contact' }]}
     image={{
       src: '~/assets/images/custom_web_application_developement.webp',
-      alt: 'System architecture blueprint detailing isolated Linux VPS infrastructure hosting open-source LLM networks and WhatsApp webhooks',
+      alt: 'System architecture blueprint detailing isolated Linux VPS infrastructure hosting open-source LLM networks and secure WhatsApp Cloud API webhooks',
     }}
   >
     <Fragment slot="title">
@@ -34,11 +51,11 @@ const metadata = {
       engineer high-throughput WhatsApp Cloud API middleware powered by your choice of architecture: lightweight
       serverless Firebase pipelines, or dedicated custom Linux VPS bare-metal nodes hosting private, open-source Large
       Language Models (LLMs) and Large Reasoning Models (LRMs). Complete data sovereignty, zero adoption friction, and
-      instant execution.
+      instant execution across Malaysia.
     </Fragment>
     <Fragment slot="content">
       <Features5
-        columns={3}
+        columns={4}
         classes={{ container: 'py-8' }}
         items={[
           {
@@ -57,42 +74,43 @@ const metadata = {
             description: 'Computer-Vision<br/>Photo Parsing',
             icon: 'carbon:image-search',
           },
-          {
-            description: 'Instant Lead Tracking<br/>(Zero-Cold Phase)',
-            icon: 'carbon:flash',
-          },
-          {
-            description: 'Direct Backend<br/>ERP Automation',
-            icon: 'carbon:app-connectivity',
-          },
         ]}
       />
     </Fragment>
     <Fragment slot="bg">
-      <div
-        class="absolute inset-0 grid grid-cols-2 -space-x-52 backdrop-blur-xl md:backdrop-blur-2xl backdrop-hue-rotate-180 backdrop-brightness-125 backdrop-contrast-[0.9]"
-      >
-        <div class="blur-[106px] h-64 bg-gradient-to-br from-yellow-100 to-violet-500 md:to-sky-300 dark:from-blue-700">
+      <div class="absolute bg-page inset-0 grid grid-cols-2 -space-x-52 opacity-80 md:opacity-85">
+        <div
+          class="blur-[106px] h-64 bg-gradient-to-br from-violet-300 to-purple-500 md:to-purple-300 dark:from-blue-700"
+        >
         </div>
-        <div class="blur-[106px] h-32 bg-gradient-to-r from-purple-300 to-cyan-300 dark:to-indigo-600"></div>
+        <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-300 to-sky-200 dark:to-indigo-600"></div>
       </div>
     </Fragment>
-  </Hero3>
+  </Hero2>
 
   <Banners2 />
 
-  <Features5
+  <!-- SECTION 2: SYSTEM CAPACITY METRICS (Computational Runtime Telemetry) -->
+  <Stats2
+    stats={[
+      { title: 'Model Token Pricing Overhead', amount: '0.00%' },
+      { title: 'Context Buffer Retention', amount: '100%' },
+      { title: 'Data Transmission Path', amount: 'Isolated' },
+    ]}
+  />
+
+  <!-- SECTION 3: ARCHITECTURAL PARAMETERS (Symmetric 8-Item Core Grid - Unique Infrastructure Context) -->
+  <Features2
     id="features"
-    tagline="Private Agentic Ecosystems"
+    tagline="Private Compute Vectors"
+    title="Uncompromising Operational Performance Built on Sovereign Infrastructure"
+    subtitle="We do not tie your business logic to fragile public web tools. We deploy independent computational backends designed to eliminate technical debt and automate human workloads natively inside WhatsApp."
     columns={2}
-    title="Uncompromising Performance Built on Sovereign Infrastructure"
-    subtitle="We don't tie your business logic to fragile public web tools. We deploy independent computational backends designed to eliminate technical debt and automate human workloads natively inside WhatsApp."
-    classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
     items={[
       {
         title: 'Self-Hosted Local LLM & LRM Deployments',
         description:
-          'We free your enterprise from per-token SaaS pricing models. By deploying and fine-tuning open-source models natively on specialized compute layers, we establish a permanent AI asset that handles deep conversational reasoning, vector embeddings, and contextual intent processing internally.',
+          'We free your enterprise from unpredictable per-token SaaS pricing models. By deploying and fine-tuning open-source models natively on specialized local compute layers, we establish a permanent corporate AI asset that handles deep conversational reasoning, vector embeddings, and contextual intent processing internally.',
         icon: 'carbon:code',
       },
       {
@@ -102,9 +120,9 @@ const metadata = {
         icon: 'carbon:server-dns',
       },
       {
-        title: 'Instant Image-to-Data Parsing',
+        title: 'Instant Image-to-Data Parsing Pipelines',
         description:
-          'Manual data typing introduces errors and delays. Our integration allows delivery drivers, clients, or warehouse teams to snap a photo of a physical receipt or invoice sheet inside WhatsApp, using computer vision to instantly map parameters straight to your system databases.',
+          'Manual data typing introduces errors and operational delays. Our integration allows delivery drivers, clients, or warehouse teams to snap a photo of a physical receipt or invoice sheet inside WhatsApp, using advanced computer vision models to instantly map parameters straight to your system databases.',
         icon: 'carbon:document-view',
       },
       {
@@ -140,6 +158,55 @@ const metadata = {
     ]}
   />
 
+  <!-- SECTION 4: VERTICAL INDUSTRIAL TARGETS (Enterprise Resource Application) -->
+  <Features4
+    id="sectors"
+    tagline="Enterprise Node Deployment"
+    columns={3}
+    title="Deploying Sovereign Compute Assets Across Key Frameworks"
+    subtitle="We replace unstable public wrappers with hardened, high-availability data backends optimized for regional transaction velocities."
+    classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
+    items={[
+      {
+        title: 'Government & GLC Portal Nodes',
+        description:
+          'Secure, high-availability digital solutions built for localized data compliance guidelines and public verification logs.',
+        link: '/clients/behind-scekl25/',
+        icon: 'carbon:building-insights-3',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+      {
+        title: 'Headless B2B Supply Networks',
+        description:
+          'Decoupled marketplace engines and secure inventory tracking ledger pipelines integrated straight with custom software wrappers.',
+        link: '/clients/architecting-persistent-b2b-supply-chain-medusajs-docker/',
+        icon: 'carbon:delivery-truck',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+      {
+        title: 'High-Volume Sales Integration',
+        description:
+          'Conversion-rate optimized product architectures built for sub-second page delivery and custom enterprise web design frameworks.',
+        link: '/clients/bosoffice/',
+        icon: 'carbon:network-enterprise',
+        callToAction: {
+          variant: 'link',
+          class: 'text-white bg-black/15 dark:bg-white/10 gotolink p-1.5 pb-[7px] rounded-full',
+          icon: 'carbon:arrow-right',
+        },
+      },
+    ]}
+  />
+
+  <!-- SECTION 5: THE TECHNICAL DEVELOPMENT STEPS (Modular Phases) -->
   <Steps3
     image={{
       src: '~/assets/images/process.webp',
@@ -157,7 +224,7 @@ const metadata = {
       {
         title: 'Stage 2: Provision & Harden the Environment',
         description:
-          'We deploy your dedicated compute stack, configuring serverless endpoints or spinning up a clean Linux VPS optimized for hosting local data nodes.',
+          'We deploy your dedicated compute stack, configuring serverless endpoints or spinning up a clean Linux VPS optimized for hosting local data nodes securely.',
         icon: 'carbon:devices',
       },
       {
@@ -169,7 +236,7 @@ const metadata = {
       {
         title: 'Stage 4: Hardwire Core Backend System Hooks',
         description:
-          'We connect the WhatsApp Cloud API webhook layer, routing validated operational payloads directly into your core business ERP databases.',
+          'We connect the WhatsApp Cloud API webhook layer, routing validated operational payloads directly into your core business custom software or ERP databases.',
         icon: 'carbon:cloud-data-ops',
       },
     ]}
@@ -179,5 +246,68 @@ const metadata = {
     </Fragment>
   </Steps3>
 
-  <FollowUp />
+  <!-- SECTION 6: INTEGRATION VECTOR STACK (Sovereignty & Tooling Layers Proof) -->
+  <section
+    class="opacity-80 border-t border-b backdrop-blur-lg border-white/10 bg-neutral-50 dark:bg-neutral-900/30 not-prose py-16"
+  >
+    <div class="text-center mb-12">
+      <Headline
+        title="Sovereign Infrastructure Compute & Tooling Layers"
+        subtitle="We bypass variable third-party API models entirely. We design, host, and monitor private network runtimes tailored for local digital data isolation guidelines."
+        classes={{
+          title: 'text-2xl md:text-3xl font-bold tracking-tight text-neutral-900 dark:text-white',
+          subtitle: 'text-neutral-500 dark:text-neutral-400 mt-2 max-w-2xl mx-auto',
+        }}
+      />
+    </div>
+    <div class="max-w-5xl mx-auto text-xs font-medium uppercase">
+      <div
+        class="px-8 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-12 items-center justify-items-center brightness-0 grayscale dark:invert opacity-60"
+      >
+        {
+          imagePaths.map(async (imagePath) => {
+            const image = images[imagePath]();
+            const imageAlt = imagePath.split('/').pop()?.split('.').shift() || 'Technical stack integration token';
+            return (
+              <Image
+                src={image}
+                alt={`${imageAlt} private infrastructure node token - MicroWeb Sarawak`}
+                loading="lazy"
+                height={32}
+                widths={[400, 768]}
+                class="object-contain transition-all hover:opacity-100"
+              />
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: PRODUCTION CLIENT PROOF (Nested low to protect unique content sequence) -->
+  <Portfoliosummary />
+
+  <!-- SECTION 8: OPTIMIZED SILO INTAKE GATEWAY (Highly Focused Infrastructure Scope) -->
+  <ContentContact id="contact">
+    <Fragment slot="content">
+      <h2 class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl">
+        Deploy Private Computational Infrastructure
+      </h2>
+      <p class="mt-2 md:mt-4 text-lg font-semibold text-primary dark:text-accent">
+        Establish an unvulnerable, self-hosted AI automation footprint inside your own security boundary.
+      </p>
+      <p class="mt-2 md:mt-4 text-neutral-600 dark:text-neutral-400">
+        Stop leasing fragile chat workflows that leak internal business data metrics to third-party cloud aggregators.
+        We engineer dedicated custom Linux VPS architectures and fine-tune private LLM/LRM deployments to process
+        conversational logic natively, eliminating per-token pricing dependencies permanently while safeguarding your
+        digital sovereignty behind an enterprise edge perimeter.<br />
+        <strong
+          >Let's execute — Contact our system architect team today to organize a technical hardware scoping audit.</strong
+        >
+      </p>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 backdrop-blur-lg bg-white/40 dark:bg-neutral-950/20"></div>
+    </Fragment>
+  </ContentContact>
 </Layout>

@@ -1,68 +1,81 @@
 ---
 import PortFolio from '~/components/widgets/PortFolio.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import ContentContact from '~/components/widgets/ContentContact.astro';
 ---
-  <PortFolio
-    id="porfolio"
-    title="Our Clients and Us"
-    tagline="See Our Success Stories"
-    classes={{panel:'bg-blue-950 text-white', container:'pb-4 pt-12 md:pb-4 md:pt-16 lg:pb-4 lg:pt-20', action:'text-primary dark:text-accent'}}
-    items={[
-      {
-        title: 'Ford Website Design',
-        icon: 'carbon:application-web',
-        description: 'We built a custom website following Ford’s strict brand guidelines, ensuring a seamless experience for local customers.',
-      },
-    ]}
-    image={{
-      src: '~/assets/images/ford_raptor.webp',
-      alt: "ford's website design sarawak - custom web design for ford's UI/UX standards",
-    }}
-    callToAction={{
-      text: 'See How We Did It',
-      icon: 'tabler:chevron-right',
-      href: '/ford-web-design',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
-        Built for Ford's Standards <br /><span class="text-lg font-semibold">UI/UX Tailored for Local Users</span>
-      </h3>
-    </Fragment>
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-page"></div>
-    </Fragment>
-  </PortFolio>
-
-  <PortFolio
-  isReversed
-  isAfterContent
-  classes={{panel:'bg-amber-300 dark:bg-fuchsia-950', container:'py-4 md:py-4 lg:py-4', action:'text-secondary dark:text-accent'}}
+<!-- SECTION 3: CASE STUDIES (The Proof) -->
+<PortFolio
+  id="portfolio"
+  title="Sovereign Implementations & Local Case Studies"
+  tagline="Proven Technical Deployment"
+  classes={{
+    panel: 'bg-blue-950 text-white',
+    container: 'pt-12 pb-4 md:pt-16 md:pb-4 lg:pt-20 lg:pb-4',
+    action: 'text-primary dark:text-accent',
+  }}
   items={[
     {
-      title: 'AI-Powered Sales Boost',
+      title: 'Custom Corporate Web Systems',
       icon: 'carbon:application-web',
-      description: 'Increased conversions with smart Google Ads targeting using AI for better timing and bids.',
+      description:
+        'Engineered a highly tailored regional web property following Ford’s global corporate layout system constraints, resulting in a flawless localized frontend interface for regional customers.',
     },
   ]}
   image={{
-    src: '~/assets/images/bosoffice_chair.webp',
-    alt: 'Setup Google Ads for Bos Office System',
+    src: '~/assets/images/ford_raptor.webp',
+    alt: "Ford's website design sarawak - custom corporate web system engineered for local user metrics",
   }}
   callToAction={{
-    text: 'See results',
+    text: 'Analyze Architecture Case Story',
     icon: 'tabler:chevron-right',
-    href: '/bosoffice',
+    href: '/clients/ford-web-design/',
   }}
 >
   <Fragment slot="content">
     <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
-      Bos Office System <br /><span class="text-lg font-semibold">Smarter Ads with AI</span>
+      Corporate Web Design for Ford Standards <br /><span class="text-lg font-semibold text-neutral-400"
+        >UI/UX Tailored for Regional Demographics</span
+      >
     </h3>
   </Fragment>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-page"></div>
+  </Fragment>
+</PortFolio>
 
+<PortFolio
+  isReversed
+  isAfterContent
+  classes={{
+    panel: 'bg-amber-300 dark:bg-fuchsia-950',
+    container: 'py-4 md:py-4 lg:py-4',
+    action: 'text-secondary dark:text-accent',
+  }}
+  items={[
+    {
+      title: 'Conversion Engine Modernization',
+      icon: 'carbon:application-web',
+      description:
+        'Optimized inbound customer capture paths for Bos Office System by engineering targeted algorithmic ad integration layers, maximizing customer request acquisition times.',
+    },
+  ]}
+  image={{
+    src: '~/assets/images/bosoffice_chair.webp',
+    alt: 'Automated digital acquisition deployment for Bos Office System',
+  }}
+  callToAction={{
+    text: 'View Acquisition Framework',
+    icon: 'tabler:chevron-right',
+    href: '/clients/bosoffice/',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
+      Bos Office System Integration <br /><span class="text-lg font-semibold dark:text-neutral-300"
+        >Algorithmic Traffic Routing & Capture</span
+      >
+    </h3>
+  </Fragment>
   <Fragment slot="bg">
     <div class="absolute inset-0 bg-page"></div>
   </Fragment>
@@ -70,43 +83,49 @@ import ContentContact from '~/components/widgets/ContentContact.astro';
 
 <PortFolio
   isAfterContent
-  classes={{panel:'bg-[#e1e1e1] dark:bg-slate-700', container:'py-4 md:py-4 lg:py-4', action:'text-secondary dark:text-accent'}}
+  classes={{
+    panel: 'bg-[#e1e1e1] dark:bg-slate-700',
+    container: 'py-4 md:py-4 lg:py-4',
+    action: 'text-secondary dark:text-accent',
+  }}
   items={[
     {
-      title: 'Better Than QR Codes',
+      title: 'Native Hardware Layer Bluetooth Beacons',
       icon: 'carbon:application-web',
-      description: 'We developed a more reliable Bluetooth solution to overcome QR code limitations for border control.',
+      description:
+        'Architected a highly secure, non-line-of-sight Bluetooth Low Energy (BLE) beacon tracking array to bypass traditional QR entry limits, providing real-time data persistence under extreme field conditions.',
     },
   ]}
   image={{
     src: '~/assets/images/wristband2.webp',
-    alt: 'App development of bluetooth and qr wristband for border control system in sarawak malaysia',
+    alt: 'Custom app development of native bluetooth telemetry tracking arrays for infrastructure deployment in Sarawak',
   }}
   callToAction={{
-    text: 'See the solution',
+    text: 'Examine Hardware Logic',
     icon: 'tabler:chevron-right',
-    href: '/digital-border-control',
+    href: '/clients/digital-border-control/',
   }}
 >
   <Fragment slot="content">
     <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
-      Border Control System <br /><span class="text-lg font-semibold">Bluetooth Beacons vs QR Codes</span>
+      Infrastructure Border Control System <br /><span
+        class="text-lg font-semibold text-neutral-600 dark:text-neutral-300"
+        >Native Hardware BLE Beacons vs Static QR Codes</span
+      >
     </h3>
   </Fragment>
-
   <Fragment slot="bg">
     <div class="absolute inset-0 bg-page"></div>
   </Fragment>
 </PortFolio>
 
-
 <CallToAction
-classes={{container:'pt-0 md:pt-0 lg:pt-0'}}
+  classes={{ container: 'pt-2 pb-12 md:pb-16 lg:pb-20' }}
   actions={[
     {
       variant: 'secondary',
-      text: 'See more case studies',
-      href: '/clients',
+      text: 'Review Complete Technical Case Index',
+      href: '/clients/',
     },
   ]}
 >
@@ -114,16 +133,3 @@ classes={{container:'pt-0 md:pt-0 lg:pt-0'}}
     <div class="absolute inset-0 bg-page"></div>
   </Fragment>
 </CallToAction>
-
-<ContentContact
-  id="contact">
-  <Fragment slot="content">
-    <h2 class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl">
-      Build Your Digital Success</h2>
-    <p class="mt-2 md:mt-4 text-lg font-semibold">High-quality websites, digital app and tools that fit your budget</p>
-    <p class="mt-2 md:mt-4">Start Small, Scale Smart. Built for growth.<br/>Let's make it happen — Reach out today</p>
-  </Fragment>
-  <Fragment slot="bg">
-    <div class="absolute inset-0 backdrop-blur-lg bg-white/40 dark:bg-white/5"></div>
-  </Fragment>
-</ContentContact>

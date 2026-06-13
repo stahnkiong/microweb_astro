@@ -5,36 +5,51 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Banners2 from '~/components/widgets/Banners2.astro';
 import Features4 from '~/components/widgets/Features4.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import Features5 from '~/components/widgets/Features5.astro';
-import FollowUp from '~/components/widgets/FollowUp.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import Portfoliosummary from '~/components/blog/PortFolioSummary.astro';
+import Stats2 from '~/components/widgets/Stats2.astro';
+import ContentContact from '~/components/widgets/ContentContact.astro';
+import Headline from '~/components/ui/Headline.astro';
 
+// Automated Asset Ingestion for the Tech Stack Tracker
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/stack/*');
+const imagePaths = Object.keys(images).filter((imagePath) => {
+  return imagePath.startsWith(`/src/assets/images/stack`);
+});
+
+// Global Metadata Configuration targeting high-tier Local Search Intent
 const metadata = {
   ignoreTitleTemplate: true,
-  title: "Sarawak's First Agentic Integration Agency | MicroWeb",
+  title: 'WhatsApp AI Agents & Custom Software Integration | MicroWeb Sarawak',
   description:
-    'Eliminate manual operational data entry. We deploy autonomous WhatsApp AI agents that integrate directly into your core business software—allowing clients to submit data, orders, and invoices via a single photo.',
+    'Eliminate manual operational data entry. We deploy autonomous WhatsApp AI agents and custom software integrations across Kuching & KL. Connect serverless Firebase channels or bare-metal Linux VPS nodes straight to your core ERP ledger.',
 };
 ---
 
 <Layout metadata={metadata}>
   <ThreeJs />
+
+  <!-- SECTION 1: HERO (The Tactical Hook - Unique Content) -->
   <Hero2
     tagline="Zero-Friction Business Automation"
-    actions={[{ variant: 'primary', text: 'Deploy an Agent', href: '#contact' }]}
+    actions={[{ variant: 'primary', text: 'Deploy an Agent Pipeline', href: '#contact' }]}
     image={{
       src: '~/assets/images/analytics2.png',
-      alt: 'WhatsApp AI Agentic Integration Architecture',
+      alt: 'System engineering map detailing WhatsApp Cloud API webhooks communicating with private local LLM servers',
     }}
   >
     <Fragment slot="title">
-      Sarawak’s First <span class="text-primary text-gradient highlight tracking-tight">Agentic AI Integration</span> Agency
+      Sarawak’s First <span class="text-primary text-gradient highlight tracking-tight">Agentic AI Integration</span> Architecture
     </Fragment>
 
     <Fragment slot="subtitle">
-      Stop fighting user adoption friction. We design and embed autonomous WhatsApp agents directly into your legacy
-      software backends. Your clients and field teams skip clunky manual key-ins and simply snap a photo—our pipelines
-      process, validate, and commit the structured data natively 24/7.
+      Stop fighting user adoption friction and rigid digital forms. As a dedicated software company in Kuching, we embed
+      autonomous WhatsApp agents directly into your internal corporate backends. Your clients and field teams skip
+      clunky manual key-ins and simply snap a photo—our pipelines process, validate, and commit the structured data
+      payloads natively 24/7.
     </Fragment>
     <Fragment slot="content">
       <Features5
@@ -50,11 +65,11 @@ const metadata = {
             icon: 'carbon:image-search',
           },
           {
-            description: 'Zero-Management<br/>Automation',
-            icon: 'carbon:gears',
+            description: 'Self-Hosted Local<br/>LLM & LRM Nodes',
+            icon: 'carbon:machine-learning-model',
           },
           {
-            description: 'Local Trust<br/>Liquidity',
+            description: 'Absolute Local<br/>Data Sovereignty',
             icon: 'carbon:security',
           },
         ]}
@@ -70,19 +85,30 @@ const metadata = {
       </div>
     </Fragment>
   </Hero2>
+
   <Banners2 />
 
+  <!-- SECTION 2: SYSTEM CAPACITY METRICS (Unique Ingestion Performance Metrics) -->
+  <Stats2
+    stats={[
+      { title: 'API Ingestion Latency', amount: '< 240ms' },
+      { title: 'Vision Parsing Accuracy', amount: '99.4%' },
+      { title: 'Token Operational Savings', amount: '100%' },
+    ]}
+  />
+
+  <!-- SECTION 3: ARCHITECTURAL PARAMETERS (Expanded Symmetric 8-Item Core Grid - Unique Service Depth) -->
   <Features2
     id="symptoms"
-    tagline="Operational Bottlenecks"
+    tagline="Operational Engineering"
     title="Are Manual Key-Ins & 'Tech-Shock' Stalling Your Sales Volume?"
-    subtitle="Forcing local clients or field workers to download complex apps or navigate rigid forms breaks their natural habits. Meet them where they already live."
-    columns={3}
+    subtitle="Forcing local clients or field workers to download complex mobile apps or navigate rigid web layouts breaks their natural habits. Meet them where they live."
+    columns={2}
     items={[
       {
         title: 'Instant Photo-to-Data Supply Chain Processing',
         description:
-          'Stop requiring clients or delivery drivers to manually type long product SKUs, quantities, or invoice fields. Our agents let them snap a photo of a handwritten order sheet or warehouse manifest directly inside WhatsApp, instantly converting the image into structured database payloads.',
+          'Stop requiring clients or delivery drivers to manually type long product SKUs, quantities, or invoice fields. Our agents let them snap a photo of a handwritten order sheet or warehouse manifest directly inside WhatsApp, using advanced computer vision to instantly convert visual images into structured database payloads.',
         icon: 'carbon:document-view',
       },
       {
@@ -115,15 +141,28 @@ const metadata = {
           'Remove the administrative friction of manual back-and-forth coordinate checks. Our integration pipelines interface WhatsApp chats directly with Google Calendar or enterprise scheduling systems, booking verified clients into your available slots automatically.',
         icon: 'tabler:calendar-time',
       },
+      {
+        title: 'Sovereign Bare-Metal & Custom Linux VPS Deployments',
+        description:
+          'For corporate operations demanding strict system isolation, we provision and harden dedicated Virtual Private Servers (VPS) from the OS layer up. We program your entire messaging middleware, caching arrays, and local data nodes with zero external software dependencies.',
+        icon: 'carbon:server-dns',
+      },
+      {
+        title: 'Self-Hosted Private LLM & LRM Infrastructures',
+        description:
+          'We free your enterprise from unpredictable per-token SaaS pricing models. By deploying and fine-tuning open-source Large Language Models (LLMs) and Large Reasoning Models (LRMs) on local compute layers, we establish a permanent, secure data asset.',
+        icon: 'tabler:brain',
+      },
     ]}
   />
 
+  <!-- SECTION 4: REGIONAL INDUSTRY TARGETS (Unique Vertical Segmentation) -->
   <Features4
     id="features"
     tagline="Who We Serve"
     columns={3}
     title="Eliminating Complexity Across Regional Enterprise Ecosystems"
-    subtitle="From regional supply chains to localized services, we build invisible agentic wrappers that protect operations from technology adoption failures."
+    subtitle="From regional supply chains to high-performance local web footprints, we build invisible agentic wrappers that protect business operations from technology adoption failures."
     classes={{ container: 'py-20 mt-80 md:mt-0 bg-white/80 md:bg-transparent dark:bg-black/80 dark:md:bg-transparent' }}
     items={[
       {
@@ -139,18 +178,19 @@ const metadata = {
         icon: 'carbon:delivery-truck',
       },
       {
-        title: 'Enterprises & Public Sector Infrastructure',
+        title: 'High-Performance Corporate Operations',
         description:
-          'Ensure absolute Digital Sovereignty. All high-velocity text processing and automated data pipelines operate behind an enterprise Google Cloud and Cloudflare Shield setup, keeping regional data isolated and secure.',
+          'Ensure absolute Digital Sovereignty. All high-velocity text processing, custom web design data streams, and automated system pipelines operate behind an enterprise Cloudflare Shield, keeping regional data isolated and secure.',
         icon: 'carbon:building-insights-2',
       },
     ]}
   />
 
+  <!-- SECTION 5: THE TECHNICAL DEVELOPMENT STEPS (Unique Operational Pipeline) -->
   <Steps3
     image={{
       src: '~/assets/images/agentic_ai_advantage.png',
-      alt: 'Agentic Infrastructure Flow: Photo Input to Database Action',
+      alt: 'Agentic Infrastructure Flow charting image intake payloads transitioning to validated database updates',
     }}
     title="The Integration Advantage"
     subtitle="How our invisible operational backend layout outperforms traditional application development."
@@ -170,13 +210,13 @@ const metadata = {
       {
         title: 'Step 3: <span class="font-medium">Direct-to-Software Commits</span>',
         description:
-          'Validated data payloads bypass human entry desks and update your core internal software or inventory ledger natively. The client gets an instant WhatsApp confirmation summary automatically.',
+          'Validated data payloads bypass human entry desks and update your core internal software or inventory ledger natively via secure REST/GraphQL hooks. The client gets an instant WhatsApp confirmation summary automatically.',
         icon: 'carbon:data-share',
       },
       {
         title: 'Step 4: <span class="font-medium">24/7 Cloud Architecture Shield</span>',
         description:
-          'The complete system runs on decoupled Cloud Workstations monitored for runtime exceptions. Your business layer operates with high-availability automation while data stays regionally secure.',
+          'The complete system runs on decoupled, serverless Cloud Functions or dedicated Linux VPS instances. Your business layer operates with high-availability automation while sensitive data stays regionally secure behind a Cloudflare wall.',
         icon: 'carbon:security',
       },
     ]}
@@ -186,5 +226,65 @@ const metadata = {
     </Fragment>
   </Steps3>
 
-  <FollowUp />
+  <!-- SECTION 6: INTEGRATION VECTOR STACK (Sovereignty & Tooling Layers Proof) -->
+  <section
+    class="opacity-80 border-t border-b backdrop-blur-lg border-white/10 bg-neutral-50 dark:bg-neutral-900/30 not-prose py-16"
+  >
+    <div class="text-center mb-12">
+      <Headline
+        title="Sovereign Infrastructure Compute & Tooling Layers"
+        subtitle="We bypass variable third-party API models entirely. We design, host, and monitor private network runtimes tailored for local digital data isolation guidelines."
+        classes={{
+          title: 'text-2xl md:text-3xl font-bold tracking-tight text-neutral-900 dark:text-white',
+          subtitle: 'text-neutral-500 dark:text-neutral-400 mt-2 max-w-2xl mx-auto',
+        }}
+      />
+    </div>
+    <div class="max-w-5xl mx-auto text-xs font-medium uppercase">
+      <div
+        class="px-8 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-12 items-center justify-items-center brightness-0 grayscale dark:invert opacity-60"
+      >
+        {
+          imagePaths.map(async (imagePath) => {
+            const image = images[imagePath]();
+            const imageAlt = imagePath.split('/').pop()?.split('.').shift() || 'Technical stack integration token';
+            return (
+              <Image
+                src={image}
+                alt={`${imageAlt} infrastructure integration token - MicroWeb Sarawak`}
+                loading="lazy"
+                height={32}
+                widths={[400, 768]}
+                class="object-contain transition-all hover:opacity-100"
+              />
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: PRODUCTION CLIENT PROOF (Shifted to the bottom to protect unique content sequence) -->
+  <Portfoliosummary />
+
+  <!-- SECTION 8: OPTIMIZED SILO INTAKE GATEWAY (Highly Focused Context Intake Rules) -->
+  <ContentContact id="contact">
+    <Fragment slot="content">
+      <h2 class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl">
+        Deploy Private Conversational Infrastructure
+      </h2>
+      <p class="mt-2 md:mt-4 text-lg font-semibold text-primary dark:text-accent">
+        Connect your customer chat channels directly to your enterprise database nodes.
+      </p>
+      <p class="mt-2 md:mt-4 text-neutral-600 dark:text-neutral-400">
+        Stop forcing clients through complex forms or clunky standalone portals. We replace high-friction administrative
+        tasks with highly secure WhatsApp integrations engineered to process webhooks instantly via custom Linux VPS
+        environments or serverless Firebase pipelines.<br />
+        <strong>Let's execute — Request an agentic integration audit today.</strong>
+      </p>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 backdrop-blur-lg bg-white/40 dark:bg-neutral-950/20"></div>
+    </Fragment>
+  </ContentContact>
 </Layout>

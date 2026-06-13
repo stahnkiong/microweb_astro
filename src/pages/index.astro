@@ -1,24 +1,38 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import FollowUp from '~/components/widgets/FollowUp.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Banners2 from '~/components/widgets/Banners2.astro';
 import Features4 from '~/components/widgets/Features4.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Stats2 from '~/components/widgets/Stats2.astro';
 import ThreeJs from '~/components/widgets/ThreeJs.astro';
+import Portfoliosummary from '~/components/blog/PortFolioSummary.astro';
+import ContentContact from '~/components/widgets/ContentContact.astro';
+import Headline from '~/components/ui/Headline.astro';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+// Automated Asset Ingestion for the Tech Stack Tracker
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/stack/*');
+const imagePaths = Object.keys(images).filter((imagePath) => {
+  return imagePath.startsWith(`/src/assets/images/stack`);
+});
 ---
 
 <Layout>
   <ThreeJs />
-  <!-- Hero Widget ******************* -->
-  <Hero tagline="App Developer & Enterprise System Integration Company in Kuching, Sarawak">
+
+  <!-- SECTION 1: HERO (The Hook) -->
+  <Hero tagline="App Developer, Software Engineering & Web Design Kuching">
     <Fragment slot="title">
-      <span class="text-primary text-gradient highlight">Deploy Your Next </span>Top Performer:<br />An Invisible
+      Deploy Your Next <span class="text-primary text-gradient highlight">Top Performer:</span><br />An Invisible
       Automation Shield
     </Fragment>
     <Fragment slot="subtitle">
-      Stop fighting user adoption friction or complex forms. As a leading app company in Kuching, we engineer
-      high-performance custom software and automated WhatsApp integrations that let clients submit orders, track stock,
+      Stop fighting user adoption friction or complex forms. As a specialized software company in Kuching, we engineer
+      high-performance custom applications and automated WhatsApp workflows that let clients submit orders, track stock,
       and process documents via a single photo 24/7.
     </Fragment>
     <Fragment slot="bg">
@@ -31,14 +45,15 @@ import ThreeJs from '~/components/widgets/ThreeJs.astro';
     </Fragment>
   </Hero>
 
+  <!-- SECTION 2: CORE SERVICES MATRIX (The Value Offer) -->
   <Features4
     columns={4}
-    classes={{ container: 'mb-96 md:mb-0 md:pb-20' }}
+    classes={{ container: 'pb-12 md:pb-20' }}
     items={[
       {
         title: 'Custom App Development',
         description: 'Secure, high-availability mobile & web application architectures tailored for regional scale.',
-        link: '/software',
+        link: '/software/',
         icon: 'carbon:network-enterprise',
         callToAction: {
           variant: 'link',
@@ -47,9 +62,9 @@ import ThreeJs from '~/components/widgets/ThreeJs.astro';
         },
       },
       {
-        title: 'Enterprise System Integration',
-        description: 'Bridging legacy databases with modern API pipelines and decoupled third-party ecosystems.',
-        link: '/integration',
+        title: 'Enterprise Software & Systems',
+        description: 'Bridging legacy corporate databases with modern API pipelines and decoupled serverless systems.',
+        link: '/integration/',
         icon: 'carbon:ibm-z-cloud-mod-stack',
         callToAction: {
           variant: 'link',
@@ -58,9 +73,10 @@ import ThreeJs from '~/components/widgets/ThreeJs.astro';
         },
       },
       {
-        title: 'WhatsApp Agents & Automation',
-        description: 'Eliminate manual key-in friction using computer-vision pipelines running natively inside chat.',
-        link: '/ai-marketing',
+        title: 'WhatsApp Agents & AI Integration',
+        description:
+          'Eliminate manual data key-in friction using custom conversational pipelines running natively inside chat.',
+        link: '/ai-marketing/',
         icon: 'carbon:machine-learning-model',
         callToAction: {
           variant: 'link',
@@ -72,7 +88,7 @@ import ThreeJs from '~/components/widgets/ThreeJs.astro';
         title: 'High-Performance Web Design',
         description:
           'Edge-cached, fast-loading corporate properties optimized for local search authority and core web vitals.',
-        link: '/web-development',
+        link: '/web-development/',
         icon: 'carbon:dashboard',
         callToAction: {
           variant: 'link',
@@ -84,8 +100,157 @@ import ThreeJs from '~/components/widgets/ThreeJs.astro';
   />
 
   <Banners2 />
-  <FollowUp />
 
+  <Portfoliosummary />
+
+  <!-- SECTION 4: CAPABILITY METRICS (The Scale) -->
+  <Stats2
+    stats={[
+      { title: 'Global Edge Cache Nodes', amount: '330+' },
+      { title: 'System Uptime Target', amount: '99.9%' },
+      { title: 'DDoS Mitigation Window', amount: '< 3s' },
+    ]}
+  />
+
+  <!-- SECTION 5: LONG-TERM ARCHITECTURE SHOWCASE (Trust & Experience) -->
+  <Content
+    isReversed
+    tagline="Your Long-Term Systems Architect"
+    title="Digital Infrastructure Built for Longevity"
+    subtitle="We don't just build applications—we engineer, monitor, and scale secure backend environments that survive technology lifecycle shifts."
+    items={[
+      {
+        title: '14+ Years of Production Stability',
+        icon: 'carbon:badge',
+        description:
+          'A documented history of engineering robust enterprise web systems and custom application code across Malaysia since 2012.',
+      },
+      {
+        title: 'Zero-Friction User Interfaces',
+        icon: 'carbon:events',
+        description:
+          'Defeating tech-shock by utilizing familiar chat channels and computer vision pipelines to eliminate tedious manual key-in friction.',
+      },
+      {
+        title: 'Performance-Driven Core Vitals',
+        icon: 'carbon:layers-external',
+        description:
+          'Maximizing conversion velocity by prioritizing sub-second load times, strict layout boundary rules, and aggressive edge caching.',
+      },
+      {
+        title: 'Modern Web Engineering',
+        icon: 'carbon:carbon-for-ibm-product',
+        description:
+          'Leveraging high-performance, fast-compiling frameworks like Astro, React, and serverless edge functions for clean data delivery.',
+      },
+      {
+        title: 'Consult an Architect',
+        callToAction: {
+          text: 'Consult an Architect',
+          variant: 'secondary',
+          href: '#contact',
+          icon: 'tabler:chevron-right',
+        },
+      },
+    ]}
+    image={{
+      src: '~/assets/images/app_development_discussion.webp',
+      alt: 'MicroWeb systems engineers blueprinting custom app architecture in Kuching, Sarawak',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-page"></div>
+    </Fragment>
+  </Content>
+
+  <!-- SECTION 6: INTEGRATION VECTOR STACK (Sovereignty Proof) -->
+  <section
+    class="opacity-80 border-t border-b backdrop-blur-lg border-white/10 bg-neutral-50 dark:bg-neutral-900/30 not-prose py-16"
+  >
+    <div class="text-center mb-12">
+      <Headline
+        title="Production Hardware & Software Architecture Vectors"
+        subtitle="We select technologies based entirely on transactional resilience, execution speed, and local data sovereignty constraints."
+        classes={{
+          title: 'text-2xl md:text-3xl font-bold tracking-tight text-neutral-900 dark:text-white',
+          subtitle: 'text-neutral-500 dark:text-neutral-400 mt-2 max-w-2xl mx-auto',
+        }}
+      />
+    </div>
+    <div class="max-w-5xl mx-auto text-xs font-medium uppercase">
+      <div
+        class="px-8 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-12 items-center justify-items-center brightness-0 grayscale dark:invert opacity-60"
+      >
+        {
+          imagePaths.map(async (imagePath) => {
+            const image = images[imagePath]();
+            const imageAlt = imagePath.split('/').pop()?.split('.').shift() || 'Technical stack integration token';
+            return (
+              <Image
+                src={image}
+                alt={`${imageAlt} infrastructure integration token - MicroWeb Sarawak`}
+                loading="lazy"
+                height={32}
+                widths={[400, 768]}
+                class="object-contain transition-all hover:opacity-100"
+              />
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: DEEPER ZERO-MANAGEMENT PARAMETERS (Handling Risk Avoidance) -->
+  <Features2
+    id="features"
+    tagline="Engineered for Performance"
+    title="<p class='font-normal'>Eliminate Technical Debt via Zero-Management Infrastructure.</p>"
+    items={[
+      {
+        title: 'Velocity Over Elegance (MVP)',
+        description:
+          'Validate operational requirements fast. We architect adaptive Minimum Viable Products that isolate and resolve high-friction bottlenecks within weeks, avoiding premature backend optimization.',
+        icon: 'carbon:ibm-cloud-hpc',
+      },
+      {
+        title: 'WhatsApp Integration Pipelines',
+        description:
+          'Meet users exactly where they live. We build autonomous workflows that turn incoming WhatsApp photos and text queries into direct, structured database entries natively.',
+        icon: 'tabler:brand-whatsapp',
+      },
+      {
+        title: 'Custom App Architecture',
+        description:
+          'As an experienced app developer company, we write decoupled, component-driven software frameworks designed to sustain high transaction volumes without runtime degradation.',
+        icon: 'carbon:development',
+      },
+      {
+        title: 'Decoupled API Connectivity',
+        description:
+          'Ensure system cohesion. We design and expose hardened REST or GraphQL API abstraction layers that connect modern edge deployments with complex legacy ERP environments.',
+        icon: 'carbon:ibm-api-connect',
+      },
+      {
+        title: 'Automated CI/CD Workflows',
+        description:
+          'Deploy production patches with confidence. Our automated pipelines run continuous verification testing via GitHub Actions, eliminating operational deployment drift.',
+        icon: 'carbon:carbon-ui-builder',
+      },
+      {
+        title: 'Local Digital Sovereignty',
+        description:
+          'Protect business data profiles. We route platform assets behind an enterprise Cloudflare Shield, keeping data workloads isolated and optimized across Malaysia regional centers.',
+        icon: 'carbon:ml-model-reference',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-page"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- SECTION 8: DEVELOPMENT LIFECYCLE METHODOLOGY (How We Execute) -->
   <Steps3
     image={{
       src: '~/assets/images/process.webp',
@@ -130,4 +295,24 @@ import ThreeJs from '~/components/widgets/ThreeJs.astro';
       <div class="absolute inset-0 backdrop-blur-lg bg-black/70 dark:bg-black/30"></div>
     </Fragment>
   </Steps3>
+
+  <!-- SECTION 9: INTAKE INBOUND SYSTEM AUDIT (The Conversion Call) -->
+  <ContentContact id="contact">
+    <Fragment slot="content">
+      <h2 class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl">
+        Architect Your Digital Infrastructure
+      </h2>
+      <p class="mt-2 md:mt-4 text-lg font-semibold text-primary dark:text-accent">
+        High-uptime custom software web layers, mobile apps, and conversational automation.
+      </p>
+      <p class="mt-2 md:mt-4 text-neutral-600 dark:text-neutral-400">
+        Stop losing regional volume to slow manual administrative pipelines. Establish a permanent, zero-management
+        digital asset engineered for immediate operational value and data persistence.<br />
+        <strong>Let's execute — Request an engineering system audit today.</strong>
+      </p>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 backdrop-blur-lg bg-white/40 dark:bg-neutral-950/20"></div>
+    </Fragment>
+  </ContentContact>
 </Layout>

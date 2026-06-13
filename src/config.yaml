@@ -9,9 +9,9 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: App Developer & Enterprise System Integration
+    default: App Developer, Custom Software & Web Design
     template: '%s | MicroWeb Sarawak'
-  description: 'Top-tier app development and automated software integrations in Kuching & KL. We architect zero-management digital infrastructure and WhatsApp-to-ERP pipelines for businesses across Malaysia.'
+  description: 'Top-tier app development, enterprise software engineering, and high-performance web design in Kuching & KL. We architect zero-management digital infrastructure and secure WhatsApp-to-ERP pipelines across Malaysia.'
   robots:
     index: true
     follow: true
