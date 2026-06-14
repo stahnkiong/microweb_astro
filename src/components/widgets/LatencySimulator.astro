@@ -1,0 +1,326 @@
+---
+interface Props {
+  height?: string;
+}
+
+const { height = '600px' } = Astro.props;
+---
+
+<div
+  class="latency-simulator-container flex flex-col md:flex-row gap-8 p-6 md:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-xl overflow-hidden transition-all duration-300 not-prose"
+  style={`min-height: ${height};`}
+>
+  <!-- Control Panel (Inputs) -->
+  <div class="flex-1 flex flex-col justify-between space-y-6">
+    <div>
+      <h3 class="text-xl font-bold text-neutral-900 dark:text-white flex items-center gap-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6 text-primary"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+          ></path>
+        </svg>
+        Network Parameters
+      </h3>
+      <p class="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
+        Configure the database queries and cache settings to simulate cross-region traffic latency.
+      </p>
+    </div>
+
+    <!-- Inputs -->
+    <div class="space-y-6">
+      <!-- Input 1: Database Queries -->
+      <div class="space-y-2">
+        <div class="flex justify-between items-center text-sm font-semibold">
+          <label for="queries-slider" class="text-neutral-700 dark:text-neutral-300">Database Queries per Page</label>
+          <span id="queries-value" class="text-primary font-mono text-base">12</span>
+        </div>
+        <div class="relative">
+          <input
+            type="range"
+            id="queries-slider"
+            min="2"
+            max="40"
+            step="2"
+            value="12"
+            class="w-full h-2 bg-neutral-200 dark:bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-primary"
+          />
+        </div>
+        <div class="flex justify-between text-xs text-neutral-400 font-mono">
+          <span>2 queries</span>
+          <span>40 queries</span>
+        </div>
+      </div>
+
+      <!-- Input 2: Edge Caching Toggle -->
+      <div class="space-y-2">
+        <div class="flex justify-between items-center text-sm font-semibold">
+          <label class="text-neutral-700 dark:text-neutral-300">Local Sarawak Edge Caching</label>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" id="caching-toggle" class="sr-only peer" />
+            <div
+              class="w-11 h-6 bg-neutral-200 dark:bg-neutral-700 rounded-full peer peer-focus:ring-2 peer-focus:ring-primary/50 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-neutral-350 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"
+            >
+            </div>
+          </label>
+        </div>
+        <div class="flex justify-between text-xs text-neutral-400 font-mono">
+          <span>Direct to KL Origin</span>
+          <span>Edge Cached (Sarawak)</span>
+        </div>
+      </div>
+
+      <!-- Input 3: Active Regional Users -->
+      <div class="space-y-2">
+        <div class="flex justify-between items-center text-sm font-semibold">
+          <label for="users-slider" class="text-neutral-700 dark:text-neutral-300">Active Concurrent Users</label>
+          <span id="users-value" class="text-primary font-mono text-base">3,000</span>
+        </div>
+        <input
+          type="range"
+          id="users-slider"
+          min="500"
+          max="10000"
+          step="500"
+          value="3000"
+          class="w-full h-2 bg-neutral-200 dark:bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-primary"
+        />
+        <div class="flex justify-between text-xs text-neutral-400 font-mono">
+          <span>500 users</span>
+          <span>10,000 users</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info Footer -->
+    <div
+      class="border-t border-neutral-100 dark:border-neutral-800 pt-4 text-xs text-neutral-400 flex items-center gap-1.5"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-4 h-4 text-neutral-400 flex-shrink-0"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <span>Calculated based on standard cross-region ping times and database query overheads.</span>
+    </div>
+  </div>
+
+  <!-- Telemetry / Estimation Dashboard (Outputs) -->
+  <div
+    class="flex-1 flex flex-col justify-between p-6 rounded-xl bg-neutral-50 dark:bg-neutral-950 border border-neutral-150 dark:border-neutral-850"
+  >
+    <div>
+      <h3 class="text-sm font-bold uppercase tracking-wider text-neutral-400 flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" id="net-status-dot"></span>
+        Network Telemetry Readout
+      </h3>
+    </div>
+
+    <!-- Outputs display -->
+    <div class="my-auto py-6 space-y-8">
+      <!-- Readout 1: TTFB -->
+      <div class="text-center">
+        <span class="text-xs font-semibold uppercase tracking-widest text-neutral-500 dark:text-neutral-400"
+          >Average Time-to-First-Byte (TTFB)</span
+        >
+        <div
+          id="ttfb-value"
+          class="mt-2 text-4xl font-black uppercase tracking-wide text-red-500 transition-all duration-300"
+        >
+          375 ms
+        </div>
+        <span id="ttfb-verdict" class="text-xs font-medium text-red-400 mt-1 block">Severe Routing Delay</span>
+      </div>
+
+      <!-- Readout 2: Bandwidth Waste -->
+      <div
+        class="space-y-2 p-4 bg-white dark:bg-neutral-900 rounded-lg border border-neutral-200/60 dark:border-neutral-800/80 shadow-sm"
+      >
+        <div class="flex justify-between items-center">
+          <span class="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400"
+            >Monthly Bandwidth Waste</span
+          >
+          <span id="bandwidth-waste" class="font-mono text-2xl font-extrabold text-neutral-800 dark:text-white"
+            >180 GB</span
+          >
+        </div>
+        <div class="w-full bg-neutral-100 dark:bg-neutral-800 rounded-full h-2 overflow-hidden">
+          <div
+            id="bandwidth-progress"
+            class="bg-primary h-full rounded-full transition-all duration-300"
+            style="width: 18%;"
+          >
+          </div>
+        </div>
+      </div>
+
+      <!-- Readout 3: Risk Assessment -->
+      <div
+        class="space-y-1 bg-neutral-100 dark:bg-neutral-900 p-4 rounded-lg border border-neutral-200/80 dark:border-neutral-800/80"
+      >
+        <span class="text-xs font-semibold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 block mb-1"
+          >Operational Risk Assessment</span
+        >
+        <p id="risk-assessment" class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+          CRITICAL RISK: Marine cable latency combined with high database query volume is causing page loads to exceed
+          300ms. High risk of East Malaysian transaction abandonment.
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer visualizer -->
+    <div class="border-t border-neutral-200/50 dark:border-neutral-800/50 pt-4 text-center">
+      <div class="text-xs font-semibold text-neutral-400 mb-2">Cross-Border Routing Status</div>
+      <div
+        class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono border bg-red-500/15 text-red-700 dark:text-red-400 border-red-500/30"
+        id="routing-status-badge"
+      >
+        <span class="w-2 h-2 rounded-full bg-red-500"></span>
+        High Latency Warning
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initLatencySimulator() {
+    const queriesSlider = document.getElementById('queries-slider') as HTMLInputElement;
+    const cachingToggle = document.getElementById('caching-toggle') as HTMLInputElement;
+    const usersSlider = document.getElementById('users-slider') as HTMLInputElement;
+
+    const queriesValue = document.getElementById('queries-value');
+    const usersValue = document.getElementById('users-value');
+
+    const ttfbValue = document.getElementById('ttfb-value');
+    const ttfbVerdict = document.getElementById('ttfb-verdict');
+    const netStatusDot = document.getElementById('net-status-dot');
+
+    const bandwidthWaste = document.getElementById('bandwidth-waste');
+    const bandwidthProgress = document.getElementById('bandwidth-progress');
+    const riskAssessment = document.getElementById('risk-assessment');
+    const routingStatusBadge = document.getElementById('routing-status-badge');
+
+    if (!queriesSlider || !cachingToggle || !usersSlider) return;
+
+    function updateTelemetry() {
+      const queries = parseInt(queriesSlider.value);
+      const isCached = cachingToggle.checked;
+      const users = parseInt(usersSlider.value);
+
+      // Update slider readouts
+      if (queriesValue) queriesValue.textContent = queries.toString();
+      if (usersValue) usersValue.textContent = users.toLocaleString();
+
+      // TTFB Calculations
+      let ttfb = 0;
+      if (isCached) {
+        // TRUE EDGE HIT: Completely decoupled from database origins and concurrent user traffic.
+        // Minor variation added only to simulate microscopic edge processing jitter.
+        ttfb = Math.round(15 + (queries % 3));
+      } else {
+        // UNCACHED TRANSMIT: Every single database call must cross the marine cable to the origin.
+        // 60ms base round-trip ping + 22ms per sequential block query + queue serialization lag under user volume.
+        const networkTransit = 60;
+        const databaseProcessing = queries * 22;
+        const serializationQueue = Math.floor((users / 1000) * 8);
+
+        ttfb = Math.round(networkTransit + databaseProcessing + serializationQueue);
+      }
+
+      // Update TTFB UI
+      if (ttfbValue) ttfbValue.textContent = `${ttfb} ms`;
+
+      let verdict = 'Optimal Performance';
+      let verdictColor = 'text-emerald-500 dark:text-emerald-400';
+      let dotColor = 'bg-emerald-500';
+      let badgeClass = 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border-emerald-500/30';
+      let badgeHtml = '<span class="w-2 h-2 rounded-full bg-emerald-500"></span>Highly Cached';
+      let riskText = '';
+
+      if (isCached) {
+        verdict = 'Sub-Second Edge Resolution';
+        verdictColor = 'text-emerald-500 dark:text-emerald-400';
+        dotColor = 'bg-emerald-500';
+        badgeClass = 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border-emerald-500/30';
+        badgeHtml = '<span class="w-2 h-2 rounded-full bg-emerald-500"></span>Edge Caching Active';
+        riskText = `Low Risk: Local Sarawak nodes are resolving static assets and API payloads under ${ttfb}ms. Database origin load is protected.`;
+      } else if (ttfb > 500) {
+        verdict = 'Critical Routing Latency';
+        verdictColor = 'text-red-500 dark:text-red-400';
+        dotColor = 'bg-red-500 animate-ping';
+        badgeClass = 'bg-red-500/15 text-red-700 dark:text-red-400 border-red-500/30';
+        badgeHtml = '<span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>Critical Latency';
+        riskText = `CRITICAL RISK: Marine cable latency combined with high database query volume is causing page loads to reach ${ttfb}ms. High risk of East Malaysian transaction abandonment.`;
+      } else {
+        verdict = 'Uncached Transit Delay';
+        verdictColor = 'text-amber-500 dark:text-amber-400';
+        dotColor = 'bg-amber-500 animate-pulse';
+        badgeClass = 'bg-amber-500/15 text-amber-700 dark:text-amber-400 border-amber-500/30';
+        badgeHtml = '<span class="w-2 h-2 rounded-full bg-amber-500"></span>Sub-Optimal';
+        riskText = `HIGH RISK: Non-cached cross-region database calls are causing noticeable lag. Mobile users over regional cell towers will experience high bounce rates.`;
+      }
+
+      if (ttfbValue) {
+        ttfbValue.className = `mt-2 text-4xl font-black uppercase tracking-wide ${verdictColor} transition-all duration-300`;
+      }
+      if (ttfbVerdict) {
+        ttfbVerdict.textContent = verdict;
+        ttfbVerdict.className = `text-xs font-semibold ${verdictColor} mt-1 block`;
+      }
+      if (netStatusDot) {
+        netStatusDot.className = `w-2.5 h-2.5 rounded-full ${dotColor}`;
+      }
+
+      // Calculate Bandwidth Waste
+      // Without caching, every user session generates substantial repeat payload calls
+      const wasteGB = isCached ? 0 : Math.round(users * queries * 0.005);
+      if (bandwidthWaste) {
+        bandwidthWaste.textContent = isCached ? '0 GB' : `${wasteGB} GB`;
+      }
+
+      // Bandwidth progress (max out at 2000GB)
+      if (bandwidthProgress) {
+        const progressPercentage = isCached ? 0 : Math.min(100, (wasteGB / 2000) * 100);
+        bandwidthProgress.style.width = `${progressPercentage}%`;
+      }
+
+      // Risk assessment text
+      if (riskAssessment) {
+        riskAssessment.textContent = riskText;
+      }
+
+      if (routingStatusBadge) {
+        routingStatusBadge.className = `inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono border ${badgeClass}`;
+        routingStatusBadge.innerHTML = badgeHtml;
+      }
+    }
+
+    // Set event listeners
+    queriesSlider.addEventListener('input', updateTelemetry);
+    cachingToggle.addEventListener('change', updateTelemetry);
+    usersSlider.addEventListener('input', updateTelemetry);
+
+    // Initial run
+    updateTelemetry();
+  }
+
+  // Setup execution on load and page transition
+  document.addEventListener('DOMContentLoaded', initLatencySimulator);
+  document.addEventListener('astro:page-load', initLatencySimulator);
+</script>

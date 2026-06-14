@@ -1,45 +1,49 @@
 ---
+// src/pages/web-design-kuching.astro
 import Layout from '~/layouts/PageLayout.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Banners2 from '~/components/widgets/Banners2.astro';
 import Features4 from '~/components/widgets/Features4.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 import Features5 from '~/components/widgets/Features5.astro';
-import FollowUp from '~/components/widgets/FollowUp.astro';
+import ContentContact from '~/components/widgets/ContentContact.astro';
 import ThreeJs from '~/components/widgets/ThreeJs.astro';
+import ConversionCalculator from '~/components/widgets/ConversionCalculator.astro';
+
+// Global Metadata targeting high-volume local commercial intent
 const metadata = {
   ignoreTitleTemplate: true,
-  title: 'Web Design Kuching | Trusted by 200+ SMEs Since 2012',
+  title: 'Web Design Kuching | High-Conversion Websites for Sarawak SMEs',
   description:
-    'Top web design agency in Sarawak crafting responsive, ultra-fast websites with SEO. Packages from RM2,000. 13+ years local expertise.',
+    'Build ultra-fast, mobile-optimized websites designed to rank #1 in local search and drive instant WhatsApp leads. Transparent packages from RM2,000.',
 };
 ---
 
 <Layout metadata={metadata}>
   <ThreeJs />
+
+  <!-- SECTION 1: LOCAL COMMERCIAL HERO -->
   <Hero2
-    tagline="Professional Web Design Services"
+    tagline="Local Market Dominance & Conversion Engineering"
     actions={[
-      { variant: 'primary', text: 'Get Free Quote', href: '#contact' },
-      { variant: 'secondary', text: 'WhatsApp Now', target: '_blank', href: 'https://wa.me/60168880650' },
+      { variant: 'primary', text: 'Request Free Growth Audit', href: '#contact' },
+      { variant: 'secondary', text: 'Instant WhatsApp Sync', target: '_blank', href: 'https://wa.me/60168880650' },
     ]}
     image={{
       src: '~/assets/images/web_design_development_kuching.webp',
-      alt: 'responsive website design across multiple devices',
+      alt: 'MicroWeb high-conversion website templates rendering flawlessly on modern mobile viewports over local networks',
     }}
   >
     <Fragment slot="title">
-      Web Design Kuching: <span class="text-primary text-gradient highlight tracking-tight">Trusted by 200+ SMEs</span> Since
-      2012
+      Web Design Kuching: <span class="text-primary text-gradient highlight tracking-tight">Convert Local Traffic</span>
+      Into Paying Customers
     </Fragment>
 
     <Fragment slot="subtitle">
-      Build mobile-friendly, SEO-optimized websites that load in seconds.
-      <div class="mt-4 flex gap-4 flex-wrap mb-4">
-        <span class="badge badge-lg">✅ 12+ Years Experience</span>
-        <span class="badge badge-lg">⚡ 95/100 PageSpeed</span>
-        <span class="badge badge-lg">🏆 99% Satisfaction</span>
-      </div>
+      Stop losing local customers to slow-loading layouts and confusing navigation menus. We engineer lightweight,
+      mobile-first commercial websites optimized to rank on Google Maps and drive direct consumer actions—built for
+      local connection speeds.
     </Fragment>
 
     <Fragment slot="content">
@@ -48,19 +52,19 @@ const metadata = {
         classes={{ container: 'py-8' }}
         items={[
           {
-            description: 'Responsive<br/>Design',
+            description: 'Mobile-First<br/>Fluid Engine',
             icon: 'carbon:devices',
           },
           {
-            description: 'SEO<br/>Optimized',
+            description: 'Local Search<br/>Authority Ranking',
             icon: 'carbon:search-locate-mirror',
           },
           {
-            description: 'Lightning<br/>Fast',
+            description: 'Sub-2 Second<br/>Sarawak Edge Load',
             icon: 'carbon:rocket',
           },
           {
-            description: 'From RM2,000',
+            description: 'SME Pricing<br/>From RM2,000',
             icon: 'carbon:pricing-consumption',
           },
         ]}
@@ -77,85 +81,140 @@ const metadata = {
       </div>
     </Fragment>
   </Hero2>
+
   <Banners2 />
 
-  <Features4
+  <!-- SECTION 2: THE INTERACTIVE SME VALUE ESTIMATOR -->
+  <section class="max-w-5xl mx-auto px-6 py-12 not-prose">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-black tracking-tight text-neutral-900 dark:text-white">
+        Calculate Your Lost Revenue Potential
+      </h2>
+      <p class="text-neutral-500 dark:text-neutral-400 mt-2 max-w-2xl mx-auto text-sm">
+        Most local sites lose half their incoming volume to slow mobile loading states. Slide the parameters to see how
+        sub-second optimizations transform your bottom line.
+      </p>
+    </div>
+
+    <ConversionCalculator height="600px" />
+  </section>
+
+  <!-- SECTION 3: THE SME METRIC GRID (Differentiated from Enterprise) -->
+  <Features2
     id="why-us"
     tagline="Why Kuching Chooses Us"
+    title="Sarawak's Complete High-Performance Web Solution for SMEs"
+    subtitle="We discard slow, over-engineered templates and heavy web plugins. We build responsive, hyper-localized customer acquisition pipelines that grow your business."
     columns={3}
-    title="Sarawak's Complete Web Solution"
-    subtitle="Combining technical excellence with deep local market understanding"
-    classes={{ container: 'py-20 bg-white/80 dark:bg-black/80' }}
     items={[
       {
-        title: 'Mobile-First Design',
-        description: "Perfect for Kuching's 65%+ mobile users",
+        title: 'Mobile-First Layout Optimization',
+        description:
+          'With over 65% of local consumers browsing exclusively on mobile viewports, we build layouts configured to load instantly even on congested regional cellular signals.',
         icon: 'carbon:devices',
       },
       {
-        title: 'Local SEO Mastery',
-        description: "Rank #1 for 'Kuching' keywords",
+        title: 'Local Google Maps Domination',
+        description:
+          'We inject native schema data matrices and structured local business identifiers straight into your code framework, pushing your company to the front page of local search terms.',
         icon: 'carbon:location-filled',
       },
       {
-        title: 'Ultra-Fast Performance',
-        description: '<2s load times with CDN in Sarawak',
+        title: 'Sub-Second Edge Rendering Latency',
+        description:
+          'By caching your web assets directly at local servers within Malaysia, we eliminate server compute delays, dropping bounce variables significantly.',
         icon: 'carbon:forecast-lightning',
       },
       {
-        title: 'Transparent Pricing',
-        description: 'Packages from RM2,000',
+        title: 'Transparent, Fixed Investment Models',
+        description:
+          'No hidden cloud support fees, no unexpected maintenance invoices. High-conversion commercial infrastructure asset packages start transparently from RM2,000.',
         icon: 'carbon:wallet',
       },
       {
-        title: 'Secure & Reliable',
-        description: '99.99% uptime guarantee',
+        title: 'Hardened Digital Security & Uptime',
+        description:
+          'We layer an aggressive security perimeter around your brand assets, protecting your customer communication routes from malicious browser scripts or spam.',
         icon: 'carbon:security',
       },
       {
-        title: 'Ongoing Support',
-        description: 'Local maintenance team',
+        title: 'Dedicated Local Support Workflows',
+        description:
+          'Get rapid help when you need it. Our local maintenance team manages software version patches internally so your customer engine runs smoothly 24/7.',
         icon: 'carbon:user',
       },
     ]}
   />
 
+  <!-- SECTION 4: CASE STUDY BRIDGE -->
+  <Features4
+    id="portfolio-links"
+    tagline="Local Execution Track"
+    columns={2}
+    title="Proven Frameworks Built for Local Market Success"
+    subtitle="See how we help regional businesses transform baseline web traffic into verifiable transaction growth."
+    classes={{ container: 'py-20 bg-neutral-50/70 dark:bg-neutral-900/30' }}
+    items={[
+      {
+        title: 'B2B Funnel Overhauls',
+        description:
+          'Discover how we restructured a legacy corporate catalog into an automated, high-converting acquisition engine.',
+        link: '/clients/bosoffice/',
+        icon: 'carbon:chart-relationship',
+      },
+      {
+        title: 'Enterprise Identity Systems',
+        description:
+          'Analyzing the digital infrastructure parameters deployed to build secure custom content layers for regional consumer networks.',
+        link: '/clients/ford-web-design/',
+        icon: 'carbon:network-enterprise',
+      },
+    ]}
+  />
+
+  <!-- SECTION 5: THE LOCAL PRODUCTION SPRINT STEPS -->
   <Steps3
     image={{
       src: '~/assets/images/webdev.webp',
-      alt: 'team working on website design',
+      alt: 'MicroWeb website design team mapping high-conversion consumer interfaces and local search parameters',
     }}
-    title="Our Kuching-Tested Process"
-    subtitle="Proven 6-stage framework refined over 12 years serving Sarawak businesses"
+    title="Our Kuching-Tested Deployment Pipeline"
+    subtitle="A structured 6-stage delivery framework refined over 14 years serving the Sarawak business ecosystem."
     items={[
       {
-        title: '1. Discovery Session',
-        description: 'Understand your business goals at our Kuching office',
+        title: '1. Discovery & Strategy Consultation',
+        description:
+          'We audit your customer acquisition goals at our local workspace to map out direct conversion objectives.',
         icon: 'carbon:forum',
       },
       {
-        title: '2. Design Mockups',
-        description: 'Get 3 concept designs tailored for Kuching market',
+        title: '2. Interface Wireframing Blueprint',
+        description:
+          'We build clear component layouts configured to maximize mobile user engagement and clear conversion targets.',
         icon: 'carbon:image-copy',
       },
       {
-        title: '3. Development',
-        description: 'Build with Vue.js/Astro for maximum speed',
+        title: '3. Component-Driven Compilation',
+        description:
+          'We write clean, high-velocity frontend elements utilizing advanced, modern code frameworks like Astro and Tailwind CSS.',
         icon: 'carbon:code',
       },
       {
-        title: '4. Local SEO Setup',
-        description: 'Optimize for Kuching search terms',
+        title: '4. Local Search Optimization Injection',
+        description:
+          'We hardwire structural metadata parameters to position your business endpoints at the top of local region categories.',
         icon: 'carbon:search',
       },
       {
-        title: '5. Quality Testing',
-        description: 'Cross-device testing on local networks',
+        title: '5. Network Staging & Stress Testing',
+        description:
+          'We test application functionality across variable device resolutions and low-bandwidth regional mobile networks.',
         icon: 'carbon:test-tool',
       },
       {
-        title: '6. Launch & Support',
-        description: 'Keep your website safe, up-to-date',
+        title: '6. Edge Launch & Continuous Monitoring',
+        description:
+          'We push your production build to fast edge hosting nodes, backing the asset with permanent security shielding.',
         icon: 'carbon:launch',
       },
     ]}
@@ -165,5 +224,24 @@ const metadata = {
     </Fragment>
   </Steps3>
 
-  <FollowUp />
+  <!-- SECTION 6: TARGETED INTAKE GATEWAY -->
+  <ContentContact id="contact">
+    <Fragment slot="content">
+      <h2 class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl">
+        Claim Your Free Web Performance Audit
+      </h2>
+      <p class="mt-2 md:mt-4 text-lg font-semibold text-primary dark:text-accent">
+        Let’s optimize your digital presence for instant mobile rendering and dominant local search positioning.
+      </p>
+      <p class="mt-2 md:mt-4 text-neutral-600 dark:text-neutral-400">
+        Stop losing qualified inquiries to slow loading speeds and outdated layouts that drive buyers away. Whether you
+        need a high-converting business interface, a local service booking portal, or an edge-cached digital asset that
+        ranks #1, we build tech designed to scale your volume safely.<br />
+        <strong>Let's execute — Reach out today to schedule a performance audit with our web design team.</strong>
+      </p>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 backdrop-blur-lg bg-white/40 dark:bg-neutral-950/20"></div>
+    </Fragment>
+  </ContentContact>
 </Layout>

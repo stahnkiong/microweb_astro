@@ -1,0 +1,343 @@
+---
+interface Props {
+  height?: string;
+}
+
+const { height = '600px' } = Astro.props;
+---
+
+<div
+  class="conversion-calculator-container flex flex-col md:flex-row gap-8 p-6 md:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-xl overflow-hidden transition-all duration-300 not-prose"
+  style={`min-height: ${height};`}
+>
+  <!-- Control Panel (Inputs) -->
+  <div class="flex-1 flex flex-col justify-between space-y-6">
+    <div>
+      <h3 class="text-xl font-bold text-neutral-900 dark:text-white flex items-center gap-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6 text-primary"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+          ></path>
+        </svg>
+        Site Performance Inputs
+      </h3>
+      <p class="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
+        Adjust the parameters to estimate the financial impact of site speed optimization.
+      </p>
+    </div>
+
+    <!-- Inputs -->
+    <div class="space-y-6">
+      <!-- Input 1: Monthly Traffic -->
+      <div class="space-y-2">
+        <div class="flex justify-between items-center text-sm font-semibold">
+          <label for="traffic-slider" class="text-neutral-700 dark:text-neutral-300">Estimated Monthly Traffic</label>
+          <span id="traffic-value" class="text-primary font-mono text-base">1,500</span>
+        </div>
+        <div class="relative">
+          <input
+            type="range"
+            id="traffic-slider"
+            min="200"
+            max="10000"
+            step="200"
+            value="1500"
+            class="w-full h-2 bg-neutral-200 dark:bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-primary"
+          />
+        </div>
+        <div class="flex justify-between text-xs text-neutral-400 font-mono">
+          <span>200 visitors</span>
+          <span>10,000 visitors</span>
+        </div>
+      </div>
+
+      <!-- Input 2: Current Mobile Load Time -->
+      <div class="space-y-2">
+        <div class="flex justify-between items-center text-sm font-semibold">
+          <label for="load-time-slider" class="text-neutral-700 dark:text-neutral-300">Current Mobile Load Time</label>
+          <span id="load-time-value" class="text-primary font-mono text-base">5 seconds</span>
+        </div>
+        <input
+          type="range"
+          id="load-time-slider"
+          min="1"
+          max="8"
+          step="1"
+          value="5"
+          class="w-full h-2 bg-neutral-200 dark:bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-primary"
+        />
+        <div class="flex justify-between text-xs text-neutral-400 font-mono">
+          <span>1s (Target)</span>
+          <span>8s (Critical Delay)</span>
+        </div>
+      </div>
+
+      <!-- Input 3: Average Lead Value -->
+      <div class="space-y-2">
+        <div class="flex justify-between items-center text-sm font-semibold">
+          <label for="lead-value-slider" class="text-neutral-700 dark:text-neutral-300"
+            >Avg. Customer Lead Value (RM)</label
+          >
+          <span id="lead-value-display" class="text-primary font-mono text-base">RM 150</span>
+        </div>
+        <input
+          type="range"
+          id="lead-value-slider"
+          min="50"
+          max="2000"
+          step="50"
+          value="150"
+          class="w-full h-2 bg-neutral-200 dark:bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-primary"
+        />
+        <div class="flex justify-between text-xs text-neutral-400 font-mono">
+          <span>RM 50</span>
+          <span>RM 2,000</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info Footer -->
+    <div
+      class="border-t border-neutral-100 dark:border-neutral-800 pt-4 text-xs text-neutral-400 flex items-center gap-1.5"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-4 h-4 text-neutral-400 flex-shrink-0"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <span>Formulated using industry-standard conversion and bounce rate correlation.</span>
+    </div>
+  </div>
+
+  <!-- Telemetry / Estimation Dashboard (Outputs) -->
+  <div
+    class="flex-1 flex flex-col justify-between p-6 rounded-xl bg-neutral-50 dark:bg-neutral-950 border border-neutral-150 dark:border-neutral-850"
+  >
+    <div>
+      <h3 class="text-sm font-bold uppercase tracking-wider text-neutral-400 flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" id="calc-status-dot"></span>
+        Conversion Engine Projections
+      </h3>
+    </div>
+
+    <!-- Outputs display -->
+    <div class="my-auto py-6 space-y-8">
+      <!-- Readout 1: Abandonment Rate -->
+      <div class="text-center">
+        <span class="text-xs font-semibold uppercase tracking-widest text-neutral-500 dark:text-neutral-400"
+          >Traffic Abandonment Rate</span
+        >
+        <div
+          id="abandonment-rate"
+          class="mt-2 text-4xl font-black uppercase tracking-wide text-red-500 transition-all duration-300"
+        >
+          60%
+        </div>
+        <span id="abandonment-verdict" class="text-xs font-medium text-red-400 mt-1 block">Critical Traffic Loss</span>
+      </div>
+
+      <!-- Readout 2: Leads Recovered -->
+      <div
+        class="space-y-2 p-4 bg-white dark:bg-neutral-900 rounded-lg border border-neutral-200/60 dark:border-neutral-800/80 shadow-sm"
+      >
+        <div class="flex justify-between items-center">
+          <span class="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400"
+            >Leads Recovered (Monthly)</span
+          >
+          <span id="leads-recovered" class="font-mono text-2xl font-extrabold text-primary">+23</span>
+        </div>
+        <div class="w-full bg-neutral-100 dark:bg-neutral-800 rounded-full h-2 overflow-hidden">
+          <div
+            id="leads-progress"
+            class="bg-primary h-full rounded-full transition-all duration-300"
+            style="width: 50%;"
+          >
+          </div>
+        </div>
+      </div>
+
+      <!-- Readout 3: Annual Revenue Recovered -->
+      <div class="space-y-1 text-center">
+        <span class="text-xs font-semibold uppercase tracking-widest text-neutral-500 dark:text-neutral-400"
+          >Projected Annual Revenue Lost</span
+        >
+        <div class="flex items-baseline justify-center gap-1 mt-1">
+          <span
+            id="revenue-recovered"
+            class="text-4xl font-extrabold text-emerald-500 font-mono tracking-tight transition-all duration-300"
+          >
+            RM 41,400
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer visualizer -->
+    <div class="border-t border-neutral-200/50 dark:border-neutral-800/50 pt-4 text-center">
+      <div class="text-xs font-semibold text-neutral-400 mb-2">Acquisition Funnel Status</div>
+      <div
+        class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono border bg-amber-500/15 text-amber-700 dark:text-amber-400 border-amber-500/30"
+        id="funnel-status-badge"
+      >
+        <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+        Sub-Optimal Performance
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initConversionCalculator() {
+    const trafficSlider = document.getElementById('traffic-slider') as HTMLInputElement;
+    const loadTimeSlider = document.getElementById('load-time-slider') as HTMLInputElement;
+    const leadValueSlider = document.getElementById('lead-value-slider') as HTMLInputElement;
+
+    const trafficValue = document.getElementById('traffic-value');
+    const loadTimeValue = document.getElementById('load-time-value');
+    const leadValueDisplay = document.getElementById('lead-value-display');
+
+    const abandonmentRate = document.getElementById('abandonment-rate');
+    const abandonmentVerdict = document.getElementById('abandonment-verdict');
+    const calcStatusDot = document.getElementById('calc-status-dot');
+
+    const leadsRecovered = document.getElementById('leads-recovered');
+    const leadsProgress = document.getElementById('leads-progress');
+    const revenueRecovered = document.getElementById('revenue-recovered');
+    const funnelStatusBadge = document.getElementById('funnel-status-badge');
+
+    if (!trafficSlider || !loadTimeSlider || !leadValueSlider) return;
+
+    // industry bounce rates / abandonment by load time
+    const abandonmentMap: Record<number, number> = {
+      1: 10,
+      2: 20,
+      3: 32,
+      4: 45,
+      5: 60,
+      6: 72,
+      7: 82,
+      8: 90,
+    };
+
+    function updateCalculations() {
+      const traffic = parseInt(trafficSlider.value);
+      const loadTime = parseInt(loadTimeSlider.value);
+      const leadValue = parseInt(leadValueSlider.value);
+
+      // Update slider readouts
+      if (trafficValue) trafficValue.textContent = traffic.toLocaleString();
+      if (loadTimeValue) loadTimeValue.textContent = loadTime + (loadTime === 1 ? ' second' : ' seconds');
+      if (leadValueDisplay) leadValueDisplay.textContent = 'RM ' + leadValue.toLocaleString();
+
+      // Get abandonment rate
+      const rate = abandonmentMap[loadTime] || 50;
+
+      // Update abandonment UI
+      if (abandonmentRate) abandonmentRate.textContent = `${rate}%`;
+
+      let verdict = 'Optimal Performance';
+      let verdictColor = 'text-emerald-500 dark:text-emerald-400';
+      let dotColor = 'bg-emerald-500';
+      let badgeClass = 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border-emerald-500/30';
+      let badgeHtml = '<span class="w-2 h-2 rounded-full bg-emerald-500"></span>Highly Optimized';
+
+      if (rate >= 70) {
+        verdict = 'Severe Uptime & Load Penalty';
+        verdictColor = 'text-red-500 dark:text-red-400';
+        dotColor = 'bg-red-500 animate-ping';
+        badgeClass = 'bg-red-500/15 text-red-700 dark:text-red-400 border-red-500/30';
+        badgeHtml = '<span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>Critical Failure';
+      } else if (rate >= 30) {
+        verdict = 'Sub-Optimal Mobile Bounce';
+        verdictColor = 'text-amber-500 dark:text-amber-400';
+        dotColor = 'bg-amber-500 animate-pulse';
+        badgeClass = 'bg-amber-500/15 text-amber-700 dark:text-amber-400 border-amber-500/30';
+        badgeHtml = '<span class="w-2 h-2 rounded-full bg-amber-500"></span>Sub-Optimal';
+      }
+
+      if (abandonmentRate) {
+        abandonmentRate.className = `mt-2 text-4xl font-black uppercase tracking-wide ${verdictColor} transition-all duration-300`;
+      }
+      if (abandonmentVerdict) {
+        abandonmentVerdict.textContent = verdict;
+        abandonmentVerdict.className = `text-xs font-semibold ${verdictColor} mt-1 block`;
+      }
+      if (calcStatusDot) {
+        calcStatusDot.className = `w-2.5 h-2.5 rounded-full ${dotColor}`;
+      }
+
+      // Calculate recovered leads
+      // Standard target load time is 1s, which has a 10% abandonment rate.
+      // Recovered traffic fraction is (rate - 10) / 100
+      const recoveredTrafficFraction = Math.max(0, (rate - 10) / 100);
+      const recoveredTraffic = traffic * recoveredTrafficFraction;
+
+      // Standard B2B/SME website-to-lead conversion rate is 3%
+      const conversionRate = 0.03;
+      const monthlyLeadsRecovered = Math.round(recoveredTraffic * conversionRate);
+
+      if (leadsRecovered) {
+        leadsRecovered.textContent = `+${monthlyLeadsRecovered}`;
+      }
+
+      // Leads progress bar (cap at a reasonable max to represent 100 leads)
+      if (leadsProgress) {
+        const progressPercentage = Math.min(100, (monthlyLeadsRecovered / 100) * 100);
+        leadsProgress.style.width = `${progressPercentage}%`;
+      }
+
+      // Calculate annual revenue recovered
+      const annualRev = monthlyLeadsRecovered * leadValue * 12;
+
+      if (revenueRecovered) {
+        revenueRecovered.textContent = 'RM ' + annualRev.toLocaleString();
+
+        // Dynamic styling for revenue value
+        if (annualRev > 50000) {
+          revenueRecovered.className =
+            'text-4xl font-extrabold text-emerald-500 font-mono tracking-tight transition-all duration-300';
+        } else if (annualRev > 20000) {
+          revenueRecovered.className =
+            'text-4xl font-extrabold text-emerald-500/90 font-mono tracking-tight transition-all duration-300';
+        } else {
+          revenueRecovered.className =
+            'text-4xl font-extrabold text-neutral-800 dark:text-neutral-200 font-mono tracking-tight transition-all duration-300';
+        }
+      }
+
+      if (funnelStatusBadge) {
+        funnelStatusBadge.className = `inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono border ${badgeClass}`;
+        funnelStatusBadge.innerHTML = badgeHtml;
+      }
+    }
+
+    // Set event listeners
+    trafficSlider.addEventListener('input', updateCalculations);
+    loadTimeSlider.addEventListener('input', updateCalculations);
+    leadValueSlider.addEventListener('input', updateCalculations);
+
+    // Initial run
+    updateCalculations();
+  }
+
+  // Setup execution on load and page transition
+  document.addEventListener('DOMContentLoaded', initConversionCalculator);
+  document.addEventListener('astro:page-load', initConversionCalculator);
+</script>

@@ -1,45 +1,54 @@
 ---
+// src/pages/web-design-sarawak.astro
 import Layout from '~/layouts/PageLayout.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Banners2 from '~/components/widgets/Banners2.astro';
-import Features4 from '~/components/widgets/Features4.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 import Features5 from '~/components/widgets/Features5.astro';
-import FollowUp from '~/components/widgets/FollowUp.astro';
+import ContentContact from '~/components/widgets/ContentContact.astro';
 import ThreeJs from '~/components/widgets/ThreeJs.astro';
+import LatencySimulator from '~/components/widgets/LatencySimulator.astro';
+
+// Global Metadata targeting cross-border enterprise expansion searches
 const metadata = {
   ignoreTitleTemplate: true,
-  title: 'Web Design Sarawak | Web Development Sarawak',
+  title: 'Web Design Sarawak | Cross-Border Regional System Custom Software | MicroWeb',
   description:
-    'For KL/West Malaysian/overseas businesses expanding to Sarawak: Localized web solutions with Kuching-specific SEO. Packages from RM2,000. 13+ years serving local & international clients.',
+    'Localized web design and web development infrastructure in Sarawak for West Malaysian and global brands. We engineer high-availability edge systems designed to eliminate cross-region latency.',
 };
 ---
 
 <Layout metadata={metadata}>
   <ThreeJs />
+
+  <!-- SECTION 1: REGIONAL ENTRY HERO -->
   <Hero2
-    tagline="Sarawak Market Entry Experts"
+    tagline="Sarawak Market Expansion Engineering"
     actions={[
-      { variant: 'primary', text: 'Get Sarawak Strategy Session', href: '#contact' },
-      { variant: 'secondary', text: 'Chat with Our Kuching Team', target: '_blank', href: 'https://wa.me/60168880650' },
+      { variant: 'primary', text: 'Request Regional Expansion Strategy', href: '#contact' },
+      {
+        variant: 'secondary',
+        text: 'Connect with Systems Architect',
+        target: '_blank',
+        href: 'https://wa.me/60168880650',
+      },
     ]}
     image={{
       src: '~/assets/images/web_design_development_kuching.webp',
-      alt: 'responsive website design across multiple devices',
+      alt: 'Decoupled web application architectures syncing cross-region databases between Peninsular Malaysia and Sarawak edge routing points',
     }}
   >
     <Fragment slot="title">
-      <span class="text-primary text-gradient highlight tracking-tight">Global Brands</span> Trust Our Kuching Web Expertise
+      Web Design Sarawak: <span class="text-primary text-gradient highlight tracking-tight"
+        >Localize Your Digital Asset</span
+      > Without System Shock
     </Fragment>
 
     <Fragment slot="subtitle">
-      We help West Malaysian and international businesses create <strong>Sarawak-optimized</strong> websites that connect
-      with local audiences while perfectly aligning with your existing UI/UX systems.
-      <div class="mt-4 flex gap-4 flex-wrap mb-4">
-        <span class="badge badge-lg">🌍 Global UI Standards</span>
-        <span class="badge badge-lg">🔄 Seamless Integration</span>
-        <span class="badge badge-lg">📱 Mobile-First Sarawak</span>
-      </div>
+      We help West Malaysian corporations and international brands deploy high-performance, Sarawak-optimized web
+      applications. From eliminating South China Sea data routing latencies to embedding localized regional search
+      indexing arrays, we ensure your expansion matches local infrastructure realities.
     </Fragment>
 
     <Fragment slot="content">
@@ -48,24 +57,25 @@ const metadata = {
         classes={{ container: 'py-8' }}
         items={[
           {
-            description: 'Sarawak-SEO<br/>Integration',
+            description: 'Cross-Region<br/>SEO Replication',
             icon: 'carbon:language',
           },
           {
-            description: 'Global + Local<br/>Hosting',
+            description: 'South China Sea<br/>Latency Mitigation',
             icon: 'carbon:cloud-service-management',
           },
           {
-            description: 'Cultural<br/>Adaptation',
+            description: 'Linguistic & Cultural<br/>Localization Filters',
             icon: 'carbon:group-account',
           },
           {
-            description: 'Bilingual<br/>Support',
+            description: 'Decoupled Multi-Channel<br/>Database Sync',
             icon: 'carbon:translate',
           },
         ]}
       />
     </Fragment>
+
     <Fragment slot="bg">
       <div class="absolute bg-page inset-0 grid grid-cols-2 -space-x-52 opacity-80 md:opacity-85">
         <div
@@ -79,83 +89,151 @@ const metadata = {
 
   <Banners2 />
 
-  <Features4
+  <!-- SECTION 2: INTERACTIVE NETWORK LATENCY & CACHE SIMULATOR -->
+  <section class="max-w-5xl mx-auto px-6 py-12 not-prose">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-black tracking-tight text-neutral-900 dark:text-white">
+        South China Sea Latency & Data Performance Simulator
+      </h2>
+      <p class="text-neutral-500 dark:text-neutral-400 mt-2 max-w-2xl mx-auto text-sm">
+        Hosting your applications solely on a Peninsular Malaysia (KL) origin server introduces significant data routing
+        delay for East Malaysian users. Simulate how adding localized edge caching configurations saves transaction
+        speed.
+      </p>
+    </div>
+
+    <LatencySimulator height="600px" />
+  </section>
+
+  <!-- SECTION 3: SYMMETRIC CROSS-BORDER PARAMETERS MATRIX -->
+  <Features2
     id="why-global"
-    tagline="Why International Businesses Choose Us"
+    tagline="Ecosystem Interconnection"
+    title="Your Localized Engineering Extension in East Malaysia"
+    subtitle="We unify strict international design system blueprints with local network configurations to prevent user drop-offs."
     columns={3}
-    title="Your Bridge to Sarawak's Digital Market"
-    subtitle="We understand both global standards and Sarawak's unique business culture"
-    classes={{ container: 'py-20 bg-white/80 dark:bg-black/80' }}
     items={[
       {
-        title: 'Market-Specific SEO',
-        description: "Optimized for 'Kuching' + your global keywords",
+        title: 'Localized Search Engine Authority',
+        description:
+          'We injection specific geolocation schema properties and structured cross-region indexing nodes, ensuring your corporate web footprint dominates search targets like web development sarawak natively.',
         icon: 'carbon:search-advanced',
       },
       {
-        title: 'Hybrid Hosting',
-        description: 'Global CDN with edge nodes',
+        title: 'Hybrid Edge Cloud Host Layouts',
+        description:
+          'By distributing static site assets and operational components to serverless nodes within the region, we isolate your application loops from mainland routing infrastructure vulnerabilities.',
         icon: 'carbon:data-center',
       },
       {
-        title: 'Cultural Localization',
-        description: "Adapted for Sarawak's multicultural audience",
+        title: 'Linguistic Demographic Targeting',
+        description:
+          "We structure content workflows tailored for East Malaysia's distinct multicultural commerce base, allowing deep alignment across targeted regional business sub-demographics.",
         icon: 'carbon:user-certification',
       },
       {
-        title: 'Global CMS Integration',
-        description: 'Sync with your existing app technology',
+        title: 'Decoupled Headless Content Sync',
+        description:
+          'We link your existing centralized ERP or global web content structures straight into lightweight localized viewports via non-blocking API queue pipelines.',
         icon: 'carbon:cics-system-group',
       },
       {
-        title: 'Compliance Ready',
-        description: 'Sarawak business + Malaysia PDPA aligned',
+        title: 'Compliance & Governance Assured',
+        description:
+          'Every architecture blueprint we compile adheres strictly to statutory regulatory frameworks, ensuring persistent corporate protection and data privacy safety.',
         icon: 'carbon:security',
       },
       {
-        title: 'KL-Kuching Coordination',
-        description: 'Seamless collaboration across regions',
+        title: 'KL-to-Kuching Developer Coordination',
+        description:
+          'We act as your remote technical staff on the ground. We execute rapid continuous updates and monitor local telemetry logs without operational management friction.',
         icon: 'carbon:collaborate',
       },
     ]}
   />
 
+  <!-- SECTION 4: STRATEGIC REGIONAL MATCH SECTORS -->
+  <section
+    class="bg-neutral-50 dark:bg-neutral-900/30 py-16 not-prose border-t border-b border-neutral-200/50 dark:border-neutral-800/50"
+  >
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-center text-neutral-900 dark:text-white mb-10">
+        Engineered Solutions for Expanding System Footprints
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div
+          class="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-neutral-200 dark:border-neutral-800 space-y-3"
+        >
+          <h3 class="text-lg font-bold text-primary flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-primary"></span>
+            Peninsular Malaysian Enterprises
+          </h3>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            Protect your brand investments. We map multi-location website delivery paths, coordinate content
+            synchronization schedules between your HQ servers and local targets, and build optimized landing networks to
+            lower your customer acquisition costs across the region.
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-neutral-200 dark:border-neutral-800 space-y-3"
+        >
+          <h3 class="text-lg font-bold text-accent flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-accent"></span>
+            Multinational & International Brands
+          </h3>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            Ensure your global platform complies with regional technical realities. We adapt your enterprise design
+            tokens for sub-second mobile delivery, configure multilingual customer pathways, and integrate localized
+            transaction nodes straight into your global tech stack.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: CROSS-BORDER INTEGRATION PIPELINE -->
   <Steps3
     image={{
       src: '~/assets/images/webdev.webp',
-      alt: 'international team meeting with Kuching staff',
+      alt: 'Enterprise technical directors monitoring cross-region network telemetry states and database synchronization pipelines',
     }}
-    title="Our Global-to-Local Process"
-    subtitle="Proven framework for international businesses entering Sarawak"
+    title="The Global-to-Local Deployment Pipeline"
+    subtitle="A structured technical transition roadmap configured to maximize conversion velocities across geographic borders safely."
     items={[
       {
-        title: '1. Market Alignment',
-        description: 'Analyze your global assets + Sarawak opportunities',
+        title: '1. Regional Infrastructure Valuation',
+        description:
+          'We audit your global design configurations against local consumer network parameters to isolate performance bottlenecks.',
         icon: 'carbon:earth-southeast-asia-filled',
       },
       {
-        title: '2. Cultural Adaptation',
-        description: 'Localize content for Sarawak audiences',
+        title: '2. Linguistic & Content Optimization',
+        description:
+          'We align landing directory copy blocks with localized regional vocabulary patterns to maximize search engine authority.',
         icon: 'carbon:group-account',
       },
       {
-        title: '3. Technical Integration',
-        description: 'Connect with your existing systems',
+        title: '3. Abstraction API Engineering',
+        description:
+          'Our team developments secure communication middleware bridges to connect edge user actions straight to your primary core databases.',
         icon: 'carbon:integration',
       },
       {
-        title: '4. Local SEO Deployment',
-        description: "Dominate 'Kuching' search results",
+        title: '4. Localized SEO Cluster Rollout',
+        description:
+          'We hardwire structural geographic indicators, schema properties, and site maps into the static runtime targets natively.',
         icon: 'carbon:location-filled',
       },
       {
-        title: '5. Performance Testing',
-        description: 'Validate across Sarawak networks',
+        title: '5. South China Sea Stress Verifications',
+        description:
+          'We validate data processing latencies and transaction consistency across real-world regional network carrier profiles.',
         icon: 'carbon:meter',
       },
       {
-        title: '6. Ongoing Local Support',
-        description: 'Keep your website safe, up-to-date',
+        title: '6. Boundary Protection & Staging',
+        description:
+          'We deploy your localized application frontends safely behind an active edge firewall shield, managing patches automatically.',
         icon: 'carbon:customer-service',
       },
     ]}
@@ -165,48 +243,26 @@ const metadata = {
     </Fragment>
   </Steps3>
 
-  <!-- Special Section for International Clients -->
-  <section class="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-gray-900 dark:to-gray-800 py-16">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8">For Businesses Expanding to Sarawak</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-          <h3 class="text-xl font-semibold mb-4">West Malaysian Companies</h3>
-          <ul class="space-y-2">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Dual-location website strategy</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>KL-Kuching content synchronization</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Peninsular-Sarawak SEO bridging</span>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-          <h3 class="text-xl font-semibold mb-4">International Businesses</h3>
-          <ul class="space-y-2">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Sarawak market entry consulting</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Multilingual support (English/Malay/Chinese)</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Global brand + local adaptation</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <FollowUp />
+  <!-- SECTION 6: ENTERPRISE EXPANSION INTAKE GATEWAY -->
+  <ContentContact id="contact">
+    <Fragment slot="content">
+      <h2 class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl">
+        Initiate a Regional Scoping Consultation
+      </h2>
+      <p class="mt-2 md:mt-4 text-lg font-semibold text-primary dark:text-accent">
+        Secure your regional transaction speeds and eliminate cross-border technical debt.
+      </p>
+      <p class="mt-2 md:mt-4 text-neutral-600 dark:text-neutral-400">
+        Stop serving slow, centralized web resources that lag over regional marine routing links. We engineer
+        high-availability, decoupled frontend architectures, secure cross-region API bridges, and localized optimization
+        frameworks programmed to align your centralized system logic natively with local market demands.<br />
+        <strong
+          >Let's execute — Contact our system architect team today to map out your localized digital assets.</strong
+        >
+      </p>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 backdrop-blur-lg bg-white/40 dark:bg-neutral-950/20"></div>
+    </Fragment>
+  </ContentContact>
 </Layout>
