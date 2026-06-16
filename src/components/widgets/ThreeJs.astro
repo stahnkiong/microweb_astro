@@ -2,10 +2,14 @@
 import { Icon } from 'astro-icon/components';
 ---
 
-<script defer type="module" src="/threejs/index-DVQ60Z-D.js"></script>
+<script defer type="module" src="/threejs/index-CzljfaV2.js"></script>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    if (window.innerWidth < 768) {
+      return;
+    }
+
     if (window.DeviceOrientationEvent) {
       window.addEventListener('deviceorientation', function (event) {
         if (event.alpha !== null || event.beta !== null || event.gamma !== null) {
@@ -31,7 +35,7 @@ import { Icon } from 'astro-icon/components';
   });
 </script>
 <div id="dimension" class="fixed h-full -z-10 dark:brightness-[0.4] dark:contrast-[1.5] transition duration-700"></div>
-<div id="side-panel" class="fixed right-1 bottom-12 md:bottom-20 text-right">
+<div id="side-panel" class="hidden md:block fixed right-1 bottom-12 md:bottom-20 text-right">
   <div
     id="autopilot"
     class="-z-10 mb-1 px-2.5 py-1 md:px-5 md:py-3 rounded-xl backdrop-blur-xl border border-green-100/20 bg-green-300/15 dark:bg-white/10 dark:border-green-950/15"
