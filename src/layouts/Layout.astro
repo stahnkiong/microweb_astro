@@ -38,22 +38,84 @@ const { language, textDirection } = I18N;
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GM5ZSBEGN2"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() {
+        dataLayer.push(arguments);
+      }
       gtag('js', new Date());
 
       gtag('config', 'G-GM5ZSBEGN2');
     </script>
 
-    <style>
+    <style is:global>
       /* Fix for Astro's CSS handling */
       .iti__flag {
-        background-image: url("/flags.png");
+        background-image: url('/flags.png');
       }
-      
+
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         .iti__flag {
-          background-image: url("/flags@2x.png");
+          background-image: url('/flags@2x.png');
         }
+      }
+
+      /* Container acts as the 3D Perspective Eye Viewport */
+      #dimension {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: #d7ebf1;
+        transition: background-color 0.8s ease;
+
+        /* 1. FORCE THE BROWSER TO PRESERVE THE 3D SPACE */
+        perspective: 400px;
+        perspective-origin: 50% 40%;
+        transform-style: preserve-3d;
+        overflow: hidden;
+      }
+
+      /* Structural blueprint matrix lines projected into 3D Space */
+      #dimension::before {
+        content: '';
+        position: absolute;
+        /* 2. Reposition boundaries to properly fit the perspective cone */
+        top: -20%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        opacity: 0.35;
+        background-size: 40px 40px;
+        background-image: linear-gradient(to right, #00ffcc 1px, transparent 1px),
+          linear-gradient(to bottom, #00ffcc 1px, transparent 1px);
+
+        /* 3. Added translateZ(0px) to lock the plane inside the render stack */
+        transform: rotateX(-30deg) translateZ(0px);
+        transform-origin: center top;
+
+        /* 4. Scroll animation runs smoothly across the 3D plane */
+        animation: grid-shift 12s linear infinite;
+        transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        pointer-events: none;
+      }
+
+      /* Transition hook when Three.js mounts the live WebGL loop */
+      #dimension.canvas-ready::before {
+        opacity: 0 !important;
+      }
+
+      /* Moving exclusively on the Y axis makes the grid roll forward toward the viewer */
+      @keyframes grid-shift {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 0 800px;
+        }
+      }
+
+      #dimension canvas {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
       }
     </style>
     <!-- <script is:inline src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/intlTelInput.min.js"></script> -->
