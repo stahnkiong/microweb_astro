@@ -1,4 +1,4 @@
-# MicroWeb Codebase
+# MicroWeb
 
 > MicroWeb is a high-performance web agency site built on the Astro v5 and Tailwind CSS v3 stack, leveraging the AstroWind theme architecture. Designed for custom web application development, mobile apps, system integrations, and AI-driven marketing campaigns, this codebase is fully optimized for speed, responsive design, search engine optimization (SEO), and cross-platform integrations.
 
@@ -45,38 +45,39 @@ The codebase is organized as follows:
 Below is the routing mapping under `src/pages/`:
 
 ### Core Pages
-- `index.astro` -> Home page (`/`)
-- `about.astro` -> Company background and vision (`/about`)
-- `contact.astro` -> General contact form (`/contact`)
-- `contact-formbricks.astro` -> Interactive survey form (`/contact-formbricks`)
-- `career.astro` -> Job opportunities and core values (`/career`)
-- `rss.xml.ts` -> Dynamic sitemap/RSS feed generation for portfolio entries.
-- `privacy.md` & `terms.md` -> Regulatory legal pages (`/privacy`, `/terms`).
+- [Home Page](https://www.microweb.my/): Main agency landing page.
+- [About Us](https://www.microweb.my/about/): Company background, mission, and vision.
+- [Contact Us](https://www.microweb.my/contact/): General inquiry contact form using Web3forms.
+- [Feedback Form](https://www.microweb.my/contact-formbricks/): Formbricks interactive feedback page.
+- [Careers](https://www.microweb.my/career/): Job opportunities, perks, and corporate values.
+- [RSS Feed](https://www.microweb.my/rss.xml): Dynamic sitemap and portfolio RSS feed.
+- [Privacy Policy](https://www.microweb.my/privacy/): Information on privacy policies and data collection.
+- [Terms & Conditions](https://www.microweb.my/terms/): Legal terms and conditions of use.
 
 ### Specialist Services
-- `software.astro` -> Custom Web Application Development (`/software`)
-- `web-development.astro` -> General Website Design (`/web-development`)
-- `mobile-app.astro` -> iOS/Android Mobile Apps (`/mobile-app`)
-- `integration.astro` -> System Integrations & APIs (`/integration`)
-- `ai-marketing.astro` -> AI-Powered Marketing & Branding (`/ai-marketing`)
+- [Software Development](https://www.microweb.my/software/): Custom web application development and enterprise architecture.
+- [Web Development](https://www.microweb.my/web-development/): Professional responsive web design and optimization.
+- [Mobile App Development](https://www.microweb.my/mobile-app/): iOS and Android mobile app development.
+- [System Integration](https://www.microweb.my/integration/): API integrations, secure databases, and backend services.
+- [AI Marketing](https://www.microweb.my/ai-marketing/): AI-powered marketing campaigns and digital brand building.
 
 ### Industrial Verticals (Solutions)
-- `enterprise.astro` -> Enterprise level solutions (`/enterprise`)
-- `healthcare.astro` -> Health industry software (`/healthcare`)
-- `logistics.astro` -> Supply chain management systems (`/logistics`)
-- `retail.astro` -> Ecommerce & retail tech (`/retail`)
-- `manufacturing.astro` -> Industry 4.0 & manufacturing automation (`/manufacturing`)
-- `agriculture.astro` -> Smart farming & agricultural IoT (`/agriculture`)
-- `hospitality.astro` -> Reservation systems & hospitality tech (`/hospitality`)
-- `education.astro` -> Learning Management Systems (LMS) (`/education`)
-- `games.astro` -> 3D Web & interactive development (`/games`)
+- [Enterprise Solutions](https://www.microweb.my/enterprise/): Enterprise-grade software systems and integrations.
+- [Healthcare Software](https://www.microweb.my/healthcare/): High-security health and medical software applications.
+- [Logistics Systems](https://www.microweb.my/logistics/): Supply chain tracking and logistics automation platforms.
+- [Retail Tech & E-Commerce](https://www.microweb.my/retail/): Smart digital commerce portals and retail systems.
+- [Manufacturing Automation](https://www.microweb.my/manufacturing/): Industry 4.0 IoT and manufacturing automation software.
+- [Agriculture IoT](https://www.microweb.my/agriculture/): Smart farming and agricultural monitoring systems.
+- [Hospitality Tech](https://www.microweb.my/hospitality/): Online booking platforms and hospitality operations software.
+- [Education Technology](https://www.microweb.my/education/): Custom learning management systems (LMS) and e-learning pages.
+- [3D Web & Interactive Games](https://www.microweb.my/games/): Immersive 3D graphics, animations, and gaming platforms.
 
 ### Location-Targeted SEO Pages
-- `web-design-kuching.astro` -> Web services target for Kuching (`/web-design-kuching`)
-- `web-design-sarawak.astro` -> Web services target for Sarawak (`/web-design-sarawak`)
+- [Web Design Kuching](https://www.microweb.my/web-design-kuching/): Dedicated agency services for clients in Kuching, Sarawak.
+- [Web Design Sarawak](https://www.microweb.my/web-design-sarawak/): Specialized web services target for the Sarawak region.
 
 ### Dynamic Blog / Portfolio
-- `[...blog]/` -> Maps portfolio tags, categories, lists, and items under `/clients` as configured in `src/config.yaml`.
+- [Clients/Portfolio Index](https://www.microweb.my/clients/): Portfolio list page displaying tag/category filtering and client case stories.
 
 ---
 

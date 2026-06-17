@@ -42,6 +42,10 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'always',
 
+  build: {
+    inlineStylesheets: 'always',
+  },
+
   redirects: getPostRedirects(),
 
   integrations: [
