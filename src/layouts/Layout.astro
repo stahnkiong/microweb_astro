@@ -1,7 +1,7 @@
 ---
 import '~/assets/styles/tailwind.css';
 
-import { I18N, ANALYTICS } from 'astrowind:config';
+import { I18N } from 'astrowind:config';
 
 import CommonMeta from '~/components/common/CommonMeta.astro';
 import Favicons from '~/components/Favicons.astro';
@@ -9,7 +9,7 @@ import CustomStyles from '~/components/CustomStyles.astro';
 import ApplyColorMode from '~/components/common/ApplyColorMode.astro';
 import Metadata from '~/components/common/Metadata.astro';
 import SiteVerification from '~/components/common/SiteVerification.astro';
-import Analytics from '~/components/common/Analytics.astro';
+// import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
 // Comment the line below to disable View Transitions
 // import { ClientRouter  } from 'astro:transitions';
@@ -22,7 +22,6 @@ export interface Props {
 
 const { metadata = {} } = Astro.props;
 const { language, textDirection } = I18N;
-const showAnalytics = !!ANALYTICS?.vendors?.googleAnalytics?.id;
 ---
 
 <!doctype html>
@@ -34,18 +33,40 @@ const showAnalytics = !!ANALYTICS?.vendors?.googleAnalytics?.id;
     <ApplyColorMode />
     <Metadata {...metadata} />
     <SiteVerification />
-    {showAnalytics && <Analytics />}
     <!-- Google tag (gtag.js) -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-GM5ZSBEGN2"></script>
     <script is:inline>
+      // 1. Initialize dataLayer and gtag immediately to queue events
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
+      window.gtag = gtag;
       gtag('js', new Date());
-
       gtag('config', 'G-GM5ZSBEGN2');
-    </script> -->
+
+      // 2. Load the external script after the main thread clears layout tasks
+      function loadGtag() {
+        if (window.__gtagLoaded) return;
+        window.__gtagLoaded = true;
+
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-GM5ZSBEGN2';
+        document.head.appendChild(script);
+      }
+
+      // Defer loading until browser is idle
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => setTimeout(loadGtag, 1000));
+      } else {
+        window.addEventListener('load', () => setTimeout(loadGtag, 1000));
+      }
+
+      // Also trigger on first interaction to avoid missing events if user interacts early
+      ['scroll', 'pointerdown', 'keydown'].forEach((evt) => {
+        window.addEventListener(evt, loadGtag, { once: true, passive: true });
+      });
+    </script>
 
     <style is:global>
       /* Fix for Astro's CSS handling */
