@@ -16,7 +16,7 @@ metadata:
 
 When a digital platform anchors a major international summit, web performance ceases to be a frontend design metric—it becomes a critical operational dependency. During a high-stakes, 3-day international event, unexpected downtime or database serialization bottlenecks can instantly disrupt registration lanes, compromise live broadcasts, and impact corporate presentation streams.
 
-For **#SCEKL25**, which hosted **21,895 attendees** from **64 countries**, we architected and managed the core digital platform. The infrastructure was engineered to completely dissolve into the background, maintaining flawless availability under peak concurrent traffic spikes, particularly during the Day 2 official launch presided over by the **Prime Minister of Malaysia**.
+For **#SCEKL25** (Official Portal: [mdec.my/smartcityexpokl](https://www.mdec.my/smartcityexpokl)), which hosted **21,895 attendees** from **64 countries**, we architected and managed the core digital platform. The infrastructure was engineered to completely dissolve into the background, maintaining flawless availability under peak concurrent traffic spikes, particularly during the Day 2 official launch presided over by the **Prime Minister of Malaysia**.
 
 Here is the technical breakdown of how we engineered the environment for absolute stability.
 

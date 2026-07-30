@@ -1,0 +1,214 @@
+---
+// src/components/common/JsonLd.astro
+import { SITE } from 'astrowind:config';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  url?: string;
+}
+
+const siteUrl = SITE?.site || 'https://www.microweb.my';
+const currentUrl = new URL(Astro.url.pathname, siteUrl).toString();
+
+// Generate dynamic Breadcrumbs based on pathname
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const breadcrumbs = [
+  {
+    '@type': 'ListItem',
+    position: 1,
+    name: 'Home',
+    item: siteUrl,
+  },
+  ...pathSegments.map((segment, index) => {
+    const itemUrl = `${siteUrl}/${pathSegments.slice(0, index + 1).join('/')}/`;
+    const formattedName = segment
+      .replace(/-/g, ' ')
+      .replace(/\b\w/g, (l) => l.toUpperCase());
+    return {
+      '@type': 'ListItem',
+      position: index + 2,
+      name: formattedName,
+      item: itemUrl,
+    };
+  }),
+];
+
+// Structural JSON-LD objects schema specification
+const schemaGraph = [
+  {
+    '@type': ['Organization', 'LocalBusiness', 'ProfessionalService'],
+    '@id': `${siteUrl}/#organization`,
+    name: 'MicroWeb',
+    legalName: 'MicroWeb Sarawak',
+    url: siteUrl,
+    logo: `${siteUrl}/favicon.svg`,
+    image: `${siteUrl}/assets/images/web_design_development_kuching.webp`,
+    description:
+      'High-performance custom software engineering, mobile app development (Flutter, React Native, Xcode, Android Studio), Java & Spring Boot enterprise backends, WhatsApp API / Meta API integration, agentic AI pipelines (Antigravity, Claude, Gemini, GPT models), React JS web applications, and edge-cached web design in Kuching, Sarawak, Malaysia.',
+    telephone: '+60168880650',
+    email: 'contact@microweb.my',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Kuching',
+      addressRegion: 'Sarawak',
+      addressCountry: 'MY',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '1.5533',
+      longitude: '110.3592',
+    },
+    areaServed: [
+      { '@type': 'AdministrativeArea', name: 'Kuching' },
+      { '@type': 'AdministrativeArea', name: 'Sarawak' },
+      { '@type': 'AdministrativeArea', name: 'Kuala Lumpur' },
+      { '@type': 'Country', name: 'Malaysia' },
+    ],
+    knowsAbout: [
+      'Java',
+      'Spring Boot',
+      'WhatsApp API',
+      'Meta API',
+      'Flutter',
+      'React Native',
+      'React JS',
+      'Xcode',
+      'Android Studio',
+      'Antigravity',
+      'Claude',
+      'Gemini',
+      'GPT model',
+      'Astro v5',
+      'Custom Software Engineering',
+      'Mobile App Development',
+      'Web Design & Development',
+    ],
+    sameAs: [
+      'https://www.facebook.com/microwebmy',
+      'https://www.linkedin.com/company/microweb',
+      'https://github.com/stahnkiong/microweb_astro',
+    ],
+    priceRange: '$$$',
+  },
+  {
+    '@type': 'WebSite',
+    '@id': `${siteUrl}/#website`,
+    url: siteUrl,
+    name: 'MicroWeb',
+    publisher: {
+      '@id': `${siteUrl}/#organization`,
+    },
+    inLanguage: 'en',
+  },
+  // Core Service 1: Web Design
+  {
+    '@type': 'Service',
+    '@id': `${siteUrl}/#service-web-design`,
+    serviceType: 'Web Design & Local Search Optimization',
+    name: 'Web Design Kuching & Sarawak',
+    provider: { '@id': `${siteUrl}/#organization` },
+    areaServed: ['Kuching', 'Sarawak', 'Malaysia'],
+    url: `${siteUrl}/web-design-kuching/`,
+    description:
+      'High-conversion commercial web design and development for Sarawak SMEs. Edge-cached Astro sites engineered with React JS islands for sub-second page loads and local search authority.',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Web Design Packages',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Mobile-First SME Web Design Package',
+            description: 'Sub-2 second local rendering, Google Maps schema injection, and transparent pricing starting from RM2,000.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Cross-Border Regional Web Design',
+            description: 'South China Sea latency mitigation and cross-region SEO replication for Peninsular & global brands in Sarawak.',
+          },
+        },
+      ],
+    },
+  },
+  // Core Service 2: Mobile App Development
+  {
+    '@type': 'Service',
+    '@id': `${siteUrl}/#service-mobile-app`,
+    serviceType: 'Mobile Application Development',
+    name: 'Mobile App Development Kuching & Sarawak',
+    provider: { '@id': `${siteUrl}/#organization` },
+    areaServed: ['Kuching', 'Sarawak', 'Malaysia'],
+    url: `${siteUrl}/mobile-app/`,
+    description:
+      'Cross-platform iOS and Android mobile application engineering built with Flutter and React Native, compiled natively via Xcode and Android Studio. Features offline-first SQLite caching, native hardware integrations (BLE beacon, OCR, GPS), and OTA automated updates.',
+    sameAs: [
+      'https://play.google.com/store/apps/details?id=my.com.omniafoodsupply.shop',
+      'https://testflight.apple.com/join/X4jQCMkT',
+    ],
+  },
+  // Core Service 3: Custom Software Development
+  {
+    '@type': 'Service',
+    '@id': `${siteUrl}/#service-custom-software`,
+    serviceType: 'Custom Software & Enterprise Systems',
+    name: 'Custom Software Development & ERP Integration',
+    provider: { '@id': `${siteUrl}/#organization` },
+    areaServed: ['Kuching', 'Sarawak', 'Malaysia'],
+    url: `${siteUrl}/software/`,
+    description:
+      'Decoupled, high-availability custom software architectures built with Java, Spring Boot, and React JS. Integrates legacy database ledgers with modern REST/GraphQL APIs, serverless Firebase pipelines, cross-border WMS reverse DNS gateways (China-Malaysia integration), isolated PostgreSQL clusters, and bare-metal VPS setups.',
+    sameAs: [
+      'https://www.bosoffice.com.my/',
+      'https://www.winwinlssb.com/',
+      'http://winwinwms.cn:38329',
+    ],
+  },
+  // Core Service 4: Digital Marketing & Agentic AI
+  {
+    '@type': 'Service',
+    '@id': `${siteUrl}/#service-digital-marketing`,
+    serviceType: 'WhatsApp AI Agents & Marketing Automation',
+    name: 'WhatsApp AI Agents & Digital Marketing Automation',
+    provider: { '@id': `${siteUrl}/#organization` },
+    areaServed: ['Kuching', 'Sarawak', 'Malaysia'],
+    url: `${siteUrl}/ai-marketing/`,
+    description:
+      'Sarawaks first Agentic AI integration architecture powered by WhatsApp API & Meta API. Connects autonomous AI pipelines leveraging Antigravity, Claude, Gemini, GPT models, and self-hosted LLMs to corporate ERPs with computer vision photo parsing.',
+  },
+  // Core Service 5: Web App / Web Development
+  {
+    '@type': 'Service',
+    '@id': `${siteUrl}/#service-web-development`,
+    serviceType: 'Web Application & Framework Engineering',
+    name: 'High-Performance Web Development & Web Apps',
+    provider: { '@id': `${siteUrl}/#organization` },
+    areaServed: ['Kuching', 'Sarawak', 'Malaysia'],
+    url: `${siteUrl}/web-development/`,
+    description:
+      'Astro v5 and React JS component-driven web application development with sub-second page TTFB, 99+ mobile page speed, Core Web Vitals optimization, WebGL 3D client rendering, and automated media pipelines.',
+    sameAs: [
+      'https://www.mdec.my/smartcityexpokl',
+      'https://www.bosoffice.com.my/',
+    ],
+  },
+  {
+    '@type': 'BreadcrumbList',
+    '@id': `${currentUrl}#breadcrumb`,
+    itemListElement: breadcrumbs,
+  },
+];
+---
+
+<script
+  type="application/ld+json"
+  is:inline
+  set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@graph': schemaGraph,
+  })}
+/>

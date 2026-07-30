@@ -16,7 +16,7 @@ metadata:
 
 For high-volume B2B e-commerce and office asset suppliers, client acquisition failure isn't typically caused by low ad spend—it is caused by data misalignment within the conversion funnel. When an enterprise operates on an unoptimized legacy web layout, cold traffic lands on generic endpoints rather than high-intent product categories, causing immediate drop-offs and burning ad capital.
 
-We were tasked with re-engineering the digital acquisition pipeline for **BOS Office**. By replacing their legacy 2018 web presence with an automated, data-backed conversion engine, we systematically reduced their Cost Per Acquisition (CPA) while maximizing conversion velocities.
+We were tasked with re-engineering the digital acquisition pipeline for **BOS Office** (Official Platform: [bosoffice.com.my](https://www.bosoffice.com.my/)). By replacing their legacy 2018 web presence with an automated, data-backed conversion engine, we systematically reduced their Cost Per Acquisition (CPA) while maximizing conversion velocities.
 
 ---
 

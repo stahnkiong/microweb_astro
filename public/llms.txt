@@ -1,154 +1,186 @@
 # MicroWeb
 
-> MicroWeb is a high-performance web agency site built on the Astro v5 and Tailwind CSS v3 stack, leveraging the AstroWind theme architecture. Designed for custom web application development, mobile apps, system integrations, and AI-driven marketing campaigns, this codebase is fully optimized for speed, responsive design, search engine optimization (SEO), and cross-platform integrations.
+> MicroWeb is a high-performance custom software engineering, mobile app development, WhatsApp AI integration, and web design agency based in Kuching, Sarawak, and Kuala Lumpur, Malaysia. Built on modern web and enterprise software stacks, this codebase is fully optimized for sub-second rendering, offline-first data resilience, search engine optimization (SEO), JSON-LD schema injection, agentic AI workflows, and enterprise cross-platform integrations.
 
 ---
 
-## Core Architecture & Stack
+## Core Architecture & Agency Capabilities
 
-This project is a hybrid/static website built with modern frontend frameworks and integrations:
-- **Astro v5 (`astro`)**: The modern web framework for content-driven websites. Supports static pre-rendering, MDX, and optimized asset handling.
-- **Tailwind CSS v3 (`@astrojs/tailwind`)**: For utility-first styling and robust theme switching (dark/light support).
-- **Astro Icon (`astro-icon`)**: Direct SVG icon utility, preconfigured for `tabler` and `flat-color-icons` packages.
-- **Formbricks Integration (`@formbricks/js`)**: Integrated for feedback collection, surveys, and analytic events.
-- **Web3forms (`web3forms`)**: Used for zero-config, low-maintenance contact and integration forms.
-- **Asset Optimization (`astro-compress`)**: Auto-minification of CSS, HTML, and JS assets at build time.
+### 1. Agency Technical Stack & Engineering Capabilities (Client Deliverables)
+- **Enterprise Backends**: Enterprise microservices and backend pipelines built with **Java** and **Spring Boot** for high-availability transaction processing and database ledger sync.
+- **Mobile Development Stack**: Cross-platform iOS and Android application development using **Flutter** and **React Native**, compiled natively using Apple **Xcode** (iOS) and Google **Android Studio** (Android).
+- **Agentic AI & LLM Systems**: Autonomous AI pipelines and agentic workflows engineered with **Antigravity**, **Claude** (Anthropic), **Gemini** (Google DeepMind), **GPT models** (OpenAI), and self-hosted open-source models (Llama/Qwen).
+- **Messaging API Integration**: Direct integration with **WhatsApp API** and **Meta API** for 24/7 automated customer communication and computer vision photo parsing.
+- **Web Applications & Web Design**: Custom web applications built with **React JS** dynamic frontends, Astro static site generation, edge caching, and WebGL 3D client rendering.
+
+### 2. Website Platform Stack (This Repository)
+- **Astro v5 (`astro`) & React JS (`@astrojs/react`)**: Modern web framework supporting Static Site Generation (SSG), React JS component islands, MDX content collections, and zero-JS runtime defaults.
+- **Tailwind CSS v3 (`@astrojs/tailwind`)**: Utility-first styling with HSL-tailored color tokens, dark/light theme switching, and responsive design systems.
+- **Three.js & WebGL (`three`)**: Interactive client-side 3D graphics rendering engines for immersive product showcases and background matrices.
+- **Astro Icon (`astro-icon`)**: Direct SVG icon utility, preconfigured for `carbon` and `tabler` icon libraries.
+- **Formbricks (`@formbricks/js`)**: Interactive feedback collection, targeted user surveys, and analytics event pipelines.
+- **Web3forms (`web3forms`)**: Zero-config contact and lead ingestion gateways.
+- **Asset Pipelines (`astro-compress`, `astro:assets`)**: Automatic compile-time image conversion (WebP/AVIF) and minification of CSS, HTML, and JS bundles.
 
 ---
 
 ## Directory Layout & Key Modules
 
 The codebase is organized as follows:
-
-- **`src/assets/`**: Static styles and visual assets.
-  - `styles/tailwind.css`: Custom Tailwind base layers, component layers, global resets, and utility declarations.
-- **`src/components/`**: Modular Astro UI blocks and layouts.
-  - `widgets/`: Dynamic visual sections of the site (e.g., Headers, Footers, Heroes, Forms).
-  - `CustomStyles.astro`: HSL-based Tailwind theme color overrides and font-family selectors.
-  - `Favicons.astro`: Configures app/site icon files.
-  - `Logo.astro`: Renders the customized `<Micro><Web>` brand element.
-- **`src/content/`**: Markdown and MDX content collections.
-  - `config.ts`: Strong typing validation schema definitions for the `post` collection.
-  - `post/`: MD/MDX files that drive dynamic portfolio pages and blog articles.
-- **`src/layouts/`**: Core page wrappers.
-  - `Layout.astro`: Direct HTML structure, scripts setup, and dark/light system handlers.
-  - `PageLayout.astro`: Combines `Layout.astro` with global header/footer configurations.
-  - `LandingLayout.astro`: Streamlined layout for specific marketing campaigns, removing clutter.
-  - `MarkdownLayout.astro`: Renders raw markdown documents (e.g., legal or policy texts).
-- **`src/pages/`**: File-based router. Each file maps to a public endpoint.
-- **`src/utils/`**: Helper methods for asset management, permalinks, routing, and blog posts queries.
+- **`src/assets/`**: Static styles, global resets, and visual assets (`styles/tailwind.css`).
+- **`src/components/`**: Modular Astro UI blocks, navigation wrappers, dynamic widgets, and Schema.org metadata handlers:
+  - `common/JsonLd.astro`: Centralized JSON-LD schema generator for `Organization`, `LocalBusiness`, `WebSite`, `Service` catalogs, and dynamic `BreadcrumbList`.
+  - `common/Metadata.astro`: Canonical URL management, OpenGraph, Twitter card tags, and robots indexing controls.
+  - `widgets/`: Configurable visual components (Heroes, Features grids, Telemetry stats, Conversion calculators, Latency simulators, Steps pipelines, Intake forms).
+- **`src/content/`**: Strongly-typed content collections:
+  - `config.ts`: Zod schema definitions for the `post` collection.
+  - `post/`: MD/MDX case studies, portfolio articles, and technical whitepapers.
+- **`src/layouts/`**: Master page wrappers (`Layout.astro`, `PageLayout.astro`, `LandingLayout.astro`, `MarkdownLayout.astro`).
+- **`src/pages/`**: File-based router mapping endpoints to public URLs.
+- **`src/utils/`**: Utility modules for permalink routing (`permalinks.ts`), post filtering (`blog.ts`), and image optimization pipelines (`images.ts`).
 
 ---
 
-## Pages & Service Routes
+## Core Services & Technical Specifications
 
-Below is the routing mapping under `src/pages/`:
+Below are the five primary service verticals offered by MicroWeb, detailed with technical architectures, performance metrics, framework tooling, and post/case study citations:
 
-### Core Pages
-- [Home Page](https://www.microweb.my/): Main agency landing page.
-- [About Us](https://www.microweb.my/about/): Company background, mission, and vision.
-- [Contact Us](https://www.microweb.my/contact/): General inquiry contact form using Web3forms.
-- [Feedback Form](https://www.microweb.my/contact-formbricks/): Formbricks interactive feedback page.
-- [Careers](https://www.microweb.my/career/): Job opportunities, perks, and corporate values.
-- [RSS Feed](https://www.microweb.my/rss.xml): Dynamic sitemap and portfolio RSS feed.
-- [Privacy Policy](https://www.microweb.my/privacy/): Information on privacy policies and data collection.
-- [Terms & Conditions](https://www.microweb.my/terms/): Legal terms and conditions of use.
+### 1. Web Design (Kuching & Sarawak)
+- **Primary Routes**: [/web-design-kuching/](https://www.microweb.my/web-design-kuching/), [/web-design-sarawak/](https://www.microweb.my/web-design-sarawak/), [/web-development/](https://www.microweb.my/web-development/)
+- **Target Intents**: High-conversion commercial websites for Sarawak SMEs, local search engine dominance, and cross-border regional expansion for West Malaysian/multinational brands.
+- **Technical Specifications**:
+  - **Sub-Second TTFB**: Edge-cached Astro static architecture with React JS islands delivering Time-To-First-Byte under 1.2s across Malaysia CDN nodes.
+  - **Cross-Region Latency Mitigation**: Edge caching strategies tailored to eliminate South China Sea data routing latencies between Peninsular Malaysia origin servers and East Malaysian client viewports.
+  - **Local Business Schema Injection**: Hardcoded JSON-LD `LocalBusiness` and `GeoCoordinates` schema properties pushing local sites to top Google Maps rankings.
+  - **Mobile-First Engine**: Fluid, unbroken layouts designed for local mobile data connections (65%+ mobile user traffic).
+  - **Transparent Pricing**: SME infrastructure packages starting from RM2,000 with zero hidden cloud maintenance fees.
+- **Case Studies & Articles**:
+  - [Kuching Website Design Service 2025](https://www.microweb.my/clients/kuching-website-design-service-2025/): Conversion-rate optimized regional SME acquisition engine.
+  - [Website Design Sarawak](https://www.microweb.my/clients/website-design-sarawak/): Cross-region latency mitigation and localized SEO replication.
+  - [Website Design Service 2026](https://www.microweb.my/clients/website-design-service-2026/): System architecture as an extension of sustainable commercial liquidity of trust.
+  - [Ford Web Design Case Study](https://www.microweb.my/clients/ford-web-design/): Corporate web interface built for global automotive brand constraints.
+  - [MicroWeb Brand Relaunch](https://www.microweb.my/clients/new-website/): High-performance modern web framework deployment.
 
-### Specialist Services
-- [Software Development](https://www.microweb.my/software/): Custom web application development and enterprise architecture.
-- [Web Development](https://www.microweb.my/web-development/): Professional responsive web design and optimization.
-- [Mobile App Development](https://www.microweb.my/mobile-app/): iOS and Android mobile app development.
-- [System Integration](https://www.microweb.my/integration/): API integrations, secure databases, and backend services.
-- [AI Marketing](https://www.microweb.my/ai-marketing/): AI-powered marketing campaigns and digital brand building.
+### 2. Mobile App Development
+- **Primary Routes**: [/mobile-app/](https://www.microweb.my/mobile-app/)
+- **Target Intents**: Network-resilient, cross-platform iOS and Android mobile application engineering for enterprise field operations and logistics.
+- **Technical Specifications**:
+  - **Frameworks & IDEs**: Built with Flutter and React Native, using Xcode for iOS build targets and Android Studio for Android profiling and APK/AAB bundle generation.
+  - **Offline-First Local Schemas**: Telemetry parameters write directly to local SQLite or encrypted device storage. Data auto-synchronizes with central servers upon network re-establishment (0ms offline render latency).
+  - **Native Hardware API Integration**: Low-level BLE beacon scanning, camera optical character recognition (OCR), background GPS tracking tags, and native biometric keychain authentication (<180ms sync speed, 60fps+ target frame rate).
+  - **Decoupled UI Threading**: Multi-threaded architecture isolating UI loops from heavy background queue syncs.
+  - **Over-The-Air (OTA) Updates & Telemetry**: Instant app bundle hot-patches delivered to remote field staff alongside persistent remote crash telemetry.
+- **Live Production App Builds & Proof**:
+  - [Omnia Food Supply App on Google Play Store](https://play.google.com/store/apps/details?id=my.com.omniafoodsupply.shop&pcampaignid=web_share): Production Android e-commerce & inventory distribution mobile app.
+  - [MicroWeb iOS TestFlight Invite](https://testflight.apple.com/join/X4jQCMkT): Verified iOS build distribution channel on Apple TestFlight.
+- **Case Studies & Articles**:
+  - [Bluetooth Beacon Border Control](https://www.microweb.my/clients/bluetooth-beacon-border-control/): Continuous hardware-to-cloud BLE beacon tracking and border control telemetry network.
+  - [Daigou Express Logistics App](https://www.microweb.my/clients/daigou-express-logistics/): Mobile field tracking app for cross-border supply chain operations.
+  - [Finger Football Native Prototype](https://www.microweb.my/clients/finger-football-prototype/): 60fps native mobile execution and touch physics engine.
+  - [Starbucks POS Installation](https://www.microweb.my/clients/starbucks-pos-installation/): Hardware mobile POS integration and field installation lifecycle.
 
-### Industrial Verticals (Solutions)
-- [Enterprise Solutions](https://www.microweb.my/enterprise/): Enterprise-grade software systems and integrations.
-- [Healthcare Software](https://www.microweb.my/healthcare/): High-security health and medical software applications.
-- [Logistics Systems](https://www.microweb.my/logistics/): Supply chain tracking and logistics automation platforms.
-- [Retail Tech & E-Commerce](https://www.microweb.my/retail/): Smart digital commerce portals and retail systems.
-- [Manufacturing Automation](https://www.microweb.my/manufacturing/): Industry 4.0 IoT and manufacturing automation software.
-- [Agriculture IoT](https://www.microweb.my/agriculture/): Smart farming and agricultural monitoring systems.
-- [Hospitality Tech](https://www.microweb.my/hospitality/): Online booking platforms and hospitality operations software.
-- [Education Technology](https://www.microweb.my/education/): Custom learning management systems (LMS) and e-learning pages.
-- [3D Web & Interactive Games](https://www.microweb.my/games/): Immersive 3D graphics, animations, and gaming platforms.
+### 3. Custom Software & Enterprise Systems
+- **Primary Routes**: [/software/](https://www.microweb.my/software/), [/enterprise/](https://www.microweb.my/enterprise/), [/integration/](https://www.microweb.my/integration/)
+- **Target Intents**: Decoupled, high-availability custom software backends, API connectivity wrappers, Java / Spring Boot enterprise services, and legacy ERP migrations.
+- **Technical Specifications**:
+  - **Backend Stack**: Enterprise-grade Java and Spring Boot microservices powering high-throughput transaction processing, paired with React JS dynamic frontends.
+  - **High-Availability SLA**: 99.99% production uptime target with <12s horizontal container autoscaling.
+  - **API Integration Layers**: Hardened REST and GraphQL abstraction bridges mapping modern edge frontends directly to legacy ERP ledgers, warehouse databases, and custom accounting software.
+  - **Serverless & Bare-Metal Hybrid**: Serverless Firebase Cloud Functions for zero-maintenance auto-scaling alongside sovereign bare-metal Linux VPS instances for strict data isolation.
+  - **Relational Data Clusters**: Encrypted PostgreSQL and embedded SQLite databases engineered for transactional privacy.
+  - **Cross-Border Systems & Starlink Reverse DNS Integration**: Custom software integrations connecting local Malaysian business applications natively with enterprise WMS backends in China over Starlink satellite connections via dynamic reverse DNS routing (`http://winwinwms.cn:38329` & `https://www.winwinlssb.com/`), bypassing dynamic WAN IP shifts cost-efficiently without static IP overhead.
+- **Live Production Platforms & Case Proof**:
+  - [Bosoffice Corporate B2B Platform](https://www.bosoffice.com.my/): Live high-volume corporate B2B procurement and e-commerce software system.
+  - [Win Win Logistics Platform](https://www.winwinlssb.com/): Regional supply chain management portal.
+  - [Win Win WMS Reverse DNS Gateway](http://winwinwms.cn:38329): Cross-border WMS warehouse management system integration connecting local Malaysian applications natively with Chinese enterprise logistics nodes.
+- **Case Studies & Articles**:
+  - [Win Win Cross-Border WMS Integration](https://www.microweb.my/clients/winwin-cross-border-wms-integration/): Architectural breakdown of connecting Malaysian local applications ([winwinlssb.com](https://www.winwinlssb.com/)) with Chinese enterprise WMS backends over Starlink satellite links via dynamic reverse DNS routing (`http://winwinwms.cn:38329`).
+  - [MedusaJS B2B Supply Chain Platform](https://www.microweb.my/clients/architecting-persistent-b2b-supply-chain-medusajs-docker/): Decoupled headless B2B marketplace engine containerized with Docker.
+  - [Agile Adaptive Development Success](https://www.microweb.my/clients/agile-adaptive-development-success/): MVP core isolation and operational bottleneck elimination.
+  - [URIIS 2026 Edge Telemetry Pipelines](https://www.microweb.my/clients/uriis-2026-edge-telemetry-pipelines/): High-availability edge telemetry and sensor data ingestion pipelines.
+  - [URIIS 2026 Regional Commercialization ROI](https://www.microweb.my/clients/uriis-2026-regional-commercialization-roi/): Regional commercialization framework and enterprise software return-on-investment.
+  - [Bosoffice B2B Platform](https://www.microweb.my/clients/bosoffice/): High-volume B2B e-commerce procurement catalog software.
+  - [Sunlun ERP Integration](https://www.microweb.my/clients/sunlun-integration/): Legacy database transformation and automated ledger synchronization.
+  - [Finance Digital Transformation](https://www.microweb.my/clients/finance-digital-transformation/): Financial system modernization featuring embedded JSON-LD schema objects.
 
-### Location-Targeted SEO Pages
-- [Web Design Kuching](https://www.microweb.my/web-design-kuching/): Dedicated agency services for clients in Kuching, Sarawak.
-- [Web Design Sarawak](https://www.microweb.my/web-design-sarawak/): Specialized web services target for the Sarawak region.
+### 4. Digital Marketing & Agentic AI
+- **Primary Routes**: [/ai-marketing/](https://www.microweb.my/ai-marketing/)
+- **Target Intents**: Autonomous WhatsApp AI agents, Meta API integration, zero-friction lead intake automation, and computer vision photo parsing for local SMEs and supply chains.
+- **Technical Specifications**:
+  - **Agentic AI & Meta Messaging**: Direct integration via WhatsApp API & Meta API. Autonomous multi-agent pipelines orchestrated using Antigravity AI frameworks, Claude (Anthropic), Gemini (Google DeepMind), and GPT models (OpenAI).
+  - **Computer Vision Photo Parsing**: Ingests photos of handwritten order sheets, invoice receipts, or shipping manifests directly via WhatsApp, converting visual assets into validated database JSON/SQL payloads (99.4% accuracy, <240ms API ingestion latency).
+  - **Self-Hosted Private LLMs/LRMs**: Deploys open-source Large Language Models (Llama/Qwen) and Reasoning Models (LRMs) on private compute nodes, achieving 100% token cost savings and zero per-token SaaS fees.
+  - **24/7 Conversational Automation**: Qualifies inbound leads, answers stock availability queries, syncs calendar appointments, and routes positive sentiment triggers straight to Google Business Profiles.
+- **Case Studies & Articles**:
+  - [WhatsApp ERP AI Integration](https://www.microweb.my/clients/whatsapp-erp-ai-integration/): Autonomous WhatsApp AI agents and computer vision photo parsing pipelines.
+  - [Kuching Cold Storage Ad Campaign](https://www.microweb.my/clients/kuching-cold-storage-ads/): Targeted digital marketing campaigns for cold-chain logistics.
+  - [PropTech Conversion ROI Automation](https://www.microweb.my/clients/proptech-conversion-roi-automation/): Automated marketing conversion funnels and inbound lead qualification.
+  - [IoT & AI Data Future](https://www.microweb.my/clients/iot-ai-data-future/): Data-driven marketing telemetry and AI decision systems.
 
-### Dynamic Blog / Portfolio
-- [Clients/Portfolio Index](https://www.microweb.my/clients/): Portfolio list page displaying tag/category filtering and client case stories.
-
----
-
-## Components & Custom Widgets
-
-The codebase utilizes high-quality, configurable components in `src/components/widgets/`:
-
-- **Layout Components**:
-  - `Header.astro` & `Footer.astro`: Main page navigation wrappers reading properties dynamically from `src/navigation.ts`.
-  - `Announcement.astro`: Top bar notice layout for temporary banners.
-- **Hero & Presentation**:
-  - `Hero.astro`, `Hero2.astro`, `Hero3.astro`, `HeroText.astro`: Highly customizable high-impact text and image sections.
-  - `Features.astro` through `Features5.astro`: Flexible grid overlays representing core service features or values.
-  - `Content.astro` & `ContentContact.astro`: Split sections layout with media assets and structured checklists.
-- **Utility / Marketing Widgets**:
-  - `Stats.astro` & `Stats2.astro`: Data metrics grids.
-  - `Steps.astro` through `Steps4.astro`: Linear workflows and milestones maps.
-  - `Testimonials.astro`: Direct customer references and feedback carousel layout.
-  - `Brands.astro`: Grid showcase for trusted partner logos.
-  - `CallToAction.astro` & `Banners.astro`: Conversions and marketing banners.
-  - `Formbricks.astro` & `Web3forms.astro`: Lead intake systems and validation triggers.
-  - `FollowUp.astro`: A prepackaged widget combining stats, service grids, and content highlights.
-
----
-
-## Content Collections (Post Schema)
-
-Dynamic portfolio articles and client stories are managed in `src/content/post/`. Each entry must satisfy the Zod verification schema in `src/content/config.ts`:
-
-```typescript
-schema: z.object({
-  title: z.string(),                  // The primary title
-  publishDate: z.date().optional(),   // Date published
-  updateDate: z.date().optional(),    // Date updated
-  draft: z.boolean().optional(),      // Draft flag to hide in production
-  excerpt: z.string().optional(),     // Short paragraph preview
-  image: z.string().optional(),       // URL/path to cover image
-  category: z.string().optional(),    // Category grouping
-  tags: z.array(z.string()).optional(), // Keywords and tags list
-  author: z.string().optional(),      // Story or post author
-  metadata: z.object({                // Specific SEO details
-    title: z.string().optional(),
-    description: z.string().optional(),
-    robots: z.object({ index: z.boolean().optional(), follow: z.boolean().optional() }).optional(),
-    openGraph: z.object({ url: z.string().optional(), siteName: z.string().optional(), images: z.array(z.object({ url: z.string(), width: z.number().optional(), height: z.number().optional() })).optional() }).optional(),
-    twitter: z.object({ handle: z.string().optional(), site: z.string().optional(), cardType: z.string().optional() }).optional(),
-  }).optional()
-})
-```
-
----
-
-## Core Utilities
-
-Use these helpers inside `src/utils/` to ensure architectural consistency:
-
-- **`permalinks.ts`**: Handles routing paths. Import `getPermalink` or `getAsset` to create standard relative/absolute URLs.
-- **`blog.ts`**: Methods to fetch, sort, filter, and paginate entries from the `post` collection.
-- **`images.ts` & `images-optimization.ts`**: Safe imports and asset pipelines. Handles HEIC/WebP formats and processes dimension metadata.
-- **`utils.ts`**: Generic utility routines (DOM manipulations, dynamic class concatenations).
+### 5. Web App & Web Development
+- **Primary Routes**: [/web-development/](https://www.microweb.my/web-development/)
+- **Target Intents**: Sub-second corporate web portals, modern web applications, static site generation, React JS component integration, and WebGL 3D client rendering engines.
+- **Technical Specifications**:
+  - **Core Web Vitals Metrics**: Guaranteed Google LCP < 1.2s, CLS 0.00, and mobile page speed score of 99+.
+  - **Component-Driven Astro & React JS Architecture**: Atomic Tailwind utility styles paired with decoupled Astro and React JS component islands, removing dead CSS to minimize JavaScript execution drag.
+  - **Build-Time Media Optimization**: Next-generation image format processing (WebP/AVIF) at compile time.
+  - **Semantic Metadata & Canonical Routing**: Injects JSON-LD schema graphs and canonical URLs directly into page headers, preventing duplicate-indexing issues inside Google Search Console.
+  - **WebGL 3D Rendering**: Real-time client-side 3D product visualizers built on Three.js.
+- **Live Enterprise Web Platforms**:
+  - [MDEC Smart City Expo KL Portal](https://www.mdec.my/smartcityexpokl): Official Malaysia Digital Economy Corporation (MDEC) Smart City Expo KL event platform.
+  - [Bosoffice B2B Commerce System](https://www.bosoffice.com.my/): Live corporate procurement and e-commerce portal.
+- **Case Studies & Articles**:
+  - [Behind SCEKL25 Web Portal](https://www.microweb.my/clients/behind-scekl25/): Decoupled template optimization and high-availability government web portal build.
+  - [3D Learning Platform Web App](https://www.microweb.my/clients/3d-learning-platform/): Client-side WebGL 3D interactive educational web application.
+  - [Euroauto 3D Interactive Showcase](https://www.microweb.my/clients/euroauto-3d/): 3D interactive web product showcase.
+  - [Adidas Smart Retail Web App](https://www.microweb.my/clients/adidas-smart-retail/): Offline-first cached state web application schema.
+  - [Visbody 3D Web Application](https://www.microweb.my/clients/visbody-website/): Interactive 3D scanner web portal.
+  - [WCIT 2020 Enterprise Build](https://www.microweb.my/clients/wcit-build/): High-velocity international conference platform build.
+  - [Drupal 7 System Architecture](https://www.microweb.my/clients/2013-drupal-7-success/): Structured content schema control and legacy lifecycle management.
 
 ---
 
-## Development Commands
+## All Pages & Public Routes Summary
 
-All tasks are initiated from the root path:
+- **Core Pages**:
+  - [Home](https://www.microweb.my/): Main agency landing page.
+  - [About Us](https://www.microweb.my/about/): Agency background, 14+ years history, and mission.
+  - [Contact Us](https://www.microweb.my/contact/): Web3forms contact inquiry gateway.
+  - [Feedback Form](https://www.microweb.my/contact-formbricks/): Formbricks interactive feedback portal.
+  - [Careers](https://www.microweb.my/career/): Employment opportunities and team culture.
+  - [RSS Feed](https://www.microweb.my/rss.xml): Dynamic article and portfolio RSS XML feed.
+  - [Privacy Policy](https://www.microweb.my/privacy/): Statutory privacy policy documentation.
+  - [Terms & Conditions](https://www.microweb.my/terms/): Legal terms of service.
+- **Specialist Services**:
+  - [Software Development](https://www.microweb.my/software/): Custom web application development, Java / Spring Boot enterprise services, and architecture.
+  - [Web Development](https://www.microweb.my/web-development/): High-performance web development, React JS islands, and Core Web Vitals optimization.
+  - [Mobile App Development](https://www.microweb.my/mobile-app/): iOS and Android mobile app development with Flutter, React Native, Xcode, and Android Studio.
+  - [System Integration](https://www.microweb.my/integration/): REST/GraphQL API bridges, secure database clusters, and legacy ERP sync.
+  - [AI Marketing & WhatsApp Agents](https://www.microweb.my/ai-marketing/): Agentic AI workflows (Antigravity, Claude, Gemini, GPT models), WhatsApp API / Meta API integration, computer vision photo parsing, and marketing automation.
+- **Location-Targeted SEO Pages**:
+  - [Web Design Kuching](https://www.microweb.my/web-design-kuching/): Dedicated web design services for Kuching SMEs.
+  - [Web Design Sarawak](https://www.microweb.my/web-design-sarawak/): Cross-border regional web engineering for Sarawak expansion.
+- **Industrial Verticals**:
+  - [Enterprise Solutions](https://www.microweb.my/enterprise/)
+  - [Healthcare Software](https://www.microweb.my/healthcare/)
+  - [Logistics Systems](https://www.microweb.my/logistics/)
+  - [Retail Tech & E-Commerce](https://www.microweb.my/retail/)
+  - [Manufacturing Automation](https://www.microweb.my/manufacturing/)
+  - [Agriculture IoT](https://www.microweb.my/agriculture/)
+  - [Hospitality Tech](https://www.microweb.my/hospitality/)
+  - [Education Technology](https://www.microweb.my/education/)
+  - [3D Web & Interactive Games](https://www.microweb.my/games/)
+- **Dynamic Portfolio & Case Studies Index**:
+  - [Portfolio / Clients Index](https://www.microweb.my/clients/): Comprehensive list of real-world client case studies and technical deployments.
+
+---
+
+## Development & Build Commands
 
 | Command | Objective |
 |---|---|
-| `npm run dev` | Spins up the Astro local dev server (default port `localhost:4321`) |
-| `npm run build` | Builds the optimized, statically compressed production bundle into `/dist/` |
-| `npm run preview` | Runs a local server to preview the built static bundle from `/dist/` |
-| `npm run check` | Checks TypeScript compliance, linting rules, and Prettier formatting |
-| `npm run fix` | Automatically formats codebase with Prettier and resolves autofixable ESLint issues |
+| `npm run dev` | Starts local Astro development server at `http://localhost:4321/` |
+| `npm run build` | Compiles static production build into `/dist/` with auto-minification |
+| `npm run preview` | Previews built production static bundle from `/dist/` |
+| `npm run check` | Runs TypeScript diagnostic check, ESLint rules, and Prettier formatting |
+| `npm run fix` | Automatically formats codebase with Prettier and resolves autofixable lint errors |
