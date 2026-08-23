@@ -1,0 +1,444 @@
+---
+interface Props {
+  height?: string;
+}
+
+const { height = '600px' } = Astro.props;
+---
+
+<div
+  class="cross-border-simulator-container flex flex-col lg:flex-row gap-6 p-6 md:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-xl overflow-hidden transition-all duration-300 not-prose"
+  style={`min-height: ${height};`}
+>
+  <!-- Interactive Control Panel -->
+  <div class="flex-1 flex flex-col justify-between space-y-6">
+    <div>
+      <div
+        class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-primary/10 text-primary mb-3"
+      >
+        <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+        Cross-Border Architecture Benchmarker
+      </div>
+      <h3 class="text-xl font-bold text-neutral-900 dark:text-white">Guangdong ⇄ Sarawak Latency & Cost Simulator</h3>
+      <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
+        Simulate cross-border network routing, GFW packet traversal, and ERP sync queues between Shenzhen, Guangzhou,
+        Guangdong and Kuching/Malaysia.
+      </p>
+    </div>
+
+    <div class="space-y-5">
+      <!-- Traffic Split Configuration -->
+      <div class="space-y-1.5">
+        <label class="block text-xs font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+          Geographic Traffic Profile
+        </label>
+        <select
+          id="cb-traffic-profile"
+          class="w-full p-2.5 bg-neutral-100 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-xs font-medium text-neutral-900 dark:text-white focus:outline-none focus:border-primary"
+        >
+          <option value="balanced">Balanced: 50% Guangdong (Shenzhen/GZ) / 50% Sarawak (KCH/KL)</option>
+          <option value="china_heavy">Mainland Heavy: 80% China Supply Chain / 20% Malaysia Sales</option>
+          <option value="malaysia_heavy">Regional Heavy: 20% China Suppliers / 80% Malaysia Retail & ERP</option>
+        </select>
+      </div>
+
+      <!-- Architecture Mode Toggle -->
+      <div class="space-y-1.5">
+        <label class="block text-xs font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+          Infrastructure Blueprint
+        </label>
+        <div class="grid grid-cols-2 gap-2">
+          <button
+            type="button"
+            id="btn-mode-pragmatic"
+            class="px-3 py-2 text-xs font-bold rounded-lg border border-primary bg-primary text-white transition-all shadow-sm"
+          >
+            Pragmatic Stack (HK BGP + EdgeOne)
+          </button>
+          <button
+            type="button"
+            id="btn-mode-enterprise-cloud"
+            class="px-3 py-2 text-xs font-bold rounded-lg border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 transition-all"
+          >
+            Over-Engineered Multi-Region Cloud
+          </button>
+        </div>
+      </div>
+
+      <!-- Monthly Request Volumetrics -->
+      <div class="space-y-1.5">
+        <div class="flex justify-between items-center text-xs font-semibold">
+          <span class="text-neutral-700 dark:text-neutral-300">Monthly Transaction Volumetrics</span>
+          <span id="cb-volume-label" class="text-primary font-mono font-bold">1,500,000 reqs</span>
+        </div>
+        <input
+          type="range"
+          id="cb-volume-slider"
+          min="100000"
+          max="5000000"
+          step="100000"
+          value="1500000"
+          class="w-full h-2 bg-neutral-200 dark:bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-primary"
+        />
+        <div class="flex justify-between text-[10px] text-neutral-400 font-mono">
+          <span>100k</span>
+          <span>5M / mo</span>
+        </div>
+      </div>
+
+      <!-- AutoCount ERP Sync Mechanism -->
+      <div class="space-y-1.5">
+        <label class="block text-xs font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+          AutoCount ERP Ledger Ingestion Model
+        </label>
+        <select
+          id="cb-erp-sync"
+          class="w-full p-2.5 bg-neutral-100 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-xs font-medium text-neutral-900 dark:text-white focus:outline-none focus:border-primary"
+        >
+          <option value="async">Optimistic Async BullMQ Worker (Sub-50ms UI ACK)</option>
+          <option value="sync">Synchronous Blocking HTTP Commit (Direct API Lock)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Telemetry Baseline Note -->
+    <div
+      class="border-t border-neutral-100 dark:border-neutral-800 pt-3 text-[11px] text-neutral-400 flex items-center gap-1.5"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-3.5 h-3.5 text-neutral-400 flex-shrink-0"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <span
+        >Evaluates direct Hong Kong CN2 / BGP peer links, EdgeOne edge PoPs, and AutoCount Open API serialization.</span
+      >
+    </div>
+  </div>
+
+  <!-- Telemetry Readout Dashboard -->
+  <div
+    class="flex-1 flex flex-col justify-between p-6 rounded-xl bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800"
+  >
+    <div class="flex items-center justify-between">
+      <h4 class="text-xs font-bold uppercase tracking-wider text-neutral-400 flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" id="cb-telemetry-dot"></span>
+        Cross-Border Telemetry Feed
+      </h4>
+      <span
+        id="cb-route-badge"
+        class="text-[10px] font-mono font-bold bg-neutral-200 dark:bg-neutral-800 px-2 py-0.5 rounded text-neutral-600 dark:text-neutral-300"
+      >
+        Routing: HK Direct BGP + EdgeOne
+      </span>
+    </div>
+
+    <div class="my-auto py-4 space-y-5">
+      <!-- Main Metric: Weighted Cross-Border Latency -->
+      <div
+        class="text-center p-4 bg-white dark:bg-neutral-900 rounded-xl border border-neutral-200/80 dark:border-neutral-800 shadow-sm"
+      >
+        <span class="text-[11px] font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 block mb-1">
+          Effective Cross-Border Roundtrip (P95)
+        </span>
+        <div id="cb-stat-latency" class="text-4xl font-black font-mono text-emerald-500 transition-all duration-300">
+          26 ms
+        </div>
+        <div
+          id="cb-stat-latency-sub"
+          class="text-xs font-medium text-emerald-600 dark:text-emerald-400 mt-1 flex justify-center items-center gap-2"
+        >
+          <span>Shenzhen: 12ms</span> • <span>Kuching: 41ms</span>
+        </div>
+      </div>
+
+      <!-- Metric Grid -->
+      <div class="grid grid-cols-2 gap-3">
+        <!-- GFW Packet Loss -->
+        <div class="p-3 bg-white dark:bg-neutral-900 rounded-lg border border-neutral-200 dark:border-neutral-800">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-neutral-400 block mb-0.5"
+            >GFW Packet Degradation</span
+          >
+          <div id="cb-stat-packetloss" class="text-lg font-mono font-bold text-emerald-500">&lt; 0.1%</div>
+          <span id="cb-stat-packetloss-desc" class="text-[10px] text-neutral-500 block mt-0.5"
+            >CN2 Direct HK Transit</span
+          >
+        </div>
+
+        <!-- Edge Cache Offload -->
+        <div class="p-3 bg-white dark:bg-neutral-900 rounded-lg border border-neutral-200 dark:border-neutral-800">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-neutral-400 block mb-0.5"
+            >Edge Cache Hit Ratio</span
+          >
+          <div id="cb-stat-cachehit" class="text-lg font-mono font-bold text-emerald-500">93.4%</div>
+          <span id="cb-stat-cachehit-desc" class="text-[10px] text-neutral-500 block mt-0.5"
+            >Static assets & API queries cached</span
+          >
+        </div>
+
+        <!-- UI Response Time for ERP Commit -->
+        <div class="p-3 bg-white dark:bg-neutral-900 rounded-lg border border-neutral-200 dark:border-neutral-800">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-neutral-400 block mb-0.5"
+            >Checkout UI ERP Delay</span
+          >
+          <div id="cb-stat-erpdelay" class="text-lg font-mono font-bold text-emerald-500">18 ms</div>
+          <span id="cb-stat-erpdelay-desc" class="text-[10px] text-neutral-500 block mt-0.5">Optimistic BullMQ ACK</span
+          >
+        </div>
+
+        <!-- Projected Infrastructure Invoicing -->
+        <div class="p-3 bg-white dark:bg-neutral-900 rounded-lg border border-neutral-200 dark:border-neutral-800">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-neutral-400 block mb-0.5"
+            >Total Monthly Cloud Bill</span
+          >
+          <div id="cb-stat-cost" class="text-lg font-mono font-bold text-emerald-500">USD $34.50</div>
+          <span id="cb-stat-cost-desc" class="text-[10px] text-neutral-500 block mt-0.5"
+            >1x Hardened VPS + COS Backup</span
+          >
+        </div>
+      </div>
+
+      <!-- Architectural Summary Banner -->
+      <div id="cb-stat-summary-box" class="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-lg">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block mb-0.5"
+          >Architecture Diagnostic</span
+        >
+        <p id="cb-stat-summary-text" class="text-xs text-neutral-700 dark:text-neutral-300 leading-normal">
+          High-Velocity Topology: Hong Kong BGP routing terminates Shenzhen/Guangdong traffic under 15ms without GFW
+          interference. EdgeOne caches 93%+ of static/API read traffic, shielding the single Docker VPS node while
+          AutoCount ERP syncs asynchronously.
+        </p>
+      </div>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="border-t border-neutral-200 dark:border-neutral-800 pt-3 flex justify-between items-center text-xs">
+      <span class="text-neutral-400 text-[11px]">Cross-Border Integrity:</span>
+      <div
+        id="cb-transit-badge"
+        class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-mono text-[11px] font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30"
+      >
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+        Zero Enterprise Cloud Tax
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initCrossBorderSimulator() {
+    const trafficProfile = document.getElementById('cb-traffic-profile') as HTMLSelectElement;
+    const btnPragmatic = document.getElementById('btn-mode-pragmatic') as HTMLButtonElement;
+    const btnEnterprise = document.getElementById('btn-mode-enterprise-cloud') as HTMLButtonElement;
+    const volumeSlider = document.getElementById('cb-volume-slider') as HTMLInputElement;
+    const erpSync = document.getElementById('cb-erp-sync') as HTMLSelectElement;
+
+    const volumeLabel = document.getElementById('cb-volume-label');
+    const statLatency = document.getElementById('cb-stat-latency');
+    const statLatencySub = document.getElementById('cb-stat-latency-sub');
+    const statPacketLoss = document.getElementById('cb-stat-packetloss');
+    const statPacketLossDesc = document.getElementById('cb-stat-packetloss-desc');
+    const statCacheHit = document.getElementById('cb-stat-cachehit');
+    const statCacheHitDesc = document.getElementById('cb-stat-cachehit-desc');
+    const statErpDelay = document.getElementById('cb-stat-erpdelay');
+    const statErpDelayDesc = document.getElementById('cb-stat-erpdelay-desc');
+    const statCost = document.getElementById('cb-stat-cost');
+    const statCostDesc = document.getElementById('cb-stat-cost-desc');
+    const summaryBox = document.getElementById('cb-stat-summary-box');
+    const summaryText = document.getElementById('cb-stat-summary-text');
+    const routeBadge = document.getElementById('cb-route-badge');
+    const transitBadge = document.getElementById('cb-transit-badge');
+    const telemetryDot = document.getElementById('cb-telemetry-dot');
+
+    if (!trafficProfile || !btnPragmatic || !btnEnterprise || !volumeSlider || !erpSync) return;
+
+    let currentArchitecture: 'pragmatic' | 'enterprise' = 'pragmatic';
+
+    function setArchitecture(arch: 'pragmatic' | 'enterprise') {
+      currentArchitecture = arch;
+      if (arch === 'pragmatic') {
+        btnPragmatic.className =
+          'px-3 py-2 text-xs font-bold rounded-lg border border-primary bg-primary text-white transition-all shadow-sm';
+        btnEnterprise.className =
+          'px-3 py-2 text-xs font-bold rounded-lg border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 transition-all';
+      } else {
+        btnEnterprise.className =
+          'px-3 py-2 text-xs font-bold rounded-lg border border-amber-600 bg-amber-600 text-white transition-all shadow-sm';
+        btnPragmatic.className =
+          'px-3 py-2 text-xs font-bold rounded-lg border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 transition-all';
+      }
+      calculateTelemetry();
+    }
+
+    btnPragmatic.addEventListener('click', () => setArchitecture('pragmatic'));
+    btnEnterprise.addEventListener('click', () => setArchitecture('enterprise'));
+
+    function calculateTelemetry() {
+      const profile = trafficProfile.value;
+      const volume = parseInt(volumeSlider.value);
+      const isAsyncErp = erpSync.value === 'async';
+
+      if (volumeLabel) {
+        volumeLabel.textContent = `${(volume / 1000000).toFixed(2)}M reqs / mo`;
+      }
+
+      let chinaRatio = 0.5;
+      let malaysiaRatio = 0.5;
+
+      if (profile === 'china_heavy') {
+        chinaRatio = 0.8;
+        malaysiaRatio = 0.2;
+      } else if (profile === 'malaysia_heavy') {
+        chinaRatio = 0.2;
+        malaysiaRatio = 0.8;
+      }
+
+      if (currentArchitecture === 'pragmatic') {
+        // PRAGMATIC STACK: HK Lighthouse VPS (BGP Direct) + EdgeOne CDN + BullMQ Worker
+        const szLatency = 12; // ms (Shenzhen to HK BGP)
+        const kchLatency = 41; // ms (Kuching to HK Submarine Cable)
+        const weightedLatency = Math.round(chinaRatio * szLatency + malaysiaRatio * kchLatency);
+
+        const packetLoss = '< 0.1%';
+        const cacheHitRate = 93.4;
+        const erpUiLatency = isAsyncErp ? 18 : 1850;
+
+        // Cost Model: 1x Tencent Cloud Lighthouse 4C8G ($24/mo) + EdgeOne Pro ($9.90/mo) + COS Backup ($0.60/mo)
+        const baseCost = 24.0 + 9.9 + 0.6;
+        const variableCost = (volume / 1000000) * 0.4;
+        const totalCost = (baseCost + variableCost).toFixed(2);
+
+        if (statLatency) {
+          statLatency.textContent = `${weightedLatency} ms`;
+          statLatency.className = 'text-4xl font-black font-mono text-emerald-500 transition-all duration-300';
+        }
+        if (statLatencySub) {
+          statLatencySub.innerHTML = `<span>Shenzhen: ${szLatency}ms</span> • <span>Kuching: ${kchLatency}ms</span>`;
+          statLatencySub.className =
+            'text-xs font-medium text-emerald-600 dark:text-emerald-400 mt-1 flex justify-center items-center gap-2';
+        }
+        if (statPacketLoss) {
+          statPacketLoss.textContent = packetLoss;
+          statPacketLoss.className = 'text-lg font-mono font-bold text-emerald-500';
+        }
+        if (statPacketLossDesc) statPacketLossDesc.textContent = 'CN2 Direct HK Transit';
+
+        if (statCacheHit) {
+          statCacheHit.textContent = `${cacheHitRate}%`;
+          statCacheHit.className = 'text-lg font-mono font-bold text-emerald-500';
+        }
+        if (statCacheHitDesc) statCacheHitDesc.textContent = 'Static assets & API queries cached';
+
+        if (statErpDelay) {
+          statErpDelay.textContent = `${erpUiLatency} ms`;
+          statErpDelay.className = isAsyncErp
+            ? 'text-lg font-mono font-bold text-emerald-500'
+            : 'text-lg font-mono font-bold text-amber-500';
+        }
+        if (statErpDelayDesc) {
+          statErpDelayDesc.textContent = isAsyncErp ? 'Optimistic BullMQ ACK' : 'Blocking synchronous API lock';
+        }
+
+        if (statCost) {
+          statCost.textContent = `USD $${totalCost}`;
+          statCost.className = 'text-lg font-mono font-bold text-emerald-500';
+        }
+        if (statCostDesc) statCostDesc.textContent = '1x Hardened VPS + COS Backup';
+
+        if (summaryBox) summaryBox.className = 'p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-lg';
+        if (summaryText) {
+          summaryText.textContent = `High-Velocity Topology: Hong Kong BGP routing terminates Shenzhen/Guangdong traffic in ${szLatency}ms without GFW interference. EdgeOne caches ${cacheHitRate}% of requests, shielding the single Docker VPS node while AutoCount ERP syncs ${isAsyncErp ? 'asynchronously in background' : 'synchronously'}.`;
+        }
+        if (routeBadge) routeBadge.textContent = 'Routing: HK Direct BGP + EdgeOne';
+        if (transitBadge) {
+          transitBadge.className =
+            'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-mono text-[11px] font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30';
+          transitBadge.innerHTML =
+            '<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Zero Enterprise Cloud Tax';
+        }
+        if (telemetryDot) telemetryDot.className = 'w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse';
+      } else {
+        // OVER-ENGINEERED ENTERPRISE CLOUD: AWS Multi-Region (Singapore + Beijing), Managed RDS Multi-AZ, Microservices
+        const szLatency = 240; // ms (traversing GFW from non-BGP international cloud origins)
+        const kchLatency = 110; // ms (multi-AZ ALB routing + cold microservice calls)
+        const weightedLatency = Math.round(chinaRatio * szLatency + malaysiaRatio * kchLatency);
+
+        const packetLoss = '14.8%';
+        const cacheHitRate = 54.2;
+        const erpUiLatency = isAsyncErp ? 145 : 3200;
+
+        // Cost Model: 2x EKS/ECS Clusters ($280) + 2x RDS Multi-AZ ($420) + 4x NAT Gateways ($130) + Cross-Region Replication & Egress ($350) + ALBs & Log analytics ($180)
+        const fixedEnterpriseCost = 1360.0;
+        const variableEnterpriseCost = (volume / 1000000) * 45.0;
+        const totalCost = (fixedEnterpriseCost + variableEnterpriseCost).toFixed(2);
+
+        if (statLatency) {
+          statLatency.textContent = `${weightedLatency} ms`;
+          statLatency.className = 'text-4xl font-black font-mono text-rose-500 transition-all duration-300';
+        }
+        if (statLatencySub) {
+          statLatencySub.innerHTML = `<span>Shenzhen: ${szLatency}ms (GFW Throttled)</span> • <span>Kuching: ${kchLatency}ms</span>`;
+          statLatencySub.className =
+            'text-xs font-medium text-rose-600 dark:text-rose-400 mt-1 flex justify-center items-center gap-2';
+        }
+        if (statPacketLoss) {
+          statPacketLoss.textContent = packetLoss;
+          statPacketLoss.className = 'text-lg font-mono font-bold text-rose-500';
+        }
+        if (statPacketLossDesc) statPacketLossDesc.textContent = 'Severe GFW packet retransmissions';
+
+        if (statCacheHit) {
+          statCacheHit.textContent = `${cacheHitRate}%`;
+          statCacheHit.className = 'text-lg font-mono font-bold text-rose-500';
+        }
+        if (statCacheHitDesc) statCacheHitDesc.textContent = 'Fragmented multi-region cache misses';
+
+        if (statErpDelay) {
+          statErpDelay.textContent = `${erpUiLatency} ms`;
+          statErpDelay.className = 'text-lg font-mono font-bold text-rose-500';
+        }
+        if (statErpDelayDesc) {
+          statErpDelayDesc.textContent = isAsyncErp
+            ? 'Microservice hop overhead'
+            : 'Cascading timeout & DB thread lock';
+        }
+
+        if (statCost) {
+          statCost.textContent = `USD $${totalCost}`;
+          statCost.className = 'text-lg font-mono font-bold text-rose-500';
+        }
+        if (statCostDesc) statCostDesc.textContent = 'Multi-AZ RDS + NAT Gateways + Egress Tax';
+
+        if (summaryBox) summaryBox.className = 'p-3 bg-rose-500/10 border border-rose-500/30 rounded-lg';
+        if (summaryText) {
+          summaryText.textContent = `Cloud Bloat Trap: Cross-region AWS replication suffers 14%+ packet loss crossing the GFW. Managing multiple Kubernetes clusters and redundant RDS instances consumes $1,400+/mo while delivering inferior latency compared to a single Hong Kong BGP node.`;
+        }
+        if (routeBadge) routeBadge.textContent = 'Routing: AWS Multi-Region (SG/BJ) + GFW Bottleneck';
+        if (transitBadge) {
+          transitBadge.className =
+            'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-mono text-[11px] font-bold bg-rose-500/15 text-rose-600 dark:text-rose-400 border border-rose-500/30';
+          transitBadge.innerHTML =
+            '<span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>Enterprise Cloud Tax Alert';
+        }
+        if (telemetryDot) telemetryDot.className = 'w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping';
+      }
+    }
+
+    trafficProfile.addEventListener('change', calculateTelemetry);
+    volumeSlider.addEventListener('input', calculateTelemetry);
+    erpSync.addEventListener('change', calculateTelemetry);
+
+    calculateTelemetry();
+  }
+
+  document.addEventListener('DOMContentLoaded', initCrossBorderSimulator);
+  document.addEventListener('astro:page-load', initCrossBorderSimulator);
+</script>

@@ -104,7 +104,14 @@ export default defineConfig({
     rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
   },
 
+  server: {
+    host: true,
+  },
+
   vite: {
+    server: {
+      allowedHosts: ['.trycloudflare.com', '.loca.lt', 'uses-laugh-successful-heaven.trycloudflare.com'],
+    },
     resolve: {
       alias: {
         '~': path.resolve(__dirname, './src'),
