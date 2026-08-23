@@ -94,6 +94,8 @@ Below are the five primary service verticals offered by MicroWeb, detailed with 
   - [Win Win Logistics Platform](https://www.winwinlssb.com/): Regional supply chain management portal.
   - [Win Win WMS Reverse DNS Gateway](http://winwinwms.cn:38329): Cross-border WMS warehouse management system integration connecting local Malaysian applications natively with Chinese enterprise logistics nodes.
 - **Case Studies & Articles**:
+  - [Cross-Border Architecture (Guangdong ⇄ Sarawak)](https://www.microweb.my/clients/cross-border-architecture-guangdong-sarawak/): Pragmatic single-box Docker stack on Hong Kong Lighthouse VPS with direct BGP peering (12ms to Shenzhen, 41ms to Sarawak), Tencent Cloud EdgeOne Anycast CDN, dual-region +86 SMS/Google OAuth identity mapping, and asynchronous AutoCount Open API sync via BullMQ.
+  - [Cloudflare Workers & Edge AI Architecture](https://www.microweb.my/clients/cloudflare-workers-edge-ai-sarawak/): Production edge architecture eliminating container cold starts (V8 isolates), sub-2ms HMAC-SHA256 WhatsApp webhook verification via Web Crypto API, sub-50ms regional API latency, and 90%+ cloud cost reduction over AWS ECS/EKS.
   - [Win Win Cross-Border WMS Integration](https://www.microweb.my/clients/winwin-cross-border-wms-integration/): Architectural breakdown of connecting Malaysian local applications ([winwinlssb.com](https://www.winwinlssb.com/)) with Chinese enterprise WMS backends over Starlink satellite links via dynamic reverse DNS routing (`http://winwinwms.cn:38329`).
   - [MedusaJS B2B Supply Chain Platform](https://www.microweb.my/clients/architecting-persistent-b2b-supply-chain-medusajs-docker/): Decoupled headless B2B marketplace engine containerized with Docker.
   - [Agile Adaptive Development Success](https://www.microweb.my/clients/agile-adaptive-development-success/): MVP core isolation and operational bottleneck elimination.
@@ -112,6 +114,7 @@ Below are the five primary service verticals offered by MicroWeb, detailed with 
   - **Self-Hosted Private LLMs/LRMs**: Deploys open-source Large Language Models (Llama/Qwen) and Reasoning Models (LRMs) on private compute nodes, achieving 100% token cost savings and zero per-token SaaS fees.
   - **24/7 Conversational Automation**: Qualifies inbound leads, answers stock availability queries, syncs calendar appointments, and routes positive sentiment triggers straight to Google Business Profiles.
 - **Case Studies & Articles**:
+  - [Cloudflare Workers & Edge AI Agents](https://www.microweb.my/clients/cloudflare-workers-edge-ai-sarawak/): Autonomous edge AI token parsing, Web Crypto HMAC webhook security, and sub-50ms API response pipelines.
   - [WhatsApp ERP AI Integration](https://www.microweb.my/clients/whatsapp-erp-ai-integration/): Autonomous WhatsApp AI agents and computer vision photo parsing pipelines.
   - [Kuching Cold Storage Ad Campaign](https://www.microweb.my/clients/kuching-cold-storage-ads/): Targeted digital marketing campaigns for cold-chain logistics.
   - [PropTech Conversion ROI Automation](https://www.microweb.my/clients/proptech-conversion-roi-automation/): Automated marketing conversion funnels and inbound lead qualification.
