@@ -1,0 +1,450 @@
+---
+interface Props {
+  height?: string;
+}
+
+const { height = '600px' } = Astro.props;
+---
+
+<div
+  class="gobox-simulator-container flex flex-col lg:flex-row gap-6 p-6 md:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-xl overflow-hidden transition-all duration-300 not-prose"
+  style={`min-height: ${height};`}
+>
+  <!-- Interactive Control Panel -->
+  <div class="flex-1 flex flex-col justify-between space-y-6">
+    <div>
+      <div
+        class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-primary/10 text-primary mb-3"
+      >
+        <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+        Multi-WAN Edge Ingress Simulator
+      </div>
+      <h3 class="text-xl font-bold text-neutral-900 dark:text-white">
+        Rainforest Edge Gateway vs. Distributed Load Balancing
+      </h3>
+      <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
+        Simulate packet scheduling, upstream link aggregation (Starlink + 3x 4G LTE), and token-bucket rate limits across 140+ remote executive devices.
+      </p>
+    </div>
+
+    <div class="space-y-5">
+      <!-- Topology Blueprint Mode -->
+      <div class="space-y-1.5">
+        <label class="block text-xs font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+          Edge Ingress Architecture
+        </label>
+        <div class="grid grid-cols-2 gap-2">
+          <button
+            type="button"
+            id="btn-mode-gobox"
+            class="px-3 py-2 text-xs font-bold rounded-lg border border-primary bg-primary text-white transition-all shadow-sm"
+          >
+            Multi-WAN "Go-Box" Trunk
+          </button>
+          <button
+            type="button"
+            id="btn-mode-naive"
+            class="px-3 py-2 text-xs font-bold rounded-lg border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 transition-all"
+          >
+            Unmanaged Single Uplink
+          </button>
+        </div>
+      </div>
+
+      <!-- Concurrent Active Devices -->
+      <div class="space-y-1.5">
+        <div class="flex justify-between items-center text-xs font-semibold">
+          <span class="text-neutral-700 dark:text-neutral-300">Active Device Concurrency</span>
+          <span id="gobox-devices-label" class="text-primary font-mono font-bold">140 Devices (70 Execs)</span>
+        </div>
+        <input
+          type="range"
+          id="gobox-devices-slider"
+          min="10"
+          max="200"
+          step="5"
+          value="140"
+          class="w-full h-2 bg-neutral-200 dark:bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-primary"
+        />
+        <div class="flex justify-between text-[10px] text-neutral-400 font-mono">
+          <span>10 devices (Base)</span>
+          <span>200 devices (Expedition Hub Surge)</span>
+        </div>
+      </div>
+
+      <!-- Traffic Profile -->
+      <div class="space-y-1.5">
+        <label class="block text-xs font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+          Workload Traffic Profile
+        </label>
+        <select
+          id="gobox-traffic-profile"
+          class="w-full p-2.5 bg-neutral-100 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-xs font-medium text-neutral-900 dark:text-white focus:outline-none focus:border-primary"
+        >
+          <option value="balanced">Executive Operations: 40% Video/VoIP + 40% Cloud Apps + 20% Burst</option>
+          <option value="sync_storm">Sync Storm: 80% Unbuffered iCloud/Google Photos Upload Surge</option>
+          <option value="rain_fade">Rain Fade & Carrier Congestion: LEO Satellite Attenuation (40% Capacity)</option>
+        </select>
+      </div>
+
+      <!-- Rate Limiting & Isolation Policy -->
+      <div class="space-y-1.5">
+        <label class="block text-xs font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+          Token-Bucket QoS & Client Isolation
+        </label>
+        <select
+          id="gobox-qos-policy"
+          class="w-full p-2.5 bg-neutral-100 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-xs font-medium text-neutral-900 dark:text-white focus:outline-none focus:border-primary"
+        >
+          <option value="strict">Strict Token-Bucket (4 Mbps Down / 1 Mbps Up, Surge Clamp + L2 Isolation)</option>
+          <option value="unthrottled">Unthrottled / Consumer Default (Tragedy of the Commons)</option>
+        </select>
+      </div>
+
+      <!-- Power Stage -->
+      <div class="space-y-1.5">
+        <label class="block text-xs font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+          Field Power Infrastructure
+        </label>
+        <select
+          id="gobox-power-stage"
+          class="w-full p-2.5 bg-neutral-100 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-xs font-medium text-neutral-900 dark:text-white focus:outline-none focus:border-primary"
+        >
+          <option value="ups_clean">Pure Sine Wave UPS Isolation (0ms Switching / Clean VDC)</option>
+          <option value="generator_dirty">Unbuffered Jungle Generator (Harmonic Distortion & Periodic Micro-Flickers)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Telemetry Baseline Note -->
+    <div class="border-t border-neutral-100 dark:border-neutral-800 pt-3 text-[11px] text-neutral-400 flex items-center gap-1.5">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-neutral-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <span>Calibrated against field benchmarks: TP-Link Omada ER707-M2, Starlink LEO, Maxis, Celcom, and U Mobile.</span>
+    </div>
+  </div>
+
+  <!-- Telemetry Output Dashboard -->
+  <div class="flex-1 flex flex-col justify-between p-6 rounded-xl bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800">
+    <div class="flex items-center justify-between">
+      <h4 class="text-xs font-bold uppercase tracking-wider text-neutral-400 flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" id="gobox-telemetry-dot"></span>
+        Edge Ingress Telemetry
+      </h4>
+      <span id="gobox-badge-topology" class="text-[10px] font-mono font-bold bg-neutral-200 dark:bg-neutral-800 px-2 py-0.5 rounded text-neutral-600 dark:text-neutral-300">
+        Trunk: 4x Multi-WAN Aggregated
+      </span>
+    </div>
+
+    <div class="my-auto py-4 space-y-5">
+      <!-- Main Metric: Median End-to-End Latency -->
+      <div class="text-center p-4 bg-white dark:bg-neutral-900 rounded-xl border border-neutral-200/80 dark:border-neutral-800 shadow-sm">
+        <span class="text-[11px] font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 block mb-1">
+          Effective Roundtrip Latency & Jitter
+        </span>
+        <div id="stat-gobox-latency" class="text-4xl font-black font-mono text-emerald-500 transition-all duration-300">
+          42 ms
+        </div>
+        <div id="stat-gobox-latency-sub" class="text-xs font-medium text-emerald-600 dark:text-emerald-400 mt-1 flex justify-center items-center gap-2">
+          <span>Jitter: ±4ms</span> • <span>Bufferbloat Shielded</span>
+        </div>
+      </div>
+
+      <!-- Metric Grid -->
+      <div class="grid grid-cols-2 gap-3">
+        <!-- Pooled Throughput -->
+        <div class="p-3 bg-white dark:bg-neutral-900 rounded-lg border border-neutral-200 dark:border-neutral-800">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-neutral-400 block mb-0.5">Aggregated Bandwidth</span>
+          <div id="stat-gobox-throughput" class="text-lg font-mono font-bold text-emerald-500">225 Mbps</div>
+          <span id="stat-gobox-throughput-desc" class="text-[10px] text-neutral-500 block mt-0.5">Weighted Multi-WAN Trunk</span>
+        </div>
+
+        <!-- Packet Loss & Retransmits -->
+        <div class="p-3 bg-white dark:bg-neutral-900 rounded-lg border border-neutral-200 dark:border-neutral-800">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-neutral-400 block mb-0.5">Packet Loss / Drop Rate</span>
+          <div id="stat-gobox-loss" class="text-lg font-mono font-bold text-emerald-500">0.2%</div>
+          <span id="stat-gobox-loss-desc" class="text-[10px] text-neutral-500 block mt-0.5">Active Queue Management</span>
+        </div>
+
+        <!-- Channel Weight Distribution -->
+        <div class="p-3 bg-white dark:bg-neutral-900 rounded-lg border border-neutral-200 dark:border-neutral-800">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-neutral-400 block mb-0.5">Primary Link Distribution</span>
+          <div id="stat-gobox-split" class="text-lg font-mono font-bold text-emerald-500">Starlink 70% | 4G 30%</div>
+          <span id="stat-gobox-split-desc" class="text-[10px] text-neutral-500 block mt-0.5">Layer 4 Flow-Balanced</span>
+        </div>
+
+        <!-- Fault Domain & Power Uptime -->
+        <div class="p-3 bg-white dark:bg-neutral-900 rounded-lg border border-neutral-200 dark:border-neutral-800">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-neutral-400 block mb-0.5">System Availability</span>
+          <div id="stat-gobox-uptime" class="text-lg font-mono font-bold text-emerald-500">99.98%</div>
+          <span id="stat-gobox-uptime-desc" class="text-[10px] text-neutral-500 block mt-0.5">Isolated Battery Stage</span>
+        </div>
+      </div>
+
+      <!-- Architectural Breakdown Box -->
+      <div id="stat-gobox-summary-box" class="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-lg">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block mb-0.5">
+          Systems Architecture Assessment
+        </span>
+        <p id="stat-gobox-summary-text" class="text-xs text-neutral-700 dark:text-neutral-300 leading-normal">
+          Multi-WAN Gateway acts as an edge reverse proxy. Inbound TCP/UDP flows are load-balanced across Starlink (high-throughput video/data) and 4G LTE carriers (low-jitter interactive packets). Token-bucket rate limiting completely eliminates upstream sync storms.
+        </p>
+      </div>
+    </div>
+
+    <!-- Status Footer -->
+    <div class="border-t border-neutral-200 dark:border-neutral-800 pt-3 flex justify-between items-center text-xs">
+      <span class="text-neutral-400 text-[11px]">Backend Analogue:</span>
+      <div id="gobox-backend-analogue" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-mono text-[11px] font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+        HAProxy / Envoy Reverse Proxy Trunk
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initGoBoxSimulator() {
+    const btnGoBox = document.getElementById('btn-mode-gobox') as HTMLButtonElement;
+    const btnNaive = document.getElementById('btn-mode-naive') as HTMLButtonElement;
+    const devicesSlider = document.getElementById('gobox-devices-slider') as HTMLInputElement;
+    const trafficProfile = document.getElementById('gobox-traffic-profile') as HTMLSelectElement;
+    const qosPolicy = document.getElementById('gobox-qos-policy') as HTMLSelectElement;
+    const powerStage = document.getElementById('gobox-power-stage') as HTMLSelectElement;
+
+    const devicesLabel = document.getElementById('gobox-devices-label');
+    const badgeTopology = document.getElementById('gobox-badge-topology');
+    const statLatency = document.getElementById('stat-gobox-latency');
+    const statLatencySub = document.getElementById('stat-gobox-latency-sub');
+    const statThroughput = document.getElementById('stat-gobox-throughput');
+    const statThroughputDesc = document.getElementById('stat-gobox-throughput-desc');
+    const statLoss = document.getElementById('stat-gobox-loss');
+    const statLossDesc = document.getElementById('stat-gobox-loss-desc');
+    const statSplit = document.getElementById('stat-gobox-split');
+    const statSplitDesc = document.getElementById('stat-gobox-split-desc');
+    const statUptime = document.getElementById('stat-gobox-uptime');
+    const statUptimeDesc = document.getElementById('stat-gobox-uptime-desc');
+    const summaryBox = document.getElementById('stat-gobox-summary-box');
+    const summaryText = document.getElementById('stat-gobox-summary-text');
+    const backendAnalogue = document.getElementById('gobox-backend-analogue');
+    const telemetryDot = document.getElementById('gobox-telemetry-dot');
+
+    if (!btnGoBox || !btnNaive || !devicesSlider || !trafficProfile || !qosPolicy || !powerStage) return;
+
+    let currentMode: 'gobox' | 'naive' = 'gobox';
+
+    function setMode(mode: 'gobox' | 'naive') {
+      currentMode = mode;
+      if (mode === 'gobox') {
+        btnGoBox.className = 'px-3 py-2 text-xs font-bold rounded-lg border border-primary bg-primary text-white transition-all shadow-sm';
+        btnNaive.className = 'px-3 py-2 text-xs font-bold rounded-lg border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 transition-all';
+      } else {
+        btnNaive.className = 'px-3 py-2 text-xs font-bold rounded-lg border border-amber-600 bg-amber-600 text-white transition-all shadow-sm';
+        btnGoBox.className = 'px-3 py-2 text-xs font-bold rounded-lg border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 transition-all';
+      }
+      recalculate();
+    }
+
+    btnGoBox.addEventListener('click', () => setMode('gobox'));
+    btnNaive.addEventListener('click', () => setMode('naive'));
+
+    function recalculate() {
+      const devices = parseInt(devicesSlider.value);
+      const execs = Math.round(devices / 2);
+      const traffic = trafficProfile.value;
+      const qos = qosPolicy.value;
+      const power = powerStage.value;
+
+      if (devicesLabel) {
+        devicesLabel.textContent = `${devices} Devices (~${execs} Execs)`;
+      }
+
+      const isCleanPower = power === 'ups_clean';
+      const isStrictQoS = qos === 'strict';
+
+      if (currentMode === 'gobox') {
+        // MULTI-WAN GO-BOX ARCHITECTURE
+        let baseCap = 230;
+        let starlinkCap = 180;
+        let cellCap = 50;
+
+        if (traffic === 'rain_fade') {
+          starlinkCap = 75; // 40% due to rain fade
+          baseCap = starlinkCap + cellCap;
+        }
+
+        let latency = 42;
+        let jitter = 4;
+        let loss = 0.2;
+        let throughput = Math.min(baseCap, Math.round(devices * (isStrictQoS ? 3.2 : 5.8)));
+        let uptime = isCleanPower ? 99.98 : 94.2;
+
+        if (traffic === 'sync_storm') {
+          if (isStrictQoS) {
+            latency = 48;
+            jitter = 6;
+            loss = 0.4;
+          } else {
+            latency = 165;
+            jitter = 45;
+            loss = 4.8;
+          }
+        } else if (traffic === 'rain_fade') {
+          latency = isStrictQoS ? 58 : 210;
+          jitter = isStrictQoS ? 12 : 65;
+          loss = isStrictQoS ? 0.8 : 8.5;
+        }
+
+        if (!isCleanPower) {
+          latency += 25;
+          loss += 3.5;
+        }
+
+        if (statLatency) {
+          statLatency.textContent = `${latency} ms`;
+          statLatency.className = 'text-4xl font-black font-mono text-emerald-500 transition-all duration-300';
+        }
+        if (statLatencySub) {
+          statLatencySub.innerHTML = `<span>Jitter: ±${jitter}ms</span> • <span>${isStrictQoS ? 'Token-Bucket Shielded' : 'Bufferbloat Warning'}</span>`;
+          statLatencySub.className = 'text-xs font-medium text-emerald-600 dark:text-emerald-400 mt-1 flex justify-center items-center gap-2';
+        }
+        if (statThroughput) {
+          statThroughput.textContent = `${throughput} Mbps`;
+          statThroughput.className = 'text-lg font-mono font-bold text-emerald-500';
+        }
+        if (statThroughputDesc) {
+          statThroughputDesc.textContent = `Pooled Trunk (Max ${baseCap} Mbps)`;
+        }
+        if (statLoss) {
+          statLoss.textContent = `${loss.toFixed(1)}%`;
+          statLoss.className = `text-lg font-mono font-bold ${loss < 2 ? 'text-emerald-500' : 'text-amber-500'}`;
+        }
+        if (statLossDesc) {
+          statLossDesc.textContent = isStrictQoS ? 'Flow-Balanced Ingress' : 'Unthrottled Queue Pressure';
+        }
+        if (statSplit) {
+          const slRatio = Math.round((starlinkCap / baseCap) * 100);
+          const cellRatio = 100 - slRatio;
+          statSplit.textContent = `Starlink ${slRatio}% | 4G Trunk ${cellRatio}%`;
+          statSplit.className = 'text-lg font-mono font-bold text-emerald-500';
+        }
+        if (statSplitDesc) {
+          statSplitDesc.textContent = 'L4 Weight-Based Multipath';
+        }
+        if (statUptime) {
+          statUptime.textContent = `${uptime.toFixed(2)}%`;
+          statUptime.className = `text-lg font-mono font-bold ${uptime > 99 ? 'text-emerald-500' : 'text-amber-500'}`;
+        }
+        if (statUptimeDesc) {
+          statUptimeDesc.textContent = isCleanPower ? 'Pure Sine Wave UPS Stage' : 'Dirty Power Micro-Flickers';
+        }
+
+        if (summaryBox) summaryBox.className = 'p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-lg';
+        if (summaryText) {
+          summaryText.textContent = `Distributed Edge Ingress: ER707-M2 multi-WAN gateway pools Starlink LEO and 3x 4G LTE links. ${
+            isStrictQoS
+              ? 'Token-bucket rate limiting (4M/1M) eliminates bufferbloat and suppresses sync storms.'
+              : 'Warning: Without rate limiting, high concurrency causes bufferbloat on satellite upstream channels.'
+          } ${
+            isCleanPower
+              ? 'Isolated UPS stage prevents satellite dish re-acquisition loops.'
+              : 'Caution: Generator voltage fluctuation introduces gateway micro-resets.'
+          }`;
+        }
+        if (badgeTopology) badgeTopology.textContent = 'Trunk: 4x Multi-WAN Aggregated';
+        if (backendAnalogue) {
+          backendAnalogue.className = 'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-mono text-[11px] font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30';
+          backendAnalogue.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>HAProxy / Envoy Reverse Proxy Trunk';
+        }
+        if (telemetryDot) telemetryDot.className = 'w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse';
+      } else {
+        // UNMANAGED SINGLE UPLINK / NAIVE SETUP
+        let latency = 280;
+        let jitter = 120;
+        let loss = 18.5;
+        let throughput = 22;
+        let uptime = isCleanPower ? 88.5 : 54.0;
+
+        if (devices > 50) {
+          latency = 450 + (devices - 50) * 4;
+          jitter = 180 + (devices - 50) * 2;
+          loss = Math.min(45, 18.5 + (devices - 50) * 0.25);
+        }
+
+        if (traffic === 'sync_storm') {
+          latency += 320;
+          jitter += 150;
+          loss += 14.2;
+          throughput = 8;
+        } else if (traffic === 'rain_fade') {
+          latency += 180;
+          loss += 12.0;
+        }
+
+        if (!isCleanPower) {
+          uptime -= 25.0;
+          loss += 8.0;
+        }
+
+        if (statLatency) {
+          statLatency.textContent = `${latency} ms`;
+          statLatency.className = 'text-4xl font-black font-mono text-rose-500 transition-all duration-300';
+        }
+        if (statLatencySub) {
+          statLatencySub.innerHTML = `<span>Jitter: ±${jitter}ms</span> • <span>Cascading Bufferbloat</span>`;
+          statLatencySub.className = 'text-xs font-medium text-rose-600 dark:text-rose-400 mt-1 flex justify-center items-center gap-2';
+        }
+        if (statThroughput) {
+          statThroughput.textContent = `${throughput} Mbps`;
+          statThroughput.className = 'text-lg font-mono font-bold text-rose-500';
+        }
+        if (statThroughputDesc) {
+          statThroughputDesc.textContent = 'Single Link Chokepoint';
+        }
+        if (statLoss) {
+          statLoss.textContent = `${loss.toFixed(1)}%`;
+          statLoss.className = 'text-lg font-mono font-bold text-rose-500';
+        }
+        if (statLossDesc) {
+          statLossDesc.textContent = 'Unmanaged FIFO Queue Overflow';
+        }
+        if (statSplit) {
+          statSplit.textContent = 'Single Link (0% Redundancy)';
+          statSplit.className = 'text-lg font-mono font-bold text-rose-500';
+        }
+        if (statSplitDesc) {
+          statSplitDesc.textContent = 'Single Point of Failure';
+        }
+        if (statUptime) {
+          statUptime.textContent = `${uptime.toFixed(2)}%`;
+          statUptime.className = 'text-lg font-mono font-bold text-rose-500';
+        }
+        if (statUptimeDesc) {
+          statUptimeDesc.textContent = isCleanPower ? 'Carrier Choke / Dropout' : 'Repeated Satellite Boot Loops';
+        }
+
+        if (summaryBox) summaryBox.className = 'p-3 bg-rose-500/10 border border-rose-500/30 rounded-lg';
+        if (summaryText) {
+          summaryText.textContent = `Cascading Outage: Single unmanaged uplink cannot sustain ${devices} devices. Without Layer 2 isolation and token-bucket throttling, background photo syncs flood the upstream queue, causing ${loss.toFixed(1)}% packet loss and unusable VoIP latency (> ${latency}ms). ${!isCleanPower ? 'Unbuffered generator flickers trigger constant 3-minute satellite reboot cycles.' : ''}`;
+        }
+        if (badgeTopology) badgeTopology.textContent = 'Single Uplink (No Gateway)';
+        if (backendAnalogue) {
+          backendAnalogue.className = 'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-mono text-[11px] font-bold bg-rose-500/15 text-rose-600 dark:text-rose-400 border border-rose-500/30';
+          backendAnalogue.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>Unbuffered Origin Direct Ingress';
+        }
+        if (telemetryDot) telemetryDot.className = 'w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping';
+      }
+    }
+
+    devicesSlider.addEventListener('input', recalculate);
+    trafficProfile.addEventListener('change', recalculate);
+    qosPolicy.addEventListener('change', recalculate);
+    powerStage.addEventListener('change', recalculate);
+
+    recalculate();
+  }
+
+  document.addEventListener('DOMContentLoaded', initGoBoxSimulator);
+  document.addEventListener('astro:page-load', initGoBoxSimulator);
+</script>
