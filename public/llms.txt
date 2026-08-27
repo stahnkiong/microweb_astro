@@ -12,6 +12,7 @@
 - **Agentic AI & LLM Systems**: Autonomous AI pipelines and agentic workflows engineered with **Antigravity**, **Claude** (Anthropic), **Gemini** (Google DeepMind), **GPT models** (OpenAI), and self-hosted open-source models (Llama/Qwen).
 - **Messaging API Integration**: Direct integration with **WhatsApp API** and **Meta API** for 24/7 automated customer communication and computer vision photo parsing.
 - **Web Applications & Web Design**: Custom web applications built with **React JS** dynamic frontends, Astro static site generation, edge caching, and WebGL 3D client rendering.
+- **Remote Edge Infrastructure & Multi-WAN Networking**: High-availability remote field networking, Multi-WAN gateway link aggregation (Starlink LEO + Multi-Carrier 4G LTE), token-bucket QoS bandwidth shaping, and isolated pure sine wave UPS power architecture.
 
 ### 2. Website Platform Stack (This Repository)
 - **Astro v5 (`astro`) & React JS (`@astrojs/react`)**: Modern web framework supporting Static Site Generation (SSG), React JS component islands, MDX content collections, and zero-JS runtime defaults.
@@ -55,6 +56,7 @@ Below are the five primary service verticals offered by MicroWeb, detailed with 
   - **Mobile-First Engine**: Fluid, unbroken layouts designed for local mobile data connections (65%+ mobile user traffic).
   - **Transparent Pricing**: SME infrastructure packages starting from RM2,000 with zero hidden cloud maintenance fees.
 - **Case Studies & Articles**:
+  - [Malaysia Website Awards 2025 Case Study](https://www.microweb.my/clients/malaysia-website-awards-2025-microweb/): Official commercial category nomination and 74% evaluation scorecard breakdown (85% SEO, 80% Accessibility). Technical deep-dive on Astro.js SSG + Tailwind CSS + Cloudflare Pages edge distribution vs monolithic CMS, calculated Three.js 3D WebGL runtime performance trade-offs, and bespoke corporate identity implementation (e.g. Ford Sarawak).
   - [Kuching Website Design Service 2025](https://www.microweb.my/clients/kuching-website-design-service-2025/): Conversion-rate optimized regional SME acquisition engine.
   - [Website Design Sarawak](https://www.microweb.my/clients/website-design-sarawak/): Cross-region latency mitigation and localized SEO replication.
   - [Website Design Service 2026](https://www.microweb.my/clients/website-design-service-2026/): System architecture as an extension of sustainable commercial liquidity of trust.
@@ -94,6 +96,7 @@ Below are the five primary service verticals offered by MicroWeb, detailed with 
   - [Win Win Logistics Platform](https://www.winwinlssb.com/): Regional supply chain management portal.
   - [Win Win WMS Reverse DNS Gateway](http://winwinwms.cn:38329): Cross-border WMS warehouse management system integration connecting local Malaysian applications natively with Chinese enterprise logistics nodes.
 - **Case Studies & Articles**:
+  - [Architectural Isomorphism: Remote Rainforest Edge Networks](https://www.microweb.my/clients/architectural-isomorphism-remote-rainforest-edge-networks/): High-availability Multi-WAN edge infrastructure deployment deep in the Borneo rainforest (Mulu, Sarawak) for a global executive leadership delegation. Multi-WAN link aggregation (Starlink LEO + 3x 4G LTE modems on TP-Link Omada ER707-M2), token-bucket QoS bandwidth shaping (4M/1M, 2M surge clamp), Layer 2 client isolation, and double-conversion online pure sine wave UPS stages eliminating satellite re-acquisition blackout loops.
   - [Cross-Border Architecture (Guangdong ⇄ Sarawak)](https://www.microweb.my/clients/cross-border-architecture-guangdong-sarawak/): Pragmatic single-box Docker stack on Hong Kong Lighthouse VPS with direct BGP peering (12ms to Shenzhen, 41ms to Sarawak), Tencent Cloud EdgeOne Anycast CDN, dual-region +86 SMS/Google OAuth identity mapping, and asynchronous AutoCount Open API sync via BullMQ.
   - [Cloudflare Workers & Edge AI Architecture](https://www.microweb.my/clients/cloudflare-workers-edge-ai-sarawak/): Production edge architecture eliminating container cold starts (V8 isolates), sub-2ms HMAC-SHA256 WhatsApp webhook verification via Web Crypto API, sub-50ms regional API latency, and 90%+ cloud cost reduction over AWS ECS/EKS.
   - [Win Win Cross-Border WMS Integration](https://www.microweb.my/clients/winwin-cross-border-wms-integration/): Architectural breakdown of connecting Malaysian local applications ([winwinlssb.com](https://www.winwinlssb.com/)) with Chinese enterprise WMS backends over Starlink satellite links via dynamic reverse DNS routing (`http://winwinwms.cn:38329`).
@@ -133,6 +136,7 @@ Below are the five primary service verticals offered by MicroWeb, detailed with 
   - [MDEC Smart City Expo KL Portal](https://www.mdec.my/smartcityexpokl): Official Malaysia Digital Economy Corporation (MDEC) Smart City Expo KL event platform.
   - [Bosoffice B2B Commerce System](https://www.bosoffice.com.my/): Live corporate procurement and e-commerce portal.
 - **Case Studies & Articles**:
+  - [Malaysia Website Awards 2025 Case Study](https://www.microweb.my/clients/malaysia-website-awards-2025-microweb/): Official MWA Commercial Category nomination and architectural case study covering Astro.js SSG, Cloudflare Pages edge caching, Three.js WebGL 3D model viewport integration, and zero-maintenance corporate infrastructure.
   - [Behind SCEKL25 Web Portal](https://www.microweb.my/clients/behind-scekl25/): Decoupled template optimization and high-availability government web portal build.
   - [3D Learning Platform Web App](https://www.microweb.my/clients/3d-learning-platform/): Client-side WebGL 3D interactive educational web application.
   - [Euroauto 3D Interactive Showcase](https://www.microweb.my/clients/euroauto-3d/): 3D interactive web product showcase.
