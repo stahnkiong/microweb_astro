@@ -1,0 +1,362 @@
+---
+interface Props {
+  height?: string;
+}
+
+const { height = '560px' } = Astro.props;
+---
+
+<div
+  class="security-perimeter-container flex flex-col lg:flex-row gap-6 p-6 md:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-xl overflow-hidden transition-all duration-300 not-prose"
+  style={`min-height: ${height};`}
+>
+  <!-- Interactive Control Panel -->
+  <div class="flex-1 flex flex-col justify-between space-y-6">
+    <div>
+      <div
+        class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-primary/10 text-primary mb-3"
+      >
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        Zero-Open-Ports Attack Surface Simulator
+      </div>
+      <h3 class="text-xl font-bold text-neutral-900 dark:text-white">
+        Exposed VPS vs. Cloudflare Tunnel Security Perimeter
+      </h3>
+      <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
+        Simulate hostile internet probes, DDoS floods, and credential scans hitting a 4 GB Linux VPS under standard port exposure versus our zero-open-ports outbound tunnel architecture.
+      </p>
+    </div>
+
+    <div class="space-y-5">
+      <!-- Architecture Mode Toggle -->
+      <div class="space-y-1.5">
+        <label class="block text-xs font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+          Architecture Deployment Mode
+        </label>
+        <div class="grid grid-cols-2 gap-2">
+          <button
+            type="button"
+            id="btn-mode-tunnel"
+            class="px-3 py-2 text-xs font-bold rounded-lg border border-primary bg-primary text-white transition-all shadow-sm"
+          >
+            Zero-Open-Ports Tunnel
+          </button>
+          <button
+            type="button"
+            id="btn-mode-exposed"
+            class="px-3 py-2 text-xs font-bold rounded-lg border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 transition-all"
+          >
+            Standard Exposed VPS
+          </button>
+        </div>
+      </div>
+
+      <!-- Attack & Bot Profile -->
+      <div class="space-y-1.5">
+        <label class="block text-xs font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+          Simulated Threat Profile
+        </label>
+        <select
+          id="threat-profile-select"
+          class="w-full p-2.5 bg-neutral-100 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-xs font-medium text-neutral-900 dark:text-white focus:outline-none focus:border-primary"
+        >
+          <option value="scanners">Shodan / Censys Automated Port Scanners & Exploit Probes</option>
+          <option value="ddos">SYN Flood & Layer 7 HTTP/S DDoS Barrage</option>
+          <option value="cve">Zero-Day Vulnerability Probes targeting Nginx & OpenSSL</option>
+          <option value="stuffing">Brute-Force Credential Stuffing on /api/v1/auth</option>
+        </select>
+      </div>
+
+      <!-- Daily Attack / Traffic Volume Slider -->
+      <div class="space-y-1.5">
+        <div class="flex justify-between items-center text-xs font-semibold">
+          <span class="text-neutral-700 dark:text-neutral-300">Inbound Internet Probe Volume</span>
+          <span id="threat-volume-label" class="text-primary font-mono font-bold">150,000 reqs/day</span>
+        </div>
+        <input
+          type="range"
+          id="threat-volume-slider"
+          min="10000"
+          max="1000000"
+          step="10000"
+          value="150000"
+          class="w-full h-2 bg-neutral-200 dark:bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-primary"
+        />
+        <div class="flex justify-between text-[10px] text-neutral-400 font-mono">
+          <span>10k / day</span>
+          <span>500k / day</span>
+          <span>1M / day</span>
+        </div>
+      </div>
+
+      <!-- Regional Geofence Toggle -->
+      <div class="flex items-center justify-between p-3 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-800/60">
+        <div>
+          <span class="text-xs font-semibold text-neutral-800 dark:text-neutral-200 block">Cloudflare Edge MY/SG Geofence</span>
+          <span class="text-[11px] text-neutral-500 dark:text-neutral-400">Enforce strict Malaysia & Singapore edge perimeter routing</span>
+        </div>
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox" id="geofence-toggle" checked class="sr-only peer" />
+          <div class="w-9 h-5 bg-neutral-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Real-Time Metrics & Simulated Telemetry -->
+  <div class="flex-1 flex flex-col justify-between space-y-4">
+    <!-- Status Overview Header -->
+    <div class="grid grid-cols-2 gap-3">
+      <div class="p-3 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-800/50">
+        <span class="text-[10px] uppercase font-mono tracking-wider text-neutral-500 dark:text-neutral-400 block mb-1">
+          Open Inbound Ports (0.0.0.0)
+        </span>
+        <div id="metric-open-ports" class="text-2xl font-black font-mono text-emerald-600 dark:text-emerald-400">
+          0 PORTS
+        </div>
+        <span id="metric-ports-sub" class="text-[10px] font-mono text-neutral-500 dark:text-neutral-400 block mt-0.5">
+          UFW & Hypervisor: DROP ALL
+        </span>
+      </div>
+
+      <div class="p-3 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-800/50">
+        <span class="text-[10px] uppercase font-mono tracking-wider text-neutral-500 dark:text-neutral-400 block mb-1">
+          Perimeter Interception
+        </span>
+        <div id="metric-edge-block" class="text-2xl font-black font-mono text-primary">
+          100% AT EDGE
+        </div>
+        <span id="metric-edge-sub" class="text-[10px] font-mono text-neutral-500 dark:text-neutral-400 block mt-0.5">
+          Filtered before reaching VPS
+        </span>
+      </div>
+    </div>
+
+    <!-- Comparative Resource Metrics -->
+    <div class="space-y-3 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-800/50">
+      <!-- Host CPU Overhead -->
+      <div class="space-y-1">
+        <div class="flex justify-between items-center text-xs">
+          <span class="font-medium text-neutral-700 dark:text-neutral-300">Host CPU Load (4 GB / 2 vCPU VPS)</span>
+          <span id="metric-cpu-val" class="font-mono font-bold text-emerald-600 dark:text-emerald-400">1.8%</span>
+        </div>
+        <div class="w-full h-2 bg-neutral-200 dark:bg-neutral-700 rounded-full overflow-hidden">
+          <div id="metric-cpu-bar" class="h-full bg-emerald-500 rounded-full transition-all duration-300" style="width: 2%;"></div>
+        </div>
+      </div>
+
+      <!-- Memory Reserved by Web Stack -->
+      <div class="space-y-1">
+        <div class="flex justify-between items-center text-xs">
+          <span class="font-medium text-neutral-700 dark:text-neutral-300">Host RAM Reserved for TLS & Security</span>
+          <span id="metric-ram-val" class="font-mono font-bold text-neutral-800 dark:text-neutral-200">42 MB (cloudflared)</span>
+        </div>
+        <div class="w-full h-2 bg-neutral-200 dark:bg-neutral-700 rounded-full overflow-hidden">
+          <div id="metric-ram-bar" class="h-full bg-primary rounded-full transition-all duration-300" style="width: 1%;"></div>
+        </div>
+      </div>
+
+      <!-- Host Attack Surface Status -->
+      <div class="flex items-center justify-between pt-1 border-t border-neutral-200 dark:border-neutral-700 text-xs">
+        <span class="text-neutral-500 dark:text-neutral-400">Attack Surface Classification</span>
+        <span id="metric-threat-badge" class="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+          ZERO-ATTACK-SURFACE
+        </span>
+      </div>
+    </div>
+
+    <!-- Live Terminal Emulation Output -->
+    <div class="rounded-xl border border-neutral-800 bg-neutral-950 p-3.5 font-mono text-[11px] text-neutral-300 shadow-inner flex flex-col justify-between space-y-2">
+      <div class="flex items-center justify-between pb-2 border-b border-neutral-800 text-[10px] text-neutral-400">
+        <div class="flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-red-500/80 inline-block"></span>
+          <span class="w-2 h-2 rounded-full bg-yellow-500/80 inline-block"></span>
+          <span class="w-2 h-2 rounded-full bg-emerald-500/80 inline-block"></span>
+          <span class="ml-1 text-neutral-400">root@kch-wms-vps01:~#</span>
+        </div>
+        <span class="text-neutral-400">Tencent Lighthouse 4GB</span>
+      </div>
+
+      <pre id="terminal-output" class="text-neutral-300 whitespace-pre leading-relaxed overflow-x-auto text-[10.5px]">
+# ss -tulpn | grep -E ':(80|443)'
+(Zero output: No services listening on public web ports)
+
+# ufw status verbose
+Status: active
+Default: deny (incoming), allow (outgoing), disabled (routed)
+New profiles: skip
+[Hypervisor Firewall: Ports 80 & 443 DROPPED at VPC boundary]
+
+# docker ps --format "&#123;&#123;.Names&#125;&#125; -> &#123;&#123;.Status&#125;&#125;"
+cloudflared  -> Up 4 days (Outbound tunnel: 4 conns to SIN/KUL PoPs)
+admin-web    -> Up 4 days (nginx:alpine on wms_internal network)
+api-server   -> Up 4 days (Internal bridge, 0 host ports published)
+postgres:16  -> Up 4 days (Internal bridge, 0 host ports published)
+      </pre>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initSecuritySimulator() {
+    let mode: 'tunnel' | 'exposed' = 'tunnel';
+    const btnTunnel = document.getElementById('btn-mode-tunnel') as HTMLButtonElement | null;
+    const btnExposed = document.getElementById('btn-mode-exposed') as HTMLButtonElement | null;
+    const threatSelect = document.getElementById('threat-profile-select') as HTMLSelectElement | null;
+    const volumeSlider = document.getElementById('threat-volume-slider') as HTMLInputElement | null;
+    const volumeLabel = document.getElementById('threat-volume-label');
+    const geofenceToggle = document.getElementById('geofence-toggle') as HTMLInputElement | null;
+
+    const metricOpenPorts = document.getElementById('metric-open-ports');
+    const metricPortsSub = document.getElementById('metric-ports-sub');
+    const metricEdgeBlock = document.getElementById('metric-edge-block');
+    const metricEdgeSub = document.getElementById('metric-edge-sub');
+    const metricCpuVal = document.getElementById('metric-cpu-val');
+    const metricCpuBar = document.getElementById('metric-cpu-bar');
+    const metricRamVal = document.getElementById('metric-ram-val');
+    const metricRamBar = document.getElementById('metric-ram-bar');
+    const metricThreatBadge = document.getElementById('metric-threat-badge');
+    const terminalOutput = document.getElementById('terminal-output');
+
+    if (!btnTunnel || !btnExposed || !volumeSlider) return;
+
+    function formatNumber(num: number): string {
+      return num >= 1000000
+        ? (num / 1000000).toFixed(1) + 'M'
+        : (num / 1000).toFixed(0) + 'k';
+    }
+
+    function update() {
+      const volume = parseInt(volumeSlider?.value || '150000', 10);
+      const threat = threatSelect?.value || 'scanners';
+      const geofence = geofenceToggle?.checked ?? true;
+
+      if (volumeLabel) {
+        volumeLabel.textContent = `${formatNumber(volume)} reqs/day`;
+      }
+
+      if (mode === 'tunnel') {
+        // Active tunnel mode
+        btnTunnel?.classList.add('bg-primary', 'text-white', 'border-primary');
+        btnTunnel?.classList.remove('bg-neutral-100', 'dark:bg-neutral-800', 'text-neutral-700', 'dark:text-neutral-300');
+        btnExposed?.classList.remove('bg-primary', 'text-white', 'border-primary');
+        btnExposed?.classList.add('bg-neutral-100', 'dark:bg-neutral-800', 'text-neutral-700', 'dark:text-neutral-300');
+
+        if (metricOpenPorts) metricOpenPorts.textContent = '0 PORTS';
+        if (metricPortsSub) metricPortsSub.textContent = 'UFW & Hypervisor: DROP ALL (80/443 closed)';
+
+        const edgeRate = geofence ? '100% AT EDGE' : '99.4% AT EDGE';
+        if (metricEdgeBlock) metricEdgeBlock.textContent = edgeRate;
+        if (metricEdgeSub) {
+          metricEdgeSub.textContent = geofence
+            ? 'MY/SG Geofence + WAF drops malicious ingress'
+            : 'WAF & Bot Management drop malicious ingress';
+        }
+
+        const cpuUsage = (1.5 + (volume / 1000000) * 1.2).toFixed(1);
+        if (metricCpuVal) {
+          metricCpuVal.textContent = `${cpuUsage}%`;
+          metricCpuVal.className = 'font-mono font-bold text-emerald-600 dark:text-emerald-400';
+        }
+        if (metricCpuBar) {
+          metricCpuBar.style.width = `${Math.min(100, Math.max(4, parseFloat(cpuUsage) * 2))}%`;
+          metricCpuBar.className = 'h-full bg-emerald-500 rounded-full transition-all duration-300';
+        }
+
+        if (metricRamVal) metricRamVal.textContent = '42 MB (cloudflared daemon)';
+        if (metricRamBar) metricRamBar.style.width = '3%';
+
+        if (metricThreatBadge) {
+          metricThreatBadge.textContent = 'ZERO-ATTACK-SURFACE';
+          metricThreatBadge.className = 'px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30';
+        }
+
+        if (terminalOutput) {
+          terminalOutput.textContent = `# ss -tulpn | grep -E ':(80|443)'
+(Zero output: No sockets listening on public web ports)
+
+# ufw status verbose
+Status: active
+Default: deny (incoming), allow (outgoing)
+[Hypervisor Firewall: Ports 80 & 443 DROPPED at VPC boundary]
+
+# docker ps --format '{{.Names}} -> {{.Status}}'
+cloudflared  -> Up (Outbound tunnel established: 4 streams to SIN/KUL PoPs)
+admin-web    -> Up (nginx:alpine serving React SPA on wms_internal network)
+api-server   -> Up (Node runtime on wms_internal, 0 host ports exposed)
+postgres:16  -> Up (PostgreSQL isolated on wms_internal, 0 host ports)`;
+        }
+      } else {
+        // Exposed mode
+        btnExposed?.classList.add('bg-rose-600', 'text-white', 'border-rose-600');
+        btnExposed?.classList.remove('bg-neutral-100', 'dark:bg-neutral-800', 'text-neutral-700', 'dark:text-neutral-300');
+        btnTunnel?.classList.remove('bg-primary', 'text-white', 'border-primary');
+        btnTunnel?.classList.add('bg-neutral-100', 'dark:bg-neutral-800', 'text-neutral-700', 'dark:text-neutral-300');
+
+        if (metricOpenPorts) {
+          metricOpenPorts.textContent = '2 PORTS (80, 443)';
+          metricOpenPorts.className = 'text-2xl font-black font-mono text-rose-600 dark:text-rose-400';
+        }
+        if (metricPortsSub) metricPortsSub.textContent = '0.0.0.0:80 & 0.0.0.0:443 fully exposed to internet';
+
+        if (metricEdgeBlock) {
+          metricEdgeBlock.textContent = '0% (NO EDGE)';
+          metricEdgeBlock.className = 'text-2xl font-black font-mono text-rose-600 dark:text-rose-400';
+        }
+        if (metricEdgeSub) metricEdgeSub.textContent = 'All TCP SYN/ACK & bot scans hit VPS kernel directly';
+
+        const cpuUsage = Math.min(98, 18 + (volume / 10000) * 0.75).toFixed(1);
+        if (metricCpuVal) {
+          metricCpuVal.textContent = `${cpuUsage}% (Elevated)`;
+          metricCpuVal.className = 'font-mono font-bold text-rose-600 dark:text-rose-400 animate-pulse';
+        }
+        if (metricCpuBar) {
+          metricCpuBar.style.width = `${Math.min(100, parseFloat(cpuUsage))}%`;
+          metricCpuBar.className = 'h-full bg-rose-600 rounded-full transition-all duration-300';
+        }
+
+        const ramMb = Math.min(2800, 320 + (volume / 1000) * 2.2).toFixed(0);
+        if (metricRamVal) metricRamVal.textContent = `${ramMb} MB (Nginx worker + SSL connection table)`;
+        if (metricRamBar) metricRamBar.style.width = `${Math.min(100, (parseInt(ramMb, 10) / 4096) * 100)}%`;
+
+        if (metricThreatBadge) {
+          metricThreatBadge.textContent = 'CRITICAL EXPOSURE';
+          metricThreatBadge.className = 'px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/30';
+        }
+
+        if (terminalOutput) {
+          const threatDesc = threat === 'ddos' ? 'SYN Flood & L7 DDoS Barrage' : threat === 'cve' ? 'Zero-Day Nginx/OpenSSL Exploit Probes' : threat === 'stuffing' ? 'Credential Stuffing on /api/auth' : 'Automated Shodan/Censys Port Probes';
+          terminalOutput.textContent = `# ss -tulpn | grep -E ':(80|443)'
+tcp  LISTEN 0  511  0.0.0.0:80   0.0.0.0:*  users:(("docker-proxy",pid=18241))
+tcp  LISTEN 0  511  0.0.0.0:443  0.0.0.0:*  users:(("docker-proxy",pid=18260))
+
+# ACTIVE INTRUSION: ${threatDesc} detected!
+# dmesg -T | grep -E '(syn_flood|conntrack: table full)'
+[Sat Nov 22 11:42:01 2026] TCP: request_sock_TCP: Hostile probes on port 443!
+[Sat Nov 22 11:43:18 2026] nf_conntrack: table full, dropping packet.
+
+# Critical: Direct IP traversal bypasses domain WAF rules completely!`;
+        }
+      }
+    }
+
+    btnTunnel.addEventListener('click', () => {
+      mode = 'tunnel';
+      update();
+    });
+
+    btnExposed.addEventListener('click', () => {
+      mode = 'exposed';
+      update();
+    });
+
+    threatSelect?.addEventListener('change', update);
+    volumeSlider.addEventListener('input', update);
+    geofenceToggle?.addEventListener('change', update);
+
+    update();
+  }
+
+  document.addEventListener('DOMContentLoaded', initSecuritySimulator);
+  document.addEventListener('astro:page-load', initSecuritySimulator);
+</script>
