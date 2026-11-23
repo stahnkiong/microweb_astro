@@ -23,7 +23,8 @@ const { height = '560px' } = Astro.props;
         Exposed VPS vs. Cloudflare Tunnel Security Perimeter
       </h3>
       <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
-        Simulate hostile internet probes, DDoS floods, and credential scans hitting a 4 GB Linux VPS under standard port exposure versus our zero-open-ports outbound tunnel architecture.
+        Simulate hostile internet probes, DDoS floods, and credential scans hitting a 4 GB Linux VPS under standard port
+        exposure versus our zero-open-ports outbound tunnel architecture.
       </p>
     </div>
 
@@ -90,14 +91,23 @@ const { height = '560px' } = Astro.props;
       </div>
 
       <!-- Regional Geofence Toggle -->
-      <div class="flex items-center justify-between p-3 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-800/60">
+      <div
+        class="flex items-center justify-between p-3 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-800/60"
+      >
         <div>
-          <span class="text-xs font-semibold text-neutral-800 dark:text-neutral-200 block">Cloudflare Edge MY/SG Geofence</span>
-          <span class="text-[11px] text-neutral-500 dark:text-neutral-400">Enforce strict Malaysia & Singapore edge perimeter routing</span>
+          <span class="text-xs font-semibold text-neutral-800 dark:text-neutral-200 block"
+            >Cloudflare Edge MY/SG Geofence</span
+          >
+          <span class="text-[11px] text-neutral-500 dark:text-neutral-400"
+            >Enforce strict Malaysia & Singapore edge perimeter routing</span
+          >
         </div>
         <label class="relative inline-flex items-center cursor-pointer">
           <input type="checkbox" id="geofence-toggle" checked class="sr-only peer" />
-          <div class="w-9 h-5 bg-neutral-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+          <div
+            class="w-9 h-5 bg-neutral-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"
+          >
+          </div>
         </label>
       </div>
     </div>
@@ -107,7 +117,9 @@ const { height = '560px' } = Astro.props;
   <div class="flex-1 flex flex-col justify-between space-y-4">
     <!-- Status Overview Header -->
     <div class="grid grid-cols-2 gap-3">
-      <div class="p-3 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-800/50">
+      <div
+        class="p-3 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-800/50"
+      >
         <span class="text-[10px] uppercase font-mono tracking-wider text-neutral-500 dark:text-neutral-400 block mb-1">
           Open Inbound Ports (0.0.0.0)
         </span>
@@ -119,13 +131,13 @@ const { height = '560px' } = Astro.props;
         </span>
       </div>
 
-      <div class="p-3 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-800/50">
+      <div
+        class="p-3 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-800/50"
+      >
         <span class="text-[10px] uppercase font-mono tracking-wider text-neutral-500 dark:text-neutral-400 block mb-1">
           Perimeter Interception
         </span>
-        <div id="metric-edge-block" class="text-2xl font-black font-mono text-primary">
-          100% AT EDGE
-        </div>
+        <div id="metric-edge-block" class="text-2xl font-black font-mono text-primary">100% AT EDGE</div>
         <span id="metric-edge-sub" class="text-[10px] font-mono text-neutral-500 dark:text-neutral-400 block mt-0.5">
           Filtered before reaching VPS
         </span>
@@ -133,7 +145,9 @@ const { height = '560px' } = Astro.props;
     </div>
 
     <!-- Comparative Resource Metrics -->
-    <div class="space-y-3 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-800/50">
+    <div
+      class="space-y-3 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-800/50"
+    >
       <!-- Host CPU Overhead -->
       <div class="space-y-1">
         <div class="flex justify-between items-center text-xs">
@@ -141,7 +155,12 @@ const { height = '560px' } = Astro.props;
           <span id="metric-cpu-val" class="font-mono font-bold text-emerald-600 dark:text-emerald-400">1.8%</span>
         </div>
         <div class="w-full h-2 bg-neutral-200 dark:bg-neutral-700 rounded-full overflow-hidden">
-          <div id="metric-cpu-bar" class="h-full bg-emerald-500 rounded-full transition-all duration-300" style="width: 2%;"></div>
+          <div
+            id="metric-cpu-bar"
+            class="h-full bg-emerald-500 rounded-full transition-all duration-300"
+            style="width: 2%;"
+          >
+          </div>
         </div>
       </div>
 
@@ -149,24 +168,36 @@ const { height = '560px' } = Astro.props;
       <div class="space-y-1">
         <div class="flex justify-between items-center text-xs">
           <span class="font-medium text-neutral-700 dark:text-neutral-300">Host RAM Reserved for TLS & Security</span>
-          <span id="metric-ram-val" class="font-mono font-bold text-neutral-800 dark:text-neutral-200">42 MB (cloudflared)</span>
+          <span id="metric-ram-val" class="font-mono font-bold text-neutral-800 dark:text-neutral-200"
+            >42 MB (cloudflared)</span
+          >
         </div>
         <div class="w-full h-2 bg-neutral-200 dark:bg-neutral-700 rounded-full overflow-hidden">
-          <div id="metric-ram-bar" class="h-full bg-primary rounded-full transition-all duration-300" style="width: 1%;"></div>
+          <div
+            id="metric-ram-bar"
+            class="h-full bg-primary rounded-full transition-all duration-300"
+            style="width: 1%;"
+          >
+          </div>
         </div>
       </div>
 
       <!-- Host Attack Surface Status -->
       <div class="flex items-center justify-between pt-1 border-t border-neutral-200 dark:border-neutral-700 text-xs">
         <span class="text-neutral-500 dark:text-neutral-400">Attack Surface Classification</span>
-        <span id="metric-threat-badge" class="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+        <span
+          id="metric-threat-badge"
+          class="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30"
+        >
           ZERO-ATTACK-SURFACE
         </span>
       </div>
     </div>
 
     <!-- Live Terminal Emulation Output -->
-    <div class="rounded-xl border border-neutral-800 bg-neutral-950 p-3.5 font-mono text-[11px] text-neutral-300 shadow-inner flex flex-col justify-between space-y-2">
+    <div
+      class="rounded-xl border border-neutral-800 bg-neutral-950 p-3.5 font-mono text-[11px] text-neutral-300 shadow-inner flex flex-col justify-between space-y-2"
+    >
       <div class="flex items-center justify-between pb-2 border-b border-neutral-800 text-[10px] text-neutral-400">
         <div class="flex items-center gap-1.5">
           <span class="w-2 h-2 rounded-full bg-red-500/80 inline-block"></span>
@@ -174,10 +205,12 @@ const { height = '560px' } = Astro.props;
           <span class="w-2 h-2 rounded-full bg-emerald-500/80 inline-block"></span>
           <span class="ml-1 text-neutral-400">root@kch-wms-vps01:~#</span>
         </div>
-        <span class="text-neutral-400">Tencent Lighthouse 4GB</span>
+        <span class="text-neutral-400"> 2 vCPU 4GB RAM</span>
       </div>
 
-      <pre id="terminal-output" class="text-neutral-300 whitespace-pre leading-relaxed overflow-x-auto text-[10.5px]">
+      <pre
+        id="terminal-output"
+        class="text-neutral-300 whitespace-pre leading-relaxed overflow-x-auto text-[10.5px]">
 # ss -tulpn | grep -E ':(80|443)'
 (Zero output: No services listening on public web ports)
 
@@ -191,7 +224,7 @@ New profiles: skip
 cloudflared  -> Up 4 days (Outbound tunnel: 4 conns to SIN/KUL PoPs)
 admin-web    -> Up 4 days (nginx:alpine on wms_internal network)
 api-server   -> Up 4 days (Internal bridge, 0 host ports published)
-postgres:16  -> Up 4 days (Internal bridge, 0 host ports published)
+postgres:18  -> Up 4 days (Internal bridge, 0 host ports published)
       </pre>
     </div>
   </div>
@@ -221,9 +254,7 @@ postgres:16  -> Up 4 days (Internal bridge, 0 host ports published)
     if (!btnTunnel || !btnExposed || !volumeSlider) return;
 
     function formatNumber(num: number): string {
-      return num >= 1000000
-        ? (num / 1000000).toFixed(1) + 'M'
-        : (num / 1000).toFixed(0) + 'k';
+      return num >= 1000000 ? (num / 1000000).toFixed(1) + 'M' : (num / 1000).toFixed(0) + 'k';
     }
 
     function update() {
@@ -238,7 +269,12 @@ postgres:16  -> Up 4 days (Internal bridge, 0 host ports published)
       if (mode === 'tunnel') {
         // Active tunnel mode
         btnTunnel?.classList.add('bg-primary', 'text-white', 'border-primary');
-        btnTunnel?.classList.remove('bg-neutral-100', 'dark:bg-neutral-800', 'text-neutral-700', 'dark:text-neutral-300');
+        btnTunnel?.classList.remove(
+          'bg-neutral-100',
+          'dark:bg-neutral-800',
+          'text-neutral-700',
+          'dark:text-neutral-300'
+        );
         btnExposed?.classList.remove('bg-primary', 'text-white', 'border-primary');
         btnExposed?.classList.add('bg-neutral-100', 'dark:bg-neutral-800', 'text-neutral-700', 'dark:text-neutral-300');
 
@@ -268,7 +304,8 @@ postgres:16  -> Up 4 days (Internal bridge, 0 host ports published)
 
         if (metricThreatBadge) {
           metricThreatBadge.textContent = 'ZERO-ATTACK-SURFACE';
-          metricThreatBadge.className = 'px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30';
+          metricThreatBadge.className =
+            'px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30';
         }
 
         if (terminalOutput) {
@@ -284,12 +321,17 @@ Default: deny (incoming), allow (outgoing)
 cloudflared  -> Up (Outbound tunnel established: 4 streams to SIN/KUL PoPs)
 admin-web    -> Up (nginx:alpine serving React SPA on wms_internal network)
 api-server   -> Up (Node runtime on wms_internal, 0 host ports exposed)
-postgres:16  -> Up (PostgreSQL isolated on wms_internal, 0 host ports)`;
+postgres:18  -> Up (PostgreSQL isolated on wms_internal, 0 host ports)`;
         }
       } else {
         // Exposed mode
         btnExposed?.classList.add('bg-rose-600', 'text-white', 'border-rose-600');
-        btnExposed?.classList.remove('bg-neutral-100', 'dark:bg-neutral-800', 'text-neutral-700', 'dark:text-neutral-300');
+        btnExposed?.classList.remove(
+          'bg-neutral-100',
+          'dark:bg-neutral-800',
+          'text-neutral-700',
+          'dark:text-neutral-300'
+        );
         btnTunnel?.classList.remove('bg-primary', 'text-white', 'border-primary');
         btnTunnel?.classList.add('bg-neutral-100', 'dark:bg-neutral-800', 'text-neutral-700', 'dark:text-neutral-300');
 
@@ -321,11 +363,19 @@ postgres:16  -> Up (PostgreSQL isolated on wms_internal, 0 host ports)`;
 
         if (metricThreatBadge) {
           metricThreatBadge.textContent = 'CRITICAL EXPOSURE';
-          metricThreatBadge.className = 'px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/30';
+          metricThreatBadge.className =
+            'px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/30';
         }
 
         if (terminalOutput) {
-          const threatDesc = threat === 'ddos' ? 'SYN Flood & L7 DDoS Barrage' : threat === 'cve' ? 'Zero-Day Nginx/OpenSSL Exploit Probes' : threat === 'stuffing' ? 'Credential Stuffing on /api/auth' : 'Automated Shodan/Censys Port Probes';
+          const threatDesc =
+            threat === 'ddos'
+              ? 'SYN Flood & L7 DDoS Barrage'
+              : threat === 'cve'
+                ? 'Zero-Day Nginx/OpenSSL Exploit Probes'
+                : threat === 'stuffing'
+                  ? 'Credential Stuffing on /api/auth'
+                  : 'Automated Shodan/Censys Port Probes';
           terminalOutput.textContent = `# ss -tulpn | grep -E ':(80|443)'
 tcp  LISTEN 0  511  0.0.0.0:80   0.0.0.0:*  users:(("docker-proxy",pid=18241))
 tcp  LISTEN 0  511  0.0.0.0:443  0.0.0.0:*  users:(("docker-proxy",pid=18260))

@@ -3,8 +3,8 @@ publishDate: 2026-11-22T00:00:00Z
 updatedDate: 2026-11-22T00:00:00Z
 author: Admin
 title: 'Zero Open Ports: How We Run a Full-Stack Docker App Behind Cloudflare Tunnel on a 4 GB VPS'
-excerpt: 'A blueprint on zero open ports VPS security: running a full-stack Docker stack with cloudflared, nginx:alpine, and postgres:16 on a 2 vCPU 4 GB Tencent Cloud Lighthouse VPS behind Cloudflare Tunnel.'
-image: ~/assets/images/blog/networking-vps.jpg
+excerpt: 'A blueprint on zero open ports VPS security: running a full-stack Docker stack with cloudflared, nginx:alpine, and postgres:18 on a 2 vCPU 4 GB Cloud VPS behind Cloudflare Tunnel.'
+image: ~/assets/images/blog/agentic_internet.jpg
 category: Architecture
 tags:
   - Cloudflare Tunnel Docker architecture
@@ -12,7 +12,7 @@ tags:
   - warehouse management system Malaysia
   - software company in Kuching
   - custom software architecture Malaysia
-  - Tencent Cloud Lighthouse Docker
+  - Cloud Docker
 metadata:
   canonical: https://www.microweb.my/clients/zero-open-ports-docker-cloudflare-tunnel-vps/
   description: 'How MicroWeb engineers a zero open ports VPS security architecture using Cloudflare Tunnel and Docker on a 4 GB VPS for enterprise logistics across the MY/SG corridor.'
@@ -20,7 +20,20 @@ metadata:
 
 import SecurityPerimeterSimulator from '~/components/widgets/SecurityPerimeterSimulator.astro';
 
-[IMAGE PLACEHOLDER 1 - HERO: High-Contrast Dark-Mode Vector Diagram of the Zero-Open-Ports Architecture (Internet -> Cloudflare Edge WAF/MY-SG Geofence -> Outbound Encrypted Tunnel -> Tencent Lighthouse VPS with Ports 80/443 Blocked -> Docker wms_internal Network: cloudflared -> admin-web nginx:alpine -> React SPA & /api/* -> api-server -> postgres:16), WebP < 80KB]
+
+## The Rise of the Agentic Internet: Why Open Ports Are an Operational Liability
+
+The web is entering the era of the **Agentic Internet**—where autonomous AI agents, automated LLM scrapers, and intelligent reconnaissance swarms roam the web 24/7. While AI agents automate business productivity, offensive autonomous agents can continuously scan public IPv4 address ranges, probe open ports, fingerprint software stacks, and test API endpoints at machine speed.
+
+This new threat surface became clear during the recent **European cold-storage cyberattacks**, where attackers breached internet-exposed commercial refrigeration controllers (such as Danfoss units) across supermarkets and blood banks. By exploiting unsegmented networks and exposed web ports, they remotely spiked cooling temperatures to 50°C (122°F), destroying vast food inventories and disrupting critical supply chains.
+
+![Cloudflare Connect presentation highlighting the tipping point where autonomous AI agent requests outpace human web traffic](~/assets/images/blog/agentic_internet_cloudflare_connect.jpg)
+
+The incident triggered urgent alerts in **Malaysia and Southeast Asia**. Cybersecurity bodies and local experts (including UNIMY) issued warnings that domestic cold-chain facilities, logistics hubs, and warehouse networks sharing similar open-port configurations face the exact same exposure. 
+
+In an agentic web, leaving **Port 80 and Port 443** exposed to public internet crawlers is an unnecessary operational risk. To keep mission-critical logistics safe, servers must be completely invisible to the public internet.
+
+---
 
 ## What Is a Zero-Open-Ports VPS Architecture?
 
@@ -28,13 +41,13 @@ A **zero-open-ports VPS architecture** is a production deployment model where a 
 
 Most development teams default to opening Port 80 (HTTP) and Port 443 (HTTPS) to the public internet on their production cloud servers. The moment those ports open on a public IPv4 address, the server becomes an active target. Within seconds, automated botnets, Censys crawlers, and Shodan scanners launch continuous TCP SYN probes, SSL negotiation attacks, and brute-force path discovery scripts against `/admin`, `/wp-login.php`, and exposed API endpoints.
 
-On a lean virtual private server (VPS)—such as an entry-level instance with **2 vCPU, 4 GB RAM, and 70 GB SSD**—absorbing this unsolicited background noise wastes valuable compute cycles. Each unauthenticated TLS handshake consumes kernel buffers, worker threads, and memory tables that should be dedicated to core business transactions.
+On a lean virtual private server (VPS)—whether an entry-level instance with **2 vCPU, 4 GB RAM, and 70 GB SSD**, or scaled compute instances such as **AWS ECS / EC2 (t4g.xlarge / c7g)**, a **DigitalOcean Droplet (4–8 vCPU, 8–16 GB)**, or a **Google Compute Engine (e2-standard / n2)** virtual machine—absorbing this unsolicited background noise wastes valuable compute cycles. Each unauthenticated TLS handshake consumes kernel buffers, worker threads, and memory tables that should be dedicated to core business transactions.
 
 At **MicroWeb**, an enterprise **software company in Kuching**, we operate under a strict philosophy: **Velocity Over Elegance**. We do not build fragile, over-budget multi-cloud monstrosities when a hardened, cost-effective architecture delivers superior reliability, sub-second latency, and impenetrable defense.
 
 In this technical post-mortem, we detail the exact production architecture we engineered for a regional cold-chain and B2B warehouse distribution operator across Malaysia and Singapore (MY/SG corridor). This infrastructure powers live, high-frequency supply chain fulfillment for Southeast Asia's fastest-growing tech-enabled specialty coffee unicorns and market-leading Malaysian artisanal brew chains—handling real-time batch distribution, automated cold-chain dairy allocations, and rigorous operational inventory audits across hundreds of retail outlets. In fast-moving F&B supply chains, logistics operators cannot afford warehouse downtime, exposed databases, or clunky software portals.
 
-By pairing **Tencent Cloud Lighthouse Docker** instances with an outbound **Cloudflare Tunnel Docker architecture**, we run a high-throughput **warehouse management system Malaysia** core (`cloudflared`, `admin-web` on `nginx:alpine`, `api-server`, and `postgres:16`) on a single 4 GB box with **zero open inbound web ports**.
+By pairing **Google Cloud Compute Engine / AWS EC2 & ECS / DigitalOcean Droplets / Tencent Cloud** instances with an outbound **Cloudflare Tunnel Docker architecture**, we run a high-throughput **warehouse management system Malaysia** core (`cloudflared`, `admin-web` on `nginx:alpine`, `api-server`, and `postgres:18`) with **zero open inbound web ports**—whether on a single 4 GB box or horizontally scaled multi-core enterprise nodes.
 
 ---
 
@@ -67,11 +80,18 @@ This model produces three chronic operational failure states:
 2. **Direct IP Bypass:** Attackers bypass DNS-level firewalls by probing the server's raw IPv4 address directly, exploiting unpatched vulnerabilities in upstream reverse proxies or application runtime headers.
 3. **Expensive Cloud Billing Spikes:** Cloud providers bill for outbound egress bandwidth and hypervisor packet inspection when servers are caught in automated reflection floods.
 
+> [!WARNING] Case Study: The Europe Refrigerator Attacks & the Wake-Up Call for Malaysia's Supply Chain
+> The catastrophic consequences of exposing operational infrastructure online were laid bare in recent cyberattacks across Europe, where threat actors remotely hijacked internet-exposed commercial refrigeration and cold-storage controllers (such as Danfoss units) across supermarkets and blood banks. By exploiting default credentials, unpatched firmware, and exposed ports, attackers spiked chilling temperatures up to 50°C (122°F), spoiling millions in perishable goods and paralyzing supply chains.
+>
+> The incident triggered urgent alarm among cybersecurity bodies and logistics operators in Malaysia. As cybersecurity specialists highlighted (including analyses from UNIMY), many regional F&B logistics operators and smart warehouse nodes run cold-chain monitoring with dangerous operational technology (OT) shortcuts—leaving management portals and telemetry ports directly visible to Shodan scanners on raw public IPs. Exposing inbound ports on cold-chain servers converts physical perishables into catastrophic liabilities.
+>
+> **Does Cloudflare Tunnel solve this?** Absolutely. With Cloudflare Tunnel, IoT bridges, warehouse microservices, and refrigeration telemetry dashboards do not publish a single inbound port (no Port 80, 443, or proprietary Modbus/BACnet/HTTP ports exposed to the WAN). Shodan and Censys crawlers cannot even discover the IP exists. All traffic must pass outbound-only through Cloudflare's Edge, where requests are strictly authenticated via Zero Trust identity (Cloudflare Access / MFA / Service Tokens) before ever reaching internal controllers.
+
 ---
 
 ## How Does Cloudflare Tunnel Protect a Warehouse Database?
 
-Cloudflare Tunnel protects an internal warehouse database by ensuring the database container (`postgres:16`) communicates exclusively over an isolated, non-published Docker bridge network (`wms_internal`). Because `cloudflared` operates inside the same private bridge and only forwards HTTP traffic to the internal frontend proxy, raw PostgreSQL network sockets remain completely unreachable from outside the host.
+Cloudflare Tunnel protects an internal warehouse database by ensuring the database container (`postgres:18`) communicates exclusively over an isolated, non-published Docker bridge network (`wms_internal`). Because `cloudflared` operates inside the same private bridge and only forwards HTTP traffic to the internal frontend proxy, raw PostgreSQL network sockets remain completely unreachable from outside the host.
 
 Instead of accepting inbound TCP connections from the public internet, a lightweight daemon container (`cloudflared`) dials **outbound** over HTTPS/QUIC on Port 7844 to the nearest Cloudflare Edge PoPs (Points of Presence) in Kuala Lumpur and Singapore. 
 
@@ -94,7 +114,7 @@ Instead of accepting inbound TCP connections from the public internet, a lightwe
                                          | Established from INSIDE the VPS
                                          v
 +---------------------------------------------------------------------------------+
-|           TENCENT CLOUD LIGHTHOUSE VPS (2 vCPU, 4 GB RAM, 70 GB SSD)            |
+|            CLOUD VPS (2 vCPU, 4 GB RAM, 70 GB SSD)            |
 |   - Hypervisor Firewall: Port 80 BLOCKED | Port 443 BLOCKED                     |
 |   - Host Linux UFW: Default DENY Incoming (Zero Public Inbound Web Sockets)     |
 |                                                                                 |
@@ -114,7 +134,7 @@ Instead of accepting inbound TCP connections from the public internet, a lightwe
 |   |                                                   │                      |   |
 |   |                                                   │ internal port 5432   |   |
 |   |                                                   v                      |   |
-|   |                                        [ postgres:16 ] (~145 MB RAM)     |   |
+|   |                                        [ postgres:18 ] (~145 MB RAM)     |   |
 |   |                                        (0 Published Host Ports)          |   |
 |   +-------------------------------------------------------------------------+   |
 +---------------------------------------------------------------------------------+
@@ -131,8 +151,8 @@ In this decoupled model:
 
 We implement defense-in-depth by enforcing port blocking at two distinct network layers: the cloud hypervisor boundary and the operating system kernel.
 
-### 1. Tencent Cloud Lighthouse Firewall
-Inside the Tencent Cloud Lighthouse console, we edit the instance Firewall Rules. We explicitly remove any standard rules allowing inbound traffic on Port 80, Port 443, Port 8080, and Port 3000. 
+### 1. Cloud Firewall
+Inside the Cloud console, we edit the instance Firewall Rules. We explicitly remove any standard rules allowing inbound traffic on Port 80, Port 443, Port 8080, and Port 3000. 
 
 - **Inbound Rules:** Drop Port 80 (TCP) and Port 443 (TCP).
 - **SSH Management:** Port 22 is restricted strictly to our office static IP in Kuching or authenticated via Cloudflare Zero Trust SSH Access.
@@ -237,7 +257,7 @@ services:
 
   # 4. Relational Database Engine
   postgres:
-    image: postgres:16-alpine
+    image: postgres:18-alpine
     container_name: postgres
     restart: unless-stopped
     networks:
@@ -329,22 +349,24 @@ Because all user traffic passes through Cloudflare before reaching the tunnel, w
 
 ---
 
-## Real-World Resource Allocation on a 4 GB VPS
+## Real-World Resource Allocation: From 4 GB VPS to Scaled Cloud Compute
 
-How does a 2 vCPU, 4 GB RAM, 70 GB SSD Tencent Cloud Lighthouse instance perform when running this full-stack Docker stack? The memory metrics speak for themselves:
+How does this full-stack Docker stack perform across compute tiers—from an entry 2 vCPU, 4 GB RAM instance up to larger production environments (such as an 8–16 GB DigitalOcean Droplet, AWS ECS / EC2 container host, or GCP Compute Engine instance)?
+
+The baseline production memory footprint illustrates why zero-open-ports architecture is so efficient:
 
 | Container / Process | Base Image | Resident Memory (RSS) | CPU Usage (Idle / Peak) | Function |
 | :--- | :--- | :--- | :--- | :--- |
 | **cloudflared** | `cloudflare/cloudflared` | ~42 MB | 0.2% / 1.5% | Outbound QUIC tunnel daemon |
 | **admin-web** | `nginx:alpine` | ~18 MB | 0.1% / 2.0% | React SPA static web server |
 | **api-server** | Node.js 22 LTS | ~165 MB | 0.4% / 12.0% | Business logic & ERP sync |
-| **postgres:16** | `postgres:16-alpine` | ~145 MB | 0.3% / 8.5% | Persistent transactional data |
+| **postgres:18** | `postgres:18-alpine` | ~145 MB | 0.3% / 8.5% | Persistent transactional data |
 | **Host Linux Core** | Ubuntu 24.04 LTS | ~350 MB | 0.5% / 2.0% | OS kernel, systemd, Docker engine |
 | **Total Resident** | — | **~720 MB** | **~1.5% / ~26%** | **Full-Stack Production Footprint** |
 
 With total resident memory consumption sitting under **750 MB**, the VPS retains more than **3.2 GB of free RAM**. This generous memory headroom is utilized by the Linux kernel for page caching, disk I/O buffers for PostgreSQL write-ahead logs (WAL), and temporary surges during end-of-month inventory reconciliations.
 
-[IMAGE PLACEHOLDER 3 - FIELD PROOF: Authentic on-ground warehouse logistics or server rack/scanner deployment photo in Sarawak/Malaysia (anonymized, no client logo visible), WebP < 80KB]
+![High-density automated storage and retrieval system (ASRS) cold-chain warehouse deployment in Malaysia](~/assets/images/blog/asrs_warehouse.jpg)
 
 ---
 
