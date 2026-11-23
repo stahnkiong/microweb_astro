@@ -245,38 +245,130 @@ export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFu
   );
 };
 
+const STOP_TOKENS = new Set([
+  'in',
+  'on',
+  'at',
+  'to',
+  'for',
+  'of',
+  'and',
+  'the',
+  'a',
+  'an',
+  'with',
+  'by',
+  'from',
+  'how',
+  'we',
+  'our',
+  'software',
+  'company',
+  'kuching',
+  'sarawak',
+  'malaysia',
+  '2025',
+  '2026',
+]);
+
+function extractTopicTokens(post: Post): Set<string> {
+  const raw = [
+    post.title || '',
+    ...(post.tags ? post.tags.map((t) => t.slug.replace(/-/g, ' ')) : []),
+  ]
+    .join(' ')
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .filter((token) => token.length > 2 && !STOP_TOKENS.has(token));
+  return new Set(raw);
+}
+
 /** */
 export async function getRelatedPosts(originalPost: Post, maxResults: number = 4): Promise<Post[]> {
   const allPosts = await fetchPosts();
-  const originalTagsSet = new Set(originalPost.tags ? originalPost.tags.map((tag) => tag.slug) : []);
+  if (allPosts.length <= 1) return [];
 
-  const postsWithScores = allPosts.reduce((acc: { post: Post; score: number }[], iteratedPost: Post) => {
-    if (iteratedPost.slug === originalPost.slug) return acc;
+  const n = allPosts.length;
+  const originalIndex = Math.max(
+    0,
+    allPosts.findIndex((p) => p.slug === originalPost.slug)
+  );
 
-    let score = 0;
-    if (iteratedPost.category && originalPost.category && iteratedPost.category.slug === originalPost.category.slug) {
-      score += 5;
-    }
+  const originalTagsSet = new Set(
+    originalPost.tags
+      ? originalPost.tags.map((tag) => tag.slug).filter((s) => s !== 'software-company-in-kuching')
+      : []
+  );
+  const originalTokens = extractTopicTokens(originalPost);
 
-    if (iteratedPost.tags) {
-      iteratedPost.tags.forEach((tag) => {
-        if (originalTagsSet.has(tag.slug)) {
+  const selectedPosts: Post[] = [];
+  const selectedSlugs = new Set<string>([originalPost.slug]);
+
+  const postsWithScores = allPosts.reduce(
+    (acc: { post: Post; score: number; ringDist: number }[], iteratedPost: Post, idx: number) => {
+      if (iteratedPost.slug === originalPost.slug) return acc;
+
+      let score = 0;
+      if (iteratedPost.category && originalPost.category && iteratedPost.category.slug === originalPost.category.slug) {
+        score += 3;
+      }
+
+      if (iteratedPost.tags) {
+        iteratedPost.tags.forEach((tag) => {
+          if (originalTagsSet.has(tag.slug)) {
+            score += 4;
+          }
+        });
+      }
+
+      const candidateTokens = extractTopicTokens(iteratedPost);
+      candidateTokens.forEach((token) => {
+        if (originalTokens.has(token)) {
           score += 1;
         }
       });
+
+      const ringDist = (idx - originalIndex + n) % n;
+      acc.push({ post: iteratedPost, score, ringDist });
+      return acc;
+    },
+    []
+  );
+
+  // 1. Pick top topical matches first (up to maxResults - 2), breaking ties via circular ring distance
+  const sortedByTopic = [...postsWithScores].sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
+    return a.ringDist - b.ringDist;
+  });
+
+  const topicSlots = Math.max(1, maxResults - 2);
+  for (const item of sortedByTopic) {
+    if (selectedPosts.length >= topicSlots) break;
+    if (!selectedSlugs.has(item.post.slug)) {
+      selectedPosts.push(item.post);
+      selectedSlugs.add(item.post.slug);
     }
+  }
 
-    acc.push({ post: iteratedPost, score });
-    return acc;
-  }, []);
+  // 2. Guarantee connected internal link graph across the entire post ring so no post ever starves
+  const ringOffsets = [1, 7, 13, 19, 2, 3];
+  for (const offset of ringOffsets) {
+    if (selectedPosts.length >= maxResults) break;
+    const candidate = allPosts[(originalIndex + offset) % n];
+    if (candidate && !selectedSlugs.has(candidate.slug)) {
+      selectedPosts.push(candidate);
+      selectedSlugs.add(candidate.slug);
+    }
+  }
 
-  postsWithScores.sort((a, b) => b.score - a.score);
-
-  const selectedPosts: Post[] = [];
-  let i = 0;
-  while (selectedPosts.length < maxResults && i < postsWithScores.length) {
-    selectedPosts.push(postsWithScores[i].post);
-    i++;
+  // 3. Fill any remaining slots if needed
+  for (const item of sortedByTopic) {
+    if (selectedPosts.length >= maxResults) break;
+    if (!selectedSlugs.has(item.post.slug)) {
+      selectedPosts.push(item.post);
+      selectedSlugs.add(item.post.slug);
+    }
   }
 
   return selectedPosts;

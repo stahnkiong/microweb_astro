@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2023-07-03T00:00:00Z
 author: Admin
 title: 'Unwavering Trust: A Decade of Partnership and Free 3D Innovation for EuroAuto'
@@ -11,7 +11,7 @@ tags:
   - Web Development
   - ThreeJS
 metadata:
-  canonical: https://www.microweb.my/euroauto-3d
+  canonical: https://www.microweb.my/clients/euroauto-3d/
 ---
 
 Since 2013, EuroAuto has placed their trust in us. They were one of our earliest clients, and we've built a relationship that stands on unwavering loyalty and mutual respect. We understand that in business, trust is paramount, and we strive to be the partner you can always rely on.

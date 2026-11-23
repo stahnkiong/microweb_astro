@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2023-07-28T00:00:00Z
 author: Admin
 title: "Secure Your Investment: Strategic Discovery for Cost-Effective Custom Software"
@@ -11,7 +11,7 @@ tags:
   - Project Planning
   - Risk Mitigation
 metadata:
-  canonical: https://www.microweb.my/discovery-phase-importance
+  canonical: https://www.microweb.my/clients/discovery-phase-importance/
 ---
 
 **Protect Your Investment: The Foundation for Cost-Effective Custom Software**

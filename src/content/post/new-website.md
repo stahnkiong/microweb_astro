@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2024-11-08T00:00:00Z
 author: Admin
 title: 'Demonstrating Tech Agility: Our Custom Site Built with AstroJS, Vue, ThreeJS, and Cloudflare'
@@ -12,7 +12,7 @@ tags:
   - Cloudflare
   - AI Content Management
 metadata:
-  canonical: https://www.microweb.my/new-website
+  canonical: https://www.microweb.my/clients/new-website/
 ---
 
 ## Showcasing Our Tech Versatility: A Custom Site Built for Performance and Innovation

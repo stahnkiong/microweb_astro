@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2021-05-26T00:00:00Z
 updatedDate: 2026-06-12T00:00:00Z
 author: Admin
@@ -11,10 +11,10 @@ tags:
   - Raspberry Pi
   - Enterprise Retail
 metadata:
-  canonical: https://www.microweb.my/clients/adidas-smart-retail
+  canonical: https://www.microweb.my/clients/adidas-smart-retail/
 ---
 
-Enterprise retail environments demand absolute system uptime. When global brands scale interactive layouts into regional markets, the core engineering challenge isn't the visual asset delivery—it is establishing network resilience, remote runtime security, and deterministic fleet management over erratic edge networks.
+Enterprise retail environments demand absolute system uptime. When global brands scale interactive layouts into regional markets, the core engineering challenge isn't the visual asset deliveryâ€”it is establishing network resilience, remote runtime security, and deterministic fleet management over erratic edge networks.
 
 We were brought in to engineer and execute an IoT-driven digital display infrastructure for **Adidas outlets across East Malaysia**. The objective was to replace passive media loops with localized, cloud-managed interactive signage nodes capable of running 14 hours a day without on-site technical intervention.
 

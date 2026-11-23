@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2025-11-26T01:00:00+08:00
 updatedDate: 2026-06-12T00:00:00+08:00
 author: Admin
@@ -11,10 +11,10 @@ tags:
   - Load Optimization
 image: ~/assets/images/blog/scekl25_crowd.jpg
 metadata:
-  canonical: https://www.microweb.my/clients/behind-scekl25
+  canonical: https://www.microweb.my/clients/behind-scekl25/
 ---
 
-When a digital platform anchors a major international summit, web performance ceases to be a frontend design metric—it becomes a critical operational dependency. During a high-stakes, 3-day international event, unexpected downtime or database serialization bottlenecks can instantly disrupt registration lanes, compromise live broadcasts, and impact corporate presentation streams.
+When a digital platform anchors a major international summit, web performance ceases to be a frontend design metricâ€”it becomes a critical operational dependency. During a high-stakes, 3-day international event, unexpected downtime or database serialization bottlenecks can instantly disrupt registration lanes, compromise live broadcasts, and impact corporate presentation streams.
 
 For **#SCEKL25** (Official Portal: [mdec.my/smartcityexpokl](https://www.mdec.my/smartcityexpokl)), which hosted **21,895 attendees** from **64 countries**, we architected and managed the core digital platform. The infrastructure was engineered to completely dissolve into the background, maintaining flawless availability under peak concurrent traffic spikes, particularly during the Day 2 official launch presided over by the **Prime Minister of Malaysia**.
 
@@ -27,7 +27,7 @@ Here is the technical breakdown of how we engineered the environment for absolut
 To accommodate lightning-fast schedules and real-time speaker adjustments without triggering layout thrashing or browser rendering lag on mobile devices, we bypassed heavy database lookups for standard static queries.
 
 - **Decoupled Template Optimization:** The user interface was structured around a decoupled content layer, ensuring that schema alterations to the main schedule or floor plan assets compiled and refreshed instantly across the client-side environment.
-- **Low-Latency Asset Pipelines:** Large-scale components—such as detailed vector maps and high-resolution spatial floor plans—were processed through lossy compression pipelines and served via explicit edge-caching arrays, dropping layout shift variables to zero.
+- **Low-Latency Asset Pipelines:** Large-scale componentsâ€”such as detailed vector maps and high-resolution spatial floor plansâ€”were processed through lossy compression pipelines and served via explicit edge-caching arrays, dropping layout shift variables to zero.
 
 ![floorplan](~/assets/images/blog/floorplan.jpg)
 
@@ -46,7 +46,7 @@ Standard, off-the-shelf templates cannot handle localized personalized schedulin
 
 Our primary objective was surviving the extreme concurrent traffic spike when thousands of onsite users simultaneously queried the platform for live stream endpoints and schedule updates during the main launch window.
 
-[Onsite Users + Remote Streams] ──> [Cloudflare Edge Shield] ──> [Hardened Reverse Proxy] ──> [App Engine Cluster]
+[Onsite Users + Remote Streams] â”€â”€> [Cloudflare Edge Shield] â”€â”€> [Hardened Reverse Proxy] â”€â”€> [App Engine Cluster]
 
 ### Operational Deployment Vector:
 

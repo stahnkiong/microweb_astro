@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2018-12-10T00:00:00Z
 author: Admin
 title: '2018: Breaking the Mono - Our Microservices Leap'
@@ -9,7 +9,7 @@ tags:
   - Architecture
   - Software Development
 metadata:
-  canonical: https://www.microweb.my/microservices
+  canonical: https://www.microweb.my/clients/microservices/
 ---
 
 Remember 2018? For many businesses, it was the year of the "monolith" headache. Big, clunky applications were slowing everyone down. "Walao, so slow!" was a common refrain. Development was a drag, scaling was a nightmare, and everything was tightly coupled. We saw a chance to fix that.

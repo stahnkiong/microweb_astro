@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2015-01-18T00:00:00Z
 author: Admin
 title: 'Lavender Florist: From Zero Traffic to Peak Bloom'
@@ -9,7 +9,7 @@ tags:
   - Performance
   - User Experience
 metadata:
-  canonical: https://www.microweb.my/florist-optimization
+  canonical: https://www.microweb.my/clients/florist-optimization/
 ---
 
 Lavender Florist came to us with a challenge. They had a complex e-commerce website, but it wasn't attracting traffic. Long loading times and a confusing user experience were holding them back.

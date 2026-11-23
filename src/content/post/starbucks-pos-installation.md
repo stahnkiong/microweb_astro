@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2019-08-01T00:00:00Z
 author: Admin
 title: "Starbucks' Digital Brew: Our POS Installation Story"
@@ -9,7 +9,7 @@ tags:
   - POS
   - Starbucks
 metadata:
-  canonical: https://www.microweb.my/starbucks-pos-installation
+  canonical: https://www.microweb.my/clients/starbucks-pos-installation/
 ---
 
 Starbucks. You know them. They wanted to take their customer experience to the next level, and that meant upgrading their tech. They kicked off a big IoT project, and we were thrilled to be part of it.

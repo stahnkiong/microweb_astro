@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2024-06-01T00:00:00Z
 updatedDate: 2026-06-12T00:00:00Z
 author: Admin
@@ -11,10 +11,10 @@ tags:
   - Open Source Software
   - Physics Simulations
 metadata:
-  canonical: https://www.microweb.my/clients/3d-learning-platform
+  canonical: https://www.microweb.my/clients/3d-learning-platform/
 ---
 
-The bottleneck in modern digital education isn't the curriculum—it is the delivery mechanism. Static text and 2D video layouts fail to sustain cognitive engagement over long sessions. Resolving student disengagement requires shifting from passive consumption to active, multi-variable experimentation.
+The bottleneck in modern digital education isn't the curriculumâ€”it is the delivery mechanism. Static text and 2D video layouts fail to sustain cognitive engagement over long sessions. Resolving student disengagement requires shifting from passive consumption to active, multi-variable experimentation.
 
 We are architecting a client-side, open-source 3D interactive learning engine designed to render complex mathematical and scientific models directly in the browser. By leveraging web-native graphics pipelines, we eliminate the need for heavy local installations, making spatial learning accessible on standard hardware.
 

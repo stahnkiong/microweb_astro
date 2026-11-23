@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2025-02-25T00:00:00Z
 author: Admin
 title: "Custom System Integration: Sunlun's Seamless ERP & Warranty Solution"
@@ -11,7 +11,7 @@ tags:
   - System Architecture
   - Business Automation
 metadata:
-  canonical: https://www.microweb.my/sunlun-integration
+  canonical: https://www.microweb.my/clients/sunlun-integration/
 ---
 
 **The Challenge: Streamlining Operations Through Seamless System Integration**

@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2024-11-05T00:00:00Z
 author: Admin
 title: 'Visbody: Driving Growth with HubSpot Integration and a Dynamic Web Presence'
@@ -11,7 +11,7 @@ tags:
   - Analytics
   - Appointment Scheduling
 metadata:
-  canonical: https://www.microweb.my/visbody-website
+  canonical: https://www.microweb.my/clients/visbody-website/
 ---
 
 In today's competitive digital landscape, businesses need more than just a website. They need a comprehensive digital strategy that drives growth. Visbody, a global leader in body composition technology, recognized this need and partnered with us to enhance their online presence and marketing capabilities.

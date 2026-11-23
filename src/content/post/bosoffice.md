@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2023-10-15T00:00:00Z
 updatedDate: 2026-06-12T00:00:00Z
 author: Admin
@@ -11,10 +11,10 @@ tags:
   - Paid Acquisition
   - Content Architecture
 metadata:
-  canonical: https://www.microweb.my/clients/bosoffice
+  canonical: https://www.microweb.my/clients/bosoffice/
 ---
 
-For high-volume B2B e-commerce and office asset suppliers, client acquisition failure isn't typically caused by low ad spend—it is caused by data misalignment within the conversion funnel. When an enterprise operates on an unoptimized legacy web layout, cold traffic lands on generic endpoints rather than high-intent product categories, causing immediate drop-offs and burning ad capital.
+For high-volume B2B e-commerce and office asset suppliers, client acquisition failure isn't typically caused by low ad spendâ€”it is caused by data misalignment within the conversion funnel. When an enterprise operates on an unoptimized legacy web layout, cold traffic lands on generic endpoints rather than high-intent product categories, causing immediate drop-offs and burning ad capital.
 
 We were tasked with re-engineering the digital acquisition pipeline for **BOS Office** (Official Platform: [bosoffice.com.my](https://www.bosoffice.com.my/)). By replacing their legacy 2018 web presence with an automated, data-backed conversion engine, we systematically reduced their Cost Per Acquisition (CPA) while maximizing conversion velocities.
 
@@ -26,10 +26,10 @@ The core breakdown of the legacy funnel was an architectural routing mismatch. C
 
 To resolve this, we executed a complete programmatic mapping overhaul of their digital entry points:
 
-- **Intent-Isolated Landing Pages:** We restructured the ad destination rules to enforce absolute contextual relevance. If a corporate procurement officer queries specific task seating, the tracking links route them directly to isolated, high-intent landing pages. We completely eliminated broken cross-category routing—ensuring no _"kerusi"_ traffic ever drops onto a table or storage index layout.
+- **Intent-Isolated Landing Pages:** We restructured the ad destination rules to enforce absolute contextual relevance. If a corporate procurement officer queries specific task seating, the tracking links route them directly to isolated, high-intent landing pages. We completely eliminated broken cross-category routingâ€”ensuring no _"kerusi"_ traffic ever drops onto a table or storage index layout.
 - **Granular Micro-Copy Optimization:** We utilized semantic data analytics to isolate high-converting B2B long-tail search terms, re-architecting the landing page headers to match the exact transactional vocabulary used by enterprise buyers.
 
-[Search Query] ──> [Intent-Isolated Landing Page] ──> [Edge Cache] ──> [Instant Conversion]
+[Search Query] â”€â”€> [Intent-Isolated Landing Page] â”€â”€> [Edge Cache] â”€â”€> [Instant Conversion]
 
 ---
 

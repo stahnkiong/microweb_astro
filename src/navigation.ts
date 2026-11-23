@@ -173,10 +173,10 @@ export const footerData = {
     {
       title: 'Company',
       links: [
-        { text: 'About', href: '/about' },
-        { text: 'Client Stories', href: '/clients' },
-        { text: 'Career', href: '/career' },
-        { text: 'Contact', href: '/contact' },
+        { text: 'About', href: getPermalink('/about') },
+        { text: 'Client Stories', href: getPermalink('/clients') },
+        { text: 'Career', href: getPermalink('/career') },
+        { text: 'Contact', href: getPermalink('/contact') },
       ],
     },
   ],

@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2019-02-09T00:00:00Z
 author: Admin
 title: 'Speed Demons: Our Tech Optimization Secrets Revealed'
@@ -9,7 +9,7 @@ tags:
   - Performance
   - Scalability
 metadata:
-  canonical: https://www.microweb.my/tech-optimization-secrets
+  canonical: https://www.microweb.my/clients/tech-optimization-secrets/
 ---
 
 Slow websites and crashing servers? That's a hard pass. In today's digital world, speed is king. We've spent time and effort to optimize our systems for peak performance and rock-solid scalability. Here's how we do it.

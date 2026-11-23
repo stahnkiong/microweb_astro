@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2024-01-15T00:00:00+08:00
 author: Admin
 title: 'Why Every Businesses Needs a Fast-Loading Website Design in Kuching 2024'
@@ -11,14 +11,14 @@ tags:
   - Conversion Rate Optimization
 image: ~/assets/images/blog/cloudflare-microweb.jpg
 metadata:
-  canonical: https://www.microweb.my/website-design-sarawak
+  canonical: https://www.microweb.my/clients/website-design-sarawak/
 ---
 
 > **The Reality:** 53% of mobile users in Sarawak abandon websites that take longer than 3 seconds to load. For Kuching businesses, slow websites mean lost sales and damaged credibility.
 
 ## The Solution: Speed-Optimized Web Design for Sarawak's Market
 
-[Modern web design](/web-design-sarawak) isn't just about aesthetics - it's about delivering lightning-fast experiences tailored to Kuching's unique digital landscape. Here's why speed matters:
+[Modern web design](/web-design-sarawak/) isn't just about aesthetics - it's about delivering lightning-fast experiences tailored to Kuching's unique digital landscape. Here's why speed matters:
 
 ### 1. Kuching's Mobile-First Reality
 
@@ -74,6 +74,6 @@ Our recent projects show:
 For Kuching businesses competing in Sarawak's digital economy, website speed isn't technical jargon - it's the difference between growth and stagnation. Modern users expect instant access to your menu, prices, and contact details.
 
 **Ready to accelerate?**  
-[Explore Our Kuching Web Design Packages](/web-design-kuching)
+[Explore Our Kuching Web Design Packages](/web-design-kuching/)
 
 _Serving Sarawak businesses since 2012 - 300+ websites launched._

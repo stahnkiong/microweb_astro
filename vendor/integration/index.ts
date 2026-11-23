@@ -118,7 +118,8 @@ export default ({ config: _themeConfig = 'src/config.yaml' } = {}): AstroIntegra
             for (const file of files) {
               if (file.endsWith('.md') || file.endsWith('.mdx')) {
                 const slug = file.replace(/\.mdx?$/, '');
-                redirectsAppend += `${os.EOL}/${slug} /clients/${slug} 301`;
+                redirectsAppend += `${os.EOL}/${slug} /clients/${slug}/ 301`;
+                redirectsAppend += `${os.EOL}/${slug}/ /clients/${slug}/ 301`;
               }
             }
             if (redirectsAppend) {

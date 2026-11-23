@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2022-09-27T00:00:00Z
 updatedDate: 2026-06-12T00:00:00Z
 author: Admin
@@ -11,7 +11,7 @@ tags:
   - Hardware Integration
   - Edge Computing
 metadata:
-  canonical: https://www.microweb.my/clients/bluetooth-beacon-border-control
+  canonical: https://www.microweb.my/clients/bluetooth-beacon-border-control/
 ---
 
 During major public health and border containment operations, static validation mechanisms like QR-code checkpoints introduce significant systemic vulnerabilities. Manual check-ins create immediate transactional choke points, rely entirely on end-user compliance, and provide only isolated snapshots of movement data rather than continuous, verifiable position telemetry.
@@ -37,7 +37,7 @@ For this deployment, we partnered directly with industrial IoT hardware manufact
 
 Raw Bluetooth signals are inherently volatile, subject to severe environmental interference, multipath fading, and physical body shielding. Relying on raw RSSI (Received Signal Strength Indicator) metrics creates massive false-positive data anomalies.
 
-[Wearable BLE Beacon] ──(Raw RSSI)──> [Edge Gateway Array] ──(Moving Average Filter)──> [Secured API Node]
+[Wearable BLE Beacon] â”€â”€(Raw RSSI)â”€â”€> [Edge Gateway Array] â”€â”€(Moving Average Filter)â”€â”€> [Secured API Node]
 
 ### The Telemetry Processing Workflow:
 

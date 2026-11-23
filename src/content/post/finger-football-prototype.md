@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2024-02-06T00:00:00Z
 author: Admin
 title: 'Football Game Development Solution: Building Beyond Bloated Engines for Lean, High-ROI Startups'
@@ -10,12 +10,12 @@ tags:
   - Godot Engine
   - Lean Development
 metadata:
-  canonical: https://www.microweb.my/finger-football-prototype
+  canonical: https://www.microweb.my/clients/finger-football-prototype/
 ---
 
 **Investment Opportunity: Disrupting the Gaming Landscape with Lean Innovation**
 
-In a market dominated by resource-intensive game engines, we offer a compelling alternative. ["Finger Football"](/games), developed in Godot, demonstrates our ability to create engaging, innovative gameplay without the overhead of "bloated" engines. This translates to faster development, reduced costs, and higher potential returns for investors.
+In a market dominated by resource-intensive game engines, we offer a compelling alternative. ["Finger Football"](/games/), developed in Godot, demonstrates our ability to create engaging, innovative gameplay without the overhead of "bloated" engines. This translates to faster development, reduced costs, and higher potential returns for investors.
 
 **The Problem: Engine Bloat and Development Bottlenecks**
 

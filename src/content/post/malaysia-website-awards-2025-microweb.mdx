@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2026-08-24T08:00:00Z
 updatedDate: 2026-08-24T14:00:00Z
 author: MicroWeb Systems Team
@@ -14,7 +14,7 @@ tags:
   - Software Company in Kuching
   - Cloudflare Pages Agency
 metadata:
-  canonical: https://www.microweb.my/blog/malaysia-website-awards-2025-microweb/
+  canonical: https://www.microweb.my/clients/malaysia-website-awards-2025-microweb/
 ---
 
 ```text
@@ -62,13 +62,13 @@ A 74% composite evaluation score reflects conscious architectural choices rather
 #### 1. Runtime Performance (17 / 25): The Three.js 3D WebGL Trade-off
 Automated evaluation bots penalize heavy client-side execution scripts. On our homepage, we deliberately integrated an interactive **Three.js WebGL 3D rendering pipeline**:
 * **What the Three.js Engine Does:** It mounts an interactive 3D hardware viewport (rendering real-time GLTF meshes, ambient lighting shaders, environment maps, and smooth touch-drag rotation controls) to demonstrate cutting-edge 3D product visualization capabilities.
-* **The Calculated Trade-off:** Initializing a WebGL graphics context and binding requestAnimationFrame render loops consumes client GPU/CPU memory cycles, which synthetic benchmark tools penalize. However, our primary target audience—corporate decision-makers, venture teams, and enterprise executives—consistently browse on modern, moderate-to-high-end hardware. On real client devices, the 3D scene renders at a rock-solid 60 FPS without UI jank. We gladly sacrifice a few synthetic benchmark points to deliver engaging interactive 3D experiences where it matters.
+* **The Calculated Trade-off:** Initializing a WebGL graphics context and binding requestAnimationFrame render loops consumes client GPU/CPU memory cycles, which synthetic benchmark tools penalize. However, our primary target audienceâ€”corporate decision-makers, venture teams, and enterprise executivesâ€”consistently browse on modern, moderate-to-high-end hardware. On real client devices, the 3D scene renders at a rock-solid 60 FPS without UI jank. We gladly sacrifice a few synthetic benchmark points to deliver engaging interactive 3D experiences where it matters.
 
 #### 2. Visual & UI Design (28 / 40): Speed, Content & Bespoke Corporate Identity
 Visual aesthetics in web evaluation are notoriously subjective. At MicroWeb, our internal design doctrine prioritizes **information velocity, scannability, and high-conversion content structures** over superficial parallax gimmicks or decorative animations that slow down user decision-making.
 
 Furthermore, our systems architecture is completely agnostic to visual styling: we tailor every user interface strictly to match our client's unique Corporate Identity (CI) and operational goals:
-* **Case in Point — [Ford Sarawak](https://ford.rightpower.com.my/):** For Rightpower Corporation's official Ford dealership network in Sarawak, we developed a bespoke UI/UX architecture fully aligned with Ford's global corporate brand guidelines—combining high-resolution vehicle model showcases, test-drive booking funnels, and enterprise dealer locator workflows with sub-second page delivery.
+* **Case in Point â€” [Ford Sarawak](https://ford.rightpower.com.my/):** For Rightpower Corporation's official Ford dealership network in Sarawak, we developed a bespoke UI/UX architecture fully aligned with Ford's global corporate brand guidelinesâ€”combining high-resolution vehicle model showcases, test-drive booking funnels, and enterprise dealer locator workflows with sub-second page delivery.
 
 ---
 
@@ -78,20 +78,20 @@ Our corporate web property is not a template theme or a dynamic PHP monolith. It
 
 ```text
 [ Astro Component Schema ]
-           │
-           ▼ (Build-Time HTML/CSS Compilation)
+           â”‚
+           â–¼ (Build-Time HTML/CSS Compilation)
 [ GitHub Actions CI/CD Pipeline ]
-           │
-           ▼ (Instant Global Deployment)
+           â”‚
+           â–¼ (Instant Global Deployment)
 [ Cloudflare Pages Edge Network (330+ Cities) ]
-           │
-           ▼ (Sub-Second Delivery via Local Peering)
+           â”‚
+           â–¼ (Sub-Second Delivery via Local Peering)
 [ End-User Browser / Viewport ]
 ```
 
 ### 1. Static Site Generation (SSG) with Astro.js
 Traditional Content Management Systems (CMS) like WordPress query an SQL database and execute hundreds of PHP scripts every single time a visitor requests a page. This creates:
-- High Time-to-First-Byte (TTFB) latency (200ms – 1,200ms+).
+- High Time-to-First-Byte (TTFB) latency (200ms â€“ 1,200ms+).
 - Vulnerability to database connection pool exhaustion under sudden traffic spikes.
 - Severe Cumulative Layout Shift (CLS) as client-side scripts asynchronously inject styling and tracking widgets.
 
@@ -101,14 +101,14 @@ Traditional Content Management Systems (CMS) like WordPress query an SQL databas
 - **Deterministic 0.00 CLS:** Pre-computed layout dimensions ensure instant visual stability and immediate Time-to-Interactive (TTI).
 
 ### 2. Serverless Edge Distribution via Cloudflare Pages
-Serving web traffic to businesses across Sarawak, Sabah, and Peninsular Malaysia involves navigating cross-sea fiber transit. Packets traveling between Borneo and standard US or European cloud origins suffer severe roundtrip latency penalties (120ms–280ms).
+Serving web traffic to businesses across Sarawak, Sabah, and Peninsular Malaysia involves navigating cross-sea fiber transit. Packets traveling between Borneo and standard US or European cloud origins suffer severe roundtrip latency penalties (120msâ€“280ms).
 
 **Our Approach:** We host MicroWeb entirely on **Cloudflare Pages**:
 - **Global Anycast Edge Network:** Static assets are replicated across more than 330 points of presence worldwide, terminating TLS handshakes and serving assets directly from regional edge nodes in Kuala Lumpur, Singapore, and regional peering points.
 - **Automated CI/CD via GitHub Actions:** Every git commit triggers an automated build pipeline that runs TypeScript validation, AST linting, and lossless WebP/AVIF image compression before dispatching atomic deployments in under 45 seconds.
 - **Immunity to Downtime:** With no running database or backend server daemon to crash, the website maintains 99.99%+ operational availability.
 
-### 3. High-Intent Search Authority (SEO Score: 17/20 — 85% Efficiency)
+### 3. High-Intent Search Authority (SEO Score: 17/20 â€” 85% Efficiency)
 Achieving a top-tier **85.0% SEO score** at the Malaysia Website Awards reflects our technical search architecture:
 - **Semantic HTML5 & Intent SILO Hierarchy:** Clean document object models with unambiguous heading hierarchies (`<h1>` through `<h3>`), eliminating nested `<div>` soup.
 - **Structured JSON-LD Schemas:** Programmatic injection of `Organization`, `WebSite`, `TechArticle`, and `BreadcrumbList` schemas enabling rich snippets on Google Search.
@@ -122,8 +122,8 @@ Achieving a top-tier **85.0% SEO score** at the Malaysia Website Awards reflects
 | Feature Dimension | Traditional WordPress / Monolith | MicroWeb Decoupled Edge Stack |
 | :--- | :--- | :--- |
 | **Rendering Model** | Dynamic Server-Side (PHP + MySQL Query per hit) | Static Site Generation (AOT Compiled HTML/CSS) |
-| **Origin Compute Latency** | 250ms – 1,500ms TTFB | < 25ms TTFB (Edge Cached) |
-| **Client-Side JS Overhead** | Heavy (1.5MB – 4.0MB of unminified plugins) | Zero-KB baseline (Selective island hydration) |
+| **Origin Compute Latency** | 250ms â€“ 1,500ms TTFB | < 25ms TTFB (Edge Cached) |
+| **Client-Side JS Overhead** | Heavy (1.5MB â€“ 4.0MB of unminified plugins) | Zero-KB baseline (Selective island hydration) |
 | **Security Surface Area** | Vulnerable to SQL injection, plugin exploits, wp-login brute force | Read-only static files; zero database or login endpoints |
 | **Maintenance Burden** | Constant plugin updates, database optimization, security patches | Zero maintenance; immutable git-backed deployments |
 | **Hosting & Compute Cost** | Escalates with traffic (dedicated VPS/managed hosting) | Predictable, near-zero edge hosting footprint |
@@ -154,4 +154,4 @@ By partnering with an engineering firm that builds high-performance, decoupled e
 
 Whether you need a blazing-fast corporate web platform, a mission-critical digital ecosystem, or custom cloud integration across Malaysia and Borneo, MicroWeb delivers systems engineered for speed and authority.
 
-👉 **[Schedule a Technical Consultation With MicroWeb](https://www.microweb.my/contact/)**
+ðŸ‘‰ **[Schedule a Technical Consultation With MicroWeb](https://www.microweb.my/contact/)**

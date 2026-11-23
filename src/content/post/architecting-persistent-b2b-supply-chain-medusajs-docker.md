@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2026-01-26T00:00:00Z
 updatedDate: 2026-06-12T00:00:00Z
 author: Admin
@@ -11,7 +11,7 @@ tags:
   - Docker Architecture
   - B2B Marketplace
 metadata:
-  canonical: https://www.microweb.my/clients/architecting-persistent-b2b-supply-chain-medusajs-docker
+  canonical: https://www.microweb.my/clients/architecting-persistent-b2b-supply-chain-medusajs-docker/
 ---
 
 Scaling a B2B supply chain marketplace within regional infrastructure limits requires a strict focus on backend predictability. For the Sarawak F&B sector, where inventory data fresh-rates directly dictate cold-chain logistics timelines, system latency and data dropouts represent direct operational losses.
@@ -24,9 +24,9 @@ During the foundational engineering phase of the **Omnia Foods** B2B ecosystem, 
 
 The production architecture is deployed across a dedicated **DigitalOcean Droplet Compute Node** running an optimized Linux core, protected behind an aggressive **Cloudflare Edge Network** perimeter.
 
-[Client App] ──> [Cloudflare Edge (Kuching Node)] ──> [Nginx Reverse Proxy] ──> [Docker / MedusaJS API]
+[Client App] â”€â”€> [Cloudflare Edge (Kuching Node)] â”€â”€> [Nginx Reverse Proxy] â”€â”€> [Docker / MedusaJS API]
 
-By leveraging localized edge routing nodes, we achieve sub-second Time to First Byte (TTFB) across East Malaysia. This network configuration ensures that warehouse managers and procurement officers experience zero interface lag—even when transmitting high-volume orders over erratic cellular connections.
+By leveraging localized edge routing nodes, we achieve sub-second Time to First Byte (TTFB) across East Malaysia. This network configuration ensures that warehouse managers and procurement officers experience zero interface lagâ€”even when transmitting high-volume orders over erratic cellular connections.
 
 ---
 
@@ -39,7 +39,7 @@ To ensure absolute asset permanence without introducing the latency overhead of 
 ### Core Implementation Parameters:
 
 - **Host-Bound Volume Mounts:** We isolated high-wear asset directories (such as generated invoices and product media payloads) and hard-mapped them directly out of the containerized environment into the host's physical NVMe storage layer.
-- **Cached Asset Delivery:** Media assets are served directly from the physical disk layer via an optimized Nginx reverse-proxy cache, combined with Cloudflare’s global edge caching rules. This workflow completely bypasses the Node.js application layer for static file requests, minimizing CPU overhead.
+- **Cached Asset Delivery:** Media assets are served directly from the physical disk layer via an optimized Nginx reverse-proxy cache, combined with Cloudflareâ€™s global edge caching rules. This workflow completely bypasses the Node.js application layer for static file requests, minimizing CPU overhead.
 - **Decoupled Architecture Scaling:** While local NVMe storage satisfies our initial velocity targets, the underlying file-service layout is fully abstracted. This design allows us to seamlessly swap the storage driver to an S3-compatible object storage cluster as transaction volume expands.
 
 ---

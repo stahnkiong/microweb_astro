@@ -1,5 +1,4 @@
 import path from 'path';
-import fs from 'fs';
 import { fileURLToPath } from 'url';
 
 import { defineConfig } from 'astro/config';
@@ -22,21 +21,6 @@ const hasExternalScripts = false;
 const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroIntegration)[] = []) =>
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
-const getPostRedirects = () => {
-  const redirects: Record<string, string> = {};
-  const postDir = path.resolve(__dirname, './src/content/post');
-  if (fs.existsSync(postDir)) {
-    const files = fs.readdirSync(postDir);
-    for (const file of files) {
-      if (file.endsWith('.md') || file.endsWith('.mdx')) {
-        const slug = file.replace(/\.mdx?$/, '');
-        redirects[`/${slug}`] = `/clients/${slug}`;
-      }
-    }
-  }
-  return redirects;
-};
-
 export default defineConfig({
   site: 'https://www.microweb.my',
   output: 'static',
@@ -45,8 +29,6 @@ export default defineConfig({
   build: {
     inlineStylesheets: 'always',
   },
-
-  redirects: getPostRedirects(),
 
   integrations: [
     tailwind({

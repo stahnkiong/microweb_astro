@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2022-06-25T00:00:00Z
 author: Admin
 title: 'The "Rojak" Dance: Bridging the Gap Between Vision and Code'
@@ -9,7 +9,7 @@ tags:
   - Client Communication
   - Agile
 metadata:
-  canonical: https://www.microweb.my/client-developer-communication
+  canonical: https://www.microweb.my/clients/client-developer-communication/
 ---
 
 You're buzzing. App idea? Check. Passion? Double-check. Then, you meet the developers. "Agile," "clean code," "technical debt." Suddenly, it's a different language.
@@ -20,7 +20,7 @@ Another customer says, "Fast and flawless, please!" They see a shiny app, ready 
 
 Developers care about solid code, a strong foundation. Customers want results, yesterday. It's a classic clash.
 
-Businesses move fast. This back-and-forth is familiar. It's a "rojak"—a mix of needs.
+Businesses move fast. This back-and-forth is familiar. It's a "rojak"â€”a mix of needs.
 
 ## The Bridge: Understanding Each Other
 
@@ -30,7 +30,7 @@ A good developer explains why things take time. A good customer sees the long-te
 
 ## The Rhythm: Launch and Longevity
 
-When they find that rhythm—between urgency and dedication—the result is user-friendly, reliable, scalable software.
+When they find that rhythmâ€”between urgency and dedicationâ€”the result is user-friendly, reliable, scalable software.
 
 It's a foundation for growth. Isn't that what everyone wants?
 

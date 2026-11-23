@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2023-07-24T00:00:00Z
 author: Admin
 title: 'Modernizing Legacy Lending: A FinTech Ecosystem Case Study'
@@ -10,7 +10,7 @@ tags:
   - FinTech Transformation
   - Automated Risk Management
 metadata:
-  canonical: https://www.microweb.my/finance-digital-transformation
+  canonical: https://www.microweb.my/clients/finance-digital-transformation/
 ---
 
 Traditional financial institutions often face a "Digital Deadlock": possessing valuable market trust but crippled by legacy infrastructure. We partnered with a major license loan provider to continuously audit and modernize their entire operational stack.
@@ -32,7 +32,7 @@ We architected a secure, centralized data warehouse that served as the "Single S
 We replaced manual credit checks with **Algorithmic Risk Assessment** modules.
 
 - **Impact:** Reduced default risk by identifying high-risk borrower patterns early.
-- **Compliance:** Automated generation of [Bank Negara Malaysia (BNM)](/finance-digital-transformation) compliant reporting.
+- **Compliance:** Automated generation of [Bank Negara Malaysia (BNM)](/clients/finance-digital-transformation/) compliant reporting.
 
 ### 2. Operational Efficiency: The "Zero-Touch" Workflow
 
@@ -49,15 +49,15 @@ By digitizing and auditing historical data, we uncovered a significant portfolio
 
 ## The Result: From Lender to FinTech Powerhouse
 
-The digital transformation did more than just "go paperless"—it fundamentally changed the business model.
+The digital transformation did more than just "go paperless"â€”it fundamentally changed the business model.
 
 - **Real-Time Liquidity Views:** Stakeholders now have live dashboards on capital deployment.
 - **Scalable Architecture:** The new infrastructure supports a 400% increase in daily transaction volume without additional headcount.
 
 **Conclusion: Future-Proofing Financial Services**
-In the highly regulated finance sector, technology is not just support—it is the competitive advantage. We help institutions bridge the gap between legacy trust and modern efficiency.
+In the highly regulated finance sector, technology is not just supportâ€”it is the competitive advantage. We help institutions bridge the gap between legacy trust and modern efficiency.
 
-[Explore Enterprise FinTech Solutions](/enterprise)
+[Explore Enterprise FinTech Solutions](/enterprise/)
 
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",

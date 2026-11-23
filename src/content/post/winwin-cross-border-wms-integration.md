@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2026-07-30T00:00:00Z
 updatedDate: 2026-07-30T00:00:00Z
 author: Admin
@@ -11,7 +11,7 @@ tags:
   - Cross-Border Architecture
   - API Engineering
 metadata:
-  canonical: https://www.microweb.my/clients/winwin-cross-border-wms-integration
+  canonical: https://www.microweb.my/clients/winwin-cross-border-wms-integration/
 ---
 
 Managing cross-border supply chain operations between Southeast Asia and mainland China introduces significant technical hurdles: cross-border network latency, dynamic IP routing, complex firewall rules, and disparate data schemas between local customer-facing applications and overseas enterprise Warehouse Management Systems (WMS).
@@ -39,14 +39,14 @@ Rather than paying heavy monthly static IP fees for Starlink connections or forc
 
 ```
 [Malaysian App / Web Frontends] 
-       │
-       ▼
+       â”‚
+       â–¼
 [MicroWeb Edge Gateway Proxy (Malaysia)]
-       │ (Encrypted Payload & Dynamic Reverse DNS Tunnel)
-       ▼
+       â”‚ (Encrypted Payload & Dynamic Reverse DNS Tunnel)
+       â–¼
 [Starlink Satellite Connection (China Hub)]
-       │
-       ▼
+       â”‚
+       â–¼
 [Win Win WMS Node (http://winwinwms.cn:38329)]
 ```
 

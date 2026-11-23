@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2025-04-03T00:00:00+08:00
 author: Admin
 title: "Attracting West Malaysian Businesses to Kuching: A Google Ads & ASRS Strategy"
@@ -12,7 +12,7 @@ tags:
   - Web Development
   - Conversion Optimization
 metadata:
-  canonical: https://www.microweb.my/kuching-cold-storage-ads
+  canonical: https://www.microweb.my/clients/kuching-cold-storage-ads/
 ---
 
 >   **The Challenge:** A new, state-of-the-art Automated Storage and Retrieval System (ASRS) cold storage warehouse in Kuching was struggling to attract business from West Malaysia. The initial Google Ads strategy, centered on the keyword "asrs warehouse," wasn't delivering the right clients.

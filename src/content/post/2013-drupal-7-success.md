@@ -1,9 +1,9 @@
----
+﻿---
 publishDate: 2019-07-13T00:00:00Z
 updatedDate: 2026-06-12T00:00:00Z
 author: Admin
 title: 'Legacy Infrastructure: Engineering 12+ Years of System Reliability for Sri Datai Holdings'
-excerpt: 'Architecting enterprise web systems that survive a decade of technology shifts. A deep dive into the Drupal 7 deployment for Sarawak’s Sri Datai Holdings, engineered in 2013 and still operational today.'
+excerpt: 'Architecting enterprise web systems that survive a decade of technology shifts. A deep dive into the Drupal 7 deployment for Sarawakâ€™s Sri Datai Holdings, engineered in 2013 and still operational today.'
 image: ~/assets/images/blog/sridatai.webp
 tags:
   - Enterprise Architecture
@@ -11,10 +11,10 @@ tags:
   - Legacy Systems
   - Infrastructure Reliability
 metadata:
-  canonical: https://www.microweb.my/clients/2013-drupal-7-success
+  canonical: https://www.microweb.my/clients/2013-drupal-7-success/
 ---
 
-When evaluating a technology partner, the ultimate metric isn't how fast they can launch a modern framework—it is how their architecture performs over a decade later. For major holdings and infrastructure conglomerates, software stability is an operational requirement, not a luxury.
+When evaluating a technology partner, the ultimate metric isn't how fast they can launch a modern frameworkâ€”it is how their architecture performs over a decade later. For major holdings and infrastructure conglomerates, software stability is an operational requirement, not a luxury.
 
 In 2013, Sarawak-based infrastructure group **Sri Datai Holdings** tasked us with building their core digital presence. Twelve years later, that foundational architecture remains online, fully functional, and structurally sound.
 
@@ -30,7 +30,7 @@ We deployed the platform on **Drupal 7**, utilizing its enterprise-level databas
 
 ### Key Engineering Objectives:
 
-- **Custom Module Architecture:** Instead of relying on volatile, third-party plugins that break during core security updates, we engineered bespoke modules tailored specifically to the group’s multi-sector corporate structure.
+- **Custom Module Architecture:** Instead of relying on volatile, third-party plugins that break during core security updates, we engineered bespoke modules tailored specifically to the groupâ€™s multi-sector corporate structure.
 - **Granular Schema Control:** Built a structured content schema using Drupal's field system to ensure data integrity across various corporate divisions.
 - **Hardened Security Perimeter:** Leveraged Drupal's native database abstraction layer to prevent SQL injection vulnerabilities, a critical requirement for a high-profile corporate asset.
 

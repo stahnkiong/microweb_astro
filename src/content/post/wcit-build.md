@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2023-10-07T00:00:00Z
 author: Admin
 title: 'Seamless Event Integration: WCIT 2023 Event Platform Delivered with Agile Precision'
@@ -10,7 +10,7 @@ tags:
   - Third-Party Integration
   - WCIT 2023
 metadata:
-  canonical: https://www.microweb.my/wcit-build
+  canonical: https://www.microweb.my/clients/wcit-build/
 ---
 
 At WCIT 2023 and IDECS 2023, we demonstrated our ability to deliver comprehensive event solutions under tight deadlines. We understand that businesses need reliable partners who can handle the complexities of event technology, allowing them to focus on the event itself.

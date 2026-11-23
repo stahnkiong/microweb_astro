@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2021-03-22T00:00:00Z
 author: Admin
 title: 'enterSarawak Integration: Streamlining Digital Border Control'
@@ -9,7 +9,7 @@ tags:
   - enterSarawak
   - Digital Border Control
 metadata:
-  canonical: https://www.microweb.my/entersarawak-integration
+  canonical: https://www.microweb.my/clients/entersarawak-integration/
 ---
 
 We were tasked with a critical integration project for enterSarawak, aimed at streamlining digital border control.

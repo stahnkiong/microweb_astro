@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2021-03-02T00:00:00Z
 author: Admin
 title: 'When the Internet Attacked: Our DDoS Defense Story'
@@ -9,7 +9,7 @@ tags:
   - DDoS
   - Cloudflare
 metadata:
-  canonical: https://www.microweb.my/ddos-attack-response
+  canonical: https://www.microweb.my/clients/ddos-attack-response/
 ---
 
 Let's talk about a rough couple of days. We got hit with a DDoS attack. Not just any attack, but a massive one. Think of it as the entire internet deciding to throw a digital tantrum at our door. It was intense.

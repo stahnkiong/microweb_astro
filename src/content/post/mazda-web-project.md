@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2017-09-13T00:00:00Z
 author: Admin
 title: 'Precision Web Solutions: Custom Mazda Retailer Site Built to Global Guidelines'
@@ -10,7 +10,7 @@ tags:
   - Mazda
   - Automotive
 metadata:
-  canonical: https://www.microweb.my/mazda-web-project
+  canonical: https://www.microweb.my/clients/mazda-web-project/
 ---
 
 As a Mazda retailer in East Malaysia, our client required a digital presence that not only reflected the brand's innovation but also adhered strictly to global brand guidelines. They sought a custom-made website that seamlessly integrated with their systems, ensuring a precise and high-quality user experience.

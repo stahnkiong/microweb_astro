@@ -1,4 +1,4 @@
----
+﻿---
 publishDate: 2019-08-23T00:00:00Z
 author: Admin
 title: 'Keeping Airports Running: Our Technical Role with Malaysia Airports'
@@ -9,7 +9,7 @@ tags:
   - Airport Technology
   - Malaysia Airports
 metadata:
-  canonical: https://www.microweb.my/malaysia-airports-technical-support
+  canonical: https://www.microweb.my/clients/malaysia-airports-technical-support/
 ---
 
 Malaysia Airports Holdings Berhad (MAHB) manages one of the most critical infrastructure networks in the region. Ensuring the seamless flow of passengers and cargo requires more than just personnel; it demands a robust, fault-tolerant technical backbone. We served as a specialized technical partner, ensuring "Zero Downtime" operations for critical terminal systems.
@@ -20,7 +20,7 @@ Airports are high-stakes environments where technical failure can lead to cascad
 
 ### 1. Vendor-Agnostic System Integration
 
-We didn't just install hardware; we integrated diverse ecosystems. Whether it was [custom web development](/web-development) for internal dashboards or proprietary security hardware, our team ensured seamless interoperability.
+We didn't just install hardware; we integrated diverse ecosystems. Whether it was [custom web development](/web-development/) for internal dashboards or proprietary security hardware, our team ensured seamless interoperability.
 
 - **Legacy Interfacing**: successfully connected modern IoT sensors with legacy airport mainframes.
 - **Hardware Deployment**: Managed the rollout of terminal-wide display systems and check-in peripherals.
@@ -41,7 +41,7 @@ Technology is only as good as the people running it. Our on-site engineers provi
 
 ## Why Enterprise Infrastructure Matters
 
-For large-scale entities like Malaysia Airports, IT support is not a utility—it is a strategic asset. Our ability to navigate complex, high-security environments demonstrates our capability to handle **Enterprise-Grade** deployments.
+For large-scale entities like Malaysia Airports, IT support is not a utilityâ€”it is a strategic asset. Our ability to navigate complex, high-security environments demonstrates our capability to handle **Enterprise-Grade** deployments.
 
 **Conclusion: Reliability at Scale**
 We are proud to have supported the nation's gateway. Our experience with Malaysia Airports reinforces our commitment to delivering resilient, scalable, and secure technical solutions for the most demanding environments.

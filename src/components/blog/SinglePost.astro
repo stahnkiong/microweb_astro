@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { APP_BLOG } from 'astrowind:config';
 
 import Image from '~/components/common/Image.astro';
 import PostTags from '~/components/blog/Tags.astro';
@@ -15,6 +16,12 @@ export interface Props {
 }
 
 const { post, url } = Astro.props;
+const imageUrl =
+  typeof post.image === 'string'
+    ? new URL(post.image, url).toString()
+    : post.image?.src
+      ? new URL(post.image.src, url).toString()
+      : undefined;
 ---
 
 <section class="py-8 sm:py-16 lg:py-20 mx-auto">
@@ -48,9 +55,13 @@ const { post, url } = Astro.props;
               <>
                 {' '}
                 ·{' '}
-                <a class="hover:underline inline-block" href={getPermalink(post.category.slug, 'category')}>
-                  {post.category.title}
-                </a>
+                {APP_BLOG?.category?.isEnabled ? (
+                  <a class="hover:underline inline-block" href={getPermalink(post.category.slug, 'category')}>
+                    {post.category.title}
+                  </a>
+                ) : (
+                  <span class="inline-block">{post.category.title}</span>
+                )}
               </>
             )
           }
@@ -109,20 +120,31 @@ const { post, url } = Astro.props;
 
 <script
   type="application/ld+json"
+  is:inline
   set:html={JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
+    '@id': `${String(url)}#article`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': String(url),
+    },
+    url: String(url),
     headline: post.title,
-    image: post.image ? [new URL(post.image, url).toString()] : [], // Assuming image is a URL string or adapt as needed
+    image: imageUrl ? [imageUrl] : [],
     datePublished: post.publishDate.toISOString(),
     dateModified: post.updateDate ? post.updateDate.toISOString() : post.publishDate.toISOString(),
     author: [
       {
-        '@type': 'Person',
-        name: post.author || 'Admin',
-        url: 'https://www.microweb.my',
+        '@type': 'Organization',
+        '@id': 'https://www.microweb.my/#organization',
+        name: 'MicroWeb',
+        url: 'https://www.microweb.my/',
       },
     ],
+    publisher: {
+      '@id': 'https://www.microweb.my/#organization',
+    },
     description: post.excerpt,
   })}
 />
